@@ -11,19 +11,19 @@ import ContactForm from './contact-form';
 
 const CERTIFICATES = [
   {
-    title: 'SOC 2',
-    description: 'Certified',
-    icon: certSOC2Icon,
-  },
-  {
     title: 'GDPR',
     description: 'Compliant',
     icon: certGDPRIcon,
   },
   {
-    title: 'ISO 27001',
-    description: 'Compliant',
+    title: 'DPA',
+    description: 'Available',
     icon: certISOIcon,
+  },
+  {
+    title: 'Cancel',
+    description: 'Anytime',
+    icon: certSOC2Icon,
   },
 ];
 
@@ -41,12 +41,12 @@ const Hero = () => (
             size="md-new"
             theme="white"
           >
-            Start shipping faster with the backend for apps and agents
+            Tell us what you track and we will help you set it up
           </Heading>
           <div className="mt-auto flex flex-col gap-7 xl:gap-5 lg:gap-7">
             <p className="max-w-[544px] text-lg leading-normal tracking-tight text-pretty text-gray-new-70 xl:text-base lg:mt-[18px] lg:max-w-xl">
-              We&apos;re happy to assist you with any questions about our tech, pricing plans,
-              custom contract options, and migrations assistance.
+              Ask us about plans and limits, running many client brands on one account, moving
+              across from another tool, or anything the docs did not answer.
             </p>
             <ul className="flex flex-col gap-y-5 border-t border-gray-new-20 pt-7 xl:gap-y-3 xl:pt-5 lg:flex-row lg:flex-wrap lg:gap-x-5 lg:gap-y-3 lg:border-t-0 lg:pt-0 md:gap-x-4 md:gap-y-3.5">
               {CERTIFICATES.map(({ title, description, icon }) => (

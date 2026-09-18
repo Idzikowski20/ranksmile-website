@@ -13,13 +13,14 @@ import Blob from './images/blob.inline.svg';
 const STATS_DATA = [
   {
     icon: databaseIcon,
-    value: '15,000,000',
-    description: 'Postgres databases turned on every day.',
+    value: '5',
+    description:
+      'AI answer engines tracked. Growth covers four of them, Scale and Agency all five.',
   },
   {
     icon: gearIcon,
-    value: '80%',
-    description: 'Of databases are deployed by automated agents.',
+    value: '2022',
+    description: 'The year the open-source rank tracker under Ranksmile shipped its first commit.',
   },
 ];
 
@@ -57,8 +58,9 @@ const Vision = () => (
         <SectionLabel icon="arrow">Where we&apos;re headed</SectionLabel>
 
         <h3 className="mt-5 max-w-[736px] text-5xl leading-dense font-normal tracking-tighter text-gray-new-40 xl:max-w-[600px] xl:text-[36px] lg:max-w-full lg:text-2xl md:mt-4 md:text-xl">
-          <span className="text-black-pure">Neon is part of the Databricks Platform.</span> In May
-          2025, Neon joined Databricks to shape the future of AI-native application backends.
+          <span className="text-black-pure">Ranksmile is built by Globalzone.</span> A small team
+          that got tired of paying for four tools to answer one question, and built the one tool
+          instead.
         </h3>
 
         <div className="mt-[194px] flex gap-x-24 xl:mt-[136px] xl:gap-x-16 lg:gap-x-8 md:mt-9 md:flex-col md:gap-y-7 md:pr-24">
@@ -73,19 +75,19 @@ const Vision = () => (
 
         <div className="grid gap-y-10 xl:gap-y-9 lg:gap-y-7 md:gap-y-4">
           <p className="text-xl leading-normal tracking-tighter text-black-pure xl:text-lg lg:text-base md:text-[15px]">
-            The mission stays the same: deliver backend primitives{' '}
+            Search is splitting in two. People still type into Google, and they also ask an AI,
+            which answers{' '}
             <mark className="rounded-sm bg-[#39A57D]/60 text-black-pure">
               {' '}
-              for developers and AI agents
+              without ever showing a list of links.
             </mark>{' '}
-            — now as part of the Databricks Platform.
+            Both decide whether you get found.
           </p>
 
           <p className="text-xl leading-normal tracking-tighter text-black-pure xl:text-lg lg:text-base md:mr-8 md:text-[15px]">
-            The same technology behind Neon powers Lakebase: The&nbsp;first serverless Postgres
-            database{' '}
+            So Ranksmile tracks both in one place and turns what it finds into{' '}
             <mark className="rounded-sm bg-[#39A57D]/60 text-black-pure">
-              integrated with the lakehouse, built for the AI era.
+              a ranked list of pages to write.
             </mark>
           </p>
         </div>

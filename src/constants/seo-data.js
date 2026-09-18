@@ -37,9 +37,9 @@ export default {
     markdownPath: `${LINKS.aiVisibility}.md`,
   },
   aboutUs: {
-    title: 'About Us — Neon',
+    title: 'About us — Ranksmile',
     description:
-      'The Neon team consists of PostgreSQL contributors and technologists on a mission to build the backend for apps and agents, for every developer.',
+      'Ranksmile is built by Globalzone: one tool for rank tracking, AI visibility, keyword research, site audits and writing, instead of four subscriptions.',
     pathname: LINKS.aboutUs,
   },
   blog: {
@@ -99,8 +99,9 @@ export default {
     markdownPath: `${LINKS.wordpress}.md`,
   },
   contactSales: {
-    title: 'Contact Sales — Neon',
-    description: 'Interested in learning more about our plans and pricing? Contact our sales team.',
+    title: 'Contact us — Ranksmile',
+    description:
+      'Tell us what you track and we will help you set it up. Questions about plans, limits, agency setups or moving from another tool.',
     pathname: LINKS.contactSales,
   },
   enterprise: {

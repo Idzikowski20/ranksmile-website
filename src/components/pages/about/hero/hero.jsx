@@ -16,12 +16,12 @@ const Hero = () => (
         theme="white"
         size="md-new"
       >
-        Neon is building the agent-native backend stack.
+        Ranksmile is one tool for being found, in Google and in AI answers.
       </Heading>
       <div className="flex w-full items-center justify-between xl:items-end lg:flex-col lg:items-start lg:gap-y-6">
         <p className="max-w-[704px] font-sans text-xl leading-snug font-normal tracking-extra-tight text-gray-new-80 xl:max-w-md lg:max-w-[640px] lg:text-lg md:max-w-80 md:text-[15px]">
-          Database, Authentication, Storage, Compute and AI Gateway, designed from the ground up to
-          be operated by agents: familiar, instant, serverless, and branchable.
+          Rank tracking, AI visibility, keyword research, site audits and a writing editor, built by
+          Globalzone so one person can run all of it from a single dashboard.
         </p>
         <div className="flex items-center justify-center gap-x-5 xl:gap-4 xl:pb-2 lg:pb-0 md:w-full md:flex-col">
           <Button
@@ -36,9 +36,9 @@ const Hero = () => (
             size="lg-new"
             theme="outlined"
             className="shrink-0 font-normal md:w-full"
-            to={LINKS.careers}
+            to={LINKS.pricing}
           >
-            View open roles at Databricks
+            See plans
           </Button>
         </div>
       </div>

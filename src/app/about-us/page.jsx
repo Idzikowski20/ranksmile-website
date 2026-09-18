@@ -1,4 +1,3 @@
-import Connections from 'components/pages/about/connections';
 import Developers from 'components/pages/about/developers';
 import Hero from 'components/pages/about/hero';
 import Timeline from 'components/pages/about/timeline';
@@ -17,15 +16,14 @@ const AboutUsPage = () => (
     <Timeline />
     <Vision />
     <Developers />
-    <Connections />
     <CTANew
       className="mt-0"
-      title="Become a part of our&nbsp;team."
-      description="We're looking for people who care deeply about quality to build with us."
-      label="Join Databricks"
-      buttonText="View open roles at Databricks"
-      buttonUrl={LINKS.careers}
-      labelIcon="databricks"
+      title="See what the engines say about&nbsp;you."
+      description="Add a site, pick the prompts your buyers ask, and read the first scan."
+      label="7-DAY FREE TRIAL"
+      buttonText="Start your free trial"
+      buttonUrl={LINKS.signup}
+      isExternal
     />
   </Layout>
 );
