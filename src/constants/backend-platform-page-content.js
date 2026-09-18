@@ -431,12 +431,52 @@ const aiVisibilityPageContent = {
         primary: 'Read the sources the engines trust for your queries,',
         secondary:
           'and the competing brands those sources mention, so outreach has a target list rather than a hunch.',
+        benefits: [
+          {
+            icon: 'branching',
+            title: 'Sources, ranked',
+            description:
+              'The URLs the engines cite most often for your prompts, with how many answers each one shows up in.',
+          },
+          {
+            icon: 'api',
+            title: 'Who each source names',
+            description:
+              'Open a source and see which brands it mentions, so you know whether earning a place there would help you or a rival.',
+          },
+          {
+            icon: 'storage',
+            title: 'Competitors per prompt',
+            description:
+              'The brands named beside you, query by query, so a lost answer has a name attached rather than being a general worry.',
+          },
+        ],
       },
       {
         id: 'database-built-for-agents',
         label: 'Turn gaps into work',
         primary: 'Every prompt you are missing from becomes a ranked task,',
         secondary: 'opening in the editor with the keyword and the competing pages already loaded.',
+        benefits: [
+          {
+            icon: 'branching',
+            title: 'One list per site',
+            description:
+              'Gaps, drops and opportunities land in Recommendations together, sorted by what will move visibility fastest.',
+          },
+          {
+            icon: 'api',
+            title: 'Straight into the editor',
+            description:
+              'A task opens with the keyword, the competing pages and a live Content Score, so there is no blank page to start from.',
+          },
+          {
+            icon: 'storage',
+            title: 'The scan confirms it',
+            description:
+              'Publish, and the next scheduled scan tells you whether the answer changed. Nothing is marked done on a hunch.',
+          },
+        ],
       },
     ],
   },

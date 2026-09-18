@@ -1,18 +1,9 @@
 import Container from 'components/shared/container';
 import { aiVisibilityPageContent } from 'constants/backend-platform-page-content';
 
-import AgentsVisual from './agents-visual';
 import Benefits from './benefits';
-import BranchingVisual from './branching-visual';
 import Capability from './capability';
-import RestoreVisual from './restore-visual';
 import SectionNavigation from './section-navigation';
-
-const VISUALS = {
-  'instant-branching': BranchingVisual,
-  'restore-to-any-point': RestoreVisual,
-  'database-built-for-agents': AgentsVisual,
-};
 
 const { dynamicDatabases } = aiVisibilityPageContent;
 
@@ -46,26 +37,21 @@ const DynamicDatabases = () => {
           </div>
 
           <div>
-            {capabilities.map(({ id, primary, secondary, benefits }, index) => {
-              const Visual = VISUALS[id];
-
-              return (
-                <Capability
-                  className={
-                    index > 0
-                      ? 'mt-40 border-t border-gray-new-20 pt-16 2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-20'
-                      : undefined
-                  }
-                  id={id}
-                  key={id}
-                  primary={primary}
-                  secondary={secondary}
-                >
-                  <Visual />
-                  {benefits && <Benefits items={benefits} />}
-                </Capability>
-              );
-            })}
+            {capabilities.map(({ id, primary, secondary, benefits }, index) => (
+              <Capability
+                className={
+                  index > 0
+                    ? 'mt-40 border-t border-gray-new-20 pt-16 2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-20'
+                    : undefined
+                }
+                id={id}
+                key={id}
+                primary={primary}
+                secondary={secondary}
+              >
+                <Benefits items={benefits} />
+              </Capability>
+            ))}
           </div>
         </div>
       </Container>
