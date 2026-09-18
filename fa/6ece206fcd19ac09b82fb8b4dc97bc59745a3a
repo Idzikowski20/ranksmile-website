@@ -1,0 +1,29 @@
+src/components/pages/pricing/hero/plans/data/plans.js
+  s_57407775d5d685::t_d65f2681cd3b40 145-148
+src/constants/menus.js
+  s_57407775d5d685::t_d65f2681cd3b40 68,175-177
+src/app/pricing/page.jsx
+  s_57407775d5d685::t_06837943db89ad 126-127
+src/components/pages/pricing/hero/programs/programs.jsx
+  s_57407775d5d685::t_d65f2681cd3b40 19
+src/app/agencies/page.jsx
+  s_57407775d5d685::t_d65f2681cd3b40 119,130,132
+src/components/pages/pricing/plans/data/plans.js
+  s_57407775d5d685::t_d65f2681cd3b40 182
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "fa6ece206fcd19ac09b82fb8b4dc97bc59745a3a",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
