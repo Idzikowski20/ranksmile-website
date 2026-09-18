@@ -1,0 +1,52 @@
+src/proxy.js
+  s_57407775d5d685::t_b8234bc58c896b 405
+src/constants/menus.test.js
+  s_57407775d5d685::t_1e2eda68649768 8
+src/utils/ai-agent-detection.test.js
+  s_57407775d5d685::t_1e2eda68649768 151
+src/components/shared/rive-wasm/rive-wasm.jsx
+  s_57407775d5d685::t_b8234bc58c896b 12
+next.config.test.js
+  s_57407775d5d685::t_1e2eda68649768 15
+src/middleware.test.js
+  s_57407775d5d685::t_1e2eda68649768 107
+src/utils/get-metadata.test.js
+  s_57407775d5d685::t_1e2eda68649768 43
+src/constants/content.js
+  s_57407775d5d685::t_b8234bc58c896b 30
+src/constants/links.js
+  s_57407775d5d685::t_b8234bc58c896b 44,65
+next.config.js
+  s_57407775d5d685::t_179cce7ee1bd8d 323-329
+src/constants/seo-data.js
+  s_57407775d5d685::t_9e5b3ba26325a1 87-88,90-92
+src/scripts/generate-backend-platform-page-markdown.js
+  s_57407775d5d685::t_9e5b3ba26325a1 312-313,317,345-346,441
+  s_57407775d5d685::t_b8234bc58c896b 421
+  s_57407775d5d685::t_138777b57d6c19 22
+src/scripts/generate-backend-platform-page-markdown.test.js
+  s_57407775d5d685::t_1e2eda68649768 161,173
+  s_57407775d5d685::t_9e5b3ba26325a1 14,107
+  s_57407775d5d685::t_1627c06b67c1ec 106,109-116,174
+src/constants/content-score-page-content.js
+  s_57407775d5d685::t_c766fdcd77b839 1-199
+src/app/content-score/page.jsx
+  s_57407775d5d685::t_138777b57d6c19 25-27
+  s_57407775d5d685::t_b8234bc58c896b 1-24,28-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "571b5aa5135e560722a7444df9571b8e23440e57",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
