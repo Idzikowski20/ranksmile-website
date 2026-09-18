@@ -1,103 +1,50 @@
 import Container from 'components/shared/container';
-import LINKS from 'constants/links';
 import accessIcon from 'icons/security/access.svg';
 import bugIcon from 'icons/security/bug.svg';
 import chartsIcon from 'icons/security/charts.svg';
 import checkPrivacyIcon from 'icons/security/check-privacy.svg';
-import checkIcon from 'icons/security/check.svg';
 import circuitIcon from 'icons/security/circuit.svg';
-import crosshairIcon from 'icons/security/crosshair.svg';
 import dataLockIcon from 'icons/security/data-lock.svg';
 import dataReplaceIcon from 'icons/security/data-replace.svg';
 import dataTransitIcon from 'icons/security/data-transit.svg';
-import gearIcon from 'icons/security/gear.svg';
-import graduationIcon from 'icons/security/graduation.svg';
 import keyIcon from 'icons/security/key.svg';
-import lockIcon from 'icons/security/lock.svg';
-import mugIcon from 'icons/security/mug.svg';
-import pcIcon from 'icons/security/pc.svg';
 import policyIcon from 'icons/security/policy.svg';
-import privacyCycleIcon from 'icons/security/privacy-cycle.svg';
 import radarIcon from 'icons/security/radar.svg';
 import restoreIcon from 'icons/security/restore.svg';
-import searchIcon from 'icons/security/search.svg';
 import segregationIcon from 'icons/security/segregation.svg';
 import serverIcon from 'icons/security/server.svg';
-import todoIcon from 'icons/security/todo.svg';
 import userLockIcon from 'icons/security/user-lock.svg';
-import userPrivacyIcon from 'icons/security/user-privacy.svg';
 import warningIcon from 'icons/security/warning.svg';
 
 import Slider from './slider';
 
 const DATA = [
   {
-    title: 'Cloud Infrastructure',
+    title: 'Where it runs',
     items: [
       {
-        title: 'Data Hosting',
+        title: 'Hosting',
         description:
-          'Neon’s infrastructure runs on AWS and Azure, certified for SOC 2, ISO 27001, FedRAMP, PCI-DSS, HIPAA, and other global security standards.',
+          'The Next.js app, the API and the background workers run on Railway. Everything is served over HTTPS, and nothing is hosted on machines we own.',
         icon: serverIcon,
       },
       {
-        title: 'Data Segregation',
+        title: 'Database',
         description:
-          'Customer data is isolated with unique IDs to prevent unauthorized access. The API enforces this through authentication in access tokens.',
+          'A single Neon serverless Postgres project holds every account, site, keyword, scan and draft. Neon runs it on AWS infrastructure.',
+        icon: dataLockIcon,
+      },
+      {
+        title: 'Region',
+        description:
+          'Ranksmile is a European company and production data belongs in an EU region. Our current project sits in a US region, which is why this reads as a plan and not a guarantee. Ask before you sign if it matters to you.',
+        icon: policyIcon,
+      },
+      {
+        title: 'Isolation',
+        description:
+          'Every row belongs to a site and every site belongs to an account. Queries are scoped by that ownership, so one account cannot read another account\u2019s scans.',
         icon: segregationIcon,
-      },
-      {
-        title: 'Physical & Environmental Security',
-        description:
-          'Neon personnel have no physical access to AWS or Azure data centers, which have 24/7 surveillance, biometric controls, redundancy, and audits.',
-        icon: lockIcon,
-      },
-      {
-        title: 'Access Control',
-        description:
-          'Production access is restricted by default, granted only when needed with least-privilege, time-limited permissions via Teleport and approval.',
-        icon: accessIcon,
-      },
-      {
-        title: 'Monitoring',
-        description:
-          'Neon uses Grafana to monitor cloud operations. System failures trigger alerts, notifying key personnel for immediate response and resolution.',
-        icon: chartsIcon,
-      },
-      {
-        title: 'Vendor Risk Management',
-        description:
-          'All vendors are assessed for security, privacy, and compliance. Those handling sensitive data must meet SOC 2.',
-        icon: checkIcon,
-      },
-    ],
-  },
-  {
-    title: 'Cloud Security',
-    items: [
-      {
-        title: 'Network Vulnerability Scanning',
-        description:
-          'Neon performs continuous vulnerability scans on all infrastructure components. Identified vulnerabilities are triaged and remediated based on severity.',
-        icon: warningIcon,
-      },
-      {
-        title: 'Intrusion Detection & Prevention',
-        description:
-          'Neon monitors for unauthorized access using traffic monitoring, anomaly detection, and threat intelligence.',
-        icon: crosshairIcon,
-      },
-      {
-        title: 'Logical Access Controls',
-        description:
-          'Access to production systems is role-based (RBAC), requiring SSO and continuous monitoring. Access modifications require documented approval.',
-        icon: userLockIcon,
-      },
-      {
-        title: 'Security Incident Response',
-        description:
-          'Neon has a 24/7 incident response team following well-defined playbooks, including continuous training and annual tabletop exercises.',
-        icon: userPrivacyIcon,
       },
     ],
   },
@@ -105,121 +52,120 @@ const DATA = [
     title: 'Encryption',
     items: [
       {
-        title: 'Data in Transit',
+        title: 'Data in transit',
         description:
-          'Neon enforces TLS 1.2+ encryption for all data transmitted over public and private networks.',
+          'Traffic to the app is HTTPS. The connection to Postgres requires TLS, and a connection string without it is refused.',
         icon: dataTransitIcon,
       },
       {
-        title: 'Data at Rest',
+        title: 'Data at rest',
         description:
-          'All stored data is encrypted using AES-256 and follows key rotation policies to maintain security.',
+          'Stored database data is encrypted by Neon, and files in Cloudflare R2 are encrypted by Cloudflare. We do not run our own disks.',
         icon: dataLockIcon,
       },
       {
-        title: 'Key Management',
+        title: 'WordPress plugin keys',
         description:
-          'Neon uses AWS KMS and Azure Key Vault for key management, with logging and access controls.',
+          'Sealed with AES-256-GCM under a dedicated secret and indexed by a SHA-256 hash. The secret is not shared with the database URL or the auth config, so rotating one does not orphan the other.',
         icon: keyIcon,
       },
     ],
   },
   {
-    title: 'Availability & Continuity',
+    title: 'Accounts and access',
     items: [
       {
-        title: 'Redundancy',
+        title: 'Sign-in',
         description:
-          'Neon’s infrastructure is designed for high availability, leveraging multi-region failover and automated scaling.',
-        icon: dataReplaceIcon,
+          'Neon Auth issues and validates the session. Ranksmile never stores a password and never sees one.',
+        icon: userLockIcon,
       },
       {
-        title: 'Backup Management',
+        title: 'Scheduled jobs',
         description:
-          'Neon performs daily encrypted backups stored across multiple availability zones, with automated integrity validation.',
-        icon: restoreIcon,
+          'The scan scheduler and the other cron routes authenticate with a shared secret that supports a current and a previous value, so it can be rotated without a window of downtime.',
+        icon: accessIcon,
       },
       {
-        title: 'Business Continuity and Disaster Recovery',
+        title: 'Internal calls',
         description:
-          'Neon has a BCDR plan with annual disaster recovery tests and predefined restoration protocols to ensure resilience.',
-        icon: gearIcon,
-      },
-    ],
-  },
-  {
-    title: 'Application & Platform Security',
-    items: [
-      {
-        title: 'Bug Bounty Program',
-        description:
-          'Neon runs a program via HackerOne, where verified researchers can securely report vulnerabilities and earn rewards for eligible findings.',
-        link: LINKS.bugBounty,
-        icon: bugIcon,
-      },
-      {
-        title: 'Secure Development Lifecycle (SDLC)',
-        description:
-          'Neon follows a secure development lifecycle with security testing, code reviews, dependency monitoring, and developer security training.',
-        icon: privacyCycleIcon,
-      },
-      {
-        title: 'Vulnerability Management',
-        description:
-          'Neon scans for vulnerabilities with Orca and Oligo, patching per SLA: critical 7 days, high 30, medium 60, low 90.',
-        icon: checkPrivacyIcon,
-      },
-      {
-        title: 'Penetration Testing',
-        description:
-          'Annual third-party penetration tests are conducted on our infrastructure, applications, and APIs to identify and mitigate risks.',
-        icon: mugIcon,
-      },
-      {
-        title: 'CI/CD Security',
-        description:
-          'Neon uses Step Security’s Harden Runner to secure CI/CD by restricting traffic, monitoring dependencies, and enforcing security policies.',
+          'The generation pipeline and the Python sidecar authenticate to each other with their own tokens rather than riding on a user session.',
         icon: circuitIcon,
       },
       {
-        title: 'GitHub Secret Scanning Partner Program',
+        title: 'No MFA yet',
         description:
-          'Neon joined the GitHub Secret Scanning Partnership in to improve secret detection and remediation across repositories.',
-        icon: radarIcon,
+          'Multi-factor authentication is not implemented. It is on the list, and until it ships this line stays here.',
+        icon: warningIcon,
       },
     ],
   },
   {
-    title: 'Human Resources & Endpoint Security',
+    title: 'Backups and recovery',
     items: [
       {
-        title: 'Background Checks',
-        description: 'Neon conducts reference checks for all employees before onboarding.',
-        icon: searchIcon,
+        title: 'Point-in-time restore',
+        description:
+          'The production database runs on a Neon paid plan with a seven-day restore window, so the database can be rolled back to any moment inside it.',
+        icon: restoreIcon,
       },
       {
-        title: 'Confidentiality Agreements',
+        title: 'Snapshots',
         description:
-          'All employees and contractors sign non-disclosure agreements (NDA) upon hire.',
-        icon: todoIcon,
+          'Snapshots are taken before migrations and other changes we expect to be disruptive, and kept alongside the restore window.',
+        icon: dataReplaceIcon,
       },
       {
-        title: 'Policies',
+        title: 'What is missing',
         description:
-          'Neon maintains a security policy framework, reviewed annually and enforced company-wide. Employees are required to acknowledge and comply with these policies each year.',
-        icon: policyIcon,
+          'There is no second backup with a different provider and no rehearsed disaster recovery drill. Today, recovery means Neon\u2019s restore window.',
+        icon: warningIcon,
+      },
+    ],
+  },
+  {
+    title: 'Monitoring',
+    items: [
+      {
+        title: 'Errors',
+        description:
+          'Sentry captures exceptions from the app and the workers, tagged by release and environment.',
+        icon: radarIcon,
       },
       {
-        title: 'Training and Awareness',
+        title: 'Model calls',
         description:
-          'Neon conducts annual security awareness training, covering HIPAA compliance, anti-harassment policies, and phishing simulations to strengthen employee resilience.',
-        icon: graduationIcon,
+          'Generation traffic is logged through Helicone, which is how we see cost, latency and failures per provider.',
+        icon: chartsIcon,
       },
       {
-        title: 'Endpoints',
+        title: 'No on-call rota',
         description:
-          'Neon centrally manages employee devices via JumpCloud MDM, enforcing full-disk encryption, automatic OS updates, enforced screen locks, anti-malware protection, and continuous monitoring.',
-        icon: pcIcon,
+          'There is no 24/7 response team. Ranksmile is a small team, alerts reach people directly, and we do not want to imply otherwise.',
+        icon: warningIcon,
+      },
+    ],
+  },
+  {
+    title: 'Reporting a problem',
+    items: [
+      {
+        title: 'Where to send it',
+        description:
+          'Email kontakt@ranksmile.pl with what you found and how to reproduce it. It reaches the people who write the code, not a ticket queue.',
+        icon: bugIcon,
+      },
+      {
+        title: 'What happens next',
+        description:
+          'We acknowledge the report, tell you what we found, and tell you when it is fixed. If we decide not to fix something, you get that answer too.',
+        icon: checkPrivacyIcon,
+      },
+      {
+        title: 'No bug bounty',
+        description:
+          'There is no paid bounty program and no HackerOne listing. Reports are still welcome, and credit is offered if you want it.',
+        icon: warningIcon,
       },
     ],
   },
