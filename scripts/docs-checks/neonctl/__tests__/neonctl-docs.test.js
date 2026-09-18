@@ -34,5 +34,7 @@ describe('neonctl docs validation', () => {
     }
 
     expect(errors, `${errors.length} doc example(s) failed validation (see above)`).toEqual([]);
-  });
+    // Walks every file under content/ (2,000+ Markdown files), which runs past the
+    // 5s default on a loaded machine and failed the pre-push hook at random.
+  }, 30000);
 });
