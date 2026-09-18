@@ -15,8 +15,8 @@ const STATS = [
     hasIcon: false,
   },
   {
-    title: '24h',
-    description: 'Rank check schedules, from daily to manual, desktop and mobile.',
+    title: '90d',
+    description: 'Compare any run against up to 90 days of position history.',
     className: 'col-span-1',
     descriptionClassName: 'max-w-54',
   },
@@ -45,7 +45,8 @@ const BuiltBy = () => (
           )}
         >
           <strong className="font-normal text-white">Nothing is estimated.</strong> Every score on
-          the dashboard traces back to a stored answer, a cited URL or a position we checked today.
+          the dashboard traces back to a stored answer, a cited URL or a position from its last
+          check.
         </h2>
 
         <ul className="mt-24.5 grid max-w-296 min-w-0 grid-cols-[2fr_1fr_.9fr] xl:mt-20 lg:mt-16 md:mt-12 md:grid-cols-1 md:gap-y-10">

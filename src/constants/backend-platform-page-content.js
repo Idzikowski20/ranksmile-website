@@ -580,7 +580,7 @@ const sharedBackendPlatformContent = {
     title: builtForAgentsTitleLines.join(' '),
     titleLines: builtForAgentsTitleLines,
     description:
-      'Nothing on the dashboard is an estimate. Every score traces back to an answer we stored, a URL an engine cited, or a position we checked today, and the same data is available to your own agents over MCP and the API.',
+      'Nothing on the dashboard is an estimate. Every score traces back to an answer we stored, a URL an engine cited, or a position from its last check, and the same data is available to your own agents over MCP and the API.',
     items: [
       {
         id: 'branchable',
@@ -615,8 +615,8 @@ const sharedBackendPlatformContent = {
           'AI engines read on every scan - AI Overviews, AI Mode, ChatGPT, Perplexity, Gemini.',
       },
       {
-        value: '24h',
-        description: 'Rank check schedules, from daily to manual, desktop and mobile',
+        value: '90d',
+        description: 'Of position history to compare any run against, desktop and mobile',
       },
     ],
     quotes: [
