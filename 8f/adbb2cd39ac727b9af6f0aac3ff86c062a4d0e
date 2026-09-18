@@ -1,0 +1,27 @@
+src/constants/backend-platform-page-content.js
+  s_57407775d5d685::t_e70fbe1c21963f 583
+  s_57407775d5d685::t_6234a1e04cef55 618-619
+src/constants/seo-data.js
+  s_57407775d5d685::t_e70fbe1c21963f 9
+src/components/pages/home/built-by/built-by.jsx
+  s_57407775d5d685::t_e70fbe1c21963f 18-19
+  s_57407775d5d685::t_6234a1e04cef55 48-49
+src/components/pages/functions/hero/illustration.jsx
+  s_57407775d5d685::t_e70fbe1c21963f 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "8fadbb2cd39ac727b9af6f0aac3ff86c062a4d0e",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
