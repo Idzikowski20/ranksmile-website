@@ -223,9 +223,11 @@ const ContactForm = () => {
         {...register('reasonForContact')}
       >
         <option value="hidden" disabled hidden />
-        <option value="Demo/POC">Demo/POC</option>
-        <option value="Enterprise Pricing">Enterprise Pricing</option>
-        <option value="HIPAA">HIPAA</option>
+        <option value="Demo">See a demo</option>
+        <option value="Agency">Agency setup</option>
+        <option value="Higher limits">Higher limits than Agency</option>
+        <option value="Migration">Moving from another tool</option>
+        <option value="Other">Something else</option>
       </Field>
       <Field
         className="gap-y-2"
