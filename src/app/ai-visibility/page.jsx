@@ -8,30 +8,30 @@ import FromFirstLine from 'components/pages/lakebase/from-first-line';
 import HeroIllustration from 'components/pages/lakebase/hero/illustration';
 import Configuration from 'components/shared/configuration';
 import Faq from 'components/shared/faq';
-import { lakebasePageContent } from 'constants/backend-platform-page-content';
+import { aiVisibilityPageContent } from 'constants/backend-platform-page-content';
 import SEO_DATA from 'constants/seo-data';
 import getMetadata from 'utils/get-metadata';
 
-export const metadata = getMetadata(SEO_DATA.lakebase);
+export const metadata = getMetadata(SEO_DATA.aiVisibility);
 
-const LakebasePage = () => (
+const AiVisibilityPage = () => (
   <BackendPlatformPage>
     <BackendHero
       className="hero relative pt-46.5 pb-16"
-      content={lakebasePageContent.hero}
+      content={aiVisibilityPageContent.hero}
       headingClassName="max-w-206.5 leading-none 2xl:max-w-190 2xl:text-[4rem] xl:max-w-180 lg:max-w-160 md:max-w-136"
-      headingId="lakebase-hero-heading"
+      headingId="ai-visibility-hero-heading"
       headingRowClassName="gap-x-16 xl:flex-col xl:items-start xl:gap-y-8"
       illustration={<HeroIllustration />}
       logosClassName="relative"
-      testIdPrefix="lakebase"
+      testIdPrefix="ai-visibility"
     />
     <Architecture />
     <Autoscaling />
     <DynamicDatabases />
-    <Configuration content={lakebasePageContent.configuration} id="data-api" />
+    <Configuration content={aiVisibilityPageContent.configuration} id="data-api" />
     <FromFirstLine />
-    <Faq items={lakebasePageContent.faqItems} variant="lakebase" />
+    <Faq items={aiVisibilityPageContent.faqItems} variant="lakebase" />
     <BackendServices
       className="pb-40 lg:pt-12 md:pt-10"
       contentClassName="mt-[73.5px] min-h-[441px]"
@@ -39,6 +39,6 @@ const LakebasePage = () => (
   </BackendPlatformPage>
 );
 
-export default LakebasePage;
+export default AiVisibilityPage;
 
 export const revalidate = false;

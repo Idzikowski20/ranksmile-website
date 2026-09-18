@@ -1,5 +1,5 @@
 import Container from 'components/shared/container';
-import { lakebasePageContent } from 'constants/backend-platform-page-content';
+import { aiVisibilityPageContent } from 'constants/backend-platform-page-content';
 
 import AgentsVisual from './agents-visual';
 import Benefits from './benefits';
@@ -14,7 +14,7 @@ const VISUALS = {
   'database-built-for-agents': AgentsVisual,
 };
 
-const { dynamicDatabases } = lakebasePageContent;
+const { dynamicDatabases } = aiVisibilityPageContent;
 
 const DynamicDatabases = () => {
   const { capabilities } = dynamicDatabases;

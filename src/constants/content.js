@@ -28,7 +28,7 @@ const GENERATED_PAGE_MARKDOWN_PATHS = {
   'ai-gateway': '/md/ai-gateway.md',
   wordpress: '/md/wordpress.md',
   'content-score': '/md/content-score.md',
-  lakebase: '/md/lakebase.md',
+  'ai-visibility': '/md/ai-visibility.md',
 };
 
 const EXCLUDED_ROUTES = ['guides', 'faqs', 'branching'];

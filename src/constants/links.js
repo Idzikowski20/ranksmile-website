@@ -2,7 +2,7 @@ export default {
   aboutUs: '/about-us',
   ai: '/ai',
   aiGateway: '/ai-gateway',
-  lakebase: '/lakebase',
+  lakebase: '/ai-visibility',
   blog: '/blog',
   branching: '/branching',
   brand: '/brand',
@@ -40,7 +40,7 @@ export default {
   toolsMigration: '/tools/postgres-migration',
 
   // Ranksmile product pages (Neon routes kept, content repurposed)
-  aiVisibility: '/lakebase',
+  aiVisibility: '/ai-visibility',
   contentScore: '/content-score',
   rankTracking: '/rank-tracking',
   keywordResearch: '/ai-gateway',
