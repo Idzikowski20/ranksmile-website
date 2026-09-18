@@ -1,0 +1,21 @@
+src/components/pages/contact-sales/hero/hero.jsx
+  s_57407775d5d685::t_83ce453adbe03a 19-20,23-27,44,48-49
+src/components/pages/contact-sales/hero/contact-form/contact-form.jsx
+  s_57407775d5d685::t_83ce453adbe03a 226-230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "08d06a2f0d9faf0664bd8bc0a6461eaaae46674a",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
