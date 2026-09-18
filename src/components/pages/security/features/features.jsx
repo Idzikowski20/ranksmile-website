@@ -164,7 +164,7 @@ const DATA = [
       {
         title: 'No bug bounty',
         description:
-          'There is no paid bounty programme and no HackerOne listing. Reports are still welcome, and credit is offered if you want it.',
+          'There is no paid bounty program and no HackerOne listing. Reports are still welcome, and credit is offered if you want it.',
         icon: warningIcon,
       },
     ],

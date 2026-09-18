@@ -17,7 +17,7 @@ const SubProcessors = () => (
               Ranksmile could not work without other people&apos;s services, so here they are, in
               full: <b>Railway</b> for hosting, <b>Neon</b> for the database and sign-in,{' '}
               <b>Cloudflare R2</b> for files, <b>Stripe</b> for payments, <b>Resend</b> for email,
-              and <b>Sentry</b> for error reports.
+              <b>Sentry</b> for error reports, and <b>Helicone</b> for logging generation traffic.
             </p>
             <p>
               Search and answer data comes from <b>DataForSEO</b> and <b>Serper</b>, and generations
