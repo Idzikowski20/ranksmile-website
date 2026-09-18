@@ -43,16 +43,16 @@ const Hero = () => (
       </Link>
 
       <h1 className="mt-5 max-w-288 text-[4rem] leading-dense tracking-tighter text-balance 2xl:text-[3.5rem] xl:max-w-244 xl:text-[3.25rem]/dense lg:max-w-200 lg:text-[2.5rem]/dense md:mt-4 md:text-[2.625rem]/dense sm:text-[2rem]/dense">
-        Track your rankings and who the{' '}
+        One tool to rank in Google and get mentioned by{' '}
         <Link className="group relative inline-block text-inherit" to="#architecture" smoothScroll>
-          AI engines
+          AI
           <span
             className="absolute bottom-px left-0 h-0.5 w-full opacity-40 transition-opacity duration-150 group-hover:opacity-80 group-focus-visible:opacity-80 motion-reduce:transition-none"
             style={LAKEBASE_UNDERLINE_STYLE}
             aria-hidden="true"
           />
-        </Link>{' '}
-        name for your brand.
+        </Link>
+        .
       </h1>
 
       <div className="mt-8 flex gap-x-5 lg:mt-7 lg:gap-x-4">
