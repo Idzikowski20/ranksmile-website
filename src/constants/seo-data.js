@@ -99,8 +99,9 @@ export default {
     markdownPath: `${LINKS.wordpress}.md`,
   },
   contactSales: {
-    title: 'Contact Sales — Neon',
-    description: 'Interested in learning more about our plans and pricing? Contact our sales team.',
+    title: 'Contact us — Ranksmile',
+    description:
+      'Tell us what you track and we will help you set it up. Questions about plans, limits, agency setups or moving from another tool.',
     pathname: LINKS.contactSales,
   },
   enterprise: {

@@ -34,8 +34,8 @@ const ITEMS = [
     title: 'Site health',
   },
   {
-    date: 'TODAY',
-    dateTime: '2026',
+    date: 'SEP, 2026',
+    dateTime: '2026-09',
     title: 'In development, open to early users',
   },
 ];

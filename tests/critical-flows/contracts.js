@@ -140,7 +140,7 @@ const LEAD_FORM_CONTRACTS = [
     },
     selects: {
       companySize: '0_1',
-      reasonForContact: 'Demo/POC',
+      reasonForContact: 'Demo',
     },
     expectedEvents: [
       {
@@ -155,7 +155,7 @@ const LEAD_FORM_CONTRACTS = [
           last_name: 'Lopez',
           company_website: 'https://example.com',
           company_size: '0_1',
-          reason_for_contact: 'Demo/POC',
+          reason_for_contact: 'Demo',
           message: 'Critical user flow monitoring',
         },
       },

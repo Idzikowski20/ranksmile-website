@@ -14,7 +14,8 @@ const STATS_DATA = [
   {
     icon: databaseIcon,
     value: '5',
-    description: 'AI engines answer every prompt you track, and every answer is stored whole.',
+    description:
+      'AI answer engines tracked. Growth covers four of them, Scale and Agency all five.',
   },
   {
     icon: gearIcon,
