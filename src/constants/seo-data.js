@@ -104,12 +104,11 @@ export default {
       'Tell us what you track and we will help you set it up. Questions about plans, limits, agency setups or moving from another tool.',
     pathname: LINKS.contactSales,
   },
-  enterprise: {
-    title: 'Neon for Enterprise - Neon',
+  agencies: {
+    title: 'Ranksmile for agencies — every client in its own space',
     description:
-      'Switch to Neon for improved scalability, reliability, and engineering efficiency. For developers and AI Agents.',
-    pathname: LINKS.enterprise,
-    imagePath: '/images/social-previews/enterprise.jpg',
+      'Rankings, AI visibility, site audits and drafts in a separate brand space for every client, with full API access and no per-seat pricing.',
+    pathname: LINKS.agencies,
   },
   migration: {
     title: 'Postgres Migration — Neon',

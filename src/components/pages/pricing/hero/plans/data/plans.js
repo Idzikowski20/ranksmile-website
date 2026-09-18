@@ -142,9 +142,15 @@ export default [
         features: [
           { title: 'Unlimited documents', info: 'Fair-use limits apply' },
           { title: 'Unlimited Brand Spaces', info: 'Fair-use limits apply' },
-          { title: 'White-label & full API' },
+          {
+            title: 'Full API access',
+            info: '<p>White-label reporting is planned<br/> for this plan, not yet available.</p>',
+          },
           { title: 'Personalized onboarding' },
-          { title: 'Dedicated success manager' },
+          {
+            title: 'A named contact',
+            info: '<p>Someone who works on the product,<br/> not a shared support queue.</p>',
+          },
         ],
       },
     },

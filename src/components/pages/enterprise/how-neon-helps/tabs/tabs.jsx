@@ -89,7 +89,7 @@ const Tabs = ({ tabs }) => {
         <div className="mt-6 flex items-center gap-x-2 lg:mt-5">
           <Image className="shrink-0" src={lampIcon} width={22} height={22} alt="" />
           <h3 className="text-xl leading-none font-semibold tracking-tighter text-white lg:text-lg">
-            How Neon helps
+            How Ranksmile helps
           </h3>
         </div>
         <LazyMotion features={domAnimation}>

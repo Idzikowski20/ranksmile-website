@@ -320,6 +320,12 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The Enterprise page became the Agencies page.
+      {
+        source: '/enterprise',
+        destination: '/agencies',
+        permanent: true,
+      },
       // The Lakebase Postgres product page became the AI Visibility page.
       {
         source: '/lakebase',
