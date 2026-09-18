@@ -121,7 +121,7 @@ CheckSquare.propTypes = {
 const CreateProject = ({ isPressed }) => (
   <div className="absolute inset-0 border-2 border-[#61646b] bg-black-pure p-[3px]">
     <div className="relative flex h-[37px] items-center bg-[#303236] px-3 text-base font-semibold text-white md:h-8 md:text-sm">
-      Neon project
+      New site
       <Image
         className="absolute top-1/2 right-2 size-[18px] -translate-y-1/2"
         src={`${ASSET_ROOT}/startup-window-control.svg`}
@@ -319,7 +319,7 @@ const StartupAnimation = ({ onStart, timelineElapsed }) => {
           y: shouldReduceMotion ? 0 : rightCardY,
         }}
         role="img"
-        aria-label="A Neon project initializes and reaches 100 percent"
+        aria-label="A new site is added and its first scan reaches 100 percent"
       >
         {frame.screen === 'create' ? (
           <CreateProject isPressed={frame.isCreatePressed} />
@@ -341,10 +341,10 @@ const StartupAnimation = ({ onStart, timelineElapsed }) => {
 
       <div className="absolute top-[361px] left-0 z-10 h-[248px] w-[511px] border border-[#242628] bg-black-pure px-8 pt-8 xl:top-112 md:w-[480px] sm:top-100 sm:h-auto sm:w-full sm:p-5 sm:pb-6">
         <strong className="block text-[5rem] leading-none font-normal tracking-extra-tight text-white sm:text-[4rem]">
-          100K+
+          50
         </strong>
         <p className="mt-[29px] max-w-[320px] text-xl leading-tight tracking-extra-tight text-gray-new-80 sm:mt-5 sm:max-w-[290px] sm:text-base">
-          Projects built and launched with Neon, from early-stage products to growing applications.
+          AI prompts scanned a day on Growth, the plan every new account starts on.
         </p>
       </div>
     </div>
