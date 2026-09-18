@@ -1,0 +1,31 @@
+src/app/security/page.jsx
+  s_57407775d5d685::t_d8d11510699089 9,24-29
+src/app/variable-load/page.jsx
+  s_57407775d5d685::t_d8d11510699089 12,65-70
+src/app/migration/page.jsx
+  s_57407775d5d685::t_d8d11510699089 9,82-87
+src/app/case-studies/page.jsx
+  s_57407775d5d685::t_d8d11510699089 6,31-35
+src/app/restores-survey/page.jsx
+  s_57407775d5d685::t_d8d11510699089 8,22-27
+src/components/shared/cta-new/cta-new.jsx
+  s_57407775d5d685::t_6c2fcce2846aad 15,45-53
+src/app/enterprise/page.jsx
+  s_57407775d5d685::t_d8d11510699089 324-329
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "b87b1ec207d35401bdd64150ce19496b71cbc1e7",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
