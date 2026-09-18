@@ -1,0 +1,20 @@
+scripts/docs-checks/neonctl/__tests__/neonctl-docs.test.js
+  s_57407775d5d685::t_8aff7d0e21a96f 37-38
+  s_57407775d5d685::t_8dab4235fd3fcd 39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "58cf746c3479ea52990c7e4abb2925298b643dd1",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
