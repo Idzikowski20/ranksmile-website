@@ -1,0 +1,21 @@
+src/components/pages/pricing/hero/plans/data/plans.js
+  s_57407775d5d685::t_ef791b3a6b3153 150-153
+src/components/pages/pricing/plans/data/plans.js
+  s_57407775d5d685::t_ef791b3a6b3153 209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "ab1a158d8899d19698af94521adc4091aaca1b80",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
