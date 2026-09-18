@@ -1,0 +1,32 @@
+src/constants/links.js
+  s_57407775d5d685::t_4dafa5ecda5afa 15-16
+next.config.js
+  s_57407775d5d685::t_4dafa5ecda5afa 323-328
+src/components/pages/enterprise/how-neon-helps/how-neon-helps.jsx
+  s_57407775d5d685::t_8f3f38aa79a4dc 11
+src/components/pages/enterprise/how-neon-helps/tabs/tabs.jsx
+  s_57407775d5d685::t_8f3f38aa79a4dc 92
+src/app/agencies/page.jsx
+  s_57407775d5d685::t_4dafa5ecda5afa 1-140
+src/constants/seo-data.js
+  s_57407775d5d685::t_4dafa5ecda5afa 106-107,109-110
+src/components/pages/enterprise/hero/hero.jsx
+  s_57407775d5d685::t_950a28df05fe3b 12
+  s_57407775d5d685::t_4dafa5ecda5afa 9,17,19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "2a1eec472098a95f35ad0ac36e1a502cd53cfa03",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
