@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 import Container from 'components/shared/container/container';
 import GradientBorder from 'components/shared/gradient-border/index';
-import LINKS from 'constants/links';
 import subprocessors from 'images/pages/security/subprocessors.jpg';
 
 const SubProcessors = () => (
@@ -11,17 +10,21 @@ const SubProcessors = () => (
       <div className="flex items-start gap-16 lg:justify-center lg:gap-6 sm:flex-col sm:gap-8">
         <div className="mt-10 grow-1 lg:mt-1.5 lg:w-[340px] lg:shrink-0 sm:mt-0 sm:w-full sm:text-center">
           <h2 className="font-title text-[44px] leading-[0.9] font-medium tracking-extra-tight xl:text-4xl lg:text-[36px] md:text-[32px]">
-            Sub-Processors
+            Sub-processors
           </h2>
           <div className="mt-4 flex flex-col gap-2 text-with-links leading-snug tracking-extra-tight text-pretty text-gray-new-70 lg:text-[15px] sm:text-sm sm:font-light">
             <p>
-              Neon engages with carefully selected third-party sub-processors that assist in service
-              delivery.
+              Ranksmile could not work without other people&apos;s services, so here they are, in
+              full: <b>Railway</b> for hosting, <b>Neon</b> for the database and sign-in,{' '}
+              <b>Cloudflare R2</b> for files, <b>Stripe</b> for payments, <b>Resend</b> for email,
+              and <b>Sentry</b> for error reports.
             </p>
             <p>
-              All sub-processors are reviewed annually and must comply with contractual security and
-              privacy requirements. A list of our third-party sub-processors is available on our{' '}
-              <a href={LINKS.subprocessors}>website</a>.
+              Search and answer data comes from <b>DataForSEO</b> and <b>Serper</b>, and generations
+              run through <b>OpenAI</b>, <b>Anthropic</b>, <b>Google</b>, <b>Perplexity</b> and{' '}
+              <b>OpenRouter</b>. Ask for the current list in writing at{' '}
+              <a href="mailto:kontakt@ranksmile.pl">kontakt@ranksmile.pl</a> and we will send it
+              with the DPA.
             </p>
           </div>
         </div>

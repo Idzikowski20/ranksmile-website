@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import Container from 'components/shared/container/container';
-import LINKS from 'constants/links';
 import cloudIcon from 'icons/security/cloud.svg';
 import dataIcon from 'icons/security/data.svg';
 import privacyIcon from 'icons/security/privacy.svg';
@@ -10,28 +9,28 @@ import userLockIcon from 'icons/security/user-lock.svg';
 
 const FEATURES = [
   {
-    title: 'Neon PostgreSQL Service',
-    description: 'Secure, scalable, cloud-hosted PostgreSQL database.',
-    icon: dataIcon,
-  },
-  {
-    title: 'Cloud Infrastructure',
-    description: 'Hosted on AWS and Azure, leveraging built-in security controls.',
+    title: 'Application',
+    description: 'The Next.js app and its background workers run on Railway.',
     icon: cloudIcon,
   },
   {
-    title: 'Data Storage & Processing',
-    description: 'Encryption, access controls, and secure data retention policies.',
-    icon: tableIcon,
+    title: 'Database',
+    description: 'Neon serverless Postgres holds every project, scan and draft.',
+    icon: dataIcon,
   },
   {
-    title: 'Access & Security Controls ',
-    description: 'Identity management, monitoring, and compliance enforcement.',
+    title: 'Sign-in',
+    description: 'Neon Auth issues the session. Ranksmile never stores a password.',
     icon: privacyIcon,
   },
   {
-    title: 'Personnel Security',
-    description: 'Employee background checks, security training, and access management.',
+    title: 'Files',
+    description: 'Generated images and exports go to Cloudflare R2 object storage.',
+    icon: tableIcon,
+  },
+  {
+    title: 'Payments',
+    description: 'Stripe handles checkout, cards and invoices. We never see a card number.',
     icon: userLockIcon,
   },
 ];
@@ -42,19 +41,17 @@ const TrustCenter = () => (
       <div className="flex gap-[72px] lg:mr-[52px] lg:justify-center lg:gap-9 md:mr-0 sm:flex-col sm:gap-10">
         <div className="w-[280px] shrink-0 lg:w-[328px] md:w-1/2 sm:w-full">
           <h2 className="font-title text-[44px] leading-[0.9] font-medium tracking-extra-tight xl:text-4xl lg:text-[36px] md:text-[32px]">
-            Trust Center
+            What it runs on
           </h2>
           <div className="mt-4 flex flex-col gap-2 text-with-links leading-snug tracking-extra-tight text-gray-new-70 lg:text-[15px]">
             <p>
-              Request audit reports, certifications, and compliance documentation via our{' '}
-              <a href={LINKS.trust} target="_blank" rel="noreferrer">
-                Trust Center
-              </a>
-              .
+              Five services, each one named. If a question about any of them is not answered on this
+              page, ask and we will answer it directly.
             </p>
             <p>
-              For additional security inquiries, contact{' '}
-              <a href="mailto:security@neon.tech">security@neon.tech</a>.
+              Security questions and vulnerability reports go to{' '}
+              <a href="mailto:kontakt@ranksmile.pl">kontakt@ranksmile.pl</a>. We read them
+              ourselves, and we reply.
             </p>
           </div>
         </div>

@@ -175,9 +175,9 @@ export default {
     imagePath: '/images/social-previews/platforms.jpg',
   },
   security: {
-    title: 'Security — Neon',
+    title: 'Security — Ranksmile',
     description:
-      "Discover Neon's security & compliance standards, including SOC 2, GDPR, and HIPAA, with encryption and access controls to protect your data.",
+      'What Ranksmile stores, where it runs, how it is encrypted, and which certifications we do not hold yet. Written plainly, including the gaps.',
     imagePath: '/images/social-previews/security.jpg',
     pathname: LINKS.security,
   },
