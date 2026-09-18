@@ -1,0 +1,141 @@
+src/app/pricing/page.jsx
+  s_57407775d5d685::t_61cb77b49616c3 34-35,38,42-43,45-46,48-50,52,56-57,59-60,64-65,67,69-70,72,76-77,79-80,84-85,87-88,92-93,95-96,100-101,103-104,108-109,111-112,116-117,119,123-124,126-127,131-132,134
+  s_57407775d5d685::t_7723c25cef3d67 147-152
+src/constants/backend-platform-page-content.js
+  s_57407775d5d685::t_a5e4bdb0ec9542 5,568,570,573-574,577-578,581-582,585-586,589-590,598,602,604,608,610,616,621-625,628,633-634,640-642,644-646,654-656,660-661,663-665,669-671,673-675,681,684
+  s_57407775d5d685::t_a29873dfdf95d7 629-630,649-653
+src/icons/logo-light.inline.svg
+  s_57407775d5d685::t_a391fdc5115780 1-20
+src/images/logo-light.svg
+  s_57407775d5d685::t_a391fdc5115780 1-20
+src/constants/menus.js
+  s_57407775d5d685::t_912204b3056bf9 9,12-14,17-19,22-24,27-29,34,37-39,42-44,54,57-59,62-64,67-69,74,78-80,84-86,110,115,118-120,130,133-135,138-140,149,152-153,156-161,164-165,168-169,172-173,178,181-182,185-186,189-190,193-194,199,202-203,206-207,210-211,214-215,220,225,228-229,232-233,236-237,240-241
+src/images/logo-dark.svg
+  s_57407775d5d685::t_a391fdc5115780 1-20
+src/constants/links.js
+  s_57407775d5d685::t_d8e6e731151aac 23,47
+  s_57407775d5d685::t_7a4043b57e8229 55
+  s_57407775d5d685::t_ba3994a12f679a 42-46,48-54,56,93,113-115,117
+src/components/pages/pricing/hero/plans/plans.jsx
+  s_57407775d5d685::t_61cb77b49616c3 16-20,24,28-60,95-102,124,155,192,194
+src/components/pages/home/scale-your-app/startups.jsx
+  s_57407775d5d685::t_a901d77889d55c 15,18
+src/constants/content.js
+  s_57407775d5d685::t_d8e6e731151aac 29
+src/utils/ai-agent-detection.test.js
+  s_57407775d5d685::t_d1e8f15e9f32d9 149-150
+src/components/pages/home/autoscaling/autoscaling.jsx
+  s_57407775d5d685::t_8dfdf97dcbfed7 19,23-24,27-29,36,40,44,73,75
+src/utils/get-metadata.test.js
+  s_57407775d5d685::t_d1e8f15e9f32d9 42
+src/components/pages/home/scale-your-app/deploy.jsx
+  s_57407775d5d685::t_f158e16b23bd20 8,11-12,26-27,51
+  s_57407775d5d685::t_a901d77889d55c 42-43,45
+public/pricing.md
+  s_57407775d5d685::t_678f78e006c123 1,3,7,9-15,17,21-51,55-62,66-68,70,72,74,76,78,80,82,84-89,91,93,97-100
+src/components/pages/home/operate-with-agents/chat.jsx
+  s_57407775d5d685::t_f7c679e39cbc59 23-25
+src/components/pages/home/toc-wrapper/toc/toc.jsx
+  s_57407775d5d685::t_73b8ea2a6c7b82 10-12
+src/components/pages/doc/docs-header/docs-header.jsx
+  s_57407775d5d685::t_0d7634f4ef495f 24
+src/components/pages/home/agent-platform/agent-platform.jsx
+  s_57407775d5d685::t_f2e5f85896a82a 16-17,21-22,26-27,31-32,56,61,64-65
+src/components/pages/pricing/hero/hero.jsx
+  s_57407775d5d685::t_61cb77b49616c3 12,15
+src/components/pages/home/operate-with-agents/operate-with-agents.jsx
+  s_57407775d5d685::t_5730e060feac7c 8
+  s_57407775d5d685::t_f7c679e39cbc59 10,13,15,18,20,35,49-50
+src/components/pages/home/cta/cta.jsx
+  s_57407775d5d685::t_f2e5f85896a82a 13,18-19,35-36
+src/components/pages/pricing/hero/programs/programs.jsx
+  s_57407775d5d685::t_61cb77b49616c3 11-14,17-20,23-26,34
+src/components/shared/logo/logo.jsx
+  s_57407775d5d685::t_6c16c06d8308dd 80
+src/components/pages/home/scale-your-app/scale.jsx
+  s_57407775d5d685::t_a901d77889d55c 46,50,53,77-78,80
+content/config/topbar.yaml
+  s_57407775d5d685::t_ba3994a12f679a 1,3-4
+src/scripts/generate-backend-platform-page-markdown.test.js
+  s_57407775d5d685::t_9ecac02264f57b 73,171
+  s_57407775d5d685::t_289d114f593c53 160
+  s_57407775d5d685::t_acdcb36374c421 16,92,170
+  s_57407775d5d685::t_27edf84a14f6d9 72,87-88,94-100,102,143-144
+src/components/pages/home/built-by/built-by.jsx
+  s_57407775d5d685::t_f2e5f85896a82a 9,15,18-19,24-25,47-48
+  s_57407775d5d685::t_387d6b64a79d02 10-11
+src/app/wordpress/page.jsx
+  s_57407775d5d685::t_0e6bb41924c844 11
+  s_57407775d5d685::t_d8e6e731151aac 1-10,12-70
+src/components/pages/pricing/plans/data/plans.js
+  s_57407775d5d685::t_61cb77b49616c3 1-3,8-9,12-13,16-17,23,28,30-32,37-38,40-42,47-48,50-52,55,57,64-65,70,72-74,77,79,81-83,88,90-92,95,97,99-101,105,108,110,112-114,117,119,121-123,126,128,130-132,136,140-145,150,152-153,157,159,162,166,168,170-172,175,177,181,185,188,190,192-194,197,199,203,206,208,211,216,221,223,225,228,230,232-234,239,241-243
+  s_57407775d5d685::t_a7edc2ea41fa95 135
+tests/critical-flows/contracts.js
+  s_57407775d5d685::t_7a4043b57e8229 2,4-5,83,93,103
+src/constants/wordpress-page-content.js
+  s_57407775d5d685::t_d8e6e731151aac 1-5,7-8,10-12,15,17,21-22,24,28-29,31,35-36,38,43,45,48-49,51,54-55,57,60-61,63,68-82,85,87,90,92,95-97,103,105,109,111,114,116,119,121,124,126,129,131,134,137
+src/proxy.js
+  s_57407775d5d685::t_d8e6e731151aac 404
+src/scripts/generate-backend-platform-page-markdown.js
+  s_57407775d5d685::t_d8e6e731151aac 23,419
+  s_57407775d5d685::t_acdcb36374c421 277,279,282,305-306,440
+next.config.js
+  s_57407775d5d685::t_dee714ae182bc2 323-333
+src/constants/seo-data.js
+  s_57407775d5d685::t_1c616ee25297fc 95,97
+  s_57407775d5d685::t_289d114f593c53 94,98-99
+  s_57407775d5d685::t_c85f488167b78b 135,137
+  s_57407775d5d685::t_01d803c31565c5 7,9
+src/components/pages/home/architecture/architecture.jsx
+  s_57407775d5d685::t_387d6b64a79d02 26-27
+  s_57407775d5d685::t_8dfdf97dcbfed7 47-49
+src/styles/main.css
+  s_57407775d5d685::t_d8d0e6d8e48f61 148-185
+src/constants/menus.test.js
+  s_57407775d5d685::t_e78050037d9ff9 7-9,11
+  s_57407775d5d685::t_d8e6e731151aac 10
+src/middleware.test.js
+  s_57407775d5d685::t_d8e6e731151aac 106,385
+src/icons/logo-dark.inline.svg
+  s_57407775d5d685::t_a391fdc5115780 1-20
+next.config.test.js
+  s_57407775d5d685::t_d1e8f15e9f32d9 14,30
+src/components/pages/pricing/features/features.jsx
+  s_57407775d5d685::t_61cb77b49616c3 18-19,23-24,28-29,33-34,38-39,43-44,48-49,53-54,68-69
+src/components/shared/header/header.jsx
+  s_57407775d5d685::t_0d7634f4ef495f 46
+src/components/shared/rive-wasm/rive-wasm.jsx
+  s_57407775d5d685::t_d8e6e731151aac 12
+src/components/pages/pricing/hero/plans/data/plans.js
+  s_57407775d5d685::t_61cb77b49616c3 3-5,9-15,18,21-23,26-27,30-31,34,37,42,44-48,54-55,60-65,68,71-73,76-77,80,83,86,90-99,102,105,110-115,118,121-123,126-127,130,133,136,140-149,152,155
+src/components/pages/home/scale-your-app/scale-your-app.jsx
+  s_57407775d5d685::t_a901d77889d55c 19
+  s_57407775d5d685::t_387d6b64a79d02 33-34
+src/components/pages/home/hero/hero.jsx
+  s_57407775d5d685::t_01d803c31565c5 40-41,46,48,55,60
+src/components/pages/object-storage/hero/hero-animation.jsx
+  s_57407775d5d685::t_d8e6e731151aac 8,24
+src/components/pages/home/build-your-backend/build-your-backend.jsx
+  s_57407775d5d685::t_387d6b64a79d02 18-19
+  s_57407775d5d685::t_d44409acaae7b1 8-9,17,27-28,36-37,45-46,64,76,78-79
+src/instrumentation.js
+  s_57407775d5d685::t_64f1e651a2c375 10-15
+src/components/shared/header/menu-banner/menu-banner.jsx
+  s_57407775d5d685::t_b9e9f885a25339 17,19,39,43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "45e278f8b45a53dae695fd8f30e8dc052ae68e86",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
