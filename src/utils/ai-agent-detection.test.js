@@ -148,7 +148,7 @@ describe('getMarkdownPath', () => {
       ['/ai-gateway.md', '/md/ai-gateway.md'],
       ['/wordpress', '/md/wordpress.md'],
       ['/wordpress.md', '/md/wordpress.md'],
-      ['/auth', '/md/auth-page.md'],
+      ['/content-score', '/md/content-score.md'],
       ['/auth.md', '/auth.md'],
       ['/lakebase', '/md/lakebase.md'],
       ['/lakebase.md', '/md/lakebase.md'],
