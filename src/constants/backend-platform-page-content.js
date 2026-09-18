@@ -4,10 +4,7 @@ const aiGatewayModelsTitleLines = ['Access a wide catalog of frontier and open',
 const aiGatewayModelsHighlightedTitleLines = ['Served with optimized performance via Databricks.'];
 const builtForAgentsTitleLines = ['Built for the teams and', 'the agents behind them.'];
 const faqTitleLines = ['Your questions,', 'answered'];
-const lakebaseFromFirstLineTitleLines = [
-  'From your first five users',
-  "to the world's largest teams",
-];
+const aiVisibilityFromFirstLineTitleLines = ['From one brand', 'to a full client roster'];
 
 const rankTrackingPageContent = {
   backendServices: {
@@ -290,258 +287,300 @@ const aiGatewayPageContent = {
   ],
 };
 
-const lakebasePageContent = {
-  slug: 'lakebase',
-  pageLabel: 'Lakebase Postgres',
+const aiVisibilityPageContent = {
+  slug: 'ai-visibility',
+  pageLabel: 'AI Visibility',
   hero: {
-    label: 'Lakebase Postgres',
-    title: 'The Neon database: Lakebase Postgres',
+    label: 'AI Visibility',
+    title: 'Find out who the engines name when buyers ask',
     illustrationDescription:
-      'An application connected to Lakebase Postgres and Neon backend services',
-    primaryAction: { label: 'Start building', linkKey: 'signup' },
-    secondaryAction: { label: 'Read the docs', linkKey: 'postgresOverview' },
+      'A tracked prompt answered by five AI engines, with the brands each answer named and the sources it cited stored alongside it.',
+    primaryAction: { label: 'Start your free trial', linkKey: 'signup' },
+    secondaryAction: { label: 'See plans', linkKey: 'pricing' },
   },
   architecture: {
-    title: 'Built on the',
-    highlightedTitle: 'lakebase architecture.',
-    titleAfterHighlight:
-      'Decoupled storage and compute, with object storage + WAL as the foundation.',
-    description: 'Deploy, scale, branch, replicate, and restore instantly,',
+    title: 'Built on',
+    highlightedTitle: 'stored answers.',
+    titleAfterHighlight: 'Not a score we invent, but the words each engine actually returned.',
+    description: 'Read the answer, the sources it cited, and the brands it named,',
     secondaryDescription:
-      'without moving or duplicating your underlying data between environments.',
+      'so a number on the dashboard can always be traced back to the sentence it came from.',
     features: [
       {
-        title: 'Ephemeral compute',
+        title: 'Five engines',
         description:
-          'Provisions instantly, autoscales with load, and scales to zero when idle, restarting in <1s.',
+          'AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini answer the same prompt in one scan.',
       },
       {
-        title: 'Shared storage',
+        title: 'The whole answer',
         description:
-          'The same versioned storage built on WAL serves every branch and replica in a project.',
+          'Each run keeps the text, the web citations, and the follow-up questions the engine expanded your prompt into.',
       },
       {
-        title: 'Agent-ready',
-        description: 'Operations are lightweight and run through the API, CLI, SDKs, and MCP.',
+        title: 'Per engine, per prompt',
+        description:
+          'Nothing is averaged into one number: every engine keeps its own result for every prompt you track.',
       },
     ],
   },
   autoscaling: {
-    label: 'Autoscaling',
-    title: 'Compute follows your traffic. No overprovisioning or performance hiccups.',
+    label: 'Scan scheduler',
+    title: 'Prompts re-scan on their own tier. You decide what matters most.',
     description:
-      'There’s no instance to size and no manual resizes in Lakebase Postgres: your database autoscales in real time',
+      'Mark a prompt core, supporting or long-tail, and the scheduler re-checks it at that pace',
     features: [
       {
-        title: 'Scales under load',
+        title: 'Core runs daily',
         description:
-          'Compute moves within your set range, up during spikes and down during slow times.',
+          'The prompts you cannot afford to lose are re-scanned every day, so a dropped citation shows up the next morning.',
       },
       {
-        title: 'Suspends when idle',
+        title: 'Supporting and long-tail',
         description:
-          'After five minutes without activity (e.g. in dev environments), compute scales to zero.',
+          'Supporting prompts re-scan weekly and long-tail every two weeks, which keeps the wide set affordable.',
       },
       {
-        title: 'Only bills for what runs',
+        title: 'Refresh by hand',
         description:
-          'You pay for the compute you actually use, without having to worry about sizing.',
+          'Any prompt can be re-run on demand, subject to a cooldown that follows the same tiers.',
       },
     ],
     tabs: [
-      { label: 'Avoid outages', number: 13024, text: 'outages prevented by Autoscaling this year' },
-      { label: 'Save costs', prefix: '$', number: 345966, text: 'saved by Autoscaling every day' },
+      {
+        label: 'Scan tiers',
+        number: 14,
+        text: 'days between long-tail re-scans, one day for core',
+      },
+      { label: 'Per scan', number: 250, text: 'prompt and engine pairs in a single run' },
     ],
-    legend: ['Neon autoscaling', 'Database load', 'Fixed-resource provisioned'],
+    legend: ['Core, daily', 'Supporting, weekly', 'Long-tail, every two weeks'],
     caption:
-      'Neon monitors your database load ten times a second and autoscales CPU and memory to exactly fit your workload.',
+      'The scheduler wakes every six hours and runs whichever prompts are due, so the wide set never crowds out the prompts that matter.',
   },
   configuration: {
-    label: 'Data API',
-    title: 'Query Postgres directly from browsers, edge runtimes, and serverless functions.',
-    filename: 'data-api.ts',
-    code: `await fetch(\`\${DATA_API_URL}/projects\`, {
-  method: "POST",
-  headers: {
-    Authorization: \`Bearer \${token}\`,
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    name: "New project"
-  })
-})`,
+    label: 'What a scan stores',
+    title: 'Every answer is kept whole, with its citations attached.',
+    filename: 'scan-result.json',
+    code: `{
+  "prompt": "best seo tool for agencies",
+  "engine": "chat_gpt",
+  "brands": [
+    { "name": "Ranksmile", "mentioned": true, "sentiment": "positive" },
+    { "name": "Competitor", "mentioned": true, "sentiment": "neutral" }
+  ],
+  "citations": [
+    { "url": "https://example.com/guide", "domain": "example.com" }
+  ],
+  "fanOutQueries": [
+    "seo tools for managing multiple clients"
+  ]
+}`,
     items: [
       {
-        title: 'Instant REST API',
+        title: 'Sources',
         description:
-          'Turn Postgres tables, views, and functions into REST endpoints you can access directly over HTTPS.',
+          'The URLs an answer cited, ranked by how often the engines lean on them, with the brands each source mentions.',
       },
       {
-        title: 'Secure access',
+        title: 'Competitors',
         description:
-          'Authenticate with JWTs and use Postgres Row-Level Security to control who can access and modify your data.',
+          'The brands named beside you or instead of you, prompt by prompt, so a lost answer has a name attached.',
       },
       {
-        title: 'PostgREST compatible',
+        title: 'Fanout queries',
         description:
-          'Bring any PostgREST client, including <code>@neondatabase/postgrest-js</code>, and keep familiar filtering, ordering, pagination, and CRUD patterns.',
+          'The follow-up questions an engine expands your prompt into before it answers, which is where the gaps you never tracked show up.',
       },
     ],
   },
   dynamicDatabases: {
     title:
-      'Agents demand new database primitives like branching, together with instant deploys and restores, and full CLI/MCP coverage.',
+      'AI answers move faster than rankings: a brand can be dropped from an answer without losing a single position.',
     highlightedTitle: '',
     capabilities: [
       {
         id: 'instant-branching',
-        label: 'Instant Branching',
-        primary: 'Create a full copy of production in about a second,',
+        label: 'Track the prompts buyers ask',
+        primary: 'Track the questions your buyers actually type,',
         secondary:
-          'without duplicating storage, so a 1 TB branch takes just as long to create as a 1 GB branch.',
+          'grouped into topics, with Ranksmile suggesting prompts from your site and your competitors.',
         benefits: [
           {
             icon: 'branching',
-            title: 'An environment per unit of work',
+            title: 'A score per engine',
             description:
-              'Every PR, version, test, and preview can have its own backend branch, following your code.',
+              'Your Visibility Score is the share of tracked prompts where an engine names your brand, reported separately for each of the five.',
           },
           {
             icon: 'api',
-            title: 'Fully programmable',
+            title: 'Sentiment, not just presence',
             description:
-              'Creating and deleting branches is a lightweight metadata operation: your agent and the API can manage it end to end.',
+              'Each mention is stored with its sentiment, so being named badly reads differently from being named well.',
           },
           {
             icon: 'storage',
-            title: 'The whole backend branches',
+            title: 'Movement over time',
             description:
-              'A Neon branch also carries its own Object Storage namespace, its own Functions, its own AI Gateway endpoint, and its own auth.',
+              'Every metric keeps its previous value, so you see the delta and the direction, not just today.',
           },
         ],
       },
       {
         id: 'restore-to-any-point',
-        label: 'Restore to any point',
-        primary: 'Roll back instantly to any point in your database history,',
+        label: 'See who is cited instead',
+        primary: 'Read the sources the engines trust for your queries,',
         secondary:
-          'without copying data, so restore time stays small no matter how large your database is.',
+          'and the competing brands those sources mention, so outreach has a target list rather than a hunch.',
+        benefits: [
+          {
+            icon: 'branching',
+            title: 'Sources, ranked',
+            description:
+              'The URLs the engines cite most often for your prompts, with how many answers each one shows up in.',
+          },
+          {
+            icon: 'api',
+            title: 'Who each source names',
+            description:
+              'Open a source and see which brands it mentions, so you know whether earning a place there would help you or a rival.',
+          },
+          {
+            icon: 'storage',
+            title: 'Competitors per prompt',
+            description:
+              'The brands named beside you, query by query, so a lost answer has a name attached rather than being a general worry.',
+          },
+        ],
       },
       {
         id: 'database-built-for-agents',
-        label: 'A database built for agents',
-        primary: 'Let agents deploy and operate isolated database environments',
-        secondary:
-          'for every task, session, or pull request, with full isolation and undos always at hand.',
+        label: 'Turn gaps into work',
+        primary: 'Every prompt you are missing from becomes a ranked task,',
+        secondary: 'opening in the editor with the keyword and the competing pages already loaded.',
+        benefits: [
+          {
+            icon: 'branching',
+            title: 'One list per site',
+            description:
+              'Gaps, drops and opportunities land in Recommendations together, sorted by what will move visibility fastest.',
+          },
+          {
+            icon: 'api',
+            title: 'Straight into the editor',
+            description:
+              'A task opens with the keyword, the competing pages and a live Content Score, so there is no blank page to start from.',
+          },
+          {
+            icon: 'storage',
+            title: 'The scan confirms it',
+            description:
+              'Publish, and the next scheduled scan tells you whether the answer changed. Nothing is marked done on a hunch.',
+          },
+        ],
       },
     ],
   },
   fromFirstLine: {
-    title: lakebaseFromFirstLineTitleLines.join(' '),
-    titleLines: lakebaseFromFirstLineTitleLines,
+    title: aiVisibilityFromFirstLineTitleLines.join(' '),
+    titleLines: aiVisibilityFromFirstLineTitleLines,
     description:
-      'From early-stage startups to Fortune 500 organizations, Lakebase Postgres gives you the same flexible foundation to build, scale, and run production workloads with confidence.',
+      'One brand or fifty, the workflow is the same: pick the prompts, read what came back, and publish against the gap.',
     slides: [
       {
-        title: 'Ship faster with a small team',
+        title: 'Know where you stand',
         description:
-          'Adopt branching workflows and grow your startup faster. Don’t let the database lag the speed at which you ship code.',
+          'Add a site, let Ranksmile suggest prompts by topic, and run the first scan. The answers, the sources and the competing brands are stored from run one.',
         tags: [],
         testimonial: {
           quote:
-            'We’ve been able to manage 300K+ Postgres databases via the Neon API. It saved us a tremendous amount of time and engineering effort.',
-          highlight: '300K+ Postgres databases',
-          author: 'Himanshu Bhandoh',
-          company: 'Software Engineer at Retool',
+            'Your Visibility Score is the share of tracked prompts where an engine names your brand, reported per engine.',
+          highlight: 'the share of tracked prompts',
+          author: 'How AI Visibility is measured',
+          company: 'Inside Ranksmile',
           logo: {
-            src: '/images/case-studies/retool-dark.svg',
-            width: 95,
-            height: 20,
-            alt: 'Retool',
-            className: 'h-5 w-[95px]',
+            src: '/images/ranksmile-wordmark.svg',
+            width: 151,
+            height: 28,
+            alt: 'Ranksmile',
+            className: 'h-7 w-[151px]',
           },
-          caseStudyLabel: 'Read case study',
-          caseStudyUrl:
-            '/blog/how-retool-uses-retool-and-the-neon-api-to-manage-300k-postgres-databases',
+          caseStudyLabel: 'How the score is measured',
         },
       },
       {
-        title: 'Scale with unpredictable demand',
+        title: 'Find out who is taking the answer',
         description:
-          'Let compute follow traffic automatically, from sudden AI-agent spikes to quiet periods, without manual capacity planning.',
+          'Competitors ranks the brands each engine names beside you. Sources lists the URLs behind those answers and which brands each one mentions.',
         tags: [],
         testimonial: {
-          quote:
-            'The combination of flexible resource limits and nearly instant database provisioning made Neon a no-brainer',
-          highlight: 'flexible resource limits',
-          author: 'Lincoln Bergeson',
-          company: 'Infrastructure Engineer',
+          quote: 'Sources lists the URLs each answer cited, and which brands each source mentions.',
+          highlight: 'which brands each source mentions',
+          author: 'What a scan stores',
+          company: 'Inside Ranksmile',
           logo: {
-            src: '/images/case-studies/replit.svg',
-            width: 120,
-            height: 32,
-            alt: 'Replit',
-            className: 'h-8 w-[120px] brightness-0',
+            src: '/images/ranksmile-wordmark.svg',
+            width: 151,
+            height: 28,
+            alt: 'Ranksmile',
+            className: 'h-7 w-[151px]',
           },
-          caseStudyLabel: 'Read case study',
-          caseStudyUrl: '/blog/neon-replit-integration',
+          caseStudyLabel: 'What a scan stores',
         },
       },
       {
-        title: 'Move fast without managing infrastructure',
+        title: 'Close the gap and hold it',
         description:
-          'Keep the developer experience simple while the database scales efficiently with your product and team.',
+          'Missing prompts land in Recommendations as ranked tasks. Fix the page in the editor, publish, and let the scheduler confirm the answer changed.',
         tags: [],
         testimonial: {
           quote:
-            'What first attracted us to Neon was the efficient scaling. What kept us interested were all the thoughtful developer-experience wins.',
-          highlight: 'thoughtful developer-experience wins.',
-          author: 'Ben Halpern',
-          company: 'DEV Co-Founder',
+            'Every gap becomes a ranked task on one list, per site, sorted by what will move visibility fastest.',
+          highlight: 'a ranked task on one list',
+          author: 'How Recommendations work',
+          company: 'Inside Ranksmile',
           logo: {
-            src: '/images/case-studies/dev-dark.svg',
-            width: 41,
-            height: 32,
-            alt: 'DEV',
-            className: 'h-8 w-[41px]',
+            src: '/images/ranksmile-wordmark.svg',
+            width: 151,
+            height: 28,
+            alt: 'Ranksmile',
+            className: 'h-7 w-[151px]',
           },
-          caseStudyLabel: 'Read case study',
-          caseStudyUrl: '/blog/dev-from-heroku-to-neon',
+          caseStudyLabel: 'How Recommendations work',
         },
       },
     ],
   },
   faqItems: [
     {
-      question: 'Is this standard Postgres?',
+      question: 'How is AI visibility measured?',
       answer:
-        '<p>In terms of compatibility, yes. Lakebase Postgres is Postgres — your existing drivers, ORMs, migration tools, and everything else from the Postgres ecosystem works unchanged. What’s different is the architecture underneath.</p>',
+        '<p>Your tracked prompts are sent to each engine on your plan. Ranksmile stores the answer text with the web citations it returned, then works out which brands and URLs were named. Your Visibility Score is the share of tracked prompts where your brand is named, reported per engine rather than blended into one number.</p>',
       initialState: 'open',
     },
     {
-      question: 'What is the lakebase architecture, and how does it relate to Databricks Lakebase?',
+      question: 'Which engines are tracked?',
       answer:
-        '<p>The lakebase architecture separates standard Postgres compute from durable, versioned storage. Neon Lakebase Postgres and Databricks Lakebase run on the same core technology: Neon delivers it as part of a developer backend, while Databricks integrates it with the Data Intelligence Platform.</p>',
+        '<p>Five: Google AI Overviews, Google AI Mode, ChatGPT, Perplexity and Gemini. Growth tracks four of them; Scale and Agency track all five. Classic Google positions are tracked separately by <a href="/rank-tracking">rank tracking</a>.</p>',
     },
     {
-      question: 'How fast is branching, and does database size change that?',
+      question: 'How often does a prompt re-scan?',
       answer:
-        '<p>A branch is typically ready in about a second, regardless of database size. Creating one records a pointer into the existing versioned storage instead of copying the database; only data changed after the branch point consumes additional storage.</p>',
+        '<p>By the priority you give it: core daily, supporting weekly, long-tail every two weeks. The scheduler wakes every six hours and runs whichever prompts are due. You can also refresh by hand, subject to a cooldown on the same tiers.</p>',
     },
     {
-      question: 'What happens when my database is idle?',
+      question: 'What exactly is stored for each answer?',
       answer:
-        '<p>Its compute can scale to zero after a period of inactivity while durable storage remains available. The database wakes automatically on the next connection, and suspended compute does not consume compute hours.</p>',
+        '<p>The answer text, the web citations it came back with, the brands it named and their sentiment, and the fanout queries the engine expanded your prompt into. Because the raw answer is kept, every score can be traced back to the wording behind it.</p>',
     },
     {
-      question: 'How does pricing work?',
+      question: 'What are fanout queries?',
       answer:
-        '<p>Neon uses usage-based pricing. You pay for the compute time and storage you actually consume, with plan allowances for branches and restore history. Scale to zero and automatic branch expiration help keep temporary environments inexpensive.</p>',
+        '<p>Before answering, an engine often expands your prompt into several narrower questions and answers those instead. Ranksmile records them, which surfaces the questions you were never tracking but are being judged on.</p>',
     },
     {
-      question: 'Can agents provision and operate databases?',
+      question: 'How does this differ from rank tracking?',
       answer:
-        '<p>Yes. Agents can use the Neon API, CLI, SDKs, and MCP Server to create isolated branches and databases, run SQL, inspect state, and clean up environments programmatically.</p>',
+        '<p>Rank tracking tells you where a page sits in the ten blue links. AI Visibility tells you whether an answer engine names your brand at all. They run on the same site, so a page that ranks well but is never cited shows up as exactly that.</p>',
     },
   ],
 };
@@ -673,6 +712,6 @@ const sharedBackendPlatformContent = {
 module.exports = {
   rankTrackingPageContent,
   aiGatewayPageContent,
-  lakebasePageContent,
+  aiVisibilityPageContent,
   sharedBackendPlatformContent,
 };

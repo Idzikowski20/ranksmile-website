@@ -320,6 +320,17 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The Lakebase Postgres product page became the AI Visibility page.
+      {
+        source: '/lakebase',
+        destination: '/ai-visibility',
+        permanent: true,
+      },
+      {
+        source: '/lakebase.md',
+        destination: '/ai-visibility.md',
+        permanent: true,
+      },
       // The Functions product page became the Rank Tracking page.
       {
         source: '/functions',

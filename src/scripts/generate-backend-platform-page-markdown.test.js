@@ -4,7 +4,7 @@ import path from 'path';
 
 import { afterEach, describe, expect, it } from 'vitest';
 
-import { lakebasePageContent } from '../constants/backend-platform-page-content';
+import { aiVisibilityPageContent } from '../constants/backend-platform-page-content';
 import LINKS from '../constants/links';
 
 import {
@@ -14,7 +14,7 @@ import {
   renderContentScoreMarkdown,
   renderRankTrackingMarkdown,
   renderWordpressMarkdown,
-  renderLakebaseMarkdown,
+  renderAiVisibilityMarkdown,
 } from './generate-backend-platform-page-markdown';
 
 const tempDirs = [];
@@ -118,26 +118,24 @@ describe('backend platform page Markdown', () => {
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code|a)(?:\s|>)/);
   });
 
-  it('renders Lakebase unique content and its shared platform footer', () => {
-    const markdown = renderLakebaseMarkdown(LINKS);
+  it('renders AI Visibility unique content and its shared platform footer', () => {
+    const markdown = renderAiVisibilityMarkdown(LINKS);
 
-    expect(markdown).toContain('# The Neon database: Lakebase Postgres');
-    expect(markdown).toContain('### Instant Branching');
-    expect(markdown).toContain(
-      '## Query Postgres directly from browsers, edge runtimes, and serverless functions.'
+    expect(markdown).toContain('# Find out who the engines name when buyers ask');
+    expect(markdown).toContain('### Track the prompts buyers ask');
+    expect(markdown).toContain('## Every answer is kept whole, with its citations attached.');
+    expect(markdown).toContain('### scan-result.json');
+    expect(markdown).toContain('"fanOutQueries"');
+    expect(markdown).toContain('### Sources');
+    expect(markdown.indexOf('### Track the prompts buyers ask')).toBeLessThan(
+      markdown.indexOf('### scan-result.json')
     );
-    expect(markdown).toContain('### data-api.ts');
-    expect(markdown).toContain('${DATA_API_URL}/projects');
-    expect(markdown).toContain('### Secure access');
-    expect(markdown.indexOf('### Instant Branching')).toBeLessThan(
-      markdown.indexOf('### data-api.ts')
+    expect(markdown.indexOf('### scan-result.json')).toBeLessThan(
+      markdown.indexOf('## From one brand to a full client roster')
     );
-    expect(markdown.indexOf('### data-api.ts')).toBeLessThan(
-      markdown.indexOf("## From your first five users to the world's largest teams")
-    );
-    expect(markdown).toContain('### Restore to any point');
-    expect(markdown).toContain('### A database built for agents');
-    expect(markdown).toContain("## From your first five users to the world's largest teams");
+    expect(markdown).toContain('### See who is cited instead');
+    expect(markdown).toContain('### Turn gaps into work');
+    expect(markdown).toContain('## From one brand to a full client roster');
     expect(markdown).toContain('## Your questions, answered.');
     expect(markdown).toContain('## Backend services');
     expect(markdown).toContain('## Measured, not guessed.');
@@ -159,7 +157,7 @@ describe('backend platform page Markdown', () => {
       'ai-gateway.md',
       'wordpress.md',
       'content-score.md',
-      'lakebase.md',
+      'ai-visibility.md',
     ]);
     expect(await fs.readFile(path.join(outputDir, 'rank-tracking.md'), 'utf8')).toContain(
       '# Every position, per device and per country'
@@ -173,15 +171,15 @@ describe('backend platform page Markdown', () => {
     expect(await fs.readFile(path.join(outputDir, 'content-score.md'), 'utf8')).toContain(
       '# Write against the pages already winning the query'
     );
-    expect(await fs.readFile(path.join(outputDir, 'lakebase.md'), 'utf8')).toContain(
-      '# The Neon database: Lakebase Postgres'
+    expect(await fs.readFile(path.join(outputDir, 'ai-visibility.md'), 'utf8')).toContain(
+      '# Find out who the engines name when buyers ask'
     );
     expect(await fs.readFile(sentinelPath, 'utf8')).toBe('keep me');
   });
 
-  it('keeps the new Lakebase sections before branching and mirrors their visible copy', () => {
-    const markdown = renderLakebaseMarkdown(LINKS);
-    const { architecture, autoscaling, dynamicDatabases } = lakebasePageContent;
+  it('keeps the AI Visibility sections in order and mirrors their visible copy', () => {
+    const markdown = renderAiVisibilityMarkdown(LINKS);
+    const { architecture, autoscaling, dynamicDatabases } = aiVisibilityPageContent;
 
     expect(markdown).toContain(`## ${architecture.title} ${architecture.highlightedTitle}`);
     expect(markdown).toContain(`${architecture.description} ${architecture.secondaryDescription}`);
@@ -193,16 +191,15 @@ describe('backend platform page Markdown', () => {
       expect(markdown).toContain(`### ${title}`);
     }
 
-    expect(markdown).toContain('restarting in \\<1s.');
-    expect(markdown).toContain('13,024 outages prevented by Autoscaling this year');
-    expect(markdown).toContain('$345,966 saved by Autoscaling every day');
+    expect(markdown).toContain('14 days between long-tail re-scans, one day for core');
+    expect(markdown).toContain('250 prompt and engine pairs in a single run');
     expect(markdown.indexOf(`## ${architecture.title}`)).toBeLessThan(
       markdown.indexOf(`## ${autoscaling.label}`)
     );
     expect(markdown.indexOf(`## ${autoscaling.label}`)).toBeLessThan(
       markdown.indexOf(`## ${dynamicDatabases.title}`)
     );
-    expect(markdown.indexOf('### Save costs')).toBeLessThan(markdown.indexOf(autoscaling.caption));
+    expect(markdown.indexOf('### Per scan')).toBeLessThan(markdown.indexOf(autoscaling.caption));
     expect(markdown.indexOf(autoscaling.caption)).toBeLessThan(
       markdown.indexOf(`### ${autoscaling.features[0].title}`)
     );

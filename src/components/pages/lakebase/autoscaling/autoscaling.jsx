@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import CountingNumber from 'components/shared/animation/counting-number';
 import Container from 'components/shared/container';
 import SectionLabel from 'components/shared/section-label';
-import { lakebasePageContent } from 'constants/backend-platform-page-content';
+import { aiVisibilityPageContent } from 'constants/backend-platform-page-content';
 import useWindowSize from 'hooks/use-window-size';
 import autoscalingLegendIcon from 'icons/lakebase/autoscaling/legend/autoscaling.svg';
 import dbLoadLegendIcon from 'icons/lakebase/autoscaling/legend/db-load.svg';
@@ -19,7 +19,7 @@ import { cn } from 'utils/cn';
 
 import Animation from './animation';
 
-const { autoscaling } = lakebasePageContent;
+const { autoscaling } = aiVisibilityPageContent;
 const LEGEND_ICONS = [autoscalingLegendIcon, dbLoadLegendIcon, resourceLegendIcon];
 
 const Autoscaling = () => {

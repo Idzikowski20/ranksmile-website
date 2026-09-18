@@ -150,8 +150,8 @@ describe('getMarkdownPath', () => {
       ['/wordpress.md', '/md/wordpress.md'],
       ['/content-score', '/md/content-score.md'],
       ['/auth.md', '/auth.md'],
-      ['/lakebase', '/md/lakebase.md'],
-      ['/lakebase.md', '/md/lakebase.md'],
+      ['/ai-visibility', '/md/ai-visibility.md'],
+      ['/ai-visibility.md', '/md/ai-visibility.md'],
     ])('should resolve generated page %s to %s', (pagePath, markdownPath) => {
       expect(getMarkdownPath(pagePath)).toBe(markdownPath);
     });

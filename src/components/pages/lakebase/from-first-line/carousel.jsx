@@ -146,7 +146,7 @@ const Carousel = ({ slides }) => {
       className="mt-16 border-t border-gray-new-50 pt-[27px] md:mt-12 md:border-t-0 md:pt-0"
       role="region"
       aria-roledescription="carousel"
-      aria-label="Lakebase customer journeys"
+      aria-label="How teams use AI Visibility"
     >
       <div className="absolute top-[187px] right-8 flex items-center gap-5 xl:top-[163px] lg:relative lg:top-auto lg:right-auto lg:z-10 lg:justify-end md:mt-6 md:w-full md:before:h-px md:before:flex-1 md:before:bg-gray-new-50 md:before:content-['']">
         <DirectionButton

@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
 import Container from 'components/shared/container';
-import { lakebasePageContent } from 'constants/backend-platform-page-content';
+import { aiVisibilityPageContent } from 'constants/backend-platform-page-content';
 import bgNoise from 'images/pages/home/backed-by/bg-noise.jpg';
 
 import Carousel from './carousel';
 
-const { fromFirstLine } = lakebasePageContent;
+const { fromFirstLine } = aiVisibilityPageContent;
 
 const FromFirstLine = () => (
   <section
