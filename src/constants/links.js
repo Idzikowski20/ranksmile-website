@@ -41,7 +41,7 @@ export default {
 
   // Ranksmile product pages (Neon routes kept, content repurposed)
   aiVisibility: '/lakebase',
-  contentScore: '/auth',
+  contentScore: '/content-score',
   rankTracking: '/functions',
   keywordResearch: '/ai-gateway',
   wordpress: '/wordpress',
@@ -62,7 +62,7 @@ export default {
   postgresOverview: '/docs/postgres/overview',
   auth: '/docs/neon-auth/overview',
   authOverview: '/docs/auth/overview',
-  authPage: '/auth',
+  authPage: '/content-score',
   functionsOverview: '/docs/compute/functions/overview',
   objectStorageOverview: '/docs/storage/overview',
   aiGatewayOverview: '/docs/ai-gateway/overview',

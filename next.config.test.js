@@ -12,7 +12,7 @@ describe('backend platform Markdown rewrites', () => {
       '/md/functions.md',
       '/md/ai-gateway.md',
       '/md/wordpress.md',
-      '/md/auth-page.md',
+      '/md/content-score.md',
     ]) {
       expect(headers.find(({ source }) => source === path)?.headers).toEqual(functionsHeaders);
     }

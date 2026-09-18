@@ -27,7 +27,7 @@ const GENERATED_PAGE_MARKDOWN_PATHS = {
   functions: '/md/functions.md',
   'ai-gateway': '/md/ai-gateway.md',
   wordpress: '/md/wordpress.md',
-  auth: '/md/auth-page.md',
+  'content-score': '/md/content-score.md',
   lakebase: '/md/lakebase.md',
 };
 

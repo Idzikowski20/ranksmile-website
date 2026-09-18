@@ -84,12 +84,12 @@ export default {
     pathname: LINKS.functions,
     markdownPath: `${LINKS.functions}.md`,
   },
-  auth: {
-    title: 'Neon Auth — Managed Better Auth that branches with your backend',
+  contentScore: {
+    title: 'Content Score — write against the pages that already rank | Ranksmile',
     description:
-      'Managed Better Auth built into Neon. Keep users, sessions, and auth configuration in Postgres, and test real login flows in isolated database branches.',
-    pathname: LINKS.authPage,
-    markdownPath: '/md/auth-page.md',
+      'A live grade on your draft in the Ranksmile editor: an SEO score, an AI score, NLP terms taken from the competing pages, and target ranges for length, headings and paragraphs.',
+    pathname: LINKS.contentScore,
+    markdownPath: '/md/content-score.md',
   },
   wordpress: {
     title: 'Ranksmile for WordPress — publish drafts straight to your site',

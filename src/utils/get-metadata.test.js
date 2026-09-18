@@ -40,7 +40,7 @@ describe('getMetadata', () => {
     [SEO_DATA.functions, 'https://neon.com/functions.md'],
     [SEO_DATA.aiGateway, 'https://neon.com/ai-gateway.md'],
     [SEO_DATA.wordpress, 'https://neon.com/wordpress.md'],
-    [SEO_DATA.auth, 'https://neon.com/md/auth-page.md'],
+    [SEO_DATA.contentScore, 'https://neon.com/md/content-score.md'],
     [SEO_DATA.lakebase, 'https://neon.com/lakebase.md'],
   ])('advertises the generated Markdown alternate', (pageSeo, markdownUrl) => {
     const metadata = getMetadata(pageSeo);

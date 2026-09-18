@@ -320,6 +320,13 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The Auth product page became the Content Score page. Only the bare path is
+      // redirected: /auth.md is the static Claimable Neon protocol, not this page.
+      {
+        source: '/auth',
+        destination: '/content-score',
+        permanent: true,
+      },
       // The Object Storage product page became the WordPress plugin page.
       {
         source: '/object-storage',

@@ -5,7 +5,7 @@ import MENUS from './menus';
 describe('Product navigation', () => {
   it.each([
     ['AI Visibility', '/lakebase'],
-    ['Content Score', '/auth'],
+    ['Content Score', '/content-score'],
     ['Rank Tracking', '/functions'],
     ['WordPress plugin', '/wordpress'],
     ['Keyword Research', '/ai-gateway'],
