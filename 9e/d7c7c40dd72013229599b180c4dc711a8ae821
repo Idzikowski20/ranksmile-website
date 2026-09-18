@@ -1,0 +1,25 @@
+tests/critical-flows/contracts.js
+  s_57407775d5d685::t_eb1d209e9d629d 143,158
+src/components/pages/about/timeline/timeline.jsx
+  s_57407775d5d685::t_b755d8b2bbd2e5 37-38
+src/components/pages/about/vision/vision.jsx
+  s_57407775d5d685::t_b755d8b2bbd2e5 17-18
+src/constants/seo-data.js
+  s_57407775d5d685::t_b755d8b2bbd2e5 102-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "9ed7c7c40dd72013229599b180c4dc711a8ae821",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
