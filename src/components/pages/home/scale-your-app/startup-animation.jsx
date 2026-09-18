@@ -118,7 +118,7 @@ CheckSquare.propTypes = {
   checked: PropTypes.bool.isRequired,
 };
 
-const CreateProject = ({ isPressed }) => (
+const AddSite = ({ isPressed }) => (
   <div className="absolute inset-0 border-2 border-[#61646b] bg-black-pure p-[3px]">
     <div className="relative flex h-[37px] items-center bg-[#303236] px-3 text-base font-semibold text-white md:h-8 md:text-sm">
       New site
@@ -133,7 +133,7 @@ const CreateProject = ({ isPressed }) => (
     </div>
     <div className="flex flex-col items-center gap-5 pt-[29px] md:gap-4 md:pt-5">
       <p className="text-center text-base leading-none font-semibold text-white md:text-sm">
-        No projects yet. Create project?
+        No sites yet. Add your first one?
       </p>
       <div className="flex items-start gap-5 text-base leading-none font-semibold md:text-sm">
         <span
@@ -142,7 +142,7 @@ const CreateProject = ({ isPressed }) => (
             isPressed ? 'bg-[#94979e]' : 'bg-white'
           )}
         >
-          Create
+          Add site
         </span>
         <span className="flex h-9 items-center justify-center border-2 border-[#94979e] px-4 text-[#94979e]">
           Cancel
@@ -152,7 +152,7 @@ const CreateProject = ({ isPressed }) => (
   </div>
 );
 
-CreateProject.propTypes = {
+AddSite.propTypes = {
   isPressed: PropTypes.bool.isRequired,
 };
 
@@ -175,7 +175,7 @@ const InitializationProgress = ({ filledBlocks, progress, status }) => {
   return (
     <div className="absolute inset-0 border-2 border-[#61646b] bg-black-pure p-[3px]">
       <div className="flex h-[37px] items-center bg-[#303236] px-3 text-base font-semibold text-white md:h-8 md:text-sm">
-        {isComplete ? 'Initialization complete' : 'Initializing...'}
+        {isComplete ? 'First scan complete' : 'Running first scan...'}
       </div>
       <div className="px-2 pt-[19px] md:pt-3.5">
         <div className="flex items-center gap-4">
@@ -194,13 +194,13 @@ const InitializationProgress = ({ filledBlocks, progress, status }) => {
         <div className="mt-4 flex flex-col gap-2 text-base leading-dense font-medium tracking-[-0.02em] text-[#94979e] md:mt-3 md:text-sm">
           {isPreparing || isComplete ? (
             <>
-              <ProgressRow checked>Project created</ProgressRow>
+              <ProgressRow checked>Site added</ProgressRow>
               <ProgressRow checked={isComplete}>
-                {isComplete ? 'Database ready' : 'Preparing database...'}
+                {isComplete ? 'Answers stored' : 'Asking the engines...'}
               </ProgressRow>
             </>
           ) : (
-            <ProgressRow checked={false}>Creating project...</ProgressRow>
+            <ProgressRow checked={false}>Adding site...</ProgressRow>
           )}
         </div>
       </div>
@@ -214,7 +214,7 @@ InitializationProgress.propTypes = {
   status: PropTypes.oneOf(['creating', 'preparing', 'complete']).isRequired,
 };
 
-const StartupAnimation = ({ onStart, timelineElapsed }) => {
+const StartupAnimation = ({ onStart = () => {}, timelineElapsed }) => {
   const elapsedRef = useRef(0);
   const frameIndexRef = useRef(0);
   const hasStartedRef = useRef(false);
@@ -322,7 +322,7 @@ const StartupAnimation = ({ onStart, timelineElapsed }) => {
         aria-label="A new site is added and its first scan reaches 100 percent"
       >
         {frame.screen === 'create' ? (
-          <CreateProject isPressed={frame.isCreatePressed} />
+          <AddSite isPressed={frame.isCreatePressed} />
         ) : (
           <InitializationProgress
             filledBlocks={frame.filledBlocks}
@@ -352,7 +352,7 @@ const StartupAnimation = ({ onStart, timelineElapsed }) => {
 };
 
 StartupAnimation.propTypes = {
-  onStart: PropTypes.func.isRequired,
+  onStart: PropTypes.func,
   timelineElapsed: PropTypes.shape({
     get: PropTypes.func.isRequired,
     on: PropTypes.func.isRequired,
