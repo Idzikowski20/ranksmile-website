@@ -13,7 +13,7 @@ import {
   renderAiGatewayMarkdown,
   renderAuthMarkdown,
   renderFunctionsMarkdown,
-  renderObjectStorageMarkdown,
+  renderWordpressMarkdown,
   renderLakebaseMarkdown,
 } from './generate-backend-platform-page-markdown';
 
@@ -69,8 +69,8 @@ describe('backend platform page Markdown', () => {
     expect(markdown).toContain('## Backend compute');
     expect(markdown).toContain('### Declared in `neon.ts`');
     expect(markdown).toContain('## Your questions, answered');
-    expect(markdown).toContain('## Built for agents and the developers behind them.');
-    expect(markdown).toContain('[Contact us](https://neon.com/contact-sales)');
+    expect(markdown).toContain('## Built for the teams and the agents behind them.');
+    expect(markdown).toContain('[Contact us](mailto:kontakt@ranksmile.pl)');
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code)>/);
   });
 
@@ -84,22 +84,22 @@ describe('backend platform page Markdown', () => {
     expect(markdown).toContain('| Released |');
     expect(markdown).toContain('Inference is free during the private preview.');
     expect(markdown).toContain('## Compatibility');
-    expect(markdown).toContain('## Built for agents and the developers behind them.');
-    expect(markdown).toContain('## Trusted at scale.');
+    expect(markdown).toContain('## Built for the teams and the agents behind them.');
+    expect(markdown).toContain('## Measured, not guessed.');
   });
 
   it('renders Object Storage config, FAQ, and matching shared content', () => {
-    const markdown = renderObjectStorageMarkdown(LINKS);
+    const markdown = renderWordpressMarkdown(LINKS);
 
-    expect(markdown).toContain('# Files that branch with your Neon database');
-    expect(markdown).toContain('[Read the docs](https://neon.com/docs/storage/overview)');
-    expect(markdown).toContain('```typescript\nimport { defineConfig }');
-    expect(markdown).toContain('uploads: {}');
-    expect(markdown).toContain('`neon deploy`');
-    expect(markdown).toContain('`.env.local`');
-    expect(markdown).toContain('Your files branch with everything else.');
+    expect(markdown).toContain('# Send the finished draft straight to WordPress');
+    expect(markdown).toContain('[Start your free trial](https://app.ranksmile.pl/auth/sign-up)');
+    expect(markdown).toContain('### publish-options.json');
+    expect(markdown).toContain('"status": "draft"');
+    expect(markdown).toContain('### Updates, not duplicates');
+    expect(markdown).toContain('### Activate and connect');
+    expect(markdown).toContain('Everything that feeds the draft.');
     expect(markdown).not.toContain('Your LLM branches');
-    expect(markdown).toContain('### Is this the same credential I use for Postgres?');
+    expect(markdown).toContain('### What happens if I publish the same article twice?');
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code)>/);
   });
 
@@ -140,8 +140,8 @@ describe('backend platform page Markdown', () => {
     expect(markdown).toContain("## From your first five users to the world's largest teams");
     expect(markdown).toContain('## Your questions, answered.');
     expect(markdown).toContain('## Backend services');
-    expect(markdown).toContain('## Trusted at scale.');
-    expect(markdown).not.toContain('## Built for agents and the developers behind them.');
+    expect(markdown).toContain('## Measured, not guessed.');
+    expect(markdown).not.toContain('## Built for the teams and the agents behind them.');
   });
 
   it('writes all mirrors without deleting other generated Markdown', async () => {
@@ -157,7 +157,7 @@ describe('backend platform page Markdown', () => {
     expect(files.map((file) => path.basename(file))).toEqual([
       'functions.md',
       'ai-gateway.md',
-      'object-storage.md',
+      'wordpress.md',
       'auth-page.md',
       'lakebase.md',
     ]);
@@ -167,8 +167,8 @@ describe('backend platform page Markdown', () => {
     expect(await fs.readFile(path.join(outputDir, 'ai-gateway.md'), 'utf8')).toContain(
       '# Call the latest models'
     );
-    expect(await fs.readFile(path.join(outputDir, 'object-storage.md'), 'utf8')).toContain(
-      '# Files that branch with your Neon database'
+    expect(await fs.readFile(path.join(outputDir, 'wordpress.md'), 'utf8')).toContain(
+      '# Send the finished draft straight to WordPress'
     );
     expect(await fs.readFile(path.join(outputDir, 'auth-page.md'), 'utf8')).toContain(
       '# Better Auth that branches, managed by Neon'

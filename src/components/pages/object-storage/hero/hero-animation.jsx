@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import RiveAnimation from 'components/shared/rive-animation';
-import { objectStoragePageContent } from 'constants/object-storage-page-content';
+import { wordpressPageContent } from 'constants/wordpress-page-content';
 import heroImage from 'images/pages/object-storage/hero.jpg';
 
 const HeroAnimation = () => {
@@ -21,7 +21,7 @@ const HeroAnimation = () => {
       className="pointer-events-none relative aspect-1344/502 w-full overflow-hidden bg-gray-new-8 select-none"
       data-figma-node-id="2070:4706"
       role="img"
-      aria-label={objectStoragePageContent.hero.illustrationDescription}
+      aria-label={wordpressPageContent.hero.illustrationDescription}
     >
       {isMounted && shouldReduceMotion === true && (
         <Image

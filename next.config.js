@@ -320,6 +320,17 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The Object Storage product page became the WordPress plugin page.
+      {
+        source: '/object-storage',
+        destination: '/wordpress',
+        permanent: true,
+      },
+      {
+        source: '/object-storage.md',
+        destination: '/wordpress.md',
+        permanent: true,
+      },
       // Branching page redirects — old slugs deleted in PR #4374 (Jan 2026)
       {
         source: '/branching/identifying-use-case',

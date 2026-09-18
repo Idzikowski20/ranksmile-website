@@ -77,7 +77,7 @@ const Logo = ({ className = null, width, height, isHeader = false }) => {
         to="/"
         onContextMenu={isHeader ? handleContextMenu : undefined}
       >
-        <span className="sr-only">Neon</span>
+        <span className="sr-only">Ranksmile</span>
         <LogoLightIcon className={cn('dark:hidden', className)} width={width} height={height} />
         <LogoDarkIcon
           className={cn('hidden dark:block', className)}

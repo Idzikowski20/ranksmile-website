@@ -20,7 +20,7 @@ export default {
   faqs: '/faqs',
   generateTicket: '/generate-ticket',
   migration: '/migration',
-  objectStorage: '/object-storage',
+  objectStorage: '/wordpress',
   partners: '/docs/guides/platform-integration-overview',
   postgresqltutorial: '/postgresql/tutorial',
   pricing: '/pricing',
@@ -38,6 +38,21 @@ export default {
   tools: '/tools',
   toolsUpgradeAssessment: '/tools/postgres-major-version-assessment/assess',
   toolsMigration: '/tools/postgres-migration',
+
+  // Ranksmile product pages (Neon routes kept, content repurposed)
+  aiVisibility: '/lakebase',
+  contentScore: '/auth',
+  rankTracking: '/functions',
+  keywordResearch: '/ai-gateway',
+  wordpress: '/wordpress',
+  mcpApi: '/cli',
+  contact: 'mailto:kontakt@ranksmile.pl',
+  legalTerms: 'https://app.ranksmile.pl/legal/terms',
+  legalPrivacy: 'https://app.ranksmile.pl/legal/privacy',
+  legalCookies: 'https://app.ranksmile.pl/legal/cookies',
+  legalDpa: 'https://app.ranksmile.pl/legal/dpa',
+  legalHub: 'https://app.ranksmile.pl/legal',
+  appBilling: 'https://app.ranksmile.pl/billing',
 
   // Docs
   docs: '/docs',
@@ -75,7 +90,7 @@ export default {
   docsExtensionsTimescaledb: '/docs/extensions/timescaledb',
   readReplicas: '/docs/introduction/read-replicas',
   serverless: '/docs/introduction/serverless',
-  support: '/docs/introduction/support',
+  support: 'mailto:kontakt@ranksmile.pl',
   scaleToZero: '/docs/guides/scale-to-zero-guide',
   whyNeon: '/docs/get-started/why-neon',
 
@@ -95,11 +110,11 @@ export default {
   hipaaContractors: '/hipaa-contractors',
 
   // Console
-  console: 'https://console.neon.tech',
-  login: 'https://console.neon.tech/login',
-  signup: 'https://console.neon.tech/signup',
+  console: 'https://app.ranksmile.pl',
+  login: 'https://app.ranksmile.pl/auth/sign-in',
+  signup: 'https://app.ranksmile.pl/auth/sign-up',
   signupCredits: 'https://fyi.neon.tech/credits',
-  consoleSupport: 'https://console.neon.tech/app/projects?modal=support',
+  consoleSupport: 'mailto:kontakt@ranksmile.pl',
 
   // Socials
   discord: 'https://neon.com/discord',

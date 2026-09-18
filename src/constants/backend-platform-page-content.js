@@ -2,7 +2,7 @@ const functionsBranchingTitleLines = ['Functions that branch with', 'the rest of
 const aiGatewayHeroTitleLines = ['Call the latest models right', 'from your Neon backend'];
 const aiGatewayModelsTitleLines = ['Access a wide catalog of frontier and open', 'weight models.'];
 const aiGatewayModelsHighlightedTitleLines = ['Served with optimized performance via Databricks.'];
-const builtForAgentsTitleLines = ['Built for agents and', 'the developers behind them.'];
+const builtForAgentsTitleLines = ['Built for the teams and', 'the agents behind them.'];
 const faqTitleLines = ['Your questions,', 'answered'];
 const lakebaseFromFirstLineTitleLines = [
   'From your first five users',
@@ -565,29 +565,29 @@ const sharedBackendPlatformContent = {
   faqTitle: faqTitleLines.join(' '),
   faqTitleLines,
   backendServices: {
-    title: 'Your Postgres branches with everything else.',
+    title: 'One workspace, not five subscriptions.',
     highlightedTitle:
-      'Create a branch and your whole backend forks with it — database, storage, auth, and a gateway endpoint of its own.',
+      'Visibility, scoring, rankings, research and publishing all read the same site, the same prompts and the same competitors.',
     itemsByVideo: {
       'postgres-database': {
-        title: 'Lakebase Postgres',
-        description: 'Serverless Postgres that scales and branches with your app.',
+        title: 'AI Visibility',
+        description: 'Five engines read every prompt, and the answers are stored.',
       },
       authentication: {
-        title: 'Authentication',
-        description: 'Managed auth with users and sessions stored in Postgres.',
+        title: 'Content Score',
+        description: 'Your draft graded live against the pages already winning the query.',
       },
       compute: {
-        title: 'Compute',
-        description: 'Functions without timeouts running close to your database.',
+        title: 'Rank Tracking',
+        description: 'Positions checked once a day, desktop and mobile, per country.',
       },
       storage: {
-        title: 'Storage',
-        description: 'S3-compatible object storage that branches with your projects.',
+        title: 'WordPress publishing',
+        description: 'Finished drafts land as Gutenberg blocks with images sideloaded.',
       },
       'ai-gateway': {
-        title: 'AI Gateway',
-        description: 'One API for all frontier & open-source models, powered by Databricks.',
+        title: 'Keyword Research',
+        description: 'Coverage gap and competitor gap decide what to write next.',
       },
     },
   },
@@ -595,87 +595,93 @@ const sharedBackendPlatformContent = {
     title: builtForAgentsTitleLines.join(' '),
     titleLines: builtForAgentsTitleLines,
     description:
-      "Every service is designed with the same API and operational model, whether it's used by a developer or called directly by an AI agent. Build once, then let both humans and agents use the same platform without additional integration work.",
+      'Nothing on the dashboard is an estimate. Every score traces back to an answer we stored, a URL an engine cited, or a position we checked today, and the same data is available to your own agents over MCP and the API.',
     items: [
       {
         id: 'branchable',
-        title: 'Branchable',
+        title: 'Traceable',
         description:
-          "Spin up isolated environments to test model changes safely, without touching production. Merge changes only when they're ready.",
+          'Each scan keeps the answer text and the citations it came back with, so you can always read the sentence a number came from.',
       },
       {
         id: 'serverless',
-        title: 'Serverless',
+        title: 'Scheduled',
         description:
-          'Usage-based infrastructure that scales automatically with your traffic, so you only pay for what you use and nothing while idle.',
+          'Core prompts re-scan daily, supporting weekly, long-tail every two weeks, and rankings run once a day. Nothing waits for you to remember.',
       },
       {
         id: 'agent-ready',
         title: 'Agent-ready',
         description:
-          'Provision and operate every service through APIs that AI agents can call directly, using the same interfaces as developers.',
+          'Connect Claude, Codex or your own agent over MCP and let it read your visibility data and drive the editor, using the same interfaces you do.',
       },
     ],
   },
   backedBy: {
-    label: 'Backed by giants',
-    title: 'Trusted at scale.',
-    highlightedTitle: 'Neon has been part of the Databricks Platform since May 2025.',
-    trustedByLabel: 'Trusted by the best',
+    label: 'How it holds up',
+    title: 'Measured, not guessed.',
+    highlightedTitle:
+      'Five AI engines plus Google rankings, on the prompts your buyers actually ask.',
+    trustedByLabel: 'What every plan includes',
     metrics: [
       {
-        value: '20M+',
-        description: 'Databases started daily - built for scale and reliability.',
+        value: '5',
+        description:
+          'AI engines read on every scan - AI Overviews, AI Mode, ChatGPT, Perplexity, Gemini.',
       },
       {
-        value: '3M+',
-        description: 'Developers building on Neon worldwide',
+        value: '24h',
+        description: 'Rank check cadence, desktop and mobile, per country',
       },
     ],
     quotes: [
       {
         text: [
-          "Neon's serverless philosophy is ",
-          'aligned with our vision:',
-          ' no infrastructure to manage, no servers to provision, no database cluster to maintain.',
+          'Your Visibility Score is ',
+          'the share of tracked prompts',
+          ' where an engine names your brand, reported per engine.',
         ],
-        highlight: 'aligned with our vision:',
-        author: 'Edouard Bonlieu',
-        post: 'Co-founder at Koyeb',
-      },
-      {
-        text: ['Neon allows us to develop much ', "faster than we've even been", ' used to.'],
-        highlight: "faster than we've even been",
-        author: 'Alex Klarfeld',
-        post: 'CEO and co-founder of Supergood.ai',
+        highlight: 'the share of tracked prompts',
+        author: 'How AI Visibility is measured',
+        post: 'Inside Ranksmile',
       },
       {
         text: [
-          'The killer feature',
-          ' that convinced us to use Neon was branching: it keeps our engineering velocity high.',
+          'Sources lists ',
+          'the URLs each answer cited',
+          ', and which brands each source mentions.',
         ],
-        highlight: 'The killer feature',
-        author: 'Léonard Henriquez',
-        post: 'Co-founder and CTO, Topo.io',
+        highlight: 'the URLs each answer cited',
+        author: 'What a scan stores',
+        post: 'Inside Ranksmile',
       },
       {
         text: [
-          "We've been able to ",
-          'automate virtually all database tasks',
-          ' via the Neon API, saving us a tremendous amount of time and engineering effort.',
+          'Fanout queries expose',
+          ' the follow-up questions an engine expands your prompt into before it answers.',
         ],
-        highlight: 'automate virtually all database tasks',
-        author: 'Himanshu Bhandoh',
-        post: 'Software Engineer at Retool',
+        highlight: 'Fanout queries expose',
+        author: 'Beyond the prompt you typed',
+        post: 'Inside Ranksmile',
+      },
+      {
+        text: [
+          'Every gap becomes ',
+          'a ranked task on one list',
+          ', per site, sorted by what will move visibility fastest.',
+        ],
+        highlight: 'a ranked task on one list',
+        author: 'How Recommendations work',
+        post: 'Inside Ranksmile',
       },
     ],
   },
   cta: {
     title: 'Talk to us.',
-    description: 'Fill out a short form and we’ll get back to you within a few business days.',
+    description: 'Tell us what you track and we will get back to you within a few business days.',
     label: 'Get help',
     buttonText: 'Contact us',
-    linkKey: 'contactSales',
+    linkKey: 'contact',
   },
 };
 

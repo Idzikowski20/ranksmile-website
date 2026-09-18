@@ -8,22 +8,22 @@ import bgPattern from './images/bg-pattern.jpg';
 
 const PROGRAMS = [
   {
-    type: 'Agent Plan',
-    title: 'App generation platforms',
-    description: 'Custom rates and limits for thousands of databases.',
-    url: '/programs/agents',
+    type: 'Yearly billing',
+    title: 'Save 17% on any plan',
+    description: 'Same limits, two months off when you pay for the year.',
+    url: '#compare-plans',
   },
   {
-    type: 'Startup Program',
-    title: 'Early-stage startups',
-    description: 'Launch faster with up to $100k in credits.',
-    url: '/startups',
+    type: 'Agency plan',
+    title: 'Running many client brands',
+    description: 'Unlimited Brand Spaces, white-label reporting and full API access.',
+    url: '#compare-plans',
   },
   {
-    type: 'Open Source Program',
-    title: 'Open source on Neon',
-    description: 'Credits and funding for building on Neon.',
-    url: '/programs/open-source',
+    type: 'Need more',
+    title: 'Higher limits than Agency',
+    description: 'Tell us the volume you track and we will quote it.',
+    url: 'mailto:kontakt@ranksmile.pl',
   },
 ];
 
@@ -31,7 +31,7 @@ const Programs = () => (
   <div className="relative mt-6 w-full overflow-hidden border border-gray-new-30 lg:mt-4">
     <div className="relative overflow-hidden px-6 py-5">
       <h2 className="relative z-10 text-2xl leading-snug font-normal tracking-extra-tight text-white md:text-xl">
-        Special programs
+        Good to know
       </h2>
       <Image
         className="pointer-events-none absolute top-0 right-0 h-full w-auto max-w-none md:hidden"

@@ -5,19 +5,19 @@ import Animation from './animation';
 
 const BENEFITS = [
   {
-    title: 'Instant operations',
+    title: "Ask, don't dig",
     description:
-      "Infrastructure that responds instantly. Agents don't wait for servers, tickets, or manual provisioning.",
+      'Smily answers in the editor side panel: what changed, which prompt you lost, what to publish next.',
   },
   {
-    title: 'Branch everything',
+    title: 'Brand Spaces',
     description:
-      'Give every idea its own environment. Agents can work in isolated copies of your entire backend.',
+      'Every client or product gets its own space, with its own prompts, competitors and rankings.',
   },
   {
-    title: 'Safe automation',
+    title: 'Scheduled, not manual',
     description:
-      'Fast development requires fast recovery. Every change can be isolated, tested, and rolled back.',
+      'Automations run the content calendar and the scheduler re-checks each prompt at its own cadence.',
   },
 ];
 
@@ -32,7 +32,7 @@ const OperateWithAgents = () => (
       size="1600"
     >
       <div className="pt-3.25 lg:pt-0">
-        <SectionLabel theme="white">OPERATE IT WITH AGENTS</SectionLabel>
+        <SectionLabel theme="white">WORK IT WITH AGENTS</SectionLabel>
         <span
           className="mt-4.25 block font-mono text-[8rem] leading-none tracking-tighter text-gray-new-10 xl:text-[6rem] md:mt-2 md:text-[5rem]"
           aria-hidden="true"
@@ -46,8 +46,8 @@ const OperateWithAgents = () => (
           className="ml-px max-w-[1182px] indent-24 text-5xl leading-dense font-normal tracking-tighter text-pretty text-gray-new-50 2xl:text-[2.75rem] xl:ml-0 xl:indent-16 xl:text-[2.25rem] lg:indent-0 md:text-[1.75rem]"
           id="operate-with-agents-heading"
         >
-          <span className="text-white">Ready for coding agents.</span> Create and branch
-          environments the way you work with PRs, with full access via MCP, CLI, and SDK.
+          <span className="text-white">Ready for your agents.</span> Connect Claude, Codex or any
+          agent over MCP and let it read your visibility data and drive the editor.
         </h2>
       </header>
 

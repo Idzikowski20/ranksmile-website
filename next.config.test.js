@@ -11,7 +11,7 @@ describe('backend platform Markdown rewrites', () => {
     for (const path of [
       '/md/functions.md',
       '/md/ai-gateway.md',
-      '/md/object-storage.md',
+      '/md/wordpress.md',
       '/md/auth-page.md',
     ]) {
       expect(headers.find(({ source }) => source === path)?.headers).toEqual(functionsHeaders);
@@ -27,7 +27,7 @@ describe('backend platform Markdown rewrites', () => {
       expect.arrayContaining([
         { source: '/functions.md', destination: '/md/functions.md' },
         { source: '/ai-gateway.md', destination: '/md/ai-gateway.md' },
-        { source: '/object-storage.md', destination: '/md/object-storage.md' },
+        { source: '/wordpress.md', destination: '/md/wordpress.md' },
       ])
     );
   });

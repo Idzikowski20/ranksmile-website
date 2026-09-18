@@ -43,7 +43,7 @@ const Header = ({
           size="1920"
         >
           <div className="flex items-center gap-x-[92px] xl:gap-x-10">
-            <Logo width={102} height={28} priority isHeader />
+            <Logo width={151} height={28} priority isHeader />
             <Navigation />
           </div>
           <Sidebar isClient={isClient} />

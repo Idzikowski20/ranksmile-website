@@ -26,7 +26,7 @@ const CONTENT_ROUTES = {
 const GENERATED_PAGE_MARKDOWN_PATHS = {
   functions: '/md/functions.md',
   'ai-gateway': '/md/ai-gateway.md',
-  'object-storage': '/md/object-storage.md',
+  wordpress: '/md/wordpress.md',
   auth: '/md/auth-page.md',
   lakebase: '/md/lakebase.md',
 };

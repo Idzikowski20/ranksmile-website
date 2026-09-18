@@ -21,7 +21,7 @@ const DocsHeader = ({ customType, docPageType, basePath, navigation, isClient })
     <Container className="z-10 w-full" size="1920">
       <div className="flex h-16 w-full items-center justify-between lg:h-14 lg:pr-20">
         <div className="flex items-center gap-x-7">
-          <Logo className="h-7" width={102} height={28} priority isHeader />
+          <Logo className="h-7" width={151} height={28} priority isHeader />
           <Link
             className="relative rounded-sm text-sm leading-none font-normal tracking-extra-tight text-gray-new-50 transition-colors duration-200 before:absolute before:inset-y-0 before:-left-3.5 before:h-full before:w-px before:bg-gray-new-80 hover:text-black-new dark:text-gray-new-50 dark:before:bg-gray-new-20 dark:hover:text-white"
             to={customType?.link || LINKS.docs}

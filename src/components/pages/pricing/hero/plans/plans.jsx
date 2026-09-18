@@ -13,13 +13,51 @@ import ResourceSizeSelect, {
   SCALE_RESOURCE_SIZES,
 } from './resource-size-select';
 
+const BILLING_PERIODS = [
+  { id: 'monthly', label: 'Monthly' },
+  { id: 'yearly', label: 'Yearly', note: 'Save 17%' },
+];
+
 const Plans = () => {
   const [launchSize, setLaunchSize] = useState('small');
   const [scaleSize, setScaleSize] = useState('xlarge');
+  const [billing, setBilling] = useState('monthly');
 
   return (
     <div className="relative mt-16 w-full xl:mt-14 lg:mt-12 md:mx-0 md:mt-11 md:w-full">
-      <h2 className="sr-only">Neon pricing plans</h2>
+      <h2 className="sr-only">Ranksmile pricing plans</h2>
+
+      <div className="mb-8 flex justify-center lg:mb-7 md:mb-6">
+        <div className="group flex" role="group" aria-label="Billing period">
+          {BILLING_PERIODS.map(({ id, label, note }) => {
+            const isActive = billing === id;
+
+            return (
+              <button
+                className={cn(
+                  'relative flex h-11 min-w-36 items-center justify-center gap-x-2 border border-gray-new-30 px-4',
+                  'text-[15px] leading-none whitespace-nowrap transition-colors duration-200',
+                  '-ml-px first:ml-0 md:min-w-32 md:text-sm',
+                  isActive
+                    ? 'z-10 border-gray-new-50 bg-gray-new-20 text-white'
+                    : 'bg-transparent text-gray-new-60 hover:bg-gray-new-15 hover:text-white'
+                )}
+                key={id}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => setBilling(id)}
+              >
+                {label}
+                {note && (
+                  <span className={cn('text-xs', isActive ? 'text-green-45' : 'text-gray-new-50')}>
+                    {note}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
       <ul className="relative z-10 grid grid-cols-3 gap-y-[18px] border-t border-b border-gray-new-30 lg:grid-cols-2 lg:border-0 md:grid-cols-1">
         {plans.map(
@@ -54,6 +92,14 @@ const Plans = () => {
               resourceSizes = SCALE_RESOURCE_SIZES;
             }
 
+            // Flat plans carry a price per billing period; the dynamic branch below is
+            // only reached by usage-priced plans, which Ranksmile does not have.
+            const periodPrice =
+              typeof price === 'object' && price !== null ? price[billing] : price;
+            const planTitle = periodPrice !== undefined ? `€${periodPrice}` : title;
+            const planSubtitle =
+              typeof subtitle === 'object' && subtitle !== null ? subtitle[billing] : subtitle;
+
             // Calculate price dynamically based on resource size and rates
             let displayPrice = 0;
 
@@ -75,7 +121,7 @@ const Plans = () => {
                 displayPrice = Math.round(computeCost + storageCost);
               }
             } else {
-              displayPrice = price !== undefined ? price : 0;
+              displayPrice = periodPrice !== undefined ? periodPrice : 0;
             }
 
             const selectedResource =
@@ -106,7 +152,7 @@ const Plans = () => {
                   </h3>
                   <div className="mt-14 flex flex-col gap-4">
                     <h4 className="text-[28px] leading-none font-normal tracking-tighter whitespace-nowrap lg:text-2xl">
-                      {title}
+                      {planTitle}
                     </h4>
                     {hasDynamicPricing ? (
                       <div className="flex flex-col gap-1.5">
@@ -143,9 +189,9 @@ const Plans = () => {
                       </div>
                     ) : (
                       <div className="flex flex-col gap-1.5 pt-3 pb-px md:pt-0">
-                        {subtitle && (
+                        {planSubtitle && (
                           <p className="text-[15px] leading-[1.7] -tracking-wide text-gray-new-60">
-                            {subtitle}
+                            {planSubtitle}
                           </p>
                         )}
                       </div>

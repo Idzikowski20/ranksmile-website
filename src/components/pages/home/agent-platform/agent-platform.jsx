@@ -13,23 +13,23 @@ import backgroundNoise from 'images/pages/home/backed-by/bg-noise.jpg';
 const CARDS = [
   {
     icon: lowEntryBarrierIcon,
-    title: 'Powerful Free Tier',
-    description: '100 free projects with Database, Storage, Functions & Auth',
+    title: '7-day free trial',
+    description: 'Growth comes with a full trial. No long-term contract.',
   },
   {
     icon: startAtZeroIcon,
-    title: 'Starts at $0',
-    description: 'There are no fixed fees for security and compliance features.',
+    title: 'Three plans',
+    description: 'Growth, Scale and Agency. EUR, VAT excluded, cancel anytime.',
   },
   {
     icon: efficientDevTestIcon,
-    title: 'Efficient dev/test',
-    description: 'Scale-to-zero and copy-on-write keep non-production costs low.',
+    title: 'Everything included',
+    description: 'Content Score, rank tracking and AI visibility are in every plan.',
   },
   {
     icon: multiTenancyIcon,
-    title: 'No-Fee AI Gateway',
-    description: 'At-cost rates for frontier models with no add-on fees.',
+    title: 'Agency extras',
+    description: 'White-label, full API access and unlimited Brand Spaces.',
   },
 ];
 
@@ -53,16 +53,16 @@ const AgentPlatform = () => (
     <DecorativeBackground />
     <Container className="relative z-10 px-0! 2xl:px-8! md:px-5!" size="1280">
       <div className="max-w-5xl">
-        <SectionLabel className="mb-5">Usage-based pricing</SectionLabel>
+        <SectionLabel className="mb-5">Simple plans</SectionLabel>
         <h2
           className="text-[4.5rem] leading-none font-normal tracking-tighter text-pretty 2xl:text-[4rem] xl:text-[3.25rem] md:text-[2.25rem] sm:text-[2rem]"
           id="agent-platform-heading"
         >
-          Pay for what you use, not for the infrastructure you might need.
+          Pay for the volume you track, not for a seat you never filled.
         </h2>
         <p className="mt-6 max-w-184 text-lg leading-normal font-normal tracking-extra-tight text-pretty text-gray-new-40 lg:text-base lg:leading-snug md:mt-4.5 md:text-[0.9375rem]">
-          Neon is built for a world where developers create, test, and scale more than ever. Start
-          free, experiment freely, and pay only for the resources your applications actually use.
+          What changes between plans is volume: prompts a day, documents, Brand Spaces, crawl size
+          and keyword research. The features themselves stay the same.
         </p>
         <Button
           className="mt-9 bg-black-pure! font-medium hover:bg-gray-new-20! lg:mt-8 md:mt-7"

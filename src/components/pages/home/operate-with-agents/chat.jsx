@@ -20,9 +20,9 @@ const THINKING_TEXT = 'Thinking...';
 const THINKING_REVEAL_DELAY = 0.25;
 
 export const CHAT_PROMPTS = [
-  'Test two login flows, email-only and social auth. Create a branch for each.',
-  'Run auth tests on both',
-  'Drop social, push email to main',
+  'Which prompts did we lose this week, and who got named instead of us?',
+  'Draft a page for the top gap',
+  'Publish it to WordPress',
 ];
 
 const SendIcon = ({ isActive }) => (

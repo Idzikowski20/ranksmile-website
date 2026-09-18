@@ -16,32 +16,32 @@ import { cn } from 'utils/cn';
 
 import Animation from './animation';
 
-const TABS = ['Avoid outages', 'Save costs'];
+const TABS = ['Catch the drop', 'Control the cost'];
 
 const STATS = [
   {
-    number: 13024,
-    text: 'outages prevented by Autoscaling this year',
+    number: 250,
+    text: 'AI prompts re-scanned per day on Agency',
   },
   {
-    prefix: '$',
-    number: 345966,
-    text: 'saved by Autoscaling every day',
+    prefix: '',
+    number: 2000,
+    text: 'keyword researches a month on Agency',
   },
 ];
 
 const LEGEND = [
   {
     icon: autoscalingLegendIcon,
-    text: 'Neon autoscaling',
+    text: 'Ranksmile re-scan',
   },
   {
     icon: dbLoadLegendIcon,
-    text: 'Database load',
+    text: 'Prompt priority',
   },
   {
     icon: resourceLegendIcon,
-    text: 'Fixed-resource provisioned',
+    text: 'Fixed weekly check',
   },
 ];
 
@@ -70,9 +70,9 @@ const Autoscaling = () => {
             )}
           >
             <strong className="font-normal text-white">
-              Autoscaling scales compute in real-time following your application.
+              The scheduler re-checks each prompt at its own cadence.
             </strong>{' '}
-            Optimized cost-performance, without capacity planning.
+            Core daily, supporting weekly, long-tail every two weeks.
           </h2>
 
           <div

@@ -1,334 +1,126 @@
-import BACKEND_PRICING from 'constants/backend-pricing';
-
-const { objectStorage, functions } = BACKEND_PRICING;
-
+// Comparison table. Every cell mirrors COMPARE_SECTIONS in the Ranksmile billing
+// source of truth (src/core/domain/pricing/planDefinition.ts). The `free` / `launch`
+// / `scale` keys are the table component's column ids, not plan names.
 export default {
   headings: {
     feature: '',
     free: {
-      label: 'Free',
-      price: '<span>$0</span>/month',
+      label: 'Growth',
+      price: '<span>€59</span>/month',
     },
     launch: {
-      label: 'Launch',
-      price: '<span>Usage-based</span>',
+      label: 'Scale',
+      price: '<span>€119</span>/month',
     },
     scale: {
-      label: 'Scale',
-      price: '<span>Usage-based</span>',
+      label: 'Agency',
+      price: '<span>€249</span>/month',
     },
   },
   cols: [
     {
       rows: '1',
-      feature: 'Projects and Branches',
+      feature: 'Documents & AI',
     },
     {
-      rows: '1',
+      rows: '2',
       feature: {
-        title: 'Projects',
+        title: 'Documents to create & optimize',
       },
-      free: '100',
+      free: '30',
       launch: '100',
-      scale: '1,000',
+      scale: 'Unlimited*',
     },
     {
       rows: '2',
       feature: {
-        title: 'Branches per project',
-        subtitle: 'Included',
+        title: 'AI prompts tracked',
+        subtitle: { text: 'Read more', href: '#how-ai-visibility-works' },
       },
-      free: '10',
-      launch: '10',
-      scale: '25',
+      free: '50<span>Per day</span>',
+      launch: '100<span>Per day</span>',
+      scale: '250<span>Per day</span>',
     },
     {
       rows: '2',
       feature: {
-        title: 'Additional branches',
-        subtitle: { text: 'Read more', href: '#additional-branches-billing' },
+        title: 'AI Visibility engines',
+        subtitle: { text: 'Read more', href: '#tracked-engines' },
       },
-      free: false,
-      launch: {
-        title: '$0.002 per branch-hour',
-      },
-      scale: {
-        title: '$0.002 per branch-hour',
-      },
+      free: '4',
+      launch: '5',
+      scale: '5',
     },
     {
-      rows: '1',
-      feature: 'Lakebase Postgres',
-    },
-    {
-      rows: '2',
+      rows: '1-2',
       feature: {
-        title: 'Compute rates',
-      },
-      free: '100 CU-hours<span>Per Project</span>',
-      launch: '$0.106 per CU-hour',
-      scale: '$0.222 per CU-hour',
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Compute sizes',
-      },
-      free: 'Up to 2 CU (8 GB RAM)',
-      launch: 'Up to 16 CU (64 GB RAM)',
-      scale: 'Up to 56 CU (224 GB RAM)',
-    },
-    {
-      rows: '1',
-      feature: {
-        title: 'Autoscaling',
+        title: 'Content Score & AI writing',
       },
       free: true,
       launch: true,
       scale: true,
     },
     {
-      rows: '2',
-      feature: {
-        title: 'Scale to zero',
-        subtitle: 'When inactive',
-      },
-      free: 'After 5 minutes <span>when inactive</span>',
-      launch: 'After 5 minutes <span>can be disabled</span>',
-      scale: 'Configurable',
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Database storage',
-        subtitle: 'Root and child branches',
-      },
-      free: 'Free<span>0.5 GB per Project</span>',
-      launch: '$0.35 per GB-month',
-      scale: '$0.35 per GB-month',
-    },
-    {
-      rows: '3',
-      feature: {
-        title: 'History',
-        subtitle: 'Instant restore storage',
-      },
-      free: 'Free<span>with limited window/size</span>',
-      launch:
-        '$0.20 per GB-month <span>based on volume of data changes during your selected history window</span>',
-      scale:
-        '$0.20 per GB-month <span>based on volume of data changes during your selected history window</span>',
-    },
-    {
-      rows: '3',
-      feature: {
-        title: 'History window',
-        subtitle: 'For instant restore (configurable)',
-      },
-      free: 'Up to 6 hours<span>or 1 GB of data changes</span>',
-      launch: 'Up to 7 days',
-      scale: 'Up to 30 days',
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Snapshots',
-      },
-      free: '1 snapshot',
-      launch: '100 snapshots  <span>$0.09/GB-month</span>',
-      scale: '100 snapshots  <span>$0.09/GB-month</span>',
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Scheduled Backups',
-      },
-      free: false,
-      launch: 'Daily/Weekly/Monthly <span>$0.09/GB-month</span>',
-      scale: 'Daily/Weekly/Monthly <span>$0.09/GB-month</span>',
-    },
-    {
       rows: '1',
-      feature: 'Backend',
-    },
-    {
-      rows: '3',
-      feature: {
-        title: 'Managed Better Auth',
-      },
-      free: 'Up to 60k MAUs',
-      launch:
-        "Up to 1M MAUs <span>If you're planning to go beyond that, <a href='/contact-sales'>contact us</a></span>",
-      scale:
-        "Up to 1M MAUs <span>If you're planning to go beyond that, <a href='/contact-sales'>contact us</a></span>",
+      feature: 'Usage',
     },
     {
       rows: '2',
       feature: {
-        title: 'Object Storage',
-        subtitle: 'Stored volume',
+        title: 'Keyword Research',
       },
-      free: `${objectStorage.freeAllowanceGb} GB included`,
-      launch: `$${objectStorage.storageRatePerGbMonth} per GB-month`,
-      scale: `$${objectStorage.storageRatePerGbMonth} per GB-month`,
-    },
-    {
-      fluid: true,
-      feature: {
-        title: 'Functions',
-        subtitle: 'Compute and invocations',
-      },
-      free: {
-        sections: [
-          {
-            title: 'Compute',
-            details: [
-              `${functions.free.activeCapacityHours} active capacity-hours`,
-              `${functions.free.waitingCapacityHours} waiting capacity-hours`,
-            ],
-          },
-          {
-            title: 'Invocations',
-            details: [`${functions.free.invocations} invocations`],
-          },
-        ],
-      },
-      launch: {
-        sections: [
-          {
-            title: 'Compute',
-            details: [
-              `$${functions.launch.activeCapacityHourRate} per active capacity-hour`,
-              `$${functions.launch.waitingCapacityHourRate} per waiting capacity-hour`,
-            ],
-          },
-          {
-            title: 'Invocations',
-            details: [`$${functions.launch.invocationRatePerMillion} per 1M invocations`],
-          },
-        ],
-      },
-      scale: {
-        sections: [
-          {
-            title: 'Compute',
-            details: [
-              `$${functions.scale.activeCapacityHourRate} per active capacity-hour`,
-              `$${functions.scale.waitingCapacityHourRate} per waiting capacity-hour`,
-            ],
-          },
-          {
-            title: 'Invocations',
-            details: [`$${functions.scale.invocationRatePerMillion} per 1M invocations`],
-          },
-        ],
-      },
+      free: '200<span>Per month</span>',
+      launch: '500<span>Per month</span>',
+      scale: '2,000<span>Per month</span>',
     },
     {
       rows: '2',
       feature: {
-        title: 'AI Gateway',
+        title: 'Competitor Keyword Gap',
       },
-      free: false,
-      launch:
-        "<a href='/docs/ai-gateway/models#available-models'>List prices here</a><span>Prepaid credits</span>",
-      scale:
-        "<a href='/docs/ai-gateway/models#available-models'>List prices here</a><span>Prepaid credits</span>",
+      free: '25<span>Per month</span>',
+      launch: '60<span>Per month</span>',
+      scale: '250<span>Per month</span>',
     },
     {
-      rows: '1',
-      feature: 'Network',
+      rows: '2',
+      feature: {
+        title: 'Site Audit pages',
+      },
+      free: '100<span>Per crawl</span>',
+      launch: '100<span>Per crawl</span>',
+      scale: '1,000<span>Per crawl</span>',
     },
     {
       rows: '1',
       feature: {
-        title: 'IP Allow Rules',
+        title: 'Rank tracking',
       },
-      free: false,
-      launch: false,
-      scale: true,
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Private Networking',
-        subtitle: 'Private Link',
-      },
-      free: false,
-      launch: false,
-      scale: true,
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Public network transfer',
-        subtitle: 'Egress',
-      },
-      free: '5 GB per project included',
-      launch: '500 GB per project included<span>then $0.10/GB</span>',
-      scale: '500 GB per project included<span>then $0.10/GB</span>',
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Private network transfer',
-        subtitle: 'Bidirectional',
-      },
-      free: false,
-      launch: false,
-      scale: '$0.01 per GB',
+      free: 'Daily',
+      launch: 'Daily',
+      scale: 'Daily',
     },
     {
       rows: '1',
-      feature: 'Account & Management',
+      feature: 'Workspace',
     },
     {
-      rows: '2',
+      rows: '1',
       feature: {
-        title: 'Monitoring retention',
-        subtitle: 'Window for metrics, logs',
+        title: 'Brand Spaces',
       },
-      free: '1 day',
-      launch: '3 days',
-      scale: '14 days',
+      free: '5',
+      launch: '15',
+      scale: 'Unlimited*',
     },
     {
-      rows: '2',
+      rows: '1-2',
       feature: {
-        title: 'Metrics and Logs export',
-        subtitle: 'Datadog, OTel',
+        title: 'Templates & Custom Voices',
       },
-      free: false,
-      launch: false,
-      scale: 'Included',
-    },
-    {
-      rows: '2',
-      feature: {
-        title: 'Spending notifications',
-        subtitle: 'Get alerts as your spend grows',
-      },
-      free: false,
+      free: true,
       launch: true,
       scale: true,
-    },
-    {
-      rows: '1',
-      feature: {
-        title: 'HIPAA Compliance',
-      },
-      free: false,
-      launch: false,
-      scale: "<a href='/docs/security/hipaa'>Available</a>",
-    },
-    {
-      rows: '1',
-      feature: {
-        title: 'SOC 2 Report Access',
-      },
-      free: false,
-      launch: false,
-      scale: "<a href='/docs/security/compliance#soc-2'>Available</a>",
     },
     {
       rows: '1',
@@ -341,12 +133,114 @@ export default {
     },
     {
       rows: '1',
+      feature: 'Integrations',
+    },
+    {
+      rows: '1',
       feature: {
-        title: 'Support Plans',
+        title: 'WordPress publishing',
       },
-      free: 'Community (Discord)',
-      launch: 'Billing Support',
-      scale: "<a href='/docs/introduction/support'>Multiple options</a>",
+      free: true,
+      launch: true,
+      scale: true,
+    },
+    {
+      rows: '1',
+      feature: {
+        title: 'MCP access',
+      },
+      free: true,
+      launch: true,
+      scale: true,
+    },
+    {
+      rows: '1',
+      feature: {
+        title: 'API access',
+      },
+      free: false,
+      launch: true,
+      scale: true,
+    },
+    {
+      rows: '1-2',
+      feature: {
+        title: 'Advanced SERP analysis',
+      },
+      free: false,
+      launch: true,
+      scale: true,
+    },
+    {
+      rows: '1',
+      feature: {
+        title: 'White-label',
+      },
+      free: false,
+      launch: false,
+      scale: true,
+    },
+    {
+      rows: '1',
+      feature: 'Support',
+    },
+    {
+      rows: '1',
+      feature: {
+        title: 'Priority support',
+      },
+      free: false,
+      launch: true,
+      scale: true,
+    },
+    {
+      rows: '1-2',
+      feature: {
+        title: 'Personalized onboarding',
+      },
+      free: false,
+      launch: false,
+      scale: true,
+    },
+    {
+      rows: '1-2',
+      feature: {
+        title: 'Dedicated success manager',
+      },
+      free: false,
+      launch: false,
+      scale: true,
+    },
+    {
+      rows: '1',
+      feature: 'Billing',
+    },
+    {
+      rows: '1',
+      feature: {
+        title: 'Free trial',
+      },
+      free: '7 days',
+      launch: false,
+      scale: false,
+    },
+    {
+      rows: '1-2',
+      feature: {
+        title: 'Yearly billing discount',
+      },
+      free: '17%',
+      launch: '17%',
+      scale: '17%',
+    },
+    {
+      rows: '1',
+      feature: {
+        title: 'Cancel anytime',
+      },
+      free: true,
+      launch: true,
+      scale: true,
     },
   ],
 };

@@ -20,7 +20,7 @@ const {
   lakebasePageContent,
   sharedBackendPlatformContent,
 } = require('../constants/backend-platform-page-content');
-const { objectStoragePageContent } = require('../constants/object-storage-page-content');
+const { wordpressPageContent } = require('../constants/wordpress-page-content');
 
 const BASE_URL = 'https://neon.com';
 
@@ -274,12 +274,12 @@ const renderAiGatewayMarkdown = (links) => {
   return `${sections.join('\n\n')}\n`;
 };
 
-const renderObjectStorageMarkdown = (links) => {
+const renderWordpressMarkdown = (links) => {
   const { hero, storageBenefits, isolatedEnvironments, configuration, faqItems } =
-    objectStoragePageContent;
+    wordpressPageContent;
 
   const sections = [
-    renderPageHeader(objectStoragePageContent),
+    renderPageHeader(wordpressPageContent),
     '## Get started',
     renderActionLinks(hero, links),
     `## ${storageBenefits.title}`,
@@ -302,8 +302,8 @@ const renderObjectStorageMarkdown = (links) => {
       htmlToMarkdown(description),
     ]),
     renderFaq(faqItems),
-    renderSharedSections(links, objectStoragePageContent.backendServicesTitle),
-    renderFeedbackFooter(objectStoragePageContent.slug),
+    renderSharedSections(links, wordpressPageContent.backendServicesTitle),
+    renderFeedbackFooter(wordpressPageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -416,7 +416,7 @@ async function generateBackendPlatformPageMarkdown(rootDir = path.resolve(__dirn
   const pages = [
     { filename: 'functions.md', content: renderFunctionsMarkdown(links) },
     { filename: 'ai-gateway.md', content: renderAiGatewayMarkdown(links) },
-    { filename: 'object-storage.md', content: renderObjectStorageMarkdown(links) },
+    { filename: 'wordpress.md', content: renderWordpressMarkdown(links) },
     // Keep public/auth.md dedicated to the existing Claimable Neon protocol.
     { filename: 'auth-page.md', content: renderAuthMarkdown(links) },
     { filename: 'lakebase.md', content: renderLakebaseMarkdown(links) },
@@ -437,7 +437,7 @@ module.exports = {
   renderFaq,
   renderFunctionsMarkdown,
   renderAiGatewayMarkdown,
-  renderObjectStorageMarkdown,
+  renderWordpressMarkdown,
   renderAuthMarkdown,
   renderLakebaseMarkdown,
   generateBackendPlatformPageMarkdown,

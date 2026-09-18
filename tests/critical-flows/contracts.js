@@ -1,8 +1,8 @@
 const DESTINATIONS = {
-  billing: 'https://console.neon.tech/app/billing#plans',
+  billing: 'https://app.ranksmile.pl/billing',
   docs: '/docs/introduction',
-  login: 'https://console.neon.tech/login',
-  signup: 'https://console.neon.tech/signup',
+  login: 'https://app.ranksmile.pl/auth/sign-in',
+  signup: 'https://app.ranksmile.pl/auth/sign-up',
   startupsApply: 'https://sites.google.com/databricks.com/startup-program-apply',
 };
 
@@ -80,7 +80,7 @@ const PRICING_LINK_CONTRACTS = [
   {
     id: 'TC-ACQ-006',
     key: 'pricing-free',
-    name: 'Free plan signup',
+    name: 'Growth plan trial signup',
     priority: 'P0',
     mode: 'navigate',
     policy: 'monitor',
@@ -90,7 +90,7 @@ const PRICING_LINK_CONTRACTS = [
   {
     id: 'TC-ACQ-007',
     key: 'pricing-launch',
-    name: 'Launch plan billing',
+    name: 'Scale plan billing',
     priority: 'P0',
     mode: 'navigate',
     policy: 'monitor',
@@ -100,7 +100,7 @@ const PRICING_LINK_CONTRACTS = [
   {
     id: 'TC-ACQ-008',
     key: 'pricing-scale',
-    name: 'Scale plan billing',
+    name: 'Agency plan billing',
     priority: 'P0',
     mode: 'navigate',
     policy: 'monitor',

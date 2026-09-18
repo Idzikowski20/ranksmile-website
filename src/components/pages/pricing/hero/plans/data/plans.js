@@ -1,176 +1,158 @@
-import BACKEND_PRICING from 'constants/backend-pricing';
 import LINKS from 'constants/links';
 
-const { objectStorage, functions } = BACKEND_PRICING;
-
+// Plans, prices and limits mirror the billing source of truth in the Ranksmile app
+// (src/core/domain/pricing/planDefinition.ts). `planId` values are kept as-is so the
+// critical-flow contracts in tests/critical-flows keep resolving their test ids.
 export default [
   {
     planId: 'free',
-    type: 'Free',
-    title: '$0',
-    subtitle: 'Build and learn free with no time limits and no credit card required.',
-    price: 0,
+    type: 'Growth',
+    price: { monthly: 59, yearly: 49 },
+    subtitle: {
+      monthly: 'Per month, billed monthly. Starts with a 7-day free trial.',
+      yearly: 'Per month, billed yearly (€588/year). Starts with a 7-day free trial.',
+    },
+    highlighted: true,
     features: {
       database: {
-        title: 'Lakebase Postgres',
+        title: 'Tracking',
         features: [
           {
-            title: '100 projects',
-            info: '<p>A project is a top-level container<br/> for your database environment.</p>',
-            moreLink: { text: 'Read more', href: '#what-is-a-project' },
+            title: '50 AI prompts per day',
+            info: '<p>Every prompt is sent to each tracked engine<br/> and the answer is stored.</p>',
+            moreLink: { text: 'Read more', href: '#how-ai-visibility-works' },
           },
           {
-            title: '100 CU-hrs monthly per project',
-            info: '<p>CU-hour = CU x active hours</p><p>1 CU ≈ 4 GB RAM</p>',
-            moreLink: { text: 'Read more', href: '#compute-usage' },
+            title: '4 AI visibility engines',
+            info: '<p>Pick four of AI Overviews, AI Mode,<br/> ChatGPT, Perplexity and Gemini.</p>',
           },
           {
-            title: '0.5 GB of storage per project',
+            title: 'Daily rank tracking',
+            info: '<p>Desktop and mobile, per country.</p>',
           },
           {
-            title: 'Sizes up to 2 CU (8 GB RAM)',
+            title: '200 keyword researches per month',
           },
           {
-            title: 'Unlimited team members',
+            title: '25 competitor keyword gaps per month',
           },
         ],
       },
       other: {
-        title: 'Backend',
+        title: 'Workspace',
         features: [
-          { title: 'Managed Better Auth', info: 'Up to 60k MAUs' },
-          {
-            title: `${objectStorage.freeAllowanceGb} GB of Object Storage`,
-            info: '<p>5 GB per project included</p>',
-          },
-          {
-            title: 'Functions',
-            info: `<p>${functions.free.activeCapacityHours} active capacity-hours per month</p><p>${functions.free.waitingCapacityHours} waiting capacity-hours per month</p><p>${functions.free.invocations} invocations per month</p>`,
-          },
+          { title: '30 documents', info: 'Pages you create and optimize in the editor' },
+          { title: '5 Brand Spaces', info: 'One per brand, product or client' },
+          { title: 'Content Score & AI writing' },
+          { title: 'Site Audit', info: '<p>100 pages per crawl</p>' },
+          { title: 'WordPress publishing' },
         ],
       },
     },
     button: {
       url: LINKS.signup,
-      text: 'Try Neon',
-      event: 'Hero Free Tier Panel',
+      text: 'Start 7-day trial',
+      event: 'Hero Growth Panel',
     },
   },
   {
     planId: 'launch',
-    type: 'Launch',
-    title: 'Usage-based',
-    highlighted: true,
-    hasDynamicPricing: true,
-    computeRate: 0.106,
-    storageRate: 0.35,
+    type: 'Scale',
+    price: { monthly: 119, yearly: 99 },
+    subtitle: {
+      monthly: 'Per month, billed monthly. For teams running several brands.',
+      yearly: 'Per month, billed yearly (€1,188/year). For teams running several brands.',
+    },
     features: {
       database: {
-        title: 'Lakebase Postgres',
+        title: 'Tracking',
         features: [
           {
-            title: '100 projects',
-            info: '<p>A project is a top-level container<br/> for your database environment.</p>',
-            moreLink: { text: 'Read more', href: '#what-is-a-project' },
+            title: '100 AI prompts per day',
+            info: '<p>Every prompt is sent to each tracked engine<br/> and the answer is stored.</p>',
+            moreLink: { text: 'Read more', href: '#how-ai-visibility-works' },
           },
           {
-            title: '$0.106 per CU-hr',
-            info: '<p>CU-hour = CU x active hours</p><p>1 CU ≈ 4 GB RAM</p>',
-            moreLink: { text: 'Read more', href: '#compute-usage' },
+            title: 'All 5 AI visibility engines',
+            info: '<p>AI Overviews, AI Mode, ChatGPT,<br/> Perplexity and Gemini.</p>',
           },
           {
-            title: '$0.35 per GB-month',
+            title: 'Advanced SERP analysis',
           },
-          { title: 'Sizes up to 16 CU (64 GB RAM)' },
-          { title: '3-day metrics/logs in UI' },
+          {
+            title: '500 keyword researches per month',
+          },
+          {
+            title: '60 competitor keyword gaps per month',
+          },
         ],
       },
       other: {
-        title: 'Backend',
+        title: 'Workspace',
         features: [
-          { title: 'Managed Better Auth', info: 'Up to 1M MAUs' },
-          {
-            title: 'Object Storage',
-            info: `<p>$${objectStorage.storageRatePerGbMonth} per GB-month</p>`,
-          },
-          {
-            title: 'Functions',
-            info: `<p>$${functions.launch.activeCapacityHourRate} per active capacity-hour</p><p>$${functions.launch.waitingCapacityHourRate} per waiting capacity-hour</p><p>$${functions.launch.invocationRatePerMillion} per million invocations</p>`,
-          },
-          {
-            title: 'AI Gateway',
-            info: 'Pricing matches model provider list prices (no markup). Billed as prepaid credits.',
-            moreLink: {
-              text: 'Full list here',
-              href: '/docs/ai-gateway/models#available-models',
-            },
-          },
+          { title: '100 documents' },
+          { title: '15 Brand Spaces' },
+          { title: 'API access', info: 'For reporting and automation' },
+          { title: 'Priority support' },
+          { title: 'Everything in Growth' },
         ],
       },
     },
     button: {
-      url: `${LINKS.console}/app/billing#plans`,
+      url: LINKS.appBilling,
       text: 'Get started',
       theme: 'primary',
-      event: 'Hero Launch Panel',
+      event: 'Hero Scale Panel',
     },
   },
   {
     planId: 'scale',
-    type: 'Scale',
-    title: 'Usage-based',
-    hasDynamicPricing: true,
-    computeRate: 0.222,
-    storageRate: 0.35,
+    type: 'Agency',
+    price: { monthly: 249, yearly: 207 },
+    subtitle: {
+      monthly: 'Per month, billed monthly. For a full client roster.',
+      yearly: 'Per month, billed yearly (€2,484/year). For a full client roster.',
+    },
     features: {
       database: {
-        title: 'Lakebase Postgres',
+        title: 'Tracking',
         features: [
           {
-            title: '1,000+ projects',
-            info: '<p>A project is a top-level container<br/> for your database environment.</p>',
-            moreLink: { text: 'Read more', href: '#what-is-a-project' },
+            title: '250 AI prompts per day',
+            info: '<p>Every prompt is sent to each tracked engine<br/> and the answer is stored.</p>',
+            moreLink: { text: 'Read more', href: '#how-ai-visibility-works' },
           },
           {
-            title: '$0.222 per CU-hr',
-            info: '<p>CU-hour = CU x active hours</p><p>1 CU ≈ 4 GB RAM</p>',
-            moreLink: { text: 'Read more', href: '#compute-usage' },
+            title: 'All 5 AI visibility engines',
+            info: '<p>AI Overviews, AI Mode, ChatGPT,<br/> Perplexity and Gemini.</p>',
           },
           {
-            title: '$0.35 per GB-month',
+            title: '2,000 keyword researches per month',
           },
-          { title: 'Sizes up to 56 CU (224 GB RAM)' },
-          { title: 'SLAs, HIPAA, private network' },
+          {
+            title: '250 competitor keyword gaps per month',
+          },
+          {
+            title: 'Site Audit up to 1,000 pages',
+          },
         ],
       },
       other: {
-        title: 'Backend',
+        title: 'Workspace',
         features: [
-          { title: 'Managed Better Auth', info: 'Up to 1M MAUs' },
-          {
-            title: 'Object Storage',
-            info: `<p>$${objectStorage.storageRatePerGbMonth} per GB-month</p>`,
-          },
-          {
-            title: 'Functions',
-            info: `<p>$${functions.scale.activeCapacityHourRate} per active capacity-hour</p><p>$${functions.scale.waitingCapacityHourRate} per waiting capacity-hour</p><p>$${functions.scale.invocationRatePerMillion} per million invocations</p>`,
-          },
-          {
-            title: 'AI Gateway',
-            info: 'Pricing matches model provider list prices (no markup). Billed as prepaid credits.',
-            moreLink: {
-              text: 'Full list here',
-              href: '/docs/ai-gateway/models#available-models',
-            },
-          },
+          { title: 'Unlimited documents', info: 'Fair-use limits apply' },
+          { title: 'Unlimited Brand Spaces', info: 'Fair-use limits apply' },
+          { title: 'White-label & full API' },
+          { title: 'Personalized onboarding' },
+          { title: 'Dedicated success manager' },
         ],
       },
     },
     button: {
-      url: `${LINKS.console}/app/billing#plans`,
+      url: LINKS.appBilling,
       text: 'Get started',
       theme: 'primary',
-      event: 'Hero Scale Panel',
+      event: 'Hero Agency Panel',
     },
   },
 ];

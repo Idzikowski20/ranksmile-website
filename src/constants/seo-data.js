@@ -4,9 +4,9 @@ export const DEFAULT_IMAGE_PATH = '/images/social-previews/index.jpg?updated=202
 
 export default {
   index: {
-    title: 'Neon — Postgres backends for apps and agents',
+    title: 'Ranksmile — rank in Google, get named by the AI engines',
     description:
-      'The backend for apps and agents. Build with Lakebase Postgres, Auth, Functions, Storage, and an AI Gateway: instant, branchable, serverless.',
+      'Ranksmile records whether AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini name your brand, scores every page as you write it, and tracks your rankings daily.',
     pathname: '',
   },
   about: {
@@ -91,12 +91,12 @@ export default {
     pathname: LINKS.authPage,
     markdownPath: '/md/auth-page.md',
   },
-  objectStorage: {
-    title: 'Neon Object Storage — S3-compatible storage that branches',
+  wordpress: {
+    title: 'Ranksmile for WordPress — publish drafts straight to your site',
     description:
-      'S3-compatible object storage built into the Neon backend. Branch files alongside Postgres, use your existing S3 tools, and authenticate with a Neon credential.',
-    pathname: LINKS.objectStorage,
-    markdownPath: `${LINKS.objectStorage}.md`,
+      'Install the Ranksmile plugin and send finished drafts to WordPress as Gutenberg blocks, with images sideloaded, your own categories and authors, and re-publishes that update the same post.',
+    pathname: LINKS.wordpress,
+    markdownPath: `${LINKS.wordpress}.md`,
   },
   contactSales: {
     title: 'Contact Sales — Neon',
@@ -132,9 +132,9 @@ export default {
     robotsNoindex: 'noindex',
   },
   pricing: {
-    title: 'Pricing — Neon',
+    title: 'Pricing — Ranksmile',
     description:
-      'Neon brings serverless architecture to Postgres, which allows us to offer you flexible usage and volume-based plans.',
+      'Growth, Scale and Agency: flat monthly plans for AI visibility tracking, live Content Score and daily rank tracking. 7-day free trial, cancel anytime.',
     imagePath: '/images/social-previews/pricing.jpg',
     pathname: LINKS.pricing,
   },

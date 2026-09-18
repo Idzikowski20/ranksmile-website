@@ -14,9 +14,9 @@ const MenuBanner = ({ linkProps: { className, ...linkProps } = {} }) => (
       'group relative flex h-[340px] w-[320px] items-end! overflow-hidden border border-gray-new-10 bg-black-pure p-6 lg:w-auto md:h-[240px] md:w-[320px]',
       className
     )}
-    to={links.whyNeon}
+    to={links.signup}
     tagName="Menu Banner"
-    tagText="What is Neon"
+    tagText="Try Ranksmile"
     {...linkProps}
   >
     <Image
@@ -36,11 +36,11 @@ const MenuBanner = ({ linkProps: { className, ...linkProps } = {} }) => (
 
     <div className="flex flex-col gap-y-2">
       <p className="flex items-baseline gap-x-2.5 text-2xl leading-none font-medium tracking-tighter whitespace-nowrap text-white lg:text-lg md:text-base">
-        What is Neon
+        Try Ranksmile
         <ArrowTopRightIcon className="-translate-x-2 scale-75 text-white opacity-0 transition-[translate,opacity] duration-200 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100" />
       </p>
       <p className="text-[15px] leading-tight tracking-extra-tight text-gray-new-60 lg:text-[13px]">
-        Built around Lakebase Postgres, by Databricks
+        Five AI engines and your daily rankings, free for 7 days
       </p>
     </div>
   </Link>

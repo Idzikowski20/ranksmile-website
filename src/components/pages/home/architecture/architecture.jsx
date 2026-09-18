@@ -23,9 +23,8 @@ const Architecture = () => (
   >
     <Container className="xl:px-16 md:px-5!" size="1600">
       <h2 className="max-w-320 indent-24 text-[3.5rem] leading-dense font-normal tracking-tighter text-black-pure 2xl:text-[3.25rem] xl:max-w-240 xl:indent-16 xl:text-[2.75rem] lg:max-w-180 lg:text-[2.25rem] md:max-w-full md:indent-0 md:text-[2rem] sm:text-[1.75rem]">
-        The way we build software is changing, but the fundamentals remain the same:{' '}
-        <Highlight>powerful databases,</Highlight> <Highlight>reliable infrastructure,</Highlight>{' '}
-        and <Highlight>seamless scalability.</Highlight>
+        The way people search is changing, but the job is the same: <Highlight>be found,</Highlight>{' '}
+        <Highlight>be cited,</Highlight> and <Highlight>be the one they trust.</Highlight>
       </h2>
 
       <div className="mt-16 border-t border-gray-new-50 pt-26.5 xl:mt-12 xl:pt-16 lg:mt-10 lg:pt-12 md:mt-8 md:pt-1.25">
@@ -45,9 +44,9 @@ const Architecture = () => (
             />
 
             <p className="mt-9 max-w-248 text-4xl leading-dense tracking-tighter text-gray-new-40 2xl:max-w-4/5 2xl:text-[2.25rem] xl:text-[2rem] lg:text-[1.75rem] md:mt-8 md:max-w-none md:text-[1.375rem] sm:text-xl">
-              The <span className="text-black-new">lakebase architecture</span> decouples storage
-              and compute to deliver instant operations and scale without compromise on performance
-              or reliability.
+              Every <span className="text-black-new">scan</span> sends your prompts to all five
+              engines and stores what came back: the answer, the brands it named and the sources it
+              cited.
             </p>
           </div>
         </div>

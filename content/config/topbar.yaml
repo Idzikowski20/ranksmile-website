@@ -1,4 +1,4 @@
-text: 'The Neon backend is GA: a complete set of primitives so agents can build'
+text: 'Your competitors are already in the AI answers. Try Ranksmile free for 7 days'
 link:
-  url: 'https://neon.com/blog/neon-backend-is-ga'
-  target: '_blank'
+  url: '/pricing'
+  target: '_self'

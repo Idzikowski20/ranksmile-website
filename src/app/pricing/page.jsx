@@ -31,217 +31,107 @@ const logos = [
 
 const faqItems = [
   {
-    question: 'Does Neon offer a backend now?',
-    id: 'does-neon-offer-a-backend',
+    question: 'What do I get in the free trial?',
+    id: 'free-trial',
     initialState: 'open',
     answer: `
-      <p>Yes. Alongside our serverless Postgres database, Neon now offers Managed Better Auth, Object Storage, Functions, and AI Gateway - a full backend suite that runs alongside your database and branches with it.</p>
+      <p>Growth comes with a 7-day free trial: the full plan, not a cut-down version. You can add a site, pick your prompts, run the first scan, write in the editor and publish to WordPress. Cancel any time from billing settings before the trial ends and you are not charged.</p>
     `,
   },
   {
-    question: 'What is a Neon project?',
-    id: 'what-is-a-project',
+    question: 'How is AI visibility measured?',
+    id: 'how-ai-visibility-works',
     answer: `
-      <p>A project in Neon is the top-level container for your environment. Each project includes all branches, with your Postgres databases and (if you deploy them) your Object Storage buckets, Functions, Managed Better Auth endpoints, and AI Gateway access.</p>
-    `,
-  },
-  {
-    question: 'What is a CU?',
-    answer: `
-      <p>A CU (short for Compute Unit) is Neon's way of representing <strong>Postgres database compute size</strong>. Neon databases <a href="${LINKS.autoscaling}">autoscale</a>, and CUs define how much CPU and memory your database is using at any moment - with each CU allocating approximately 1 vCPU and 4 GB of RAM.</p>
-    `,
-  },
-  {
-    question: 'What is a CU-hour?',
-    id: 'compute-usage',
-    answer: `
-      <p>A CU-hour is Neon's unit for measuring <strong>Postgres database compute usage</strong>. Because Neon databases scale to zero and autoscale, you're billed only for the database compute resources you actually use. In other words, your monthly database compute usage depends on:</p>
+      <p>You pick the prompts your buyers actually ask. Ranksmile sends each one to every engine on your plan, stores the answer text together with the web citations it came back with, and works out which brands and URLs were named.</p>
+      <p>Your <strong>Visibility Score</strong> is the share of tracked prompts where your brand is named, reported per engine. Alongside it you get:</p>
       <ul>
-        <li>How many compute endpoints are you running</li>
-        <li>How large your compute endpoints are (in CUs)</li>
-        <li>How long they run (in hours)</li>
+        <li><strong>Sources</strong> — the URLs each answer cited, and which brands each source mentions</li>
+        <li><strong>Competitors</strong> — the brands named beside you, or instead of you, prompt by prompt</li>
+        <li><strong>Fanout queries</strong> — the follow-up questions an engine expanded your prompt into before answering</li>
       </ul>
-      <p>For a single compute, the calculation works similar to this:</p>
-      <code>Monthly CU-hours = [average CU size] × [number of hours the compute runs in the month]</code>
-      <code>Monthly compute cost = [monthly CU-hours] × [CU-hour price]</code>
-      <p>The CU-hour price depends on your pricing plan:</p>
+      <p>Because the raw answer is stored, every number traces back to the sentence it came from.</p>
+    `,
+  },
+  {
+    question: 'Which AI engines are tracked?',
+    id: 'tracked-engines',
+    answer: `
+      <p>Five: Google AI Overviews, Google AI Mode, ChatGPT, Perplexity and Gemini — plus classic Google rankings, which are tracked separately as keyword positions.</p>
+      <p>Growth tracks four of the five engines. Scale and Agency track all five.</p>
+    `,
+  },
+  {
+    question: 'How often is everything re-checked?',
+    id: 'refresh-cadence',
+    answer: `
+      <p>Keywords and AI prompts run on different clocks.</p>
       <ul>
-        <li>Launch plan: $0.106 per CU-hour</li>
-        <li>Scale plan: $0.222 per CU-hour</li>
+        <li><strong>Keyword positions</strong> are checked once a day, desktop and mobile, per country.</li>
+        <li><strong>AI prompts</strong> are re-scanned by the priority you give them: core daily, supporting weekly, long-tail every two weeks.</li>
       </ul>
-      <p>Remember that when your database is idle, compute can scale down to zero, so you don't consume CU-hours while it's not running. <a href="${LINKS.billing}">Learn more about Neon's billing.</a></p>
+      <p>The scheduler looks for due scans every six hours. You can also refresh a scan by hand, subject to a short cooldown on the same tiers.</p>
     `,
   },
   {
-    question: 'What does 100 CU-hours per project give me on the Free plan?',
+    question: 'What counts as a document?',
+    id: 'what-is-a-document',
     answer: `
-      <p>On the Free plan, each project gets 100 CU-hours of <strong>database compute</strong> per month, and compute automatically scales down to zero when idle. What this means in practice:</p>
-      <ul>
-        <li>You can create up to 100 projects, each with its own independent 100 CU-hour allowance</li>
-        <li>CU-hours are only consumed while a database is actively running queries. When a project is idle, compute scales to zero and uses no CU-hours</li>
-        <li>Usage is typically spread across short bursts of activity, not continuous runtime</li>
-      </ul>
-      <p>A realistic example for a single project:</p>
-      <ul>
-        <li>The database runs at an average of 1 CU for ~3 hours per day. It scales down to zero the rest of the time</li>
-        <li>Over a month, this uses roughly 90 CU-hours, staying within the Free plan limits for that project</li>
-      </ul>
-      <p>This model is designed to make it practical to have many small or intermittent databases (for development, demos, previews, or experiments) without being forced into an upgrade. <a href="${LINKS.blog}/why-so-many-projects-in-the-neon-free-plan">Learn more about our Free Plan philosophy.</a></p>
+      <p>A document is one page you create or optimize in the editor, with its own Content Score, brief and revision history. Growth includes 30, Scale 100, and Agency is uncapped under fair use.</p>
+      <p>Auditing a published page does not consume a document — only pages you open in the editor do.</p>
     `,
   },
   {
-    question:
-      'Is Object Storage, Functions, or AI Gateway usage included in my Free plan CU-hours?',
-    id: 'backend-free-plan-cu-hours',
+    question: 'What is a Brand Space?',
+    id: 'what-is-a-brand-space',
     answer: `
-      <p>No. CU-hours measure Postgres database compute only. Object Storage, Functions, and AI Gateway have their own allowances and rates, shown in the plan table.</p>
+      <p>A Brand Space is one brand, product or client: its own site, prompts, competitors, keywords and reports, kept separate from the others in your workspace.</p>
+      <p>Agencies usually run one per client. Growth includes 5, Scale 15, and Agency is uncapped under fair use.</p>
     `,
   },
   {
-    question: 'How are the workload cost estimates calculated?',
-    id: 'workload-cost-estimates',
+    question: 'What counts as a keyword research?',
+    id: 'what-counts-as-research',
     answer: `
-      <p><strong>The typical monthly cost estimates shown in our pricing plans are based on representative database workloads that reflect common usage patterns across different application types. These estimates cover Postgres compute and storage only - they don't factor in Object Storage, Functions, or AI Gateway usage, which are billed separately.</strong></p>
-      <p>Each estimate combines two components:</p>
-      <ul>
-        <li><strong>Database compute cost:</strong> Based on the specified CU-hours per month. </li>
-        <li><strong>Database storage cost:</strong> Based on the specified amount of database storage in GB. </li>
-      </ul>
-      <p>These estimates help you compare typical workloads across plans.</p>
-      <p>Here's a detailed breakdown of each of the workload sizes and what they represent:</p>
-      <h3 class="mt-6 text-lg text-white font-semibold">Intermittent Load:</h3>
-      <p>
-        140 CU-hours compute, 1 GB-month of storage. Typical of a small database that doesn't need to run 24/7.
-        <img class="my-4" src="/images/pricing/140-CU-Hours.webp" />
-        A databse using 140 CU-hours compute per month can scale to zero when idle, and start back up in 350ms when it's needed. When it's running it is set to a minimum size of 0.25 CU but can scale up to 2CU when needed.</p>
-      <h3 class="mt-6 text-lg text-white font-semibold">Low Load:</h3>
-      <p>
-        190 CU-hours compute, 5 GB-month of storage. A small database that <em>does</em> need to run 24/7.
-        <img class="my-4" src="/images/pricing/190-CU-Hours.webp" />
-        Once scale to zero is disabled, the minimum CU-hours a database can use in a month is 187.5 <em>(750 hours in a month x 0.25 minimum CU size = 187.5)</em> so this example represents a database that has scale to zero disable but only occasionally needs to scale above the 0.25 minimum size. Good for small production applications and databases that need to be always-on for features like real-time sync.
-      </p>
-      <h3 class="mt-6 text-lg text-white font-semibold">Medium Load:</h3>
-      <p>
-        720 CU-hours compute, 10 GB-month of storage. Representative of a constant-load application database.
-        <img class="my-4" src="/images/pricing/720-CU-Hours.webp" />
-        As you can see from the autoscaling chart above, 720 CU hours translates to a database that scales between 0.5 and 4 CU based on load. 
-      </p>
-      <h3 class="mt-6 text-lg text-white font-semibold">High Load:</h3>
-      <p>
-        3,000 CU-hours compute, 100 GB-month of storage.
-        <img class="my-4" src="/images/pricing/3000-CU-Hours.webp" />
-        As an example, a database that is scaling between 3 CU and 7 CU will often use around 3000 CU hours in a month. This level represents production applications with sustained traffic, higher data volumes, and more complex queries requiring consistent compute resources.
-      </p>
-      <h3 class="mt-6 text-lg text-white font-semibold">XL Load:</h3>
-      <p>
-        6,000 CU-hours compute, 1,000 GB-month of storage.
-        <img class="my-4" src="/images/pricing/6000-CU-Hours.webp" />
-        A database scaling between 6 and 14 CU can use in the range of 6,000 CU hours in a month. This is representative of large-scale production workloads with high traffic volumes, extensive datasets, and applications requiring significant compute capacity and storage.
-      </p>
-      
-      <p>Your actual costs will vary based on:</p>
-      <ul>
-        <li>How much your database autoscales based on actual query load</li>
-        <li>How long your computes run before scaling to zero</li>
-        <li>Your actual data size and number of branches</li>
-        <li>Your configured history window for instant restore (affects History storage costs)</li>
-      </ul>
-      <p>Remember that Neon bills based on actual usage, not estimates. Use these workload examples as reference points, then monitor your usage in the <a href="${LINKS.console}">Neon Console</a> to understand your real costs. <a href="${LINKS.billing}">Learn more about how Neon billing works.</a></p>
+      <p>One research run is one seed keyword expanded into its related queries, with volumes and difficulty. Competitor Keyword Gap is metered separately: one run compares your site against one competitor domain.</p>
+      <p>Both reset monthly, and unused runs do not roll over.</p>
     `,
   },
   {
-    question: 'How are Object Storage, Functions, and AI Gateway billed?',
-    id: 'backend-billing',
+    question: 'Monthly or yearly — what changes?',
+    id: 'billing-period',
     answer: `
-      <p>Each is billed separately from Postgres compute (CU-hours).</p>
-      <p><strong>Object Storage</strong> is $0.023 per GB-month of stored volume. There's no per-operation charge. Egress counts toward your public network transfer allowance. The Free plan includes 5 GB of Object Storage per project.</p>
-      <p><strong>Functions</strong> are billed for active compute, waiting compute, and invocations at the rates in the plan table. The Free plan includes 10 active capacity-hours, 400 waiting capacity-hours, and 1 million invocations per month.</p>
-      <p><strong>AI Gateway</strong> is available on Launch and Scale. Pricing matches the model provider's list prices, with no markup, and draws down prepaid credits. <a href="/docs/ai-gateway/prepaid-credits">Learn how prepaid credits work</a>, or see <a href="/docs/ai-gateway/models#available-models">per-model rates</a>.</p>
+      <p>Only the price. Yearly billing takes 17% off every plan (Growth €49/mo, Scale €99/mo, Agency €207/mo, billed once for the year) and the limits are identical either way.</p>
+      <p>All prices are in EUR and exclude VAT.</p>
     `,
   },
   {
-    question: 'What does "no monthly minimum" mean on paid plans?',
+    question: 'Can I change plan or cancel later?',
+    id: 'change-or-cancel',
     answer: `
-      <p>Neon's paid plans don't require a minimum monthly spend or base fee. You're billed purely based on usage. If one month you barely use Neon, your bill might be just a few dollars.</p>
-      <p>For example, if your databases are mostly idle that month, or you only run them briefly for development or testing, you'll only pay for the compute and storage actually consumed during that time. Remember that Neon databases scale to zero by default.</p>
+      <p>Yes, from billing settings, at any time. Upgrades take effect immediately and are prorated. Downgrades take effect at the end of the current period, so you keep the higher limits until then.</p>
+      <p>There is no contract and no cancellation fee.</p>
     `,
   },
   {
-    question: 'Are the Free Plan quotas for database usage included in the paid plans?',
+    question: 'Does Ranksmile work with WordPress?',
+    id: 'wordpress',
     answer: `
-      <p>No. When you're on a paid plan, database usage starts metering from zero for both compute and storage. Free plan quotas don't apply once you upgrade. Instead, you're billed purely based on actual usage, at the rates of your paid plan.</p>
-      <p>You should consider a paid plan if:</p>
-      <ul>
-        <li>You expect higher or more sustained usage than what's included per project on the Free plan</li>
-        <li>You care about production guarantees, such as consistent availability, predictable performance, and never having your database paused due to usage limits</li>
-      </ul>
-      <p>If your usage fits comfortably within the Free plan and you're not running a production workload, there's no reason to upgrade. The Free plan is designed to be genuinely useful for development and prototyping. <a href="${LINKS.blog}/why-so-many-projects-in-the-neon-free-plan">Learn more about our Free Plan philosophy.</a></p>
+      <p>Yes, on every plan. The Ranksmile WordPress plugin publishes a finished draft straight to your site and keeps headings, links and images intact — no copy-paste and no lost formatting.</p>
     `,
   },
   {
-    question: 'How is Postgres database storage billed in Neon?',
-    id: 'branches-and-storage',
+    question: 'What does white-label on Agency include?',
+    id: 'white-label',
     answer: `
-      <p>In Neon, you don't provision or manage database storage in advance. It scales automatically and invisibly as your data grows. At the end of each month, you're billed for the database storage actually consumed per project, measured in GB-months.</p>
-      <p>Neon bills storage usage using two separate metrics:</p>
-      <p><strong>History storage (or instant restore storage)</strong></p>
-      <p><strong>Instant restore</strong> relies on Neon retaining a history of database changes so you can restore a branch to a previous point in time, create branches from past states, run Time Travel queries, and more. How long that history is kept is controlled by the <strong>history window</strong> on <strong>Settings → Instant restore</strong>—see <a href="${LINKS.docs}/introduction/history-window">History window</a> (1 day by default on paid plans).</p>
-      <p><strong>History</strong> storage is billed based on the amount of Write-Ahead Log (WAL) retained within that history window, at $0.20 per GB-month on paid plans. This is billed separately from your regular database storage.</p>
-      <p>If you don't need deep recovery or long Time Travel, shorten the history window to reduce costs.</p>
-      <p><strong>Database storage (root and child branches)</strong></p>
-      <p>This is the storage used by your database data itself. Since Neon databases can branch, this is how branches contribute to database storage:</p>
-      <ul>
-        <li>Root branches are billed based on their actual data size (for example, 5 GB)</li>
-        <li>Child branches <em>might</em> be billed based on the minimum of: the accumulated data changes since the branch was created, or the underlying storage footprint, which is zero if the branch is still within the history window used for instant restore (in this case, the child branch effectively shares storage with its parent).</li>
-      </ul>
-      <p>The SUM of both components will be billed as your database storage at $0.35 per GB-month.</p>
-      <p>What this implies:</p>
-      <ul>
-        <li>A child branch that has no data changes compared to its parent and is still within the <a href="${LINKS.docs}/introduction/history-window">history window</a> does not incur additional database storage costs.</li>
-        <li>As a child branch accumulates changes over time, its storage usage increases.</li>
-        <li>If a child branch falls out of the history window, it becomes as expensive as a root branch, since it no longer shares storage with its parent.</li>
-      </ul>
-      <p>To keep database storage costs low, child branches are best kept short-lived - for example, by setting <a href="${LINKS.docs}/guides/branch-expiration">expiration times</a>, <a href="${LINKS.docs}/guides/reset-from-parent">resetting them</a> frequently, or deleting branches when they're no longer needed.</p>
+      <p>Agency adds white-label reporting, so what you hand a client carries your branding rather than ours, plus full API access for pulling the same data into your own dashboards.</p>
+      <p>It also comes with personalized onboarding and a dedicated success manager.</p>
     `,
   },
   {
-    question: 'How are extra branches billed?',
-    id: 'additional-branches-billing',
+    question: 'I need higher limits than Agency. What now?',
+    id: 'custom-limits',
     answer: `
-      <p>Each Neon plan includes a set number of branches per project at no additional cost (10 branches per project in Launch, 25 branches per project in Scale) but you can create and delete branches freely within your plan's included allowance:</p>
-      <ul>
-        <li>If the total number of concurrent branches in a project exceeds your plan's allowance, the extra branches are billed as branch-months, prorated hourly.</li>
-        <li>The price is $1.50 per extra branch-month (≈ $0.002 per hour)</li>
-        <li>You're only billed for branches that exceed your included limit, and only for the time they exist.</li>
-      </ul>
-      <p>Example: The Launch plan includes 10 branches per project. If you already have 10 branches but create 2 additional branches and keep them for 5 hours each, that'd be 10 extra branch-hours total: 10 × $0.002/hour = $0.02</p>
-      <p><strong>How to avoid extra branch charges</strong></p>
-      <ul>
-        <li><a href="${LINKS.docs}/guides/branch-expiration">Use branch expiration.</a> Set automatic deletion times on temporary branches so they're cleaned up when no longer needed.</li>
-        <li>Automate cleanup. Use the <a href="${LINKS.docs}/manage/branches#branching-with-the-neon-api">Neon API</a> or <a href="${LINKS.docs}/guides/branching-neon-cli">Neon CLI</a> to periodically delete unused branches and stay within your included allowance.</li>
-      </ul>
-    `,
-  },
-  {
-    question: 'How is Managed Better Auth billed?',
-    answer: `
-      <p>Neon Managed Better Auth is included at no additional cost for all Neon databases until you reach 1 million monthly active users (MAU). If you surpass that threshold, a member of our team will reach out to discuss pricing.</p>
-      <p>On the Free plan, Managed Better Auth is included for up to 60,000 MAU.</p>
-    `,
-  },
-  {
-    question: 'How can I control my Postgres database costs (compute and storage consumption)?',
-    answer: `
-      <p>Database compute is often the most variable part of a monthly bill. For Neon databases, the most effective way to control compute costs is to configure maximum autoscaling limits and scale-to-zero.</p>
-      <p>Autoscaling limits act as a built-in cost ceiling: your database will never scale beyond the limit you set, even during traffic spikes. If you want to prioritize performance over costs in a particular compute endpoint (e.g. production), choose a higher limit. If you want to optimize for cost predictability, set a lower one. <a href="${LINKS.docs}/guides/autoscaling-guide#configure-autoscaling-defaults-for-your-project">Learn how to configure autoscaling limits.</a></p>
-      <p>Another effective way to control database compute costs is to ensure scale to zero is enabled for all non-production branches. When a branch is idle, compute scales down automatically, so you're not charged for unused databases. <a href="${LINKS.docs}/introduction/scale-to-zero">Learn about scale to zero.</a></p>
-      <p>To manage database storage costs, regularly clean up unused branches, snapshots, and projects, and avoid retaining a large history window for instant restore if your use case does not require it. <a href="${LINKS.docs}/introduction/cost-optimization#storage-root-and-child-branches">Learn more about optimizing storage usage.</a></p>
-    `,
-  },
-  {
-    question: 'Do you offer credit programs for startups?',
-    answer: `
-      <p>Early startups that have received venture funding are eligible to apply to our Startup Program. <a href="${LINKS.startups}">Learn more and apply here.</a></p>
+      <p>Write to <a href="mailto:kontakt@ranksmile.pl">kontakt@ranksmile.pl</a> with the volume you need — prompts a day, brands, crawl size — and we will quote it.</p>
     `,
   },
 ];
@@ -254,11 +144,12 @@ const PricingPage = () => (
     <Features />
     <Faq items={faqItems} />
     <CTANew
-      label="ASK AI"
-      title="Still have questions? Ask our AI. <br class='xs:hidden' />"
-      description="It knows Neon inside and out."
-      buttonText="Get Answers"
-      buttonType="aiHelper"
+      label="7-DAY FREE TRIAL"
+      title="See who the engines name <br class='xs:hidden' /> before you decide."
+      description="Add a site, pick your prompts, and read the first scan."
+      buttonText="Start your free trial"
+      buttonUrl={LINKS.signup}
+      isExternal
     />
   </Layout>
 );

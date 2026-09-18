@@ -37,27 +37,27 @@ const Hero = () => (
   <section className="hero relative mt-16 safe-paddings lg:mt-14">
     <Container className="relative z-30 pt-96 pb-2 xl:pt-54 lg:pt-52 md:px-5! md:pt-53" size="1600">
       <Link href="#backed-by-giants">
-        <SectionLabel theme="white" icon="databricks">
-          NEON IS PART OF THE DATABRICKS PLATFORM
+        <SectionLabel theme="white" icon="arrow">
+          FIVE AI ENGINES READ ON EVERY SCAN
         </SectionLabel>
       </Link>
 
       <h1 className="mt-5 max-w-288 text-[4rem] leading-dense tracking-tighter text-balance 2xl:text-[3.5rem] xl:max-w-244 xl:text-[3.25rem]/dense lg:max-w-200 lg:text-[2.5rem]/dense md:mt-4 md:text-[2.625rem]/dense sm:text-[2rem]/dense">
-        The backend for apps and agents, built to scale on{' '}
+        Track your rankings and who the{' '}
         <Link className="group relative inline-block text-inherit" to="#architecture" smoothScroll>
-          Lakebase
+          AI engines
           <span
             className="absolute bottom-px left-0 h-0.5 w-full opacity-40 transition-opacity duration-150 group-hover:opacity-80 group-focus-visible:opacity-80 motion-reduce:transition-none"
             style={LAKEBASE_UNDERLINE_STYLE}
             aria-hidden="true"
           />
         </Link>{' '}
-        Postgres.
+        name for your brand.
       </h1>
 
       <div className="mt-8 flex gap-x-5 lg:mt-7 lg:gap-x-4">
         <Button data-test="home-signup" theme="white-filled" size="new" to={LINKS.signup}>
-          Get started
+          Start your free trial
         </Button>
         <Button data-test="home-docs" theme="outlined" size="new" to={LINKS.docsHome}>
           Read the docs

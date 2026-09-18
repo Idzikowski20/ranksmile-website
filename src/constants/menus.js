@@ -6,62 +6,42 @@ export default {
       text: 'Product',
       sections: [
         {
-          title: 'Core Primitives',
+          title: 'Platform',
           items: [
             {
-              title: 'Lakebase Postgres',
-              to: LINKS.lakebase,
-              description: 'Serverless Postgres database',
+              title: 'AI Visibility',
+              to: LINKS.aiVisibility,
+              description: 'Who the five engines name, and what they cite',
             },
             {
-              title: 'Object Storage',
-              to: LINKS.objectStorage,
-              description: 'S3-compatible storage that branches',
+              title: 'Content Score',
+              to: LINKS.contentScore,
+              description: 'Your draft graded live as you write',
             },
             {
-              title: 'Functions',
-              to: LINKS.functions,
-              description: 'Serverless compute next to your data',
+              title: 'Rank Tracking',
+              to: LINKS.rankTracking,
+              description: 'Daily positions, desktop and mobile, per country',
             },
             {
-              title: 'Managed Better Auth',
-              to: LINKS.authPage,
-              description: 'Authentication built into your database',
-            },
-            {
-              title: 'AI Gateway',
-              to: LINKS.aiGateway,
-              description: 'One API for frontier and open-source models',
+              title: 'Keyword Research',
+              to: LINKS.keywordResearch,
+              description: 'Coverage gap and competitor keyword gap',
             },
           ],
         },
         {
-          title: 'Features',
+          title: 'Integrations',
           items: [
             {
-              title: 'Lakebase Architecture',
-              to: LINKS.architecture,
-              description: 'Storage-compute separation',
+              title: 'WordPress plugin',
+              to: LINKS.wordpress,
+              description: 'Publish finished drafts straight to your site',
             },
             {
-              title: 'Autoscaling',
-              to: LINKS.autoscaling,
-              description: 'Automatic instance sizing',
-            },
-            {
-              title: 'Branching',
-              to: LINKS.branching,
-              description: 'Faster Postgres workflows',
-            },
-            {
-              title: 'Search',
-              to: LINKS.lakebaseSearch,
-              description: 'Vector, keyword, and hybrid search',
-            },
-            {
-              title: 'Instant Restore',
-              to: LINKS.instantRestore,
-              description: 'Instant recovery when mistakes happen',
+              title: 'MCP & API',
+              to: LINKS.mcpApi,
+              description: 'Connect Claude, Codex or your own agent',
             },
           ],
         },
@@ -71,44 +51,39 @@ export default {
       text: 'Solutions',
       sections: [
         {
-          title: 'Use cases',
+          title: 'Who it is for',
           items: [
             {
-              title: 'Full-stack apps',
-              to: `${LINKS.useCases}/full-stack-apps`,
-              description: 'Deploy backends via your agent',
+              title: 'In-house SEO teams',
+              to: '/#scale-your-app',
+              description: 'One scoreboard instead of four tabs',
             },
             {
-              title: 'Branching workflows',
-              to: `${LINKS.useCases}/branching-workflows`,
-              description: 'Simplify DB ops to ship faster & safer',
+              title: 'Content writers',
+              to: '/#operate-with-agents',
+              description: 'Write against a live score, publish in one click',
             },
             {
-              title: 'Bursty workloads',
-              to: `${LINKS.useCases}/bursty-workloads`,
-              description: 'Avoid overprovisioning & optimize performance',
-            },
-            {
-              title: 'Large databases',
-              to: `${LINKS.useCases}/large-databases`,
-              description: 'Restore & replicate your DB in seconds',
+              title: 'Agencies',
+              to: '/#scale-your-app',
+              description: 'Every client brand in its own space',
             },
           ],
         },
         {
-          title: 'Deploy at scale',
+          title: 'How it works',
           variant: 'cards',
           items: [
             {
-              title: 'Agents',
-              to: `${LINKS.useCases}/ai-agents`,
-              description: 'Infra for app-generation agents like Replit & v0',
+              title: 'See where you stand',
+              to: '/#build-your-backend',
+              description: 'Five engines, your rankings and your audits in one view',
               graphic: 'agents',
             },
             {
-              title: 'Platforms',
-              to: LINKS.platforms,
-              description: 'Deploy isolated backends for your end users',
+              title: 'Fix it and hold it',
+              to: '/#autoscaling',
+              description: 'Ranked tasks, a live editor, and scheduled re-checks',
               graphic: 'platforms',
             },
           ],
@@ -132,27 +107,17 @@ export default {
             {
               title: 'Blog',
               to: LINKS.blog,
-              description: 'Technical posts & product updates',
-            },
-            {
-              title: 'Case studies',
-              to: LINKS.caseStudies,
-              description: 'Explore customer stories',
+              description: 'Notes on ranking and getting cited',
             },
             {
               title: 'Changelog',
               to: LINKS.changelog,
-              description: 'Product updates',
+              description: 'What we shipped recently',
             },
             {
-              title: 'Community',
-              to: LINKS.discord,
-              description: 'Connect on Discord',
-            },
-            {
-              title: 'Startups',
-              to: LINKS.startups,
-              description: 'Build with Neon',
+              title: 'FAQs',
+              to: LINKS.faqs,
+              description: 'Answers to the usual questions',
             },
           ],
         },
@@ -162,27 +127,17 @@ export default {
             {
               title: 'About us',
               to: LINKS.aboutUs,
-              description: 'The company and the mission',
+              description: 'The team and the reason for Ranksmile',
             },
             {
-              title: 'Careers',
-              to: LINKS.careers,
-              description: 'Join the team',
+              title: 'Contact',
+              to: LINKS.contact,
+              description: 'Talk to a human',
             },
             {
-              title: 'Contact sales',
-              to: LINKS.contactSales,
-              description: 'Contact sales team',
-            },
-            {
-              title: 'Security',
-              to: LINKS.security,
-              description: 'Compliance & privacy',
-            },
-            {
-              title: 'Status',
-              to: LINKS.status,
-              description: 'Service status',
+              title: 'Legal',
+              to: LINKS.legalHub,
+              description: 'Terms, privacy and DPA',
             },
           ],
         },
@@ -190,6 +145,35 @@ export default {
     },
   ],
   footer: [
+    {
+      heading: 'Platform',
+      items: [
+        {
+          text: 'AI Visibility',
+          to: LINKS.aiVisibility,
+        },
+        {
+          text: 'Content Score',
+          to: LINKS.contentScore,
+        },
+        {
+          text: 'Rank Tracking',
+          to: LINKS.rankTracking,
+        },
+        {
+          text: 'Keyword Research',
+          to: LINKS.keywordResearch,
+        },
+        {
+          text: 'WordPress plugin',
+          to: LINKS.wordpress,
+        },
+        {
+          text: 'MCP & API',
+          to: LINKS.mcpApi,
+        },
+      ],
+    },
     {
       heading: 'Company',
       items: [
@@ -202,16 +186,12 @@ export default {
           to: LINKS.blog,
         },
         {
-          text: 'Careers',
-          to: LINKS.careers,
+          text: 'Pricing',
+          to: LINKS.pricing,
         },
         {
-          text: 'Contact Sales',
-          to: LINKS.contactSales,
-        },
-        {
-          text: 'Security',
-          to: LINKS.security,
+          text: 'Contact',
+          to: LINKS.contact,
         },
       ],
     },
@@ -227,103 +207,38 @@ export default {
           to: LINKS.changelog,
         },
         {
-          text: 'Support',
-          to: LINKS.support,
-        },
-        {
-          text: 'Community Guides',
-          to: LINKS.guides,
-        },
-        {
           text: 'FAQs',
           to: LINKS.faqs,
         },
         {
-          text: 'PostgreSQL Tutorial',
-          to: LINKS.postgresqltutorial,
-        },
-        {
-          text: 'Startups',
-          to: LINKS.startups,
+          text: 'Support',
+          to: LINKS.support,
         },
       ],
     },
     {
-      heading: 'Community',
+      heading: 'Legal',
       items: [
-        {
-          text: 'Discord',
-          to: LINKS.discord,
-          icon: 'discord-icon',
-        },
-        {
-          text: 'GitHub',
-          to: LINKS.github,
-          icon: 'github-icon',
-        },
-        {
-          text: 'X.com',
-          to: LINKS.twitter,
-          icon: 'x-icon',
-        },
-        {
-          text: 'LinkedIn',
-          to: LINKS.linkedin,
-          icon: 'linkedin-icon',
-        },
-        {
-          text: 'YouTube',
-          to: LINKS.youtube,
-          icon: 'youtube-icon',
-        },
-      ],
-    },
-    {
-      heading: 'Compliance',
-      items: [
-        {
-          text: 'CCPA',
-          description: 'Compliant',
-          to: LINKS.certCCPA,
-        },
         {
           text: 'GDPR',
           description: 'Compliant',
-          to: LINKS.certGDPR,
+          to: LINKS.legalDpa,
         },
         {
-          text: 'ISO 27001',
-          description: 'Certified',
-          to: LINKS.certISO27001,
+          text: 'Terms of Service',
+          to: LINKS.legalTerms,
         },
         {
-          text: 'ISO 27701',
-          description: 'Certified',
-          to: LINKS.certISO27701,
+          text: 'Privacy Policy',
+          to: LINKS.legalPrivacy,
         },
         {
-          text: 'SOC 2',
-          description: 'Certified',
-          to: LINKS.certSOC2,
+          text: 'Cookie Policy',
+          to: LINKS.legalCookies,
         },
         {
-          text: 'HIPAA',
-          description: 'Compliant',
-          to: LINKS.certHIPAA,
-          links: [
-            {
-              text: 'Compliance Guide',
-              to: LINKS.hipaaCompliance,
-            },
-            {
-              text: 'Neon’s Sub Contractors',
-              to: LINKS.hipaaContractors,
-            },
-          ],
-        },
-        {
-          text: 'Trust Center',
-          to: LINKS.trust,
+          text: 'Data Processing Addendum',
+          to: LINKS.legalDpa,
         },
       ],
     },

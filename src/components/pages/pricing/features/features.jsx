@@ -15,43 +15,43 @@ import { cn } from 'utils/cn';
 const FEATURES = [
   {
     icon: storageIcon,
-    title: 'High availability.',
-    description: `Neon’s storage is <a href="${LINKS.docsHighAvailability}">multi-AZ</a> by default, without the need for HA standbys.`,
+    title: 'AI Visibility.',
+    description: `Every tracked prompt is sent to the engines on your plan, and the answer is stored with the sources it cited.`,
   },
   {
     icon: replicasIcon,
-    title: 'Read replicas.',
-    description: `Neon lets you offload <a href="${LINKS.docs}/introduction/read-replicas">read-heavy queries</a> without added storage costs.`,
+    title: 'Content Score.',
+    description: `The editor grades terms, headings, structure and length live, against the pages already winning the query.`,
   },
   {
     icon: autoscalingIcon,
-    title: 'Autoscaling.',
-    description: `Neon automatically <a href="${LINKS.autoscaling}">adjusts compute</a> and storage based on demand, including on the Free plan.`,
+    title: 'Daily rank tracking.',
+    description: `Tracked keywords are checked once a day, desktop and mobile, per country, with history you can read back.`,
   },
   {
     icon: monitoringIcon,
-    title: 'Monitoring.',
-    description: `Built-in dashboards in the console give you <a href="${LINKS.docs}/introduction/monitoring-page">real-time</a> visibility into usage and performance.`,
+    title: 'Search Console performance.',
+    description: `Connect Google Search Console and read clicks and impressions next to your tracked positions.`,
   },
   {
     icon: connectionsIcon,
-    title: 'Connection pooling.',
-    description: `All Neon databases can use pooled connections built on pgBouncer (up to <a href="${LINKS.connectionPooling}">10,000 connections</a>).`,
+    title: 'Recommendations.',
+    description: `Every gap, drop and opportunity lands in one ranked task list per site, sorted by impact.`,
   },
   {
     icon: extensionsIcon,
-    title: 'Postgres extensions library.',
-    description: `You can add extensions like <a href="${LINKS.docsExtensionsPgVector}">pg_vector</a>, <a href="${LINKS.docsExtensionsPostgisRelatedExtensions}">PostGIS</a>, <a href="${LINKS.docsExtensionsTimescaledb}">TimescaleDB</a>, and many more.`,
+    title: 'WordPress publishing.',
+    description: `The Ranksmile plugin pushes a finished draft straight to your site with headings, links and images intact.`,
   },
   {
     icon: authIcon,
-    title: 'Managed Better Auth.',
-    description: `Neon comes with <a href="${LINKS.auth}">built-in authentication</a> based on Better Auth, with a one-click install.`,
+    title: 'MCP access.',
+    description: `Connect Claude, Codex or your own agent and let it read your visibility data and drive the editor.`,
   },
   {
     icon: securityIcon,
-    title: 'GDPR and ISO compliance.',
-    description: `Included across all plans. Learn more on our <a href="${LINKS.security}">Security page</a>.`,
+    title: 'GDPR compliance.',
+    description: `Included on every plan, with a DPA available. See the <a href="${LINKS.legalHub}">legal hub</a>.`,
   },
 ];
 
@@ -65,8 +65,8 @@ const Features = () => (
           '[&>strong]:font-normal [&>strong]:text-white'
         )}
       >
-        <strong>Included with every Neon database, on every plan, by default.</strong> These are
-        core platform capabilities that come out of the box with Neon.
+        <strong>Included on every plan, by default.</strong> What changes between tiers is volume,
+        not which parts of Ranksmile you get to use.
       </h2>
       <ul
         className={cn(

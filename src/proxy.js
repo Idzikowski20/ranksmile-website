@@ -401,7 +401,7 @@ export const config = {
     '/pricing', // Agent-friendly pricing page
     '/functions', // Agent-friendly Functions page
     '/ai-gateway', // Agent-friendly AI Gateway page
-    '/object-storage', // Agent-friendly Object Storage page
+    '/wordpress', // Agent-friendly WordPress plugin page
     '/auth', // Agent-friendly Auth product page
     '/lakebase', // Agent-friendly Lakebase page
     '/docs', // Bare docs root: serve llms.txt for agents; browsers fall through to the /docs→/docs/introduction redirect
