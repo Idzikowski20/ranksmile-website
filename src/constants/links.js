@@ -14,7 +14,7 @@ export default {
   contactSales: '/contact-sales',
   enterprise: '/enterprise',
   flow: '/flow',
-  functions: '/functions',
+  functions: '/rank-tracking',
   faster: '/faster',
   guides: '/guides',
   faqs: '/faqs',
@@ -42,7 +42,7 @@ export default {
   // Ranksmile product pages (Neon routes kept, content repurposed)
   aiVisibility: '/lakebase',
   contentScore: '/content-score',
-  rankTracking: '/functions',
+  rankTracking: '/rank-tracking',
   keywordResearch: '/ai-gateway',
   wordpress: '/wordpress',
   mcpApi: '/cli',

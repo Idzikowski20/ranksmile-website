@@ -21,7 +21,7 @@ export default {
             {
               title: 'Rank Tracking',
               to: LINKS.rankTracking,
-              description: 'Daily positions, desktop and mobile, per country',
+              description: 'Your schedule, desktop and mobile, per country',
             },
             {
               title: 'Keyword Research',

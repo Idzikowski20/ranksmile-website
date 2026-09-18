@@ -25,7 +25,7 @@ const SERVICE_ITEMS = [
   },
   {
     title: 'Rank Tracking',
-    description: 'Positions checked once a day, desktop and mobile, per country.',
+    description: 'Positions on your own schedule, desktop and mobile, per country.',
     videoBase: 'compute',
     version: '20260821',
     aspectRatio: 'aspect-590/300',
@@ -75,8 +75,8 @@ const BuildYourBackend = () => (
         >
           <span>Not just a rank tracker. </span>
           <span className="text-gray-new-50">
-            Ranksmile is one workspace for AI visibility, content scoring, daily rankings, audits
-            and keyword research.
+            Ranksmile is one workspace for AI visibility, content scoring, rank tracking, audits and
+            keyword research.
           </span>
         </h2>
       </div>

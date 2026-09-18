@@ -24,7 +24,7 @@ const CONTENT_ROUTES = {
 // Marketing pages whose Markdown mirrors are generated from the same structured
 // content as their React views. Keys are public page paths without a leading slash.
 const GENERATED_PAGE_MARKDOWN_PATHS = {
-  functions: '/md/functions.md',
+  'rank-tracking': '/md/rank-tracking.md',
   'ai-gateway': '/md/ai-gateway.md',
   wordpress: '/md/wordpress.md',
   'content-score': '/md/content-score.md',

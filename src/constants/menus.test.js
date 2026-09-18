@@ -6,7 +6,7 @@ describe('Product navigation', () => {
   it.each([
     ['AI Visibility', '/lakebase'],
     ['Content Score', '/content-score'],
-    ['Rank Tracking', '/functions'],
+    ['Rank Tracking', '/rank-tracking'],
     ['WordPress plugin', '/wordpress'],
     ['Keyword Research', '/ai-gateway'],
   ])('links %s to its product page', (title, path) => {

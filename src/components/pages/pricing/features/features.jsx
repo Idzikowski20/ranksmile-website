@@ -25,8 +25,8 @@ const FEATURES = [
   },
   {
     icon: autoscalingIcon,
-    title: 'Daily rank tracking.',
-    description: `Tracked keywords are checked once a day, desktop and mobile, per country, with history you can read back.`,
+    title: 'Rank tracking.',
+    description: `Checked on the schedule you set, desktop and mobile, per country, with history you can read back.`,
   },
   {
     icon: monitoringIcon,

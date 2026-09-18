@@ -6,7 +6,7 @@ export default {
   index: {
     title: 'Ranksmile — rank in Google, get named by the AI engines',
     description:
-      'Ranksmile records whether AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini name your brand, scores every page as you write it, and tracks your rankings daily.',
+      'Ranksmile records whether AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini name your brand, scores every page as you write it, and tracks your rankings on the schedule you set.',
     pathname: '',
   },
   about: {
@@ -77,12 +77,12 @@ export default {
     pathname: LINKS.cli,
     imagePath: '/images/social-previews/cli.jpg',
   },
-  functions: {
-    title: 'Neon Functions — Long-running serverless functions',
+  rankTracking: {
+    title: 'Rank Tracking — every position, per device and per country | Ranksmile',
     description:
-      'Run long-running Node.js functions next to Lakebase Postgres, with branch-aware data and Neon service credentials injected automatically.',
-    pathname: LINKS.functions,
-    markdownPath: `${LINKS.functions}.md`,
+      'Track Google positions on your own schedule. Each check stores the position, the ranking URL and title, the domain and the SERP features, with top 3 / top 10 / top 100 buckets per run.',
+    pathname: LINKS.rankTracking,
+    markdownPath: `${LINKS.rankTracking}.md`,
   },
   contentScore: {
     title: 'Content Score — write against the pages that already rank | Ranksmile',
@@ -134,7 +134,7 @@ export default {
   pricing: {
     title: 'Pricing — Ranksmile',
     description:
-      'Growth, Scale and Agency: flat monthly plans for AI visibility tracking, live Content Score and daily rank tracking. 7-day free trial, cancel anytime.',
+      'Growth, Scale and Agency: flat monthly plans for AI visibility tracking, live Content Score and scheduled rank tracking. 7-day free trial, cancel anytime.',
     imagePath: '/images/social-previews/pricing.jpg',
     pathname: LINKS.pricing,
   },

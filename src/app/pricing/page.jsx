@@ -66,7 +66,7 @@ const faqItems = [
     answer: `
       <p>Keywords and AI prompts run on different clocks.</p>
       <ul>
-        <li><strong>Keyword positions</strong> are checked once a day, desktop and mobile, per country.</li>
+        <li><strong>Keyword positions</strong> run on the schedule you set per site: daily, weekly, monthly, every N days, or manual. Weekly is the default.</li>
         <li><strong>AI prompts</strong> are re-scanned by the priority you give them: core daily, supporting weekly, long-tail every two weeks.</li>
       </ul>
       <p>The scheduler looks for due scans every six hours. You can also refresh a scan by hand, subject to a short cooldown on the same tiers.</p>

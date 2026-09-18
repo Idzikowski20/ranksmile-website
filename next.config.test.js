@@ -5,11 +5,11 @@ import nextConfig from './next.config';
 describe('backend platform Markdown rewrites', () => {
   it('serves public and direct Markdown mirrors with the same noindex headers', async () => {
     const headers = await nextConfig.headers();
-    const functionsHeaders = headers.find(({ source }) => source === '/functions.md').headers;
+    const functionsHeaders = headers.find(({ source }) => source === '/rank-tracking.md').headers;
 
     expect(functionsHeaders).toContainEqual({ key: 'X-Robots-Tag', value: 'noindex' });
     for (const path of [
-      '/md/functions.md',
+      '/md/rank-tracking.md',
       '/md/ai-gateway.md',
       '/md/wordpress.md',
       '/md/content-score.md',
@@ -25,7 +25,7 @@ describe('backend platform Markdown rewrites', () => {
     expect(allRewrites.some(({ source }) => source === '/auth.md')).toBe(false);
     expect(rewrites.beforeFiles).toEqual(
       expect.arrayContaining([
-        { source: '/functions.md', destination: '/md/functions.md' },
+        { source: '/rank-tracking.md', destination: '/md/rank-tracking.md' },
         { source: '/ai-gateway.md', destination: '/md/ai-gateway.md' },
         { source: '/wordpress.md', destination: '/md/wordpress.md' },
       ])

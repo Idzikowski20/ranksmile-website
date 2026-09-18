@@ -399,7 +399,7 @@ export const config = {
     '/', // Check if the user is logged in
     '/home', // Check if the user is logged in
     '/pricing', // Agent-friendly pricing page
-    '/functions', // Agent-friendly Functions page
+    '/rank-tracking', // Agent-friendly Rank Tracking page
     '/ai-gateway', // Agent-friendly AI Gateway page
     '/wordpress', // Agent-friendly WordPress plugin page
     '/content-score', // Agent-friendly Content Score page

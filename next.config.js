@@ -320,6 +320,17 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The Functions product page became the Rank Tracking page.
+      {
+        source: '/functions',
+        destination: '/rank-tracking',
+        permanent: true,
+      },
+      {
+        source: '/functions.md',
+        destination: '/rank-tracking.md',
+        permanent: true,
+      },
       // The Auth product page became the Content Score page. Only the bare path is
       // redirected: /auth.md is the static Claimable Neon protocol, not this page.
       {
