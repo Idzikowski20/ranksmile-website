@@ -127,15 +127,7 @@ MobileMenuItem.propTypes = {
   ),
 };
 
-const mobileMenuItems = [
-  ...MENUS.header,
-  {
-    text: 'Discord',
-    to: LINKS.discord,
-    target: '_blank',
-    rel: 'noopener noreferrer',
-  },
-];
+const mobileMenuItems = [...MENUS.header];
 
 const MobileMenu = ({ isDocPage = false, docPageType = null }) => {
   const { isMobileMenuOpen, toggleMobileMenu } = useMobileMenu();

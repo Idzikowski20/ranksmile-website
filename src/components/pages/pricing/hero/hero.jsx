@@ -12,7 +12,7 @@ const Hero = () => (
         Ranksmile pricing
       </h1>
       <p className="mx-auto mt-4 max-w-[680px] text-center text-xl leading-normal font-normal -tracking-wide text-gray-new-60 xl:mt-[14px] xl:max-w-[560px] xl:text-[18px] lg:mt-3 lg:text-[16px] md:mt-[10px] md:text-[14px]">
-        Start with a 7-day trial. Flat monthly price, cancel anytime.
+        Start on Growth with a 7-day trial. Flat monthly price, cancel anytime.
       </p>
       <Plans />
       <Programs />

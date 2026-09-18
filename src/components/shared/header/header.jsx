@@ -46,7 +46,7 @@ const Header = ({
             <Logo width={151} height={28} priority isHeader />
             <Navigation />
           </div>
-          <Sidebar isClient={isClient} />
+          <Sidebar />
         </Container>
       )}
     </HeaderWrapper>
