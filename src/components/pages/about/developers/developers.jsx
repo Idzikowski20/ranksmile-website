@@ -1,4 +1,5 @@
 import Container from 'components/shared/container';
+import Link from 'components/shared/link';
 import { cn } from 'utils/cn';
 
 import IconCost from './images/icon-cost.inline.svg';
@@ -9,38 +10,39 @@ import IconReliable from './images/icon-reliable.inline.svg';
 const FEATURES_DATA = [
   {
     icon: IconPostgres,
-    title: 'Familiar',
+    title: 'Open roots',
     description:
-      'Build with Postgres, the world’s most popular database, and a rich ecosystem of extensions and tools.',
+      'The rank tracker at the core of Ranksmile grew out of SerpBear, released as open source by Towfiq I. in 2022.',
   },
   {
     icon: IconEasy,
-    title: 'Easy',
+    title: 'One place',
     description:
-      'Simplify the life of developers by bringing the serverless model to application backends.',
+      'Rankings, AI answers, keywords, audits and the editor share one project, so nothing has to be copied between tabs.',
   },
   {
     icon: IconCost,
-    title: 'Cost efficient',
-    description: 'Aim to deliver the best price-performance backend services in the world.',
+    title: 'One price',
+    description:
+      'Flat monthly plans with the limits printed on the pricing page. No per-seat maths, no quote to request.',
   },
   {
     icon: IconReliable,
-    title: 'Reliable',
+    title: 'Traceable',
     description:
-      'Use modern replication techniques to provide high availability and high durability guarantees.',
+      'Every score opens back to what produced it: the answer the engine returned and the sources it cited.',
   },
 ];
 
 const Developers = () => (
   <section className="developers bg-black-pure safe-paddings">
-    <h2 className="sr-only">Developer-Focused Features</h2>
+    <h2 className="sr-only">Why Ranksmile is built this way</h2>
     <Container
       size="small"
       className="pt-[153px] pb-[200px] xl:px-32 xl:pt-[136px] xl:pb-[184px] lg:pt-[108px] lg:pb-[136px] md:pt-[88px] md:pb-[104px]"
     >
       <p className="max-w-[800px] text-[64px] leading-none font-normal tracking-[-0.05em] text-white xl:max-w-[696px] xl:text-[56px] lg:max-w-[544px] lg:text-[44px] md:max-w-full md:text-[32px]">
-        Developers are at the center of everything we&nbsp;do.
+        Built by people who were paying for four tools to answer one&nbsp;question.
       </p>
 
       <ul className="mt-40 grid grid-cols-4 gap-x-20 xl:mt-[136px] xl:grid-cols-2 xl:gap-[72px] lg:mt-28 lg:gap-16 md:mt-20 md:grid-cols-1 md:gap-y-14">
@@ -77,6 +79,18 @@ const Developers = () => (
           );
         })}
       </ul>
+
+      <p className="mt-32 max-w-[800px] border-t border-gray-new-20 pt-8 text-base leading-normal font-normal tracking-extra-tight text-gray-new-60 xl:mt-28 lg:mt-24 lg:max-w-[544px] md:mt-16 md:text-[15px]">
+        Credits: Ranksmile is built by Globalzone. The rank tracker it started from is{' '}
+        <Link className="text-white" to="https://github.com/towfiqi/serpbear" isExternal>
+          SerpBear
+        </Link>
+        , released under the MIT license by Towfiq I. in 2022. This website started from{' '}
+        <Link className="text-white" to="https://github.com/neondatabase/website" isExternal>
+          Neon&apos;s open-source site
+        </Link>{' '}
+        and still carries a lot of its design.
+      </p>
     </Container>
   </section>
 );

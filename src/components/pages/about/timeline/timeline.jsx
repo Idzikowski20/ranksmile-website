@@ -2,46 +2,41 @@
 
 import Container from 'components/shared/container';
 import Link from 'components/shared/link';
-import LINKS from 'constants/links';
 import TimelineSvg from 'images/pages/about/timeline/timeline.inline.svg';
 import { cn } from 'utils/cn';
 
 const ITEMS = [
   {
-    date: 'MAR, 2021',
-    dateTime: '2021-03',
-    title: 'First commit',
-  },
-  {
-    date: 'JUN 15, 2022',
-    dateTime: '2022-06-15',
-    title: 'Technical preview',
-    link: `${LINKS.blog}/hello-world`,
-  },
-  {
-    date: 'DEC, 2022',
-    dateTime: '2022-12',
-    title: 'Open access',
-    link: `${LINKS.blog}/neon-serverless-postgres-is-live`,
-  },
-  {
-    date: 'AUG, 2023',
-    dateTime: '2023-08',
-    title: '$46M raised',
-    link: `${LINKS.blog}/series-b-funding`,
-  },
-  {
-    date: 'APR 15, 2024',
-    dateTime: '2024-04-15',
-    title: 'Neon is GA',
-    link: `${LINKS.blog}/neon-ga`,
-  },
-  {
-    date: 'MAY 14, 2025',
-    dateTime: '2025-05-14',
-    title: 'Databricks acquires Neon',
-    link: `https://www.databricks.com/company/newsroom/press-releases/databricks-agrees-acquire-neon-help-developers-deliver-ai-systems`,
+    date: 'OCT, 2022',
+    dateTime: '2022-10',
+    title: 'SerpBear',
+    link: 'https://github.com/towfiqi/serpbear',
     isExternal: true,
+  },
+  {
+    date: 'MAY, 2026',
+    dateTime: '2026-05',
+    title: 'Ranksmile starts',
+  },
+  {
+    date: 'JUN, 2026',
+    dateTime: '2026-06',
+    title: 'WordPress publishing',
+  },
+  {
+    date: 'SEP 2, 2026',
+    dateTime: '2026-09-02',
+    title: 'Brand-level AI scores',
+  },
+  {
+    date: 'SEP 16, 2026',
+    dateTime: '2026-09-16',
+    title: 'Site health',
+  },
+  {
+    date: 'TODAY',
+    dateTime: '2026',
+    title: 'In development, open to early users',
   },
 ];
 
@@ -49,10 +44,10 @@ const Timeline = () => (
   <section className="timeline overflow-hidden pt-40 safe-paddings pb-[200px] xl:pt-[136px] xl:pb-[184px] lg:pt-[88px] lg:pb-[136px] md:pt-[72px] md:pb-[104px]">
     <Container size="1600">
       <h2 className="mb-20 max-w-5xl indent-24 font-sans text-5xl leading-dense font-normal tracking-tighter xl:text-4xl lg:mb-14 lg:indent-16 lg:text-[28px] md:mb-11 md:indent-0 md:text-2xl">
-        Our mission is to deliver cloud primitives:{' '}
+        We want one honest answer to one question:{' '}
         <span className="text-gray-new-50">
-          Database, Compute, Storage. Designed to help teams build scalable, dependable services
-          faster than ever.
+          can people find you? Ranksmile checks Google and the AI answer engines, then tells you
+          what to write next.
         </span>
       </h2>
       <div className="no-scrollbars w-full sm:-mx-5 sm:-mt-2 sm:w-screen sm:overflow-x-auto sm:pb-2">
