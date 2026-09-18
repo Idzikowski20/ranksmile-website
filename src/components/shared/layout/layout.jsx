@@ -40,7 +40,6 @@ const Layout = ({
         docsNavigation={docsNavigation}
         docsBasePath={docsBasePath}
         customType={customType}
-        isClient={isClient}
       />
       <main
         className={cn(withOverflowHidden && 'overflow-hidden', 'flex flex-1 flex-col', className)}

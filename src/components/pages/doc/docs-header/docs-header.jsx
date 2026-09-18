@@ -10,7 +10,7 @@ import { cn } from 'utils/cn';
 
 import DocsNavigation from '../docs-navigation';
 
-const DocsHeader = ({ customType, docPageType, basePath, navigation, isClient }) => (
+const DocsHeader = ({ customType, docPageType, basePath, navigation }) => (
   <div
     className={cn(
       'flex h-28 w-full items-center bg-white backdrop-blur-xl dark:bg-black-pure lg:h-14',
@@ -32,7 +32,7 @@ const DocsHeader = ({ customType, docPageType, basePath, navigation, isClient })
         <div className="absolute left-1/2 flex -translate-x-1/2 gap-2.5 xl:relative xl:left-0 xl:translate-x-0 lg:hidden">
           <InkeepTrigger docPageType={docPageType} />
         </div>
-        <Sidebar className="lg:hidden" isClient={isClient} isDocs />
+        <Sidebar className="lg:hidden" isDocs />
       </div>
       <div className="h-12 lg:hidden">
         <DocsNavigation navigation={navigation} basePath={basePath} />
@@ -49,7 +49,6 @@ DocsHeader.propTypes = {
   }),
   basePath: PropTypes.string.isRequired,
   navigation: PropTypes.array.isRequired,
-  isClient: PropTypes.bool,
 };
 
 export default DocsHeader;

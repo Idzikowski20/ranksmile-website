@@ -19,7 +19,6 @@ const Header = ({
   docsNavigation = null,
   docsBasePath = null,
   customType = null,
-  isClient = false,
 }) => (
   <>
     <HeaderWrapper
@@ -33,7 +32,6 @@ const Header = ({
         <DocsHeader
           customType={customType}
           docPageType={docPageType}
-          isClient={isClient}
           navigation={docsNavigation}
           basePath={docsBasePath}
         />
@@ -46,7 +44,7 @@ const Header = ({
             <Logo width={151} height={28} priority isHeader />
             <Navigation />
           </div>
-          <Sidebar isClient={isClient} />
+          <Sidebar />
         </Container>
       )}
     </HeaderWrapper>
@@ -67,7 +65,6 @@ Header.propTypes = {
     title: PropTypes.string,
     link: PropTypes.string,
   }),
-  isClient: PropTypes.bool,
 };
 
 export default Header;
