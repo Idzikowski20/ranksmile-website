@@ -206,7 +206,7 @@ export default {
     {
       rows: '1-2',
       feature: {
-        title: 'Dedicated success manager',
+        title: 'A named contact',
       },
       free: false,
       launch: false,
