@@ -1,0 +1,21 @@
+src/components/pages/security/features/features.jsx
+  s_57407775d5d685::t_a59f9d2fba68e5 167
+src/components/pages/security/sub-processors/sub-processors.jsx
+  s_57407775d5d685::t_a59f9d2fba68e5 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "bb83487ff640cefae5acd7620f1c05fb57d57676",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
