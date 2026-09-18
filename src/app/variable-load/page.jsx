@@ -9,6 +9,7 @@ import CTANew from 'components/shared/cta-new';
 import Layout from 'components/shared/layout';
 import SidebarCta from 'components/shared/sidebar-cta';
 import TableOfContents from 'components/shared/table-of-contents';
+import LINKS from 'constants/links';
 import SEO_DATA from 'constants/seo-data';
 import { cn } from 'utils/cn';
 import getMetadata from 'utils/get-metadata';
@@ -61,11 +62,12 @@ const VariableLoadPage = async () => {
           </div>
         </Container>
         <CTANew
-          label="ASK AI"
-          title="Still have questions? Ask our AI. <br class='xs:hidden' />"
-          description="It knows Neon inside and out."
-          buttonText="Get Answers"
-          buttonType="aiHelper"
+          label="7-DAY FREE TRIAL"
+          title="Still deciding? <br class='xs:hidden' /> Try it on your own site."
+          description="Add a site, pick your prompts, and read the first scan."
+          buttonText="Start your free trial"
+          buttonUrl={LINKS.signup}
+          isExternal
         />
       </div>
     </Layout>

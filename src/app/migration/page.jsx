@@ -6,6 +6,7 @@ import CTANew from 'components/shared/cta-new';
 import GridFeatures from 'components/shared/grid-features';
 import Layout from 'components/shared/layout';
 import TestimonialNew from 'components/shared/testimonial-new';
+import LINKS from 'constants/links';
 import SEO_DATA from 'constants/seo-data';
 import costEffective from 'icons/migration/grid-features/cost-effective.svg';
 import developerFriendly from 'icons/migration/grid-features/developer-friendly.svg';
@@ -78,11 +79,12 @@ const MigrationPage = () => (
       items={FEATURES}
     />
     <CTANew
-      label="ASK AI"
-      title="Still have questions? Ask our AI. <br class='xs:hidden' />"
-      description="It knows Neon inside and out."
-      buttonText="Get Answers"
-      buttonType="aiHelper"
+      label="7-DAY FREE TRIAL"
+      title="Still deciding? <br class='xs:hidden' /> Try it on your own site."
+      description="Add a site, pick your prompts, and read the first scan."
+      buttonText="Start your free trial"
+      buttonUrl={LINKS.signup}
+      isExternal
     />
   </Layout>
 );
