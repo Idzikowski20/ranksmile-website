@@ -65,7 +65,7 @@ export default {
             },
             {
               title: 'Agencies',
-              to: '/#scale-your-app',
+              to: LINKS.agencies,
               description: 'Every client brand in its own space',
             },
           ],
@@ -171,6 +171,10 @@ export default {
         {
           text: 'MCP & API',
           to: LINKS.mcpApi,
+        },
+        {
+          text: 'For agencies',
+          to: LINKS.agencies,
         },
       ],
     },

@@ -179,7 +179,7 @@ export default {
       },
       free: false,
       launch: false,
-      scale: true,
+      scale: 'Planned',
     },
     {
       rows: '1',

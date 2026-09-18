@@ -116,7 +116,7 @@ const faqItems = [
   },
   {
     question: 'Can I try it before moving clients over?',
-    answer: `Yes. Every plan starts with a 7-day free trial, and you can cancel from the billing page without talking to anyone. Add one client, run a scan, and see whether the numbers match what you already know about them.`,
+    answer: `Yes, on Growth. The 7-day free trial runs on the Growth plan, once per organization; Scale and Agency are paid upfront. So add one client on Growth, run a scan, see whether the numbers match what you already know about them, and move up when you are ready. You can cancel from the billing page without talking to anyone.`,
   },
 ];
 
@@ -127,9 +127,9 @@ const AgenciesPage = () => (
     <HowNeonHelps tabs={howNeonHelpsTabs} />
     <Faq items={faqItems} />
     <CTANew
-      label="7-DAY FREE TRIAL"
+      label="START ON GROWTH"
       title="Still deciding? <br class='xs:hidden' /> Try it on one client."
-      description="Add a site, pick your prompts, and read the first scan."
+      description="The 7-day trial runs on Growth. Add one client, read the first scan, move up when it earns it."
       buttonText="Start your free trial"
       buttonUrl={LINKS.signup}
       isExternal
