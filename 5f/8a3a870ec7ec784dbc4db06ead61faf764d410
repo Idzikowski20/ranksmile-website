@@ -1,0 +1,21 @@
+src/components/pages/lakebase/dynamic-databases/dynamic-databases.jsx
+  s_57407775d5d685::t_b431a965129017 40-54
+src/constants/backend-platform-page-content.js
+  s_57407775d5d685::t_07b4497911029a 434-453,460-479
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "5f8a3a870ec7ec784dbc4db06ead61faf764d410",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
