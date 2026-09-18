@@ -4,7 +4,7 @@ export const DEFAULT_IMAGE_PATH = '/images/social-previews/index.jpg?updated=202
 
 export default {
   index: {
-    title: 'Ranksmile — rank in Google, get named by the AI engines',
+    title: 'Ranksmile — one tool to rank in Google and get mentioned by AI',
     description:
       'Ranksmile records whether AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini name your brand, scores every page as you write it, and tracks your rankings on the schedule you set.',
     pathname: '',
