@@ -182,8 +182,8 @@ const Autoscaling = () => {
               ))}
             </ul>
             <p className="max-w-120 shrink-0 text-lg leading-normal tracking-extra-tight md:text-[0.9375rem]/snug">
-              Neon monitors your database load ten times a second and autoscales CPU and memory to
-              exactly fit your workload.
+              Ranksmile re-checks each prompt on the priority you gave it, so the prompts you cannot
+              afford to lose are scanned every day.
             </p>
           </div>
         </div>

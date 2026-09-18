@@ -7,11 +7,9 @@ import Link from 'components/shared/link';
 import LINKS from 'constants/links';
 import MENUS from 'constants/menus.js';
 import ChevronIcon from 'icons/chevron-down.inline.svg';
+import logoDarkSvg from 'images/logo-dark.svg';
+import logoLightSvg from 'images/logo-light.svg';
 import { cn } from 'utils/cn';
-
-import databricksLogoDark from './images/databricks-logo-dark.svg';
-import databricksLogoLight from './images/databricks-logo-light.svg';
-import StatusBadge from './status-badge';
 
 const Footer = ({ hasThemesSupport = false }) => (
   <footer className="relative z-30 mt-auto border-t border-gray-new-90 bg-white safe-paddings font-sans dark:border-gray-new-20 dark:bg-black-pure">
@@ -21,17 +19,17 @@ const Footer = ({ hasThemesSupport = false }) => (
           <div className="mb-auto lg:mb-11">
             <Image
               className="dark:hidden sm:h-6 sm:w-auto"
-              src={databricksLogoLight}
-              width={177}
+              src={logoLightSvg}
+              width={151}
               height={28}
-              alt="Databricks"
+              alt="Ranksmile"
             />
             <Image
               className="hidden dark:block sm:h-6 sm:w-auto"
-              src={databricksLogoDark}
-              width={177}
+              src={logoDarkSvg}
+              width={151}
               height={28}
-              alt="Databricks"
+              alt="Ranksmile"
             />
             <span
               className={cn(
@@ -40,24 +38,16 @@ const Footer = ({ hasThemesSupport = false }) => (
                 'xl:mt-3'
               )}
             >
-              Neon is part of the Databricks Platform
+              Rank in Google. Get named by AI.
             </span>
           </div>
 
           {hasThemesSupport && <ThemeSelect className="mb-8 lg:mb-6" />}
 
           <p className="max-w-146 text-[0.8125rem]/snug tracking-extra-tight text-gray-new-40">
-            © Neon 2026. All rights reserved. Apache, Apache Spark, Spark, the Spark Logo, Apache
-            Iceberg, Iceberg, and the Apache Iceberg logo are trademarks of the{' '}
-            <a
-              href="https://www.apache.org"
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-              className="underline hover:text-gray-new-20 dark:hover:text-gray-new-80"
-            >
-              Apache Software Foundation
-            </a>
-            .
+            © Globalzone 2026. All rights reserved. Google and Gemini are trademarks of Google LLC,
+            ChatGPT of OpenAI, Perplexity of Perplexity AI, and WordPress of the WordPress
+            Foundation. Ranksmile is not affiliated with or endorsed by any of them.
           </p>
         </div>
 
@@ -159,7 +149,6 @@ const Footer = ({ hasThemesSupport = false }) => (
         className="flex flex-row justify-between gap-5 lg:w-full lg:flex-col-reverse lg:items-start"
         size="1920"
       >
-        <StatusBadge />
         <div
           className={cn(
             'flex w-full max-w-214 flex-col gap-y-2 font-sans text-[0.9375rem] leading-normal tracking-extra-tight text-gray-new-70 xl:max-w-180 lg:max-w-md',
@@ -169,33 +158,33 @@ const Footer = ({ hasThemesSupport = false }) => (
           <p className="flex w-full flex-wrap justify-between gap-3 leading-none lg:justify-start">
             <Link
               className="text-gray-new-40 hover:text-black-pure dark:text-gray-new-70 dark:hover:text-white"
-              to={LINKS.privacy}
+              to={LINKS.legalTerms}
             >
-              Privacy Notice
+              Terms of Service
             </Link>
             <Link
               className="leading-none text-gray-new-40 hover:text-black-pure dark:text-gray-new-70 dark:hover:text-white"
-              to={LINKS.websiteTerms}
+              to={LINKS.legalPrivacy}
             >
-              Terms of Use
+              Privacy Policy
             </Link>
             <Link
               className="leading-none text-gray-new-40 hover:text-black-pure dark:text-gray-new-70 dark:hover:text-white"
-              to={LINKS.platformTerms}
+              to={LINKS.legalCookies}
             >
-              Neon Platform Terms
+              Cookie Policy
             </Link>
             <Link
               className="leading-none text-gray-new-40 hover:text-black-pure dark:text-gray-new-70 dark:hover:text-white"
-              to={LINKS.modernSlaveryStatement}
+              to={LINKS.legalDpa}
             >
-              Modern Slavery Statement
+              Data Processing Addendum
             </Link>
             <Link
               className="leading-none text-gray-new-40 hover:text-black-pure dark:text-gray-new-70 dark:hover:text-white"
-              to={LINKS.californiaPolicy}
+              to={LINKS.contact}
             >
-              California Privacy
+              Contact
             </Link>
           </p>
         </div>

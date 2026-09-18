@@ -118,10 +118,10 @@ CheckSquare.propTypes = {
   checked: PropTypes.bool.isRequired,
 };
 
-const CreateProject = ({ isPressed }) => (
+const AddSite = ({ isPressed }) => (
   <div className="absolute inset-0 border-2 border-[#61646b] bg-black-pure p-[3px]">
     <div className="relative flex h-[37px] items-center bg-[#303236] px-3 text-base font-semibold text-white md:h-8 md:text-sm">
-      Neon project
+      New site
       <Image
         className="absolute top-1/2 right-2 size-[18px] -translate-y-1/2"
         src={`${ASSET_ROOT}/startup-window-control.svg`}
@@ -133,7 +133,7 @@ const CreateProject = ({ isPressed }) => (
     </div>
     <div className="flex flex-col items-center gap-5 pt-[29px] md:gap-4 md:pt-5">
       <p className="text-center text-base leading-none font-semibold text-white md:text-sm">
-        No projects yet. Create project?
+        No sites yet. Add your first one?
       </p>
       <div className="flex items-start gap-5 text-base leading-none font-semibold md:text-sm">
         <span
@@ -142,7 +142,7 @@ const CreateProject = ({ isPressed }) => (
             isPressed ? 'bg-[#94979e]' : 'bg-white'
           )}
         >
-          Create
+          Add site
         </span>
         <span className="flex h-9 items-center justify-center border-2 border-[#94979e] px-4 text-[#94979e]">
           Cancel
@@ -152,7 +152,7 @@ const CreateProject = ({ isPressed }) => (
   </div>
 );
 
-CreateProject.propTypes = {
+AddSite.propTypes = {
   isPressed: PropTypes.bool.isRequired,
 };
 
@@ -175,7 +175,7 @@ const InitializationProgress = ({ filledBlocks, progress, status }) => {
   return (
     <div className="absolute inset-0 border-2 border-[#61646b] bg-black-pure p-[3px]">
       <div className="flex h-[37px] items-center bg-[#303236] px-3 text-base font-semibold text-white md:h-8 md:text-sm">
-        {isComplete ? 'Initialization complete' : 'Initializing...'}
+        {isComplete ? 'First scan complete' : 'Running first scan...'}
       </div>
       <div className="px-2 pt-[19px] md:pt-3.5">
         <div className="flex items-center gap-4">
@@ -194,13 +194,13 @@ const InitializationProgress = ({ filledBlocks, progress, status }) => {
         <div className="mt-4 flex flex-col gap-2 text-base leading-dense font-medium tracking-[-0.02em] text-[#94979e] md:mt-3 md:text-sm">
           {isPreparing || isComplete ? (
             <>
-              <ProgressRow checked>Project created</ProgressRow>
+              <ProgressRow checked>Site added</ProgressRow>
               <ProgressRow checked={isComplete}>
-                {isComplete ? 'Database ready' : 'Preparing database...'}
+                {isComplete ? 'Answers stored' : 'Asking the engines...'}
               </ProgressRow>
             </>
           ) : (
-            <ProgressRow checked={false}>Creating project...</ProgressRow>
+            <ProgressRow checked={false}>Adding site...</ProgressRow>
           )}
         </div>
       </div>
@@ -214,7 +214,7 @@ InitializationProgress.propTypes = {
   status: PropTypes.oneOf(['creating', 'preparing', 'complete']).isRequired,
 };
 
-const StartupAnimation = ({ onStart, timelineElapsed }) => {
+const StartupAnimation = ({ onStart = () => {}, timelineElapsed }) => {
   const elapsedRef = useRef(0);
   const frameIndexRef = useRef(0);
   const hasStartedRef = useRef(false);
@@ -319,10 +319,10 @@ const StartupAnimation = ({ onStart, timelineElapsed }) => {
           y: shouldReduceMotion ? 0 : rightCardY,
         }}
         role="img"
-        aria-label="A Neon project initializes and reaches 100 percent"
+        aria-label="A new site is added and its first scan reaches 100 percent"
       >
         {frame.screen === 'create' ? (
-          <CreateProject isPressed={frame.isCreatePressed} />
+          <AddSite isPressed={frame.isCreatePressed} />
         ) : (
           <InitializationProgress
             filledBlocks={frame.filledBlocks}
@@ -341,10 +341,10 @@ const StartupAnimation = ({ onStart, timelineElapsed }) => {
 
       <div className="absolute top-[361px] left-0 z-10 h-[248px] w-[511px] border border-[#242628] bg-black-pure px-8 pt-8 xl:top-112 md:w-[480px] sm:top-100 sm:h-auto sm:w-full sm:p-5 sm:pb-6">
         <strong className="block text-[5rem] leading-none font-normal tracking-extra-tight text-white sm:text-[4rem]">
-          100K+
+          50
         </strong>
         <p className="mt-[29px] max-w-[320px] text-xl leading-tight tracking-extra-tight text-gray-new-80 sm:mt-5 sm:max-w-[290px] sm:text-base">
-          Projects built and launched with Neon, from early-stage products to growing applications.
+          AI prompts scanned a day on Growth, the plan every new account starts on.
         </p>
       </div>
     </div>
@@ -352,7 +352,7 @@ const StartupAnimation = ({ onStart, timelineElapsed }) => {
 };
 
 StartupAnimation.propTypes = {
-  onStart: PropTypes.func.isRequired,
+  onStart: PropTypes.func,
   timelineElapsed: PropTypes.shape({
     get: PropTypes.func.isRequired,
     on: PropTypes.func.isRequired,

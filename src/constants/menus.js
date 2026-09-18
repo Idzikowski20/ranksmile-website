@@ -220,31 +220,5 @@ export default {
         },
       ],
     },
-    {
-      heading: 'Legal',
-      items: [
-        {
-          text: 'GDPR',
-          description: 'Compliant',
-          to: LINKS.legalDpa,
-        },
-        {
-          text: 'Terms of Service',
-          to: LINKS.legalTerms,
-        },
-        {
-          text: 'Privacy Policy',
-          to: LINKS.legalPrivacy,
-        },
-        {
-          text: 'Cookie Policy',
-          to: LINKS.legalCookies,
-        },
-        {
-          text: 'Data Processing Addendum',
-          to: LINKS.legalDpa,
-        },
-      ],
-    },
   ],
 };
