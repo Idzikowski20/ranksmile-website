@@ -1,0 +1,34 @@
+src/components/pages/about/hero/hero.jsx
+  s_57407775d5d685::t_dc5b511e1c29ec 23-24
+  s_57407775d5d685::t_c2e96b6e01d4d3 19,39,41
+src/constants/seo-data.js
+  s_57407775d5d685::t_c2e96b6e01d4d3 40,42
+src/app/about-us/page.jsx
+  s_57407775d5d685::t_c2e96b6e01d4d3 21-26
+src/components/pages/about/developers/developers.jsx
+  s_57407775d5d685::t_c2e96b6e01d4d3 13,15,19,21,25-27,31,33,45
+  s_57407775d5d685::t_dc5b511e1c29ec 2,82-93
+  s_57407775d5d685::t_0309e9772b229a 39
+src/components/pages/about/vision/vision.jsx
+  s_57407775d5d685::t_c2e96b6e01d4d3 16-17,21-22,60-62,81,83,87,89
+  s_57407775d5d685::t_dc5b511e1c29ec 77-78
+src/components/pages/about/timeline/timeline.jsx
+  s_57407775d5d685::t_c2e96b6e01d4d3 10-14,17-19,22-24,27-29,32-34,37-39,47
+  s_57407775d5d685::t_dc5b511e1c29ec 49-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "376169ae02353f476ae77c0cea7ee9a5e9d77e7d",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
