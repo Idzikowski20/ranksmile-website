@@ -1,0 +1,63 @@
+src/constants/backend-platform-page-content.js
+  s_57407775d5d685::t_f5e4655f44e4ba 290-292,294-295,297-299,302-305,307,310,312,315,317,320-322,327-328,330,333,335,338,340,343,345,349-351,353-354,356,358,361-377,380,382,385,387,390,392,398,403-404,406,410,412,416,418,422,424,430-431,433,437-439,444-445,447,450,452,456-459,471,473,476-479,491,493,497-500,515,517,521,523,526,528,531,533,536,538,541,543,675
+  s_57407775d5d685::t_1804f012c7c780 461-465,467,481-485,487,502-506,508
+src/components/pages/lakebase/dynamic-databases/section-navigation.jsx
+  s_57407775d5d685::t_e36ac030a44af4 48
+next.config.js
+  s_57407775d5d685::t_41535f7e5b1aeb 323-333
+src/constants/menus.test.js
+  s_57407775d5d685::t_485141717dd352 7
+src/components/pages/lakebase/architecture/architecture.jsx
+  s_57407775d5d685::t_41535f7e5b1aeb 4,12
+  s_57407775d5d685::t_4be326b8db1112 38
+src/app/ai-visibility/page.jsx
+  s_57407775d5d685::t_41535f7e5b1aeb 1-44
+src/components/pages/lakebase/dynamic-databases/dynamic-databases.jsx
+  s_57407775d5d685::t_41535f7e5b1aeb 2,17
+src/constants/seo-data.js
+  s_57407775d5d685::t_41535f7e5b1aeb 32-33,35-37
+src/proxy.js
+  s_57407775d5d685::t_41535f7e5b1aeb 406
+src/middleware.test.js
+  s_57407775d5d685::t_485141717dd352 63,108,386
+src/utils/get-metadata.test.js
+  s_57407775d5d685::t_485141717dd352 44
+src/components/pages/lakebase/from-first-line/carousel.jsx
+  s_57407775d5d685::t_e36ac030a44af4 149
+src/components/pages/lakebase/from-first-line/from-first-line.jsx
+  s_57407775d5d685::t_41535f7e5b1aeb 4,9
+src/constants/content.js
+  s_57407775d5d685::t_41535f7e5b1aeb 31
+src/constants/links.js
+  s_57407775d5d685::t_41535f7e5b1aeb 5,43
+src/components/pages/lakebase/autoscaling/autoscaling.jsx
+  s_57407775d5d685::t_41535f7e5b1aeb 11,22
+src/scripts/generate-backend-platform-page-markdown.js
+  s_57407775d5d685::t_1804f012c7c780 403-405
+  s_57407775d5d685::t_41535f7e5b1aeb 19,352,361,365,410,424,444
+src/scripts/generate-backend-platform-page-markdown.test.js
+  s_57407775d5d685::t_41535f7e5b1aeb 7,17,122,160,174,181-182
+  s_57407775d5d685::t_ee42c88131fbf7 121,124-131,133-134,136-138,175,180,194-195,202
+src/utils/ai-agent-detection.test.js
+  s_57407775d5d685::t_485141717dd352 153-154
+src/components/pages/lakebase/hero/illustration.jsx
+  s_57407775d5d685::t_4be326b8db1112 11
+public/images/ranksmile-wordmark.svg
+  s_57407775d5d685::t_f74850ac5b8b4e 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "6d4bfdcd7d8452151045975ac5c2d8aa8a952d34",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
