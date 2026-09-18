@@ -60,7 +60,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
 
   it('matches every generated marketing page for content negotiation', () => {
     expect(middlewareConfig.matcher).toEqual(
-      expect.arrayContaining(['/rank-tracking', '/ai-gateway', '/lakebase'])
+      expect.arrayContaining(['/rank-tracking', '/ai-gateway', '/ai-visibility'])
     );
   });
 
@@ -105,7 +105,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
       { name: 'AI Gateway', path: '/ai-gateway' },
       { name: 'WordPress plugin', path: '/wordpress' },
       { name: 'Content Score', path: '/content-score' },
-      { name: 'Lakebase', path: '/lakebase' },
+      { name: 'AI Visibility', path: '/ai-visibility' },
       { name: 'FAQs', path: '/faqs/connect-application-using-connection-string' },
     ];
 
@@ -383,7 +383,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
       ['/rank-tracking.md', 'https://neon.com/md/rank-tracking.md'],
       ['/ai-gateway.md', 'https://neon.com/md/ai-gateway.md'],
       ['/wordpress.md', 'https://neon.com/md/wordpress.md'],
-      ['/lakebase.md', 'https://neon.com/md/lakebase.md'],
+      ['/ai-visibility.md', 'https://neon.com/md/ai-visibility.md'],
     ])('should serve the generated marketing page for %s', async (pathname, markdownUrl) => {
       const req = createMockRequest(pathname, 'Mozilla/5.0', 'text/html');
 

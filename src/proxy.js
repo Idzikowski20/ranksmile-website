@@ -403,7 +403,7 @@ export const config = {
     '/ai-gateway', // Agent-friendly AI Gateway page
     '/wordpress', // Agent-friendly WordPress plugin page
     '/content-score', // Agent-friendly Content Score page
-    '/lakebase', // Agent-friendly Lakebase page
+    '/ai-visibility', // Agent-friendly AI Visibility page
     '/docs', // Bare docs root: serve llms.txt for agents; browsers fall through to the /docs→/docs/introduction redirect
     '/blog', // Bare blog root: serve blog/llms.txt for agents; browsers fall through normally
     '/blog/:slug.md', // Individual blog post markdown

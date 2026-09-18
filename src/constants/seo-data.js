@@ -4,7 +4,7 @@ export const DEFAULT_IMAGE_PATH = '/images/social-previews/index.jpg?updated=202
 
 export default {
   index: {
-    title: 'Ranksmile — rank in Google, get named by the AI engines',
+    title: 'Ranksmile — one tool to rank in Google and get mentioned by AI',
     description:
       'Ranksmile records whether AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini name your brand, scores every page as you write it, and tracks your rankings on the schedule you set.',
     pathname: '',
@@ -29,12 +29,12 @@ export default {
     pathname: LINKS.aiGateway,
     markdownPath: `${LINKS.aiGateway}.md`,
   },
-  lakebase: {
-    title: 'Lakebase Postgres — Postgres for apps and agents | Neon',
+  aiVisibility: {
+    title: 'AI Visibility — who the engines name when buyers ask | Ranksmile',
     description:
-      'Build apps and agents on Lakebase Postgres: standard Postgres with instant branching, point-in-time restore, autoscaling, and scale to zero.',
-    pathname: LINKS.lakebase,
-    markdownPath: `${LINKS.lakebase}.md`,
+      'Track whether AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini name your brand. Every scan stores the answer, the sources it cited, the competing brands and the fanout queries.',
+    pathname: LINKS.aiVisibility,
+    markdownPath: `${LINKS.aiVisibility}.md`,
   },
   aboutUs: {
     title: 'About Us — Neon',

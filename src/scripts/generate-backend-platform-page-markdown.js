@@ -16,7 +16,7 @@ const {
 const {
   rankTrackingPageContent,
   aiGatewayPageContent,
-  lakebasePageContent,
+  aiVisibilityPageContent,
   sharedBackendPlatformContent,
 } = require('../constants/backend-platform-page-content');
 const { contentScorePageContent } = require('../constants/content-score-page-content');
@@ -349,7 +349,7 @@ const renderContentScoreMarkdown = (links) => {
   return `${sections.join('\n\n')}\n`;
 };
 
-const renderLakebaseMarkdown = (links) => {
+const renderAiVisibilityMarkdown = (links) => {
   const {
     hero,
     architecture,
@@ -358,11 +358,11 @@ const renderLakebaseMarkdown = (links) => {
     dynamicDatabases,
     fromFirstLine,
     faqItems,
-  } = lakebasePageContent;
+  } = aiVisibilityPageContent;
   const { backendServices } = sharedBackendPlatformContent;
 
   const sections = [
-    renderPageHeader(lakebasePageContent),
+    renderPageHeader(aiVisibilityPageContent),
     '## Get started',
     renderActionLinks(hero, links),
     `## ${architecture.title} ${architecture.highlightedTitle} ${architecture.titleAfterHighlight}`,
@@ -400,12 +400,14 @@ const renderLakebaseMarkdown = (links) => {
       description,
       tags.map(({ label }) => `- ${label}`).join('\n'),
       `> ${testimonial.quote}\n> — ${testimonial.author}, ${testimonial.company}`,
-      `[${testimonial.caseStudyLabel}](${absoluteUrl(testimonial.caseStudyUrl)})`,
+      testimonial.caseStudyUrl
+        ? `[${testimonial.caseStudyLabel}](${absoluteUrl(testimonial.caseStudyUrl)})`
+        : testimonial.caseStudyLabel,
     ]),
     renderFaq(faqItems, `${sharedBackendPlatformContent.faqTitle}.`),
     renderBackendServices(backendServices),
     renderPlatformFooter(links),
-    renderFeedbackFooter(lakebasePageContent.slug),
+    renderFeedbackFooter(aiVisibilityPageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -419,7 +421,7 @@ async function generateBackendPlatformPageMarkdown(rootDir = path.resolve(__dirn
     { filename: 'wordpress.md', content: renderWordpressMarkdown(links) },
     // Keep public/auth.md dedicated to the existing Claimable Neon protocol.
     { filename: 'content-score.md', content: renderContentScoreMarkdown(links) },
-    { filename: 'lakebase.md', content: renderLakebaseMarkdown(links) },
+    { filename: 'ai-visibility.md', content: renderAiVisibilityMarkdown(links) },
   ];
 
   await fs.mkdir(outputDir, { recursive: true });
@@ -439,7 +441,7 @@ module.exports = {
   renderAiGatewayMarkdown,
   renderWordpressMarkdown,
   renderContentScoreMarkdown,
-  renderLakebaseMarkdown,
+  renderAiVisibilityMarkdown,
   generateBackendPlatformPageMarkdown,
 };
 

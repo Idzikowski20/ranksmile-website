@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import Container from 'components/shared/container';
-import { lakebasePageContent } from 'constants/backend-platform-page-content';
+import { aiVisibilityPageContent } from 'constants/backend-platform-page-content';
 import agentReadyIcon from 'icons/lakebase/architecture/agent-ready.svg';
 import ephemeralComputeIcon from 'icons/lakebase/architecture/ephemeral-compute.svg';
 import sharedStorageIcon from 'icons/lakebase/architecture/shared-storage.svg';
@@ -9,7 +9,7 @@ import schemaMobileImage from 'images/pages/home/architecture/schema-mobile.png'
 
 import Animation from './animation';
 
-const { architecture } = lakebasePageContent;
+const { architecture } = aiVisibilityPageContent;
 const FEATURE_ICONS = [
   { src: ephemeralComputeIcon, width: 13.33, height: 13.33 },
   { src: sharedStorageIcon, width: 12.22, height: 14.67 },
@@ -35,11 +35,7 @@ const Architecture = () => (
         {architecture.titleAfterHighlight && ` ${architecture.titleAfterHighlight}`}
       </h2>
 
-      <figure
-        className="mt-50 2xl:mt-32 md:mt-10"
-        aria-label="Decoupled compute and shared versioned storage in Lakebase"
-        role="img"
-      >
+      <figure className="mt-50 2xl:mt-32 md:mt-10" aria-hidden="true">
         <div className="mx-auto 2xl:max-w-[85%] md:hidden">
           <Animation />
         </div>
