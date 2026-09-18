@@ -13,13 +13,13 @@ const { htmlToDOM } = require('html-react-parser');
 const {
   renderAiGatewayModelIndex,
 } = require('../components/pages/doc/ai-gateway-model-index/model-markdown');
-const { authPageContent } = require('../constants/auth-page-content');
 const {
   rankTrackingPageContent,
   aiGatewayPageContent,
   lakebasePageContent,
   sharedBackendPlatformContent,
 } = require('../constants/backend-platform-page-content');
+const { contentScorePageContent } = require('../constants/content-score-page-content');
 const { wordpressPageContent } = require('../constants/wordpress-page-content');
 
 const BASE_URL = 'https://neon.com';
@@ -309,12 +309,12 @@ const renderWordpressMarkdown = (links) => {
   return `${sections.join('\n\n')}\n`;
 };
 
-const renderAuthMarkdown = (links) => {
-  const { hero, benefits, identity, branching, setupSteps, faqItems } = authPageContent;
+const renderContentScoreMarkdown = (links) => {
+  const { hero, benefits, identity, branching, setupSteps, faqItems } = contentScorePageContent;
   const { inspectAuth, identityData } = identity;
 
   const sections = [
-    renderPageHeader(authPageContent),
+    renderPageHeader(contentScorePageContent),
     '## Get started',
     renderActionLinks(hero, links),
     `## ${benefits.title}`,
@@ -342,8 +342,8 @@ const renderAuthMarkdown = (links) => {
       description,
     ]),
     renderFaq(faqItems),
-    renderSharedSections(links, authPageContent.backendServicesTitle),
-    renderFeedbackFooter(authPageContent.slug),
+    renderSharedSections(links, contentScorePageContent.backendServicesTitle),
+    renderFeedbackFooter(contentScorePageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -418,7 +418,7 @@ async function generateBackendPlatformPageMarkdown(rootDir = path.resolve(__dirn
     { filename: 'ai-gateway.md', content: renderAiGatewayMarkdown(links) },
     { filename: 'wordpress.md', content: renderWordpressMarkdown(links) },
     // Keep public/auth.md dedicated to the existing Claimable Neon protocol.
-    { filename: 'auth-page.md', content: renderAuthMarkdown(links) },
+    { filename: 'content-score.md', content: renderContentScoreMarkdown(links) },
     { filename: 'lakebase.md', content: renderLakebaseMarkdown(links) },
   ];
 
@@ -438,7 +438,7 @@ module.exports = {
   renderRankTrackingMarkdown,
   renderAiGatewayMarkdown,
   renderWordpressMarkdown,
-  renderAuthMarkdown,
+  renderContentScoreMarkdown,
   renderLakebaseMarkdown,
   generateBackendPlatformPageMarkdown,
 };

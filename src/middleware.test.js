@@ -104,7 +104,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
       { name: 'Rank Tracking', path: '/rank-tracking' },
       { name: 'AI Gateway', path: '/ai-gateway' },
       { name: 'WordPress plugin', path: '/wordpress' },
-      { name: 'Auth', path: '/auth' },
+      { name: 'Content Score', path: '/content-score' },
       { name: 'Lakebase', path: '/lakebase' },
       { name: 'FAQs', path: '/faqs/connect-application-using-connection-string' },
     ];

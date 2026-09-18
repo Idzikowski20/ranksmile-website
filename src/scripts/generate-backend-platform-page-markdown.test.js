@@ -11,7 +11,7 @@ import {
   generateBackendPlatformPageMarkdown,
   htmlToMarkdown,
   renderAiGatewayMarkdown,
-  renderAuthMarkdown,
+  renderContentScoreMarkdown,
   renderRankTrackingMarkdown,
   renderWordpressMarkdown,
   renderLakebaseMarkdown,
@@ -103,17 +103,17 @@ describe('backend platform page Markdown', () => {
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code)>/);
   });
 
-  it('renders Auth content without confusing it with Claimable Neon', () => {
-    const markdown = renderAuthMarkdown(LINKS);
+  it('renders Content Score content without confusing it with Claimable Neon', () => {
+    const markdown = renderContentScoreMarkdown(LINKS);
 
-    expect(markdown).toContain('# Better Auth that branches, managed by Neon');
-    expect(markdown).toContain('[Read the docs](https://neon.com/docs/auth/overview)');
-    expect(markdown).toContain('Built on Better Auth');
-    expect(markdown).toContain('`neon_auth`');
-    expect(markdown).toContain('Build previews you can actually log into');
-    expect(markdown).toContain('### 4. Preview');
-    expect(markdown).toContain('Your auth branches with everything else.');
-    expect(markdown).toContain('What happens to sessions when I branch?');
+    expect(markdown).toContain('# Write against the pages already winning the query');
+    expect(markdown).toContain('[See plans](https://neon.com/pricing)');
+    expect(markdown).toContain('Two scores, not a vibe');
+    expect(markdown).toContain('`target_count`');
+    expect(markdown).toContain('From competitors to published, in one panel');
+    expect(markdown).toContain('### 4. Review and publish');
+    expect(markdown).toContain('Everything the score reads from.');
+    expect(markdown).toContain('Where do the targets come from?');
     expect(markdown).not.toContain('Claimable Neon for agents');
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code|a)(?:\s|>)/);
   });
@@ -158,7 +158,7 @@ describe('backend platform page Markdown', () => {
       'rank-tracking.md',
       'ai-gateway.md',
       'wordpress.md',
-      'auth-page.md',
+      'content-score.md',
       'lakebase.md',
     ]);
     expect(await fs.readFile(path.join(outputDir, 'rank-tracking.md'), 'utf8')).toContain(
@@ -170,8 +170,8 @@ describe('backend platform page Markdown', () => {
     expect(await fs.readFile(path.join(outputDir, 'wordpress.md'), 'utf8')).toContain(
       '# Send the finished draft straight to WordPress'
     );
-    expect(await fs.readFile(path.join(outputDir, 'auth-page.md'), 'utf8')).toContain(
-      '# Better Auth that branches, managed by Neon'
+    expect(await fs.readFile(path.join(outputDir, 'content-score.md'), 'utf8')).toContain(
+      '# Write against the pages already winning the query'
     );
     expect(await fs.readFile(path.join(outputDir, 'lakebase.md'), 'utf8')).toContain(
       '# The Neon database: Lakebase Postgres'

@@ -402,7 +402,7 @@ export const config = {
     '/rank-tracking', // Agent-friendly Rank Tracking page
     '/ai-gateway', // Agent-friendly AI Gateway page
     '/wordpress', // Agent-friendly WordPress plugin page
-    '/auth', // Agent-friendly Auth product page
+    '/content-score', // Agent-friendly Content Score page
     '/lakebase', // Agent-friendly Lakebase page
     '/docs', // Bare docs root: serve llms.txt for agents; browsers fall through to the /docs→/docs/introduction redirect
     '/blog', // Bare blog root: serve blog/llms.txt for agents; browsers fall through normally
