@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import Container from 'components/shared/container';
 import SectionLabel from 'components/shared/section-label';
-import { functionsPageContent } from 'constants/backend-platform-page-content';
+import { rankTrackingPageContent } from 'constants/backend-platform-page-content';
 import aiAgentsIcon from 'icons/functions/backend-compute/ai-agents.svg';
 import apiIcon from 'icons/functions/backend-compute/api.svg';
 import mcpServersIcon from 'icons/functions/backend-compute/mcp-servers.svg';
@@ -12,7 +12,7 @@ import websocketsIcon from 'icons/functions/backend-compute/websockets.svg';
 import ConnectedServicesIllustration from './connected-services-illustration';
 import LongRunningIllustration from './long-running-illustration';
 
-const { backendCompute: backendComputeContent } = functionsPageContent;
+const { backendCompute: backendComputeContent } = rankTrackingPageContent;
 
 const WORKLOAD_VISUALS = {
   api: { icon: apiIcon, nodeId: '3122:2153' },

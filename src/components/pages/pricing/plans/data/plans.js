@@ -92,13 +92,14 @@ export default {
       scale: '1,000<span>Per crawl</span>',
     },
     {
-      rows: '1',
+      rows: '2',
       feature: {
         title: 'Rank tracking',
+        subtitle: 'Daily to manual',
       },
-      free: 'Daily',
-      launch: 'Daily',
-      scale: 'Daily',
+      free: 'Your schedule',
+      launch: 'Your schedule',
+      scale: 'Your schedule',
     },
     {
       rows: '1',

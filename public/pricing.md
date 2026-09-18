@@ -1,6 +1,6 @@
 # Ranksmile Pricing Plans
 
-> AI visibility tracking, a live Content Score in the editor, and daily rank tracking, across three plans: Growth, Scale, and Agency. Flat monthly price per workspace, no usage metering. Growth starts with a 7-day free trial.
+> AI visibility tracking, a live Content Score in the editor, and scheduled rank tracking, across three plans: Growth, Scale, and Agency. Flat monthly price per workspace, no usage metering. Growth starts with a 7-day free trial.
 
 ## How billing works
 
@@ -32,7 +32,7 @@ All prices are in EUR and exclude VAT. Yearly billing takes 17% off every plan. 
 | Keyword research             | 200/month                     | 500/month                     | 2,000/month                         |
 | Competitor Keyword Gap       | 25/month                      | 60/month                      | 250/month                           |
 | Site Audit                   | 100 pages/crawl               | 100 pages/crawl               | 1,000 pages/crawl                   |
-| Rank tracking                | Daily                         | Daily                         | Daily                               |
+| Rank tracking                | Your schedule                 | Your schedule                 | Your schedule                       |
 | Content Score & AI writing   | Yes                           | Yes                           | Yes                                 |
 | Templates & Custom Voices    | Yes                           | Yes                           | Yes                                 |
 | WordPress publishing         | Yes                           | Yes                           | Yes                                 |
@@ -48,13 +48,13 @@ All prices are in EUR and exclude VAT. Yearly billing takes 17% off every plan. 
 
 A "-" means the feature is not available on that plan. \* Unlimited is subject to fair use.
 
-All plans include: AI visibility tracking with stored answers and citations, cited sources and competing brands per prompt, fanout queries, daily keyword rank tracking, Search Console performance reporting, Site Audit and Content Audit, coverage gap, a ranked Recommendations list per site, content calendar automations, an activity log, and the WordPress publishing plugin.
+All plans include: AI visibility tracking with stored answers and citations, cited sources and competing brands per prompt, fanout queries, scheduled keyword rank tracking, Search Console performance reporting, Site Audit and Content Audit, coverage gap, a ranked Recommendations list per site, content calendar automations, an activity log, and the WordPress publishing plugin.
 
 ## Table clarifications
 
 - **AI engines** are Google AI Overviews, Google AI Mode, ChatGPT, Perplexity, and Gemini. Growth tracks four of the five; Scale and Agency track all five.
 - **Re-scan cadence** depends on the priority you give a prompt: core daily, supporting weekly, long-tail every two weeks. The scheduler checks for due scans every six hours, and manual refresh is available after a short cooldown on the same tiers.
-- **Rank tracking** runs once a day per tracked keyword, desktop and mobile, per country. It is not affected by the AI prompt allowance.
+- **Rank tracking** runs on the schedule you set per site (daily, weekly, monthly, every N days, or manual; weekly by default), desktop and mobile, per country. It is not affected by the AI prompt allowance.
 - **Documents** count only pages opened in the editor. Auditing a published page does not consume one.
 - **Keyword research** and **Competitor Keyword Gap** reset monthly and unused runs do not roll over.
 - **Site Audit** limits are per crawl, not per month.

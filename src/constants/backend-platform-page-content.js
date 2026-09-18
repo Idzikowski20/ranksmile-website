@@ -1,4 +1,4 @@
-const functionsBranchingTitleLines = ['Functions that branch with', 'the rest of your stack.'];
+const rankTrackingTitleLines = ['Track the keywords that', 'actually pay the bills.'];
 const aiGatewayHeroTitleLines = ['Call the latest models right', 'from your Neon backend'];
 const aiGatewayModelsTitleLines = ['Access a wide catalog of frontier and open', 'weight models.'];
 const aiGatewayModelsHighlightedTitleLines = ['Served with optimized performance via Databricks.'];
@@ -9,145 +9,130 @@ const lakebaseFromFirstLineTitleLines = [
   "to the world's largest teams",
 ];
 
-const functionsPageContent = {
+const rankTrackingPageContent = {
   backendServices: {
-    title: 'Your functions branch with everything else.',
+    title: 'Everything the positions sit next to.',
   },
-  slug: 'functions',
-  pageLabel: 'Functions',
+  slug: 'rank-tracking',
+  pageLabel: 'Rank Tracking',
   hero: {
-    label: 'Managed Functions for Lakebase Postgres',
-    title: 'Long-running functions, right next to your database',
+    label: 'Rank Tracking in Ranksmile',
+    title: 'Every position, per device and per country',
     illustrationDescription:
-      'An application connects to long-running serverless Node.js Functions inside a Neon branch. Functions connect to Lakebase Postgres, AI Gateway, and Object Storage.',
-    primaryAction: { label: 'Start building', linkKey: 'signup' },
-    secondaryAction: { label: 'Read the docs', linkKey: 'functionsOverview' },
+      'A tracked keyword checked on desktop and mobile in one location, stored with its position, the URL that ranked and the SERP features around it.',
+    primaryAction: { label: 'Start your free trial', linkKey: 'signup' },
+    secondaryAction: { label: 'See plans', linkKey: 'pricing' },
   },
   backendCompute: {
-    label: 'Backend compute',
-    title: 'Run backend logic where your data lives',
-    highlightedTitle: '— and keep it running when the job takes time.',
+    label: 'What a check records',
+    title: 'Each run stores the result, not just the number',
+    highlightedTitle: '— the URL that ranked, its title, and the SERP features around it.',
     connectedServices: {
-      title: 'Next to Lakebase Postgres.',
-      descriptionBeforeCode: 'Functions run in the same region as your Neon branch, with its',
-      code: 'DATABASE_URL',
+      title: 'Per device, per location.',
+      descriptionBeforeCode: 'Every tracking config carries a location, a language and a',
+      code: 'devices',
       descriptionAfterCode:
-        'and credentials for AI Gateway and Object Storage injected automatically.',
+        'setting, so desktop and mobile are stored as separate results instead of being averaged into one.',
     },
     longRunning: {
-      title: 'Serverless and long-running.',
+      title: 'Buckets, not just an average.',
       description:
-        'Start responding quickly, then keep streaming as agents call models and tools, WebSockets stay open, or SSE sends live updates.',
+        'Each run summarises how many keywords sit in the top 3, top 10 and top 100, how many moved up, down or held, and how the average position compares with the run before it.',
     },
-    workloadsLabel: 'For backend work that needs more than a quick response',
+    workloadsLabel: 'What every snapshot keeps',
     workloads: [
-      { id: 'api', label: 'APIs' },
-      { id: 'ai-agents', label: 'AI agents' },
-      { id: 'mcp-servers', label: 'MCP servers' },
-      { id: 'websockets', label: 'WebSockets' },
-      { id: 'sse', label: 'SSE' },
+      { id: 'api', label: 'Position' },
+      { id: 'ai-agents', label: 'Ranking URL' },
+      { id: 'mcp-servers', label: 'Page title' },
+      { id: 'websockets', label: 'SERP features' },
+      { id: 'sse', label: 'Ranking domain' },
     ],
   },
   branching: {
-    title: functionsBranchingTitleLines.join(' '),
-    titleLines: functionsBranchingTitleLines,
+    title: rankTrackingTitleLines.join(' '),
+    titleLines: rankTrackingTitleLines,
     description:
-      'Your agent can deploy isolated backend environments to run previews or tests, functions included.',
+      'Group keywords into configs per site, each with its own location, language, devices and schedule.',
     items: [
       {
         id: 'branches-with-data',
-        title: 'Branches with your data',
+        title: 'Your schedule, not ours',
         description:
-          'Create a child branch and the function follows, with its own invocation URL and branch-specific database context.',
+          'Check daily, weekly, monthly, every N days, or only when you ask. Weekly is the default, and each config keeps its own cadence.',
       },
       {
         id: 'declared-in',
-        title: 'Declared in',
-        titleCode: 'neon.ts',
+        title: 'Compare back to',
+        titleCode: '90d',
         descriptionBeforeCode:
-          'Define Functions alongside the rest of your Neon backend in one typed config, then deploy the selected branch with',
-        descriptionCode: 'neon deploy',
-        descriptionAfterCode: '.',
+          'Put the latest run against 1, 2, 7, 30, 60 or 90 days ago, then take the history out as',
+        descriptionCode: 'csv',
+        descriptionAfterCode: 'or JSON.',
       },
       {
         id: 'agent-friendly',
-        title: 'Agent-friendly support',
+        title: 'Paused, not lost',
         description:
-          'Tell your agent to deploy and manage your functions alongside the rest of the Neon backend.',
+          'Pause or archive a keyword without losing its history, and failed checks retry on their own with the attempt count kept on the row.',
       },
     ],
   },
   faqItems: [
     {
-      question: 'What are Neon Functions?',
+      question: 'What does Ranksmile rank tracking do?',
       answer:
-        '<p>Neon Functions are serverless functions you deploy onto a Neon branch, so your backend code runs in the same region as your database. <code>DATABASE_URL</code> is injected automatically, along with AI Gateway and Object Storage credentials when you use them. Use a Function to host an API, an MCP server, an AI agent, a real-time server, or a webhook handler without standing up separate infrastructure. Functions run JavaScript or TypeScript on the Node.js runtime.</p>',
+        '<p>It checks where your site sits in Google for the keywords you track, and stores the whole result. Each snapshot keeps the position, the URL that ranked, its title and description, the ranking domain, and the SERP features present on that result, so a movement can be explained rather than just noticed.</p>',
       initialState: 'open',
     },
     {
-      question: 'How are Neon Functions different from lambda-style serverless?',
+      question: 'How often are positions checked?',
       answer:
-        '<p>Functions run next to your data and stay open for long-running work. A Function can start responding within 15 minutes and keep streaming while data flows, so agents, WebSockets, and SSE connections aren&apos;t cut off by a short execution limit. They are still serverless: idle functions can be evicted.</p>',
+        '<p>On the schedule you set per config: daily, weekly, monthly, every N days, or manual only. Weekly is the default. The scheduler wakes once a day and runs whichever configs are due, so a daily config is checked every day and a weekly one once a week.</p>',
     },
     {
-      question: 'When should I use Neon Functions?',
+      question: 'Are desktop and mobile tracked separately?',
       answer:
-        '<p>Use Functions for backend APIs, AI agents, MCP servers, WebSockets, SSE, file upload handlers, webhook handlers, and other request-driven work that benefits from running close to your data. Hosting an MCP server is a common pattern: the Function stays close to Postgres, can keep a long-lived stream open, and gets <code>DATABASE_URL</code> plus other Neon credentials injected automatically, so the MCP tools can query and mutate the same branch as the rest of the backend.</p>',
+        '<p>Yes. A config tracks desktop, mobile, or both, and each device is stored as its own snapshot. Nothing is blended into a single average, because the two often diverge for the same keyword.</p>',
     },
     {
-      question: 'Should I run my frontend on Neon Functions?',
+      question: 'Can I track more than one country or language?',
       answer:
-        '<p>Run your frontend on your preferred web host. Use Functions for backend work that needs longer execution, persistent connections, or direct access to your Neon services.</p>',
+        '<p>Yes. Location and language live on the config, so a site can carry several configs, one per market, each with its own keyword set, devices and schedule.</p>',
     },
     {
-      question: 'Can I run cron jobs or scheduled work?',
+      question: 'What does the summary show after a run?',
       answer:
-        '<p>Yes. Function Triggers let Neon invoke a deployed Function on a cron schedule. Schedules run outside the Postgres compute, so they fire even when the database is scaled to zero. This replaces the pattern of running an external scheduler or keeping a compute awake for <code>pg_cron</code>. For queued, retryable background jobs with their own lifecycle, pair a Function with a job queue or workflow service. A native Neon job queue is a separate, upcoming offering.</p>',
+        '<p>Average position and how it moved against the previous run, how many keywords went up, down or held, and how the set is distributed across the top 3, top 10, top 100 and not ranking. The previous distribution is kept beside it, so the shift is visible and not just the current state.</p>',
     },
     {
-      question: 'What are Function Triggers?',
+      question: 'Can I compare periods and export the data?',
       answer:
-        '<p>Triggers tell Neon when to invoke a deployed Function. They live on a branch and point to a Function on that branch. A child branch inherits its parent&apos;s triggers, but they arrive disabled and don&apos;t run until you enable them, so branching production for a test doesn&apos;t fire the parent&apos;s schedule a second time. The first trigger type is cron schedules, with event-based triggers that react to activity inside Neon planned next.</p>',
+        '<p>Yes. Any view can compare the latest run against 1, 2, 7, 30, 60 or 90 days back, and the results export as CSV or JSON.</p>',
     },
     {
-      question: 'What happens to my Functions when I create a branch?',
+      question: 'Where do volume, difficulty and CPC come from?',
       answer:
-        '<p>Each branch runs its own copy of a Function, at its own URL, against its own database state. Your Function configuration branches with the rest of your backend, so a preview or test branch gets an isolated Function endpoint.</p>',
+        '<p>They are fetched per keyword for the location and language of its config and stored alongside the positions, so the list can be sorted by what is worth chasing rather than by rank alone.</p>',
     },
     {
-      question: 'How do I deploy a Function?',
+      question: 'What happens if a check fails?',
       answer:
-        '<p>Declare the Function in <code>neon.ts</code>, then run <code>neon deploy</code>. You can also deploy a single Function with the Neon CLI.</p>',
+        '<p>The keyword is retried on its own schedule and the failure is recorded with an attempt count and the last error. A run finishes as partial rather than failing outright, so one bad keyword does not throw away the rest of the results.</p>',
     },
     {
-      question: 'Can I use a custom domain?',
+      question: 'Can I stop tracking a keyword without losing its history?',
       answer:
-        '<p>Yes. You can serve a Function from your own hostname, such as <code>api.example.com</code>, instead of its native Neon invocation URL. Register the domain from the Neon Console, CLI, SDK, or API, add the returned CNAME record at your DNS provider, and Neon issues the TLS certificate automatically through Let&apos;s Encrypt. Custom domains are included with Functions with no separate charge; traffic is billed like any other Function traffic.</p>',
+        '<p>Yes. Keywords can be paused or archived and their past snapshots stay, so you can bring one back later and still see where it was.</p>',
     },
     {
-      question: 'How do custom domains work with branches?',
+      question: 'How does this fit with AI Visibility?',
       answer:
-        '<p>A custom domain is attached to one Function on one branch, not to the whole project. If you register <code>api.example.com</code> on production, that hostname keeps pointing at the production Function after you branch. Each hostname can be registered once, so a preview branch needs its own name, such as <code>preview.api.example.com</code>. Adding a custom domain doesn&apos;t authenticate the Function or disable its native Neon URL, so protect the Function with application-level authentication.</p>',
+        '<p>They answer different questions about the same site. Rank tracking tells you where a page sits in the ten blue links. AI Visibility tells you whether an answer engine names your brand at all. Ranksmile keeps both on one site, so a page that ranks but never gets cited shows up as exactly that.</p>',
     },
     {
-      question: 'How does Functions pricing work?',
+      question: 'How many keywords can I track?',
       answer:
-        '<p>Functions are pay-as-you-go on paid plans and billed on three parts: active compute while your code runs, waiting compute while a Function is idle but held ready, and invocations. Active compute is $0.10 per Capacity-Hour on Launch and $0.12 on Scale. Waiting compute is $0.025 per Capacity-Hour on Launch and $0.03 on Scale. Invocations are $0.60 per million on both plans. See the <a href="/pricing">pricing page</a> for current rates.</p>',
-    },
-    {
-      question: 'Is there a free allowance for Functions?',
-      answer:
-        '<p>The Free plan includes 10 active Capacity-Hours, 400 waiting Capacity-Hours, and 1 million invocations per month. Custom domains and triggers are part of Functions and don&apos;t carry a separate charge.</p>',
-    },
-    {
-      question: 'Which languages and runtimes do Functions support?',
-      answer:
-        '<p>Functions run JavaScript or TypeScript on the Node.js runtime. You can deploy JS/TS handlers or code that bundles to JavaScript for Node.js. A Function is any module whose default export provides a <code>fetch(request)</code> method that returns a web <code>Response</code>, the same handler shape used by other standards-based serverless runtimes. Hono is the recommended framework.</p>',
-    },
-    {
-      question: 'Which regions are Functions available in?',
-      answer:
-        '<p>Functions run in the same region as your Neon branch. Region coverage is expanding; create your project in a supported region to use Functions. See the <a href="/docs/compute/functions/overview">Functions overview</a> for the current list.</p>',
+        '<p>Tracking is on every plan. What scales with the tier is the surrounding volume: documents, Brand Spaces, keyword research and competitor gap runs. See the <a href="/pricing">pricing page</a> for the limits per plan.</p>',
     },
   ],
 };
@@ -579,7 +564,7 @@ const sharedBackendPlatformContent = {
       },
       compute: {
         title: 'Rank Tracking',
-        description: 'Positions checked once a day, desktop and mobile, per country.',
+        description: 'Positions on your own schedule, desktop and mobile, per country.',
       },
       storage: {
         title: 'WordPress publishing',
@@ -607,7 +592,7 @@ const sharedBackendPlatformContent = {
         id: 'serverless',
         title: 'Scheduled',
         description:
-          'Core prompts re-scan daily, supporting weekly, long-tail every two weeks, and rankings run once a day. Nothing waits for you to remember.',
+          'Core prompts re-scan daily, supporting weekly, long-tail every two weeks, and rank checks run on the schedule you set. Nothing waits for you to remember.',
       },
       {
         id: 'agent-ready',
@@ -631,7 +616,7 @@ const sharedBackendPlatformContent = {
       },
       {
         value: '24h',
-        description: 'Rank check cadence, desktop and mobile, per country',
+        description: 'Rank check schedules, from daily to manual, desktop and mobile',
       },
     ],
     quotes: [
@@ -686,7 +671,7 @@ const sharedBackendPlatformContent = {
 };
 
 module.exports = {
-  functionsPageContent,
+  rankTrackingPageContent,
   aiGatewayPageContent,
   lakebasePageContent,
   sharedBackendPlatformContent,

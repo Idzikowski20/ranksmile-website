@@ -7,22 +7,22 @@ import Branching from 'components/pages/functions/branching';
 import HeroIllustration from 'components/pages/functions/hero/illustration';
 import Faq from 'components/shared/faq';
 import {
-  functionsPageContent,
+  rankTrackingPageContent,
   sharedBackendPlatformContent,
 } from 'constants/backend-platform-page-content';
 import SEO_DATA from 'constants/seo-data';
 import getMetadata from 'utils/get-metadata';
 
-export const metadata = getMetadata(SEO_DATA.functions);
+export const metadata = getMetadata(SEO_DATA.rankTracking);
 
-const FunctionsPage = () => (
+const RankTrackingPage = () => (
   <BackendPlatformPage>
     <BackendHero
       className="bg-black-pure pt-[146px] pb-20 text-white xl:pt-[122px] lg:pt-[98px] md:pt-24 md:pb-16"
-      content={functionsPageContent.hero}
+      content={rankTrackingPageContent.hero}
       dataFigmaNodeId="3122:1263"
       headingClassName="max-w-[878px] leading-[1.125] xl:text-6xl sm:text-[2.5rem]"
-      headingId="functions-hero-heading"
+      headingId="rank-tracking-hero-heading"
       headingRowClassName="gap-12 lg:flex-col lg:items-start"
       illustration={<HeroIllustration />}
       illustrationClassName="overflow-hidden"
@@ -32,13 +32,13 @@ const FunctionsPage = () => (
     <BackendCompute />
     <Branching />
     <Faq
-      items={functionsPageContent.faqItems}
+      items={rankTrackingPageContent.faqItems}
       titleLines={sharedBackendPlatformContent.faqTitleLines}
       variant="light"
     />
-    <BackendServices title={functionsPageContent.backendServices.title} />
+    <BackendServices title={rankTrackingPageContent.backendServices.title} />
     <BuiltForAgents />
   </BackendPlatformPage>
 );
 
-export default FunctionsPage;
+export default RankTrackingPage;

@@ -12,7 +12,7 @@ import {
   htmlToMarkdown,
   renderAiGatewayMarkdown,
   renderAuthMarkdown,
-  renderFunctionsMarkdown,
+  renderRankTrackingMarkdown,
   renderWordpressMarkdown,
   renderLakebaseMarkdown,
 } from './generate-backend-platform-page-markdown';
@@ -62,12 +62,12 @@ describe('backend platform page Markdown', () => {
     );
   });
 
-  it('renders Functions unique and shared content from the page data', () => {
-    const markdown = renderFunctionsMarkdown(LINKS);
+  it('renders Rank Tracking unique and shared content from the page data', () => {
+    const markdown = renderRankTrackingMarkdown(LINKS);
 
-    expect(markdown).toContain('# Long-running functions, right next to your database');
-    expect(markdown).toContain('## Backend compute');
-    expect(markdown).toContain('### Declared in `neon.ts`');
+    expect(markdown).toContain('# Every position, per device and per country');
+    expect(markdown).toContain('## What a check records');
+    expect(markdown).toContain('### Compare back to `90d`');
     expect(markdown).toContain('## Your questions, answered');
     expect(markdown).toContain('## Built for the teams and the agents behind them.');
     expect(markdown).toContain('[Contact us](mailto:kontakt@ranksmile.pl)');
@@ -155,14 +155,14 @@ describe('backend platform page Markdown', () => {
     const files = await generateBackendPlatformPageMarkdown(rootDir);
 
     expect(files.map((file) => path.basename(file))).toEqual([
-      'functions.md',
+      'rank-tracking.md',
       'ai-gateway.md',
       'wordpress.md',
       'auth-page.md',
       'lakebase.md',
     ]);
-    expect(await fs.readFile(path.join(outputDir, 'functions.md'), 'utf8')).toContain(
-      '# Long-running functions'
+    expect(await fs.readFile(path.join(outputDir, 'rank-tracking.md'), 'utf8')).toContain(
+      '# Every position, per device and per country'
     );
     expect(await fs.readFile(path.join(outputDir, 'ai-gateway.md'), 'utf8')).toContain(
       '# Call the latest models'

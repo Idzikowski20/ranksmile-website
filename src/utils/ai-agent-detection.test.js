@@ -142,8 +142,8 @@ describe('isAIAgentRequest', () => {
 describe('getMarkdownPath', () => {
   describe('Valid content routes', () => {
     it.each([
-      ['/functions', '/md/functions.md'],
-      ['/functions.md', '/md/functions.md'],
+      ['/rank-tracking', '/md/rank-tracking.md'],
+      ['/rank-tracking.md', '/md/rank-tracking.md'],
       ['/ai-gateway', '/md/ai-gateway.md'],
       ['/ai-gateway.md', '/md/ai-gateway.md'],
       ['/wordpress', '/md/wordpress.md'],

@@ -27,8 +27,8 @@ export default [
             info: '<p>Pick four of AI Overviews, AI Mode,<br/> ChatGPT, Perplexity and Gemini.</p>',
           },
           {
-            title: 'Daily rank tracking',
-            info: '<p>Desktop and mobile, per country.</p>',
+            title: 'Rank tracking',
+            info: '<p>Daily to manual, your schedule.</p><p>Desktop and mobile, per country.</p>',
           },
           {
             title: '200 keyword researches per month',

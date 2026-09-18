@@ -9,7 +9,7 @@ configureRiveRuntime();
 const RiveWasm = () => {
   const pathname = usePathname();
 
-  const pagesWithRiveInHero = ['/functions', '/ai-gateway', '/wordpress', '/auth'];
+  const pagesWithRiveInHero = ['/rank-tracking', '/ai-gateway', '/wordpress', '/auth'];
 
   if (pagesWithRiveInHero.includes(pathname)) {
     return <link rel="preload" href={RIVE_WASM_URL} as="fetch" crossOrigin="anonymous" />;

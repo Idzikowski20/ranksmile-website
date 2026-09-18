@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 import Container from 'components/shared/container';
 import RiveAnimation from 'components/shared/rive-animation';
-import { functionsPageContent } from 'constants/backend-platform-page-content';
+import { rankTrackingPageContent } from 'constants/backend-platform-page-content';
 import agentFriendlyIcon from 'icons/functions/branching/agent-friendly.svg';
 import branchesWithDataIcon from 'icons/functions/branching/branches-with-data.svg';
 import declaredInIcon from 'icons/functions/branching/declared-in.svg';
 
-const { branching: branchingContent } = functionsPageContent;
+const { branching: branchingContent } = rankTrackingPageContent;
 const branchingItemsById = Object.fromEntries(
   branchingContent.items.map((item) => [item.id, item])
 );

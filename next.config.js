@@ -320,6 +320,17 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The Functions product page became the Rank Tracking page.
+      {
+        source: '/functions',
+        destination: '/rank-tracking',
+        permanent: true,
+      },
+      {
+        source: '/functions.md',
+        destination: '/rank-tracking.md',
+        permanent: true,
+      },
       // The Object Storage product page became the WordPress plugin page.
       {
         source: '/object-storage',

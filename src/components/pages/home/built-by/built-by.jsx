@@ -16,7 +16,7 @@ const STATS = [
   },
   {
     title: '24h',
-    description: 'Rank check cadence - desktop and mobile, per country.',
+    description: 'Rank check schedules, from daily to manual, desktop and mobile.',
     className: 'col-span-1',
     descriptionClassName: 'max-w-54',
   },

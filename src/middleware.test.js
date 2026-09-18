@@ -60,7 +60,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
 
   it('matches every generated marketing page for content negotiation', () => {
     expect(middlewareConfig.matcher).toEqual(
-      expect.arrayContaining(['/functions', '/ai-gateway', '/lakebase'])
+      expect.arrayContaining(['/rank-tracking', '/ai-gateway', '/lakebase'])
     );
   });
 
@@ -101,7 +101,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
       { name: 'Use Cases bursty workloads', path: '/use-cases/bursty-workloads' },
       { name: 'Use Cases large databases', path: '/use-cases/large-databases' },
       { name: 'Pricing', path: '/pricing' },
-      { name: 'Functions', path: '/functions' },
+      { name: 'Rank Tracking', path: '/rank-tracking' },
       { name: 'AI Gateway', path: '/ai-gateway' },
       { name: 'WordPress plugin', path: '/wordpress' },
       { name: 'Auth', path: '/auth' },
@@ -380,7 +380,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
   // served as markdown and tracked as LLM pageviews regardless of User-Agent.
   describe('Direct .md URL handling', () => {
     it.each([
-      ['/functions.md', 'https://neon.com/md/functions.md'],
+      ['/rank-tracking.md', 'https://neon.com/md/rank-tracking.md'],
       ['/ai-gateway.md', 'https://neon.com/md/ai-gateway.md'],
       ['/wordpress.md', 'https://neon.com/md/wordpress.md'],
       ['/lakebase.md', 'https://neon.com/md/lakebase.md'],

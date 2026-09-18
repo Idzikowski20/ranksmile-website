@@ -1,12 +1,12 @@
 import RiveAnimation from 'components/shared/rive-animation';
-import { functionsPageContent } from 'constants/backend-platform-page-content';
+import { rankTrackingPageContent } from 'constants/backend-platform-page-content';
 
 const Illustration = () => (
   <div
     className="pointer-events-none relative aspect-[1344/502] w-full overflow-hidden bg-[#151617] select-none"
     data-figma-node-id="3122:1275"
     role="img"
-    aria-label={functionsPageContent.hero.illustrationDescription}
+    aria-label={rankTrackingPageContent.hero.illustrationDescription}
   >
     <RiveAnimation
       className="pointer-events-none size-full select-none"
