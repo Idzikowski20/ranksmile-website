@@ -24,7 +24,7 @@ const FEATURES_DATA = [
     icon: IconCost,
     title: 'One price',
     description:
-      'Flat monthly plans with the limits printed on the pricing page. No per-seat maths, no quote to request.',
+      'Flat monthly plans with the limits printed on the pricing page. No per-seat math, no quote to request.',
   },
   {
     icon: IconReliable,
