@@ -2,7 +2,6 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 import Button from 'components/shared/button';
-import ButtonAiHelper from 'components/shared/button-ai-helper';
 import Container from 'components/shared/container';
 import SectionLabel from 'components/shared/section-label';
 import LINKS from 'constants/links';
@@ -10,30 +9,16 @@ import { cn } from 'utils/cn';
 
 import ctaBackground from './images/cta-bg.jpg';
 
-const CONTACT_SALES_AI_SETTINGS = {
-  aiAssistantName: 'Neon Sales AI',
-  placeholder: 'How do I get started?',
-  introMessage:
-    "Hi!\nI'm an AI assistant here to help you learn about Neon and answer any questions you have.\n\nFeel free to ask about pricing, features, enterprise solutions, or anything else!",
-  exampleQuestions: [
-    'How to get a Demo request?',
-    'What are the Enterprise Pricing?',
-    'HIPAA Compliance',
-    'Security Overview',
-  ],
-};
-
 const CTANew = ({
   className = 'mt-[183px] xl:mt-[168px] lg:mt-[145px] md:mt-[90px]',
   copyWrapperClassName = null,
-  title = "The world's most advanced <br /> backend platform.",
+  title = 'One tool to rank in Google <br /> and get mentioned by AI.',
   description = null,
   label,
   labelIcon = 'arrow',
   buttonText = 'Get started',
   buttonUrl = LINKS.signup,
   isExternal = false,
-  buttonType = null,
 }) => (
   <section className={cn('cta relative bg-[#151617] safe-paddings', className)}>
     <div className="absolute inset-0 z-10">
@@ -57,21 +42,15 @@ const CTANew = ({
             </>
           )}
         </div>
-        {buttonType === 'aiHelper' ? (
-          <ButtonAiHelper className="mt-10 lg:mt-8" {...CONTACT_SALES_AI_SETTINGS}>
-            {buttonText}
-          </ButtonAiHelper>
-        ) : (
-          <Button
-            className="mt-10 lg:mt-8"
-            theme="white-filled"
-            size="new"
-            to={buttonUrl}
-            isExternal={isExternal}
-          >
-            {buttonText}
-          </Button>
-        )}
+        <Button
+          className="mt-10 lg:mt-8"
+          theme="white-filled"
+          size="new"
+          to={buttonUrl}
+          isExternal={isExternal}
+        >
+          {buttonText}
+        </Button>
       </Container>
     </div>
 
@@ -98,7 +77,6 @@ CTANew.propTypes = {
   buttonText: PropTypes.string,
   buttonUrl: PropTypes.string,
   isExternal: PropTypes.bool,
-  buttonType: PropTypes.oneOf(['aiHelper', null]),
 };
 
 export default CTANew;

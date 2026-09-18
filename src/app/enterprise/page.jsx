@@ -321,11 +321,12 @@ const EnterprisePage = () => (
     />
     <Faq items={faqItems} />
     <CTANew
-      label="ASK AI"
-      title="Still have questions? Ask our AI. <br class='xs:hidden' />"
-      description="It knows Neon inside and out."
-      buttonText="Get Answers"
-      buttonType="aiHelper"
+      label="7-DAY FREE TRIAL"
+      title="Still deciding? <br class='xs:hidden' /> Try it on your own site."
+      description="Add a site, pick your prompts, and read the first scan."
+      buttonText="Start your free trial"
+      buttonUrl={LINKS.signup}
+      isExternal
     />
   </Layout>
 );
