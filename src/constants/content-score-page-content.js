@@ -40,8 +40,8 @@ const contentScorePageContent = {
   ],
   hero: {
     label: 'Content Score in the Ranksmile editor',
-    title: 'How your page compares to the ones already winning.',
-    titleLines: ['How your page compares to', 'the ones already winning.'],
+    title: 'Know what your page needs before you publish it.',
+    titleLines: ['Know what your page needs', 'before you publish it.'],
     illustrationDescription:
       'A draft open in the Ranksmile editor with its Content Score panel alongside: an SEO ring, an AI score, NLP term coverage, and live counts for words, headings and paragraphs.',
     primaryAction: {

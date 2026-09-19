@@ -5,7 +5,7 @@ const wordpressPageContent = {
   pageLabel: 'WordPress plugin',
   hero: {
     label: 'Ranksmile for WordPress',
-    title: 'The finished draft, straight to WordPress.',
+    title: 'Publish straight to your WordPress site.',
     illustrationDescription:
       'A draft written in the Ranksmile editor is published to a connected WordPress site, arriving as Gutenberg blocks with its images sideloaded into the media library.',
     primaryAction: { label: 'Start your free trial', linkKey: 'signup' },
