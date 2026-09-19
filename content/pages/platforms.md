@@ -22,7 +22,7 @@ Neon is perfect for platforms that need to offer every user their own Postgres d
 - **API-first** - Provision, set quotas, track usage, and transfer ownership programmatically across tens or hundreds of thousands of projects
 - **Claimable when you need it** - Spin up a database with no signup, then let the user claim it into their own Neon account later
 
-This page covers the embedded Postgres model for SaaS and developer platforms. If you are building an agent product that provisions Neon for end users, see also [Neon for AI Agent Platforms](/use-cases/ai-agents).
+This page covers the embedded Postgres model for SaaS and developer platforms.
 </Admonition>
 
 ## Built to scale Postgres fleets
@@ -68,21 +68,21 @@ Neon's API is built for platforms that manage large fleets of Postgres databases
 
 Platforms that ship free, pro, and enterprise tiers need hard caps per user, not just observability. Neon exposes those caps on the project itself through the `quota` object on [Create project](/docs/reference/api/projects/create-project) and [Update project](/docs/reference/api/projects/update-project). Set them when you provision a tenant, then raise or lower them when the user changes plan, without downtime.
 
-| Quota | Scope | What it caps |
-| --- | --- | --- |
-| `active_time_seconds` | Project, per billing period | How long computes can stay active, excluding idle scale-to-zero time |
-| `compute_time_seconds` | Project, per billing period | CPU-seconds across all computes in the project, weighted by compute size |
-| `written_data_bytes` | Project, per billing period | Total data written across all branches |
-| `data_transfer_bytes` | Project, per billing period | Egress through the Neon proxy |
-| `logical_size_bytes` | Branch, lifetime of the branch | Maximum size of any one branch. Only that branch's compute is suspended when hit |
+| Quota                  | Scope                          | What it caps                                                                     |
+| ---------------------- | ------------------------------ | -------------------------------------------------------------------------------- |
+| `active_time_seconds`  | Project, per billing period    | How long computes can stay active, excluding idle scale-to-zero time             |
+| `compute_time_seconds` | Project, per billing period    | CPU-seconds across all computes in the project, weighted by compute size         |
+| `written_data_bytes`   | Project, per billing period    | Total data written across all branches                                           |
+| `data_transfer_bytes`  | Project, per billing period    | Egress through the Neon proxy                                                    |
+| `logical_size_bytes`   | Branch, lifetime of the branch | Maximum size of any one branch. Only that branch's compute is suspended when hit |
 
 You can also size each endpoint from the same API surface, as project defaults, on branch create, or when creating or updating an endpoint.
 
-| Setting | What it controls |
-| --- | --- |
-| `autoscaling_limit_min_cu` | Minimum compute size when the endpoint wakes |
-| `autoscaling_limit_max_cu` | Hard ceiling for autoscaling under load |
-| `suspend_timeout_seconds` | How long an idle endpoint stays warm before scale-to-zero |
+| Setting                    | What it controls                                          |
+| -------------------------- | --------------------------------------------------------- |
+| `autoscaling_limit_min_cu` | Minimum compute size when the endpoint wakes              |
+| `autoscaling_limit_max_cu` | Hard ceiling for autoscaling under load                   |
+| `suspend_timeout_seconds`  | How long an idle endpoint stays warm before scale-to-zero |
 
 Together, quotas and endpoint settings let you encode your pricing tiers in API calls:
 
@@ -99,23 +99,23 @@ Together, quotas and endpoint settings let you encode your pricing tiers in API 
 
 Platforms that bill their own users, or that need to watch a large fleet, get invoice-aligned consumption data from the Neon API. The v2 consumption endpoints return the same line items Neon bills on, at hourly, daily, or monthly granularity, without waking suspended computes when you poll.
 
-| Endpoint | Path | What it returns | Plan availability |
-| --- | --- | --- | --- |
-| Project metrics | `GET /consumption_history/v2/projects` | Usage-based metrics per project, cursor-paginated across the org | Launch, Scale, Agent, Enterprise |
+| Endpoint              | Path                                   | What it returns                                                                | Plan availability                |
+| --------------------- | -------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------- |
+| Project metrics       | `GET /consumption_history/v2/projects` | Usage-based metrics per project, cursor-paginated across the org               | Launch, Scale, Agent, Enterprise |
 | Branch metrics (beta) | `GET /consumption_history/v2/branches` | The same usage-based metrics broken down by branch across one or more projects | Launch, Scale, Agent, Enterprise |
 
 Project metrics cover the full billing surface. Branch metrics omit snapshot storage and extra-branch counts, and are meant for attributing compute and storage to CI branches, previews, or development environments inside a project.
 
-| Metric | What it measures | Useful for |
-| --- | --- | --- |
-| `compute_unit_seconds` | CPU time weighted by compute size | Passing through compute cost per user or project |
-| `root_branch_bytes_month` | Storage on root branches | Primary database storage per tenant |
-| `child_branch_bytes_month` | Delta storage on child branches | Preview, CI, and developer branch cost |
-| `instant_restore_bytes_month` | Point-in-time history storage | History-window cost per project |
-| `snapshot_storage_bytes_month` | Snapshot storage (project endpoint only) | Backup and snapshot line items |
-| `public_network_transfer_bytes` | Egress over the public internet | Data-transfer quotas and billing |
-| `private_network_transfer_bytes` | Egress over private networks | PrivateLink and similar paths |
-| `extra_branches_month` | Child branches beyond plan allowance (project endpoint only) | Enforcing or billing for branch headroom |
+| Metric                           | What it measures                                             | Useful for                                       |
+| -------------------------------- | ------------------------------------------------------------ | ------------------------------------------------ |
+| `compute_unit_seconds`           | CPU time weighted by compute size                            | Passing through compute cost per user or project |
+| `root_branch_bytes_month`        | Storage on root branches                                     | Primary database storage per tenant              |
+| `child_branch_bytes_month`       | Delta storage on child branches                              | Preview, CI, and developer branch cost           |
+| `instant_restore_bytes_month`    | Point-in-time history storage                                | History-window cost per project                  |
+| `snapshot_storage_bytes_month`   | Snapshot storage (project endpoint only)                     | Backup and snapshot line items                   |
+| `public_network_transfer_bytes`  | Egress over the public internet                              | Data-transfer quotas and billing                 |
+| `private_network_transfer_bytes` | Egress over private networks                                 | PrivateLink and similar paths                    |
+| `extra_branches_month`           | Child branches beyond plan allowance (project endpoint only) | Enforcing or billing for branch headroom         |
 
 You can use these to:
 
@@ -146,6 +146,7 @@ That pattern fits:
 Via [Netlify DB](/blog/netlify-db-powered-by-neon) developers and agents can provision a production-ready Postgres database from a Netlify project in one click or one CLI command, with no external signup. If they wish, they claim the database into a Neon account.
 
 <video autoPlay playsInline muted loop width="704" height="400" style={{ marginLeft: 0, marginRight: 'auto', width: '100%', height: 'auto' }}>
+
   <source src="https://cdn.neonapi.io/public/videos/pages/blog/netlify-db-powered-by-neon/netlify-db-clip-449bd1a2.mp4" type="video/mp4" />
 </video>
 

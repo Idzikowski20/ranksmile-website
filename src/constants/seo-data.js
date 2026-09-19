@@ -120,20 +120,6 @@ export default {
     imagePath: '/images/social-previews/pricing.jpg',
     pathname: LINKS.pricing,
   },
-  report: {
-    title: 'Impact of Postgres restores survey',
-    description:
-      'We asked 50 developers managing production Postgres about recovery times and their business impact.',
-    pathname: LINKS.report,
-    imagePath: '/images/social-previews/report.jpg',
-  },
-  variable: {
-    title: 'Dynamically scale your Postgres database — Neon',
-    description:
-      'Discover how Neon dynamically scales Postgres compute resources for optimal performance during peak traffic without overpaying.',
-    imagePath: '/images/social-previews/variable.jpg',
-    pathname: LINKS.variable,
-  },
   costFleets: {
     title: 'Neon for platforms: Cost estimator',
     description:
