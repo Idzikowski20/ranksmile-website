@@ -1,6 +1,7 @@
-- title: Ranksmile Docs
-  slug: docs
-  icon: docs
+- nav: Docs
+  slug: introduction/overview
+  title: Ranksmile Docs
+  icon: home
   items:
     - section: Start here
       icon: get-started

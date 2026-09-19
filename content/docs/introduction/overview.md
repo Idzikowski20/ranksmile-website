@@ -2,6 +2,8 @@
 title: What Ranksmile is
 subtitle: One tool for search rankings, AI visibility, technical health and content, instead of four subscriptions that do not talk to each other.
 enableTableOfContents: true
+redirectFrom:
+  - /docs/introduction
 ---
 
 Ranksmile watches how findable you are, in both places that matter now: the classic search results, and the answers AI assistants give when someone asks about your market.
