@@ -18,6 +18,21 @@ describe('backend platform Markdown rewrites', () => {
     }
   });
 
+  it('keeps the legacy product paths redirecting to their new pages', async () => {
+    const redirects = await nextConfig.redirects();
+
+    // /ai-gateway.md also matches the global .md proxy matcher, so a routing-order
+    // regression would answer it with a Markdown 404 instead of this redirect.
+    for (const [source, destination] of [
+      ['/ai-gateway', '/site-audit'],
+      ['/ai-gateway.md', '/site-audit.md'],
+    ]) {
+      expect(redirects).toContainEqual(
+        expect.objectContaining({ source, destination, permanent: true })
+      );
+    }
+  });
+
   it('preserves the static Claimable Neon protocol at /auth.md', async () => {
     const rewrites = await nextConfig.rewrites();
     const allRewrites = Object.values(rewrites).flat();
