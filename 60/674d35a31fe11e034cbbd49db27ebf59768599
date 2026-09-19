@@ -1,0 +1,19 @@
+public/index.md
+  s_57407775d5d685::t_0948347d37a959 1,3,5,7,9-14,16,18,20,22-23,26,28-35,37,41-52,54,56,58,60,62-65,69-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "60674d35a31fe11e034cbbd49db27ebf59768599",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
