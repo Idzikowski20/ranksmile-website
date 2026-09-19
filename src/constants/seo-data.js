@@ -58,12 +58,6 @@ export default {
     description: 'Frequently asked questions about Neon.',
     pathname: LINKS.faqs,
   },
-  claimableNeon: {
-    title: 'Claimable Neon for agents — Neon',
-    description:
-      'Let agents provision a temporary Neon project (Lakebase Postgres, Data API, and Managed Better Auth) before a human creates a Neon account.',
-    pathname: LINKS.claimableNeon,
-  },
   mcp: {
     title: 'Ranksmile MCP — give your agent the keys to your SEO data',
     description:
@@ -108,9 +102,6 @@ export default {
     description: 'Bring familiar, reliable and scalable Postgres experience to your customers.',
     imagePath: '/images/social-previews/partners.jpg',
     pathname: LINKS.partners,
-  },
-  pingThing: {
-    robotsNoindex: 'noindex',
   },
   pricing: {
     title: 'Pricing — Ranksmile',

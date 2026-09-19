@@ -105,25 +105,6 @@ const defaultConfig = {
         ],
       },
       {
-        source: '/home',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'max-age=0, s-maxage=31536000',
-          },
-          {
-            key: 'Link',
-            value: [
-              '</.well-known/api-catalog>; rel="api-catalog"',
-              '</docs/llms.txt>; rel="llms-txt"',
-              '</.well-known/agent-skills/index.json>; rel="profile"',
-              '</.well-known/mcp/server-card.json>; rel="mcp-server-card"',
-              '</.well-known/ai-catalog.json>; rel="ai-catalog"',
-            ].join(', '),
-          },
-        ],
-      },
-      {
         source: '/fonts/:slug*',
         headers: [
           {
@@ -2372,86 +2353,6 @@ const defaultConfig = {
       {
         source: '/baa/signed',
         destination: 'https://ironcladapp.com/public-launch/6884048e9f9f2acee1cf6353',
-        permanent: true,
-      },
-      {
-        source: '/launchpad',
-        destination: '/claimable-neon',
-        permanent: false,
-      },
-      {
-        source: '/instagres',
-        destination: '/claimable-neon',
-        permanent: false,
-      },
-      {
-        source: '/claimable',
-        destination: '/claimable-neon',
-        permanent: false,
-      },
-      {
-        source: '/claimable-postgres',
-        destination: '/claimable-neon',
-        permanent: true,
-      },
-      {
-        source: '/docs/reference/claimable-postgres',
-        destination: '/docs/reference/claimable-neon',
-        permanent: true,
-      },
-      {
-        source: '/docs/reference/claimable-postgres.md',
-        destination: '/docs/reference/claimable-neon.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/ai/skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/ai/skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/agent-skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/agent-skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/agent-skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/agent-skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/skills/claimable-postgres/:path*',
-        destination: '/auth.md',
         permanent: true,
       },
       {

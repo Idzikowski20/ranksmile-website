@@ -571,7 +571,6 @@ describe('Middleware - AI Agent Integration Tests', () => {
 
     it.each([
       ['real static file', '/pricing.md'],
-      ['Claimable Neon auth protocol', '/auth.md'],
       ['real skill SKILL.md', '/docs/ai/skills/neon-postgres/SKILL.md'],
       // Rewrite-backed skill-discovery aliases: no physical file at the request
       // path (next.config rewrites to a real SKILL.md), so the proxy must pass

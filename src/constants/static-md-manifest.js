@@ -4,7 +4,6 @@
 
 export const STATIC_MD_PATHS = [
   '/agentic-provisioning-llm-context.md',
-  '/auth.md',
   '/docs/ai/skills/neon-ai-gateway/SKILL.md',
   '/docs/ai/skills/neon-auth/SKILL.md',
   '/docs/ai/skills/neon-auth/references/managed-auth.md',

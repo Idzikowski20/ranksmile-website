@@ -7,7 +7,6 @@ export default {
   blog: '/blog',
   careers:
     'https://www.databricks.com/company/careers/open-positions?department=engineering&location=all&itm_source=www&itm_category=company&itm_page=engineering-at-databricks&itm_location=body&itm_component=hero&itm_offer=open-positions',
-  claimableNeon: '/claimable-neon',
   cli: '/mcp',
   mcp: '/mcp',
   appMcpSettings: 'https://app.ranksmile.pl/settings/api',
