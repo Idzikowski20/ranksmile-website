@@ -1,0 +1,20 @@
+src/components/shared/faq/item/item.test.jsx
+  s_57407775d5d685::t_1a319636804507 1-59,77-107
+  s_57407775d5d685::t_e6f1d675eda69a 60-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "f0c62643064dd7994b27b39b350262ef0a3bf915",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
