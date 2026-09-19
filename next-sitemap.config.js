@@ -34,6 +34,19 @@ module.exports = {
 
     // Legacy docs
     '/docs/auth/legacy/*',
+
+    // Inherited from Neon and not yet rewritten. Kept on disk, kept out of
+    // search: see the Disallow list below and the noindex headers in
+    // next.config.js. Drop a line here once its section is ours.
+    '/docs',
+    '/docs/*',
+    '/guides',
+    '/guides/*',
+    '/faqs',
+    '/faqs/*',
+    '/changelog',
+    '/changelog/*',
+    '/blog',
   ],
   generateRobotsTxt: true,
   additionalPaths: async (config) => [await config.transform(config, '/')],
@@ -48,17 +61,24 @@ module.exports = {
 
           // Legacy docs
           '/docs/auth/legacy/',
+
+          // Inherited from Neon and not yet rewritten.
+          '/docs/',
+          '/postgresql/',
+          '/guides/',
+          '/faqs/',
+          '/blog/',
+          '/changelog/',
         ],
       },
     ],
-    additionalSitemaps: [
-      `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/blog-sitemap.xml`,
-      `${process.env.NEXT_PUBLIC_DEFAULT_SITE_URL}/sitemap-postgres.xml`,
-    ],
+    // blog-sitemap.xml and sitemap-postgres.xml list inherited Neon content, so
+    // they are not announced while that content is out of search.
+    additionalSitemaps: [],
     transformRobotsTxt: async (_config, robotsTxt) => {
       return robotsTxt.replace(
         '# Host',
-        'Content-Signal: ai-train=yes, search=yes, ai-input=yes\n\n# Host'
+        'Content-Signal: ai-train=no, search=yes, ai-input=yes\n\n# Host'
       );
     },
   },

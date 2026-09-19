@@ -84,7 +84,23 @@ const defaultConfig = {
         }))
     );
 
+    // Content inherited from Neon and not yet rewritten. It stays on disk and
+    // stays reachable, but it is not for search engines or model training: see
+    // the matching exclude and Disallow lists in next-sitemap.config.js.
+    const inheritedNoindex = [
+      '/docs/:path*',
+      '/postgresql/:path*',
+      '/guides/:path*',
+      '/faqs/:path*',
+      '/blog/:path*',
+      '/changelog/:path*',
+    ].map((source) => ({
+      source,
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+    }));
+
     return [
+      ...inheritedNoindex,
       {
         source: '/',
         headers: [
@@ -95,7 +111,6 @@ const defaultConfig = {
           {
             key: 'Link',
             value: [
-              '</.well-known/api-catalog>; rel="api-catalog"',
               '</docs/llms.txt>; rel="llms-txt"',
               '</.well-known/agent-skills/index.json>; rel="profile"',
               '</.well-known/mcp/server-card.json>; rel="mcp-server-card"',
