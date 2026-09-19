@@ -1,173 +1,134 @@
-import Bento from 'components/pages/ai/bento';
 import Hero from 'components/pages/ai/hero';
-import Usage from 'components/pages/ai/usage';
 import CTANew from 'components/shared/cta-new';
-import FeaturesCards from 'components/shared/features-cards';
 import GridFeatures from 'components/shared/grid-features';
 import Layout from 'components/shared/layout';
-import TestimonialNew from 'components/shared/testimonial-new';
 import LINKS from 'constants/links';
 import SEO_DATA from 'constants/seo-data';
 import aiApps from 'icons/ai/features-grid/ai-apps.svg';
 import auth from 'icons/ai/features-grid/auth.svg';
 import autoscaling from 'icons/ai/features-grid/autoscaling.svg';
 import branches from 'icons/ai/features-grid/branches.svg';
-import builtWithNeon from 'icons/ai/features-grid/built-with-neon.svg';
 import jsConsole from 'icons/ai/features-grid/js-console.svg';
 import lightning from 'icons/ai/features-grid/lightning.svg';
 import performanceStorage from 'icons/ai/features-grid/performance-storage.svg';
-import pgvector from 'icons/ai/features-grid/pgvector.svg';
 import programmable from 'icons/ai/features-grid/programmable.svg';
 import scale from 'icons/ai/features-grid/scale.svg';
 import vectorSearchOptimization from 'icons/ai/features-grid/vector-seo.svg';
-import anythingIcon from 'icons/companies/anything.svg';
-import replitIcon from 'icons/companies/replit.svg';
-import authorDhruvAmin from 'images/authors/dhruv-amin.jpg';
-import authorMarcoDalia from 'images/authors/marco-dalia.jpg';
 import getMetadata from 'utils/get-metadata';
 
 export const metadata = getMetadata(SEO_DATA.ai);
 
-const AGENT_FEATURES = [
+// The nine actions Smily can take, from src/core/primitives/capabilities.ts in the
+// app. Not the same surface as the MCP server, which exposes six read-only tools:
+// these are what the editor and the generation pipeline run.
+const CAPABILITIES = [
   {
-    title: 'One-second database provisioning',
+    title: 'Create outline',
     description:
-      'Agents move fast, and so does Neon. Provision fresh databases in seconds for a smooth developer experience.',
-    icon: lightning,
-  },
-  {
-    title: 'Scale to zero and pay-as-you-go',
-    description:
-      'Neon only charges for true usage, so you can run fleets of short-lived databases without blowing your budget.',
-    icon: scale,
-  },
-  {
-    title: 'Simple, programmable API',
-    description:
-      'Create, delete, scale, and monitor databases with a feature-complete API designed to manage thousands of Postgres instances.',
+      'An H2 and H3 outline built from the target keyword and what is already ranking for it.',
     icon: programmable,
   },
   {
-    title: 'Embed directly, no signup required',
+    title: 'Generate brief',
     description:
-      'Agents can create and manage databases without a user ever logging into Neon. No UI, no OAuth, no friction.',
+      'A brief assembled from the observations about the page and what the Knowledge Layer holds on the topic.',
     icon: jsConsole,
   },
   {
-    title: 'Time travel for your apps',
+    title: 'Analyze competitors',
+    description: 'The gap between you and the pages that hold the positions and the citations.',
+    icon: vectorSearchOptimization,
+  },
+  {
+    title: 'Rewrite section',
     description:
-      'Branches let you snapshot the full database state instantly. Let users roll back to a previous version in one click.',
+      'One section at a time, edited rather than regenerated, so the rest of the article stays as you wrote it.',
+    icon: lightning,
+  },
+  {
+    title: 'Run Auto-Optimize',
+    description:
+      'The same pipeline across a whole article, with the before and after score kept for every run.',
+    icon: autoscaling,
+  },
+  {
+    title: 'Generate FAQ',
+    description:
+      'An FAQ block covering the questions the answer engines ask that your page does not yet answer.',
+    icon: aiApps,
+  },
+  {
+    title: 'Cluster entities',
+    description: 'The entities a page should cover, grouped, so coverage is judged as a set.',
     icon: branches,
   },
   {
-    title: 'Built-in auth',
+    title: 'Suggest internal links',
+    description: 'Links proposed from your own pages, not invented ones.',
+    icon: scale,
+  },
+  {
+    title: 'Publish to WordPress',
     description:
-      'With Neon Auth, agents can build apps with secure authentication baked in - no extra setup, just more power to vibe coders.',
+      'Smily proposes the publish through the plugin. You confirm it. Nothing goes live on its own.',
     icon: auth,
   },
 ];
 
-const STARTER_KIT_FEATURES = [
+const IN_THE_EDITOR = [
   {
-    title: 'Postgres with pgvector',
+    title: 'Outline first, draft second',
     description:
-      'Store and retrieve vector embeddings efficiently with Neon Postgres and pgvector.',
-    icon: pgvector,
+      '"Write with Smily AI" gives you the outline to review before a single paragraph is written, so a wrong angle costs you a minute rather than an article.',
+    icon: programmable,
   },
   {
-    title: 'AI Starter Apps',
-    description: 'Access pre-built AI apps like AI chatbot, semantic search, and hybrid search.',
-    icon: aiApps,
-  },
-  {
-    title: 'Vector Search Optimization',
+    title: 'It works on your selection',
     description:
-      'Enhance the performance of your AI by using Neon’s vector search optimization guide.',
-    icon: vectorSearchOptimization,
+      'Select a paragraph and ask about that paragraph. Smily reads what you highlighted rather than guessing from the whole document.',
+    icon: lightning,
   },
   {
-    title: 'Autoscaling & Scaling Guide',
-    description: 'Scale your AI apps seamlessly with Neon’s Autoscaling and Read Replicas.',
-    icon: autoscaling,
-  },
-  {
-    title: 'Built with Neon',
+    title: 'Conversations are kept',
     description:
-      'Explore AI apps using Neon to gain valuable inspiration and learn best practices.',
-    icon: builtWithNeon,
-  },
-  {
-    title: 'Performance & Storage',
-    description:
-      'Optimize and manage your AI workloads with Neon’s storage and autoscaling solutions.',
+      'Threads stay with the article, so the reasoning behind a rewrite is still there next week.',
     icon: performanceStorage,
+  },
+  {
+    title: 'It can see the score',
+    description:
+      'The same per-slot breakdown the Content Score panel shows: which terms are short, which headings are missing, what the competitor-derived targets are.',
+    icon: vectorSearchOptimization,
   },
 ];
 
 const AiPage = () => (
   <Layout>
     <Hero />
-    <Bento />
-    <TestimonialNew
-      className="mt-[200px] xl:mt-[192px] lg:mt-[158px] md:mt-[104px]"
-      figureClassName="lg:max-w-[704px]"
-      quoteClassName="text-pretty md:text-wrap"
-      quote="The combination of flexible resource limits and nearly instant database provisioning made Neon a no&#8209;brainer."
-      author={{
-        name: 'Lincoln Bergeson',
-        position: 'Infrastructure Engineer at Replit',
-      }}
-      company={{
-        src: replitIcon,
-        width: 152,
-      }}
-    />
     <GridFeatures
-      className="mt-[199px] xl:mt-[191px] lg:mt-[153px] md:mt-[107px]"
-      title="Add a backend to your agent"
+      className="mt-[200px] xl:mt-[194px] lg:mt-[160px] md:mt-[104px]"
+      title="What Smily can do"
       titleClassName="md:text-pretty"
-      description="Neon is purpose-built to support AI agents at the infrastructure level, with a native, API-first backend that doesn’t require end-user signups or manual provisioning."
-      items={AGENT_FEATURES}
-    />
-    <TestimonialNew
-      className="mt-[200px] xl:mt-[192px] lg:mt-[158px] md:mt-[104px]"
-      figureClassName="lg:max-w-[704px]"
-      quoteClassName="text-pretty lg:text-wrap"
-      quote="Neon’s speed of provisioning and serverless scale-to-zero is critical for us. We can serve users iterating on quick ideas efficiently while also supporting them as they scale, without making them think about database setup."
-      author={{
-        name: 'Dhruv Amin',
-        position: 'Co-founder at Anything',
-        avatar: authorDhruvAmin,
-      }}
-      company={{
-        src: anythingIcon,
-        width: 136,
-      }}
-    />
-    <FeaturesCards />
-    <Usage />
-    <TestimonialNew
-      className="mt-[200px] xl:mt-[192px] lg:mt-[160px] md:mt-[107px]"
-      figureClassName="lg:max-w-[704px]"
-      quote="I did testing on vector databases, but I didn’t see a real advantage. Postgres with Pgvector covers everything I need."
-      quoteClassName="text-balance lg:text-pretty"
-      author={{
-        name: 'Marco D’Alia',
-        position: 'Software Architect behind RagRabbit',
-        avatar: authorMarcoDalia,
-      }}
+      description="Nine actions, declared in one list the editor and the generation pipeline both read. Every one of them runs against your article, your competitors and your own pages."
+      descriptionClassName="max-w-[520px]"
+      items={CAPABILITIES}
     />
     <GridFeatures
       className="mt-[200px] xl:mt-[194px] lg:mt-[160px] md:mt-[104px]"
-      title="Neon's AI App Starter Kit"
+      title="In the editor, not in another tab"
       titleClassName="md:text-pretty"
-      description="Neon's AI App Starter Kit offers resources, apps, and examples to kickstart Neon as your vector database."
-      descriptionClassName="max-w-[490px]"
-      items={STARTER_KIT_FEATURES}
-      link={LINKS.docsAi}
-      linkText="Learn more"
+      description="Smily sits beside the draft, which is the only place where knowing the score and knowing the sentence are the same thing."
+      descriptionClassName="max-w-[520px]"
+      items={IN_THE_EDITOR}
     />
-    <CTANew title="The Postgres of tomorrow,<br /> available today" label="Get started" />
+    <CTANew
+      label="7-DAY FREE TRIAL"
+      title="Write the next one with&nbsp;Smily."
+      description="Add a site, open a draft, and ask it why the page scores what it scores."
+      buttonText="Start your free trial"
+      buttonUrl={LINKS.signup}
+      isExternal
+    />
   </Layout>
 );
 
