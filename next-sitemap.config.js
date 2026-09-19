@@ -28,8 +28,6 @@ module.exports = {
     // next.config.js. Drop a line here once its section is ours.
     '/docs',
     '/docs/*',
-    '/faqs',
-    '/faqs/*',
     '/changelog',
     '/changelog/*',
   ],
@@ -49,7 +47,6 @@ module.exports = {
 
           // Inherited from Neon and not yet rewritten.
           '/docs/',
-          '/faqs/',
           '/changelog/',
         ],
       },

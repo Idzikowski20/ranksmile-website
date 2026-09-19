@@ -2,7 +2,6 @@
 import { notFound } from 'next/navigation';
 
 import Post from 'components/pages/doc/post';
-import ProgrammaticCTA from 'components/pages/faqs/programmatic-cta';
 import VERCEL_URL from 'constants/base';
 import { FAQS_DIR_PATH } from 'constants/content';
 import { FAQS_BASE_PATH } from 'constants/faqs';
@@ -34,7 +33,7 @@ export async function generateMetadata(props) {
   const encodedTitle = Buffer.from(title).toString('base64');
 
   return getMetadata({
-    title: `${title} - Neon FAQs`,
+    title: `${title} - Ranksmile FAQs`,
     description: subtitle,
     imagePath: `${VERCEL_URL}/api/og?title=${encodedTitle}`,
     pathname: `${LINKS.faqs}/${slug}`,
@@ -62,7 +61,7 @@ const FaqPost = async (props) => {
     headline: data.title,
     author: {
       '@type': 'Organization',
-      name: 'Neon',
+      name: 'Ranksmile',
     },
   };
 
@@ -77,10 +76,6 @@ const FaqPost = async (props) => {
         data={data}
         breadcrumbs={[
           {
-            title: 'Community',
-            slug: 'community/community-intro',
-          },
-          {
             title: 'FAQs',
             slug: 'faqs',
           },
@@ -90,7 +85,6 @@ const FaqPost = async (props) => {
         currentSlug={slug}
         gitHubPath={gitHubPath}
         tableOfContents={tableOfContents}
-        aboveContent={<ProgrammaticCTA />}
         isFaq
       />
     </>

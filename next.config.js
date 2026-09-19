@@ -87,12 +87,10 @@ const defaultConfig = {
     // Content inherited from Neon and not yet rewritten. It stays on disk and
     // stays reachable, but it is not for search engines or model training: see
     // the matching exclude and Disallow lists in next-sitemap.config.js.
-    const inheritedNoindex = ['/docs/:path*', '/faqs/:path*', '/changelog/:path*'].map(
-      (source) => ({
-        source,
-        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
-      })
-    );
+    const inheritedNoindex = ['/docs/:path*', '/changelog/:path*'].map((source) => ({
+      source,
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+    }));
 
     return [
       ...inheritedNoindex,

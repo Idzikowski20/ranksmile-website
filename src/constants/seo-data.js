@@ -42,8 +42,9 @@ export default {
     pathname: LINKS.aboutUs,
   },
   faqs: {
-    title: 'FAQs — Neon',
-    description: 'Frequently asked questions about Neon.',
+    title: 'FAQs — Ranksmile',
+    description:
+      'Answers to the questions people ask before signing up: which AI engines Ranksmile tracks, how often data refreshes, and what a Brand Space includes.',
     pathname: LINKS.faqs,
   },
   mcp: {
