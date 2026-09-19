@@ -128,9 +128,6 @@ const AiPage = () => (
       titleClassName="md:text-pretty"
       description="Neon is purpose-built to support AI agents at the infrastructure level, with a native, API-first backend that doesn’t require end-user signups or manual provisioning."
       items={AGENT_FEATURES}
-      link={LINKS.useCasesAI}
-      linkText="Read more"
-      logos={['anything', 'replit', 'same', 'solar', 'databutton']}
     />
     <TestimonialNew
       className="mt-[200px] xl:mt-[192px] lg:mt-[158px] md:mt-[104px]"

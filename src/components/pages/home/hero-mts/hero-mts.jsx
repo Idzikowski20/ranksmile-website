@@ -7,7 +7,6 @@ import Logos from 'components/shared/logos';
 import PauseableVideo from 'components/shared/pauseable-video';
 import SectionLabel from 'components/shared/section-label';
 import LINKS from 'constants/links';
-import bgNoise from 'images/pages/home/backed-by/bg-noise.jpg';
 import mobileBgIllustration from 'images/pages/home/hero/bg-illustration.jpg';
 import { cn } from 'utils/cn';
 
@@ -37,30 +36,6 @@ const HeroMts = () => (
         <br />
         designed for apps and agents.
       </h1>
-
-      <Link
-        className="group relative mt-8 inline-flex max-w-full items-center gap-x-3 overflow-hidden bg-[#E4F1EB] py-3 pr-5 pl-3 text-black-pure lg:mt-7"
-        to={LINKS.startups}
-      >
-        <Image
-          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-right"
-          src={bgNoise}
-          width={1175}
-          height={927}
-          quality={100}
-          alt=""
-        />
-        <span className="relative z-10 inline-flex shrink-0 items-center bg-[linear-gradient(90deg,rgba(57,165,125,0.6)_50%,transparent_50%)] bg-[size:200%_100%] bg-left bg-no-repeat px-2.5 py-1 font-mono text-[0.8125rem] leading-none font-medium tracking-extra-tight text-black-pure uppercase">
-          Startups
-        </span>
-        <span className="relative z-10 text-base leading-snug font-medium tracking-extra-tight text-black-pure">
-          Qualifying startups get up to <span className="font-semibold">$100K in credits</span> to
-          scale on Neon
-          <span className="ml-1 inline-block transition-transform duration-200 group-hover:translate-x-0.5">
-            &rarr;
-          </span>
-        </span>
-      </Link>
 
       <div className="mt-8 flex gap-x-5 lg:mt-7 lg:gap-x-4">
         <Button data-test="home-signup" theme="white-filled" size="new" to={LINKS.signup}>
