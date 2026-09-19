@@ -59,12 +59,6 @@ export default {
     description: 'Frequently asked questions about Neon.',
     pathname: LINKS.faqs,
   },
-  caseStudies: {
-    title: 'Case Studies — Neon',
-    description: 'Discover how other companies are using Neon.',
-    pathname: LINKS.caseStudies,
-    imagePath: '/images/social-previews/case-studies.jpg',
-  },
   claimableNeon: {
     title: 'Claimable Neon for agents — Neon',
     description:
@@ -110,18 +104,6 @@ export default {
       'Rankings, AI visibility, site audits and drafts in a separate brand space for every client, with full API access and no per-seat pricing.',
     pathname: LINKS.agencies,
   },
-  migration: {
-    title: 'Postgres Migration — Neon',
-    description: 'Learn how to migrate your Postgres database to Neon.',
-    pathname: LINKS.migration,
-    imagePath: '/images/social-previews/migration.jpg',
-  },
-  useCases: {
-    title: 'Use Cases — Neon',
-    description:
-      'Explore how teams use Neon to support branching databases, CI pipelines, preview environments, and production workloads.',
-    pathname: LINKS.useCases,
-  },
   partners: {
     title: 'Accelerate your business with Neon partnership — Neon',
     description: 'Bring familiar, reliable and scalable Postgres experience to your customers.',
@@ -138,34 +120,12 @@ export default {
     imagePath: '/images/social-previews/pricing.jpg',
     pathname: LINKS.pricing,
   },
-  report: {
-    title: 'Impact of Postgres restores survey',
-    description:
-      'We asked 50 developers managing production Postgres about recovery times and their business impact.',
-    pathname: LINKS.report,
-    imagePath: '/images/social-previews/report.jpg',
-  },
-  variable: {
-    title: 'Dynamically scale your Postgres database — Neon',
-    description:
-      'Discover how Neon dynamically scales Postgres compute resources for optimal performance during peak traffic without overpaying.',
-    imagePath: '/images/social-previews/variable.jpg',
-    pathname: LINKS.variable,
-  },
   costFleets: {
     title: 'Neon for platforms: Cost estimator',
     description:
       'Run thousands of Postgres databases for a fraction of the cost with Neon. Great for building your free tier.',
     imagePath: '/images/social-previews/cost-fleets.jpg',
     pathname: LINKS.costFleets,
-  },
-  branching: {
-    title: 'Database Branching Workflows - Neon',
-    description:
-      'A new paradigm for managing Postgres. Instantly create, test, preview, and roll back environments with Neon’s powerful database branching.',
-    imagePath: '/images/social-previews/branching.jpg',
-    pathname: LINKS.branching,
-    type: 'article',
   },
   platforms: {
     title: 'Embedded Postgres for Platforms - Neon',
@@ -180,18 +140,6 @@ export default {
       'What Ranksmile stores, where it runs, how it is encrypted, and which certifications we do not hold yet. Written plainly, including the gaps.',
     imagePath: '/images/social-previews/security.jpg',
     pathname: LINKS.security,
-  },
-  startups: {
-    title: 'Neon Credits for Startups',
-    description:
-      'Apply to the Databricks Startup Program and get up to $200K in Neon and Databricks credits. For venture-backed companies and startup accelerator programs.',
-    pathname: LINKS.startups,
-  },
-  tools: {
-    title: 'Postgres upgrade and migration tools — Neon',
-    description:
-      'Tools to assess major version upgrades, catch compatibility issues, and find the right migration path for your database.',
-    pathname: LINKS.tools,
   },
   autoscalingReport: {
     title: 'Compute Autoscaling Report',

@@ -171,19 +171,9 @@ describe('getMarkdownPath', () => {
       expect(result).toBe('/md/guides/neon-sst.md');
     });
 
-    it('should convert /branching/introduction to markdown path', () => {
-      const result = getMarkdownPath('/branching/introduction');
-      expect(result).toBe('/md/branching/introduction.md');
-    });
-
     it('should convert /programs/agents to markdown path', () => {
       const result = getMarkdownPath('/programs/agents');
       expect(result).toBe('/md/programs/agents.md');
-    });
-
-    it('should convert /use-cases/ai-agents to markdown path', () => {
-      const result = getMarkdownPath('/use-cases/ai-agents');
-      expect(result).toBe('/md/use-cases/ai-agents.md');
     });
 
     it('should handle nested docs paths', () => {
@@ -198,9 +188,23 @@ describe('getMarkdownPath', () => {
       expect(result).toBeNull();
     });
 
-    it('should exclude index page /branching', () => {
-      const result = getMarkdownPath('/branching');
-      expect(result).toBeNull();
+    // The branching and use-cases content routes are retired, so nothing under
+    // them resolves to a mirror any more. Asserted rather than deleted so a route
+    // reappearing by accident fails here.
+    it('should return null for the retired branching and use-cases routes', () => {
+      for (const path of [
+        '/branching',
+        '/branching/introduction',
+        '/branching.md',
+        '/use-cases',
+        '/use-cases/ai-agents',
+        '/use-cases/full-stack-apps',
+        '/use-cases/branching-workflows',
+        '/use-cases/bursty-workloads',
+        '/use-cases/large-databases',
+      ]) {
+        expect(getMarkdownPath(path)).toBeNull();
+      }
     });
 
     it('should alias /docs.md to the curated llms.txt index', () => {
@@ -253,12 +257,7 @@ describe('getMarkdownPath', () => {
       expect(result).toBe('/md/changelog/2026-03-13.md');
     });
 
-    it.each([
-      ['/use-cases/full-stack-apps', '/md/use-cases/full-stack-apps.md'],
-      ['/use-cases/branching-workflows', '/md/use-cases/branching-workflows.md'],
-      ['/use-cases/bursty-workloads', '/md/use-cases/bursty-workloads.md'],
-      ['/use-cases/large-databases', '/md/use-cases/large-databases.md'],
-    ])('should resolve %s to its markdown mirror', (path, expected) => {
+    it.each([])('should resolve %s to its markdown mirror', (path, expected) => {
       expect(getMarkdownPath(path)).toBe(expected);
     });
   });
@@ -328,11 +327,6 @@ describe('getMarkdownPath', () => {
     it('should not double .md for nested paths ending with .md', () => {
       const result = getMarkdownPath('/docs/guides/logical-replication.md');
       expect(result).toBe('/md/docs/guides/logical-replication.md');
-    });
-
-    it('should map /branching.md to /md/branching.md (file may not exist)', () => {
-      const result = getMarkdownPath('/branching.md');
-      expect(result).toBe('/md/branching.md');
     });
 
     it('should map /guides.md to /md/guides.md (file may not exist)', () => {

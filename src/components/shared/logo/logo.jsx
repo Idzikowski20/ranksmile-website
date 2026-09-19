@@ -5,7 +5,6 @@ import copyToClipboard from 'copy-to-clipboard';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-import LINKS from 'constants/links';
 import useContextMenu from 'hooks/use-context-menu';
 import LogoDarkIcon from 'icons/logo-dark.inline.svg';
 import LogoLightIcon from 'icons/logo-light.inline.svg';
@@ -43,14 +42,6 @@ const copySvgToClipboard = async () => {
 const data = [
   {
     name: 'Copy logo as SVG',
-  },
-  {
-    name: 'Download logo pack',
-    url: '/brand/neon-brand-assets.zip',
-  },
-  {
-    name: 'View brand guidelines',
-    url: LINKS.brand,
   },
 ];
 

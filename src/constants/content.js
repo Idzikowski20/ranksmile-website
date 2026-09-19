@@ -14,10 +14,8 @@ const CONTENT_ROUTES = {
   'docs/changelog': CHANGELOG_DIR_PATH,
   docs: DOCS_DIR_PATH,
   postgresql: POSTGRESQL_DIR_PATH,
-  'use-cases': USE_CASES_DIR_PATH,
   guides: GUIDES_DIR_PATH,
   faqs: FAQS_DIR_PATH,
-  branching: BRANCHING_DIR_PATH,
   programs: PROGRAMS_DIR_PATH,
 };
 
@@ -31,7 +29,7 @@ const GENERATED_PAGE_MARKDOWN_PATHS = {
   'ai-visibility': '/md/ai-visibility.md',
 };
 
-const EXCLUDED_ROUTES = ['guides', 'faqs', 'branching'];
+const EXCLUDED_ROUTES = ['guides', 'faqs'];
 
 const EXCLUDED_DIRS = ['shared-content', 'unused'];
 
