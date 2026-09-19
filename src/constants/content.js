@@ -25,7 +25,7 @@ const CONTENT_ROUTES = {
 // content as their React views. Keys are public page paths without a leading slash.
 const GENERATED_PAGE_MARKDOWN_PATHS = {
   'rank-tracking': '/md/rank-tracking.md',
-  'ai-gateway': '/md/ai-gateway.md',
+  'site-audit': '/md/site-audit.md',
   wordpress: '/md/wordpress.md',
   'content-score': '/md/content-score.md',
   'ai-visibility': '/md/ai-visibility.md',

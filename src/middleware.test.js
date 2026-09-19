@@ -60,7 +60,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
 
   it('matches every generated marketing page for content negotiation', () => {
     expect(middlewareConfig.matcher).toEqual(
-      expect.arrayContaining(['/rank-tracking', '/ai-gateway', '/ai-visibility'])
+      expect.arrayContaining(['/rank-tracking', '/site-audit', '/ai-visibility'])
     );
   });
 
@@ -102,7 +102,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
       { name: 'Use Cases large databases', path: '/use-cases/large-databases' },
       { name: 'Pricing', path: '/pricing' },
       { name: 'Rank Tracking', path: '/rank-tracking' },
-      { name: 'AI Gateway', path: '/ai-gateway' },
+      { name: 'Site Audit', path: '/site-audit' },
       { name: 'WordPress plugin', path: '/wordpress' },
       { name: 'Content Score', path: '/content-score' },
       { name: 'AI Visibility', path: '/ai-visibility' },
@@ -381,7 +381,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
   describe('Direct .md URL handling', () => {
     it.each([
       ['/rank-tracking.md', 'https://neon.com/md/rank-tracking.md'],
-      ['/ai-gateway.md', 'https://neon.com/md/ai-gateway.md'],
+      ['/site-audit.md', 'https://neon.com/md/site-audit.md'],
       ['/wordpress.md', 'https://neon.com/md/wordpress.md'],
       ['/ai-visibility.md', 'https://neon.com/md/ai-visibility.md'],
     ])('should serve the generated marketing page for %s', async (pathname, markdownUrl) => {

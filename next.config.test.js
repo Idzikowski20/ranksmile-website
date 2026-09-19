@@ -10,11 +10,26 @@ describe('backend platform Markdown rewrites', () => {
     expect(functionsHeaders).toContainEqual({ key: 'X-Robots-Tag', value: 'noindex' });
     for (const path of [
       '/md/rank-tracking.md',
-      '/md/ai-gateway.md',
+      '/md/site-audit.md',
       '/md/wordpress.md',
       '/md/content-score.md',
     ]) {
       expect(headers.find(({ source }) => source === path)?.headers).toEqual(functionsHeaders);
+    }
+  });
+
+  it('keeps the legacy product paths redirecting to their new pages', async () => {
+    const redirects = await nextConfig.redirects();
+
+    // /ai-gateway.md also matches the global .md proxy matcher, so a routing-order
+    // regression would answer it with a Markdown 404 instead of this redirect.
+    for (const [source, destination] of [
+      ['/ai-gateway', '/site-audit'],
+      ['/ai-gateway.md', '/site-audit.md'],
+    ]) {
+      expect(redirects).toContainEqual(
+        expect.objectContaining({ source, destination, permanent: true })
+      );
     }
   });
 
@@ -26,7 +41,7 @@ describe('backend platform Markdown rewrites', () => {
     expect(rewrites.beforeFiles).toEqual(
       expect.arrayContaining([
         { source: '/rank-tracking.md', destination: '/md/rank-tracking.md' },
-        { source: '/ai-gateway.md', destination: '/md/ai-gateway.md' },
+        { source: '/site-audit.md', destination: '/md/site-audit.md' },
         { source: '/wordpress.md', destination: '/md/wordpress.md' },
       ])
     );

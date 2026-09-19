@@ -11,11 +11,8 @@ const path = require('path');
 const { htmlToDOM } = require('html-react-parser');
 
 const {
-  renderAiGatewayModelIndex,
-} = require('../components/pages/doc/ai-gateway-model-index/model-markdown');
-const {
   rankTrackingPageContent,
-  aiGatewayPageContent,
+  siteAuditPageContent,
   aiVisibilityPageContent,
   sharedBackendPlatformContent,
 } = require('../constants/backend-platform-page-content');
@@ -243,32 +240,26 @@ const renderRankTrackingMarkdown = (links) => {
   return `${sections.join('\n\n')}\n`;
 };
 
-const renderAiGatewayMarkdown = (links) => {
-  const { hero, models, gatewayBenefits, compatibility, faqItems } = aiGatewayPageContent;
+const renderSiteAuditMarkdown = (links) => {
+  const { hero, crawlers, checks, faqItems } = siteAuditPageContent;
   const { backendServices, builtForAgents } = sharedBackendPlatformContent;
 
   const sections = [
-    renderPageHeader(aiGatewayPageContent),
+    renderPageHeader(siteAuditPageContent),
     '## Get started',
     renderActionLinks(hero, links),
-    '## Models',
-    `${models.title} ${models.highlightedTitle}`,
-    renderAiGatewayModelIndex(),
-    `## ${gatewayBenefits.title}`,
-    gatewayBenefits.highlightedTitle,
-    ...gatewayBenefits.items.flatMap(({ label, title, description }) => [
-      `### ${label}: ${title}`,
-      description,
-    ]),
-    `## ${compatibility.label}`,
-    compatibility.title,
-    compatibility.description,
-    ...compatibility.items.flatMap(({ title, description }) => [`### ${title}`, description]),
+    `## ${crawlers.title} ${crawlers.highlightedTitle}`,
+    crawlers.description,
+    ...crawlers.items.flatMap(({ name, description }) => [`### ${name}`, description]),
+    `## ${checks.label}`,
+    checks.title,
+    checks.description,
+    ...checks.items.flatMap(({ title, description }) => [`### ${title}`, description]),
     renderFaq(faqItems),
     renderBackendServices(backendServices),
     renderBuiltForAgents(builtForAgents),
     renderPlatformFooter(links),
-    renderFeedbackFooter(aiGatewayPageContent.slug),
+    renderFeedbackFooter(siteAuditPageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -417,7 +408,7 @@ async function generateBackendPlatformPageMarkdown(rootDir = path.resolve(__dirn
   const outputDir = path.join(rootDir, 'public/md');
   const pages = [
     { filename: 'rank-tracking.md', content: renderRankTrackingMarkdown(links) },
-    { filename: 'ai-gateway.md', content: renderAiGatewayMarkdown(links) },
+    { filename: 'site-audit.md', content: renderSiteAuditMarkdown(links) },
     { filename: 'wordpress.md', content: renderWordpressMarkdown(links) },
     // Keep public/auth.md dedicated to the existing Claimable Neon protocol.
     { filename: 'content-score.md', content: renderContentScoreMarkdown(links) },
@@ -438,7 +429,7 @@ module.exports = {
   htmlToMarkdown,
   renderFaq,
   renderRankTrackingMarkdown,
-  renderAiGatewayMarkdown,
+  renderSiteAuditMarkdown,
   renderWordpressMarkdown,
   renderContentScoreMarkdown,
   renderAiVisibilityMarkdown,

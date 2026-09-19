@@ -24,9 +24,9 @@ export default {
               description: 'Your schedule, desktop and mobile, per country',
             },
             {
-              title: 'Keyword Research',
-              to: LINKS.keywordResearch,
-              description: 'Coverage gap and competitor keyword gap',
+              title: 'Site Audit',
+              to: LINKS.siteAudit,
+              description: 'Site health, speed, and whether AI crawlers get in',
             },
           ],
         },
@@ -161,8 +161,8 @@ export default {
           to: LINKS.rankTracking,
         },
         {
-          text: 'Keyword Research',
-          to: LINKS.keywordResearch,
+          text: 'Site Audit',
+          to: LINKS.siteAudit,
         },
         {
           text: 'WordPress plugin',

@@ -1,7 +1,4 @@
 const rankTrackingTitleLines = ['Track the keywords that', 'actually pay the bills.'];
-const aiGatewayHeroTitleLines = ['Call the latest models right', 'from your Neon backend'];
-const aiGatewayModelsTitleLines = ['Access a wide catalog of frontier and open', 'weight models.'];
-const aiGatewayModelsHighlightedTitleLines = ['Served with optimized performance via Databricks.'];
 const builtForAgentsTitleLines = ['Built for the teams and', 'the agents behind them.'];
 const faqTitleLines = ['Your questions,', 'answered'];
 const aiVisibilityFromFirstLineTitleLines = ['From one brand', 'to a full client roster'];
@@ -134,155 +131,126 @@ const rankTrackingPageContent = {
   ],
 };
 
-const aiGatewayPageContent = {
-  slug: 'ai-gateway',
-  pageLabel: 'AI Gateway',
+const siteAuditPageContent = {
+  slug: 'site-audit',
+  pageLabel: 'Site Audit',
   hero: {
-    label: 'AI Gateway, powered by Databricks',
-    title: aiGatewayHeroTitleLines.join(' '),
-    titleLines: aiGatewayHeroTitleLines,
-    illustrationDescription:
-      'A Neon backend routing AI Gateway requests to models from multiple providers',
-    primaryAction: { label: 'Start building', linkKey: 'signup' },
-    secondaryAction: { label: 'Read the docs', linkKey: 'aiGatewayOverview' },
+    label: 'Site Audit',
+    title: 'Find what is stopping you from being found',
+    primaryAction: { label: 'Start your free trial', linkKey: 'signup' },
+    secondaryAction: { label: 'See plans', linkKey: 'pricing' },
   },
-  models: {
-    title: aiGatewayModelsTitleLines.join(' '),
-    titleLines: aiGatewayModelsTitleLines,
-    highlightedTitle: aiGatewayModelsHighlightedTitleLines.join(' '),
-    highlightedTitleLines: aiGatewayModelsHighlightedTitleLines,
-  },
-  gatewayBenefits: {
-    title: 'LLMs belong in your backend.',
-    highlightedTitle:
-      'Call them with the same credential and the same bill as the rest of the Neon platform.',
+  crawlers: {
+    title: 'The engines answering questions about you',
+    highlightedTitle: 'have to read your site first.',
+    description:
+      'Every crawl checks whether the eight crawlers behind Google, ChatGPT, Perplexity and Claude can actually reach your pages. Each one comes back Healthy, Have issues, or Blocked.',
     items: [
       {
-        id: 'unified-access',
-        label: 'Unified access',
-        title: 'One credential for every provider.',
+        name: 'Googlebot',
         description:
-          'Authenticate just once with Neon and call AI agents through the same endpoint — no separate provider accounts to wire up.',
+          'Crawls for Google Search, which is also where the pages behind an AI Overview are chosen from.',
       },
       {
-        id: 'simplified-billing',
-        label: 'Simplified billing',
-        title: 'One bill to pay.',
+        name: 'Google-Extended',
         description:
-          'All your model usage lands directly on your Neon invoice, next to Postgres, Storage, and Auth. One vendor, one payment method, one line in your accounting.',
+          'Controls whether your pages may be used by Gemini. Blocking it does not affect your ranking, and does keep you out of the answers.',
       },
       {
-        id: 'fair-pricing',
-        label: 'Fair pricing',
-        title: 'Zero markup.',
+        name: 'OAI-SearchBot',
+        description: 'Builds the index ChatGPT searches when it looks something up.',
+      },
+      {
+        name: 'ChatGPT-User',
         description:
-          'Neon charges the same per-token rate as the model provider — published prices, passed through with nothing added on top.',
+          'Fetches a page live, mid-conversation, when a prompt needs what is on it right now.',
+      },
+      {
+        name: 'PerplexityBot',
+        description: 'Builds the index Perplexity draws its cited sources from.',
+      },
+      {
+        name: 'Perplexity-User',
+        description: 'Fetches a page live while answering one specific question.',
+      },
+      {
+        name: 'Claude-SearchBot',
+        description: 'Builds the index Claude searches.',
+      },
+      {
+        name: 'Claude-User',
+        description: 'Fetches a page live when a Claude user asks for something on it.',
       },
     ],
   },
-  compatibility: {
-    label: 'Compatibility',
-    title:
-      'Powered by Databricks Foundation Model APIs. OpenAI-compatible, so your SDK already works.',
+  checks: {
+    label: 'What a crawl gives you',
+    title: 'Three scores, and the list of pages behind each one.',
     description:
-      'Pointing a standard client at Neon takes a URL and credential change — the rest of your code stays exactly as it is.',
+      'Nothing is a black box: open any score and you get the pages that produced it, what is wrong with each, and how to fix it.',
     items: [
       {
-        title: 'Base URL.',
+        title: 'Site Health.',
         description:
-          "Point your existing client at your branch's gateway endpoint instead of the provider's.",
+          'The technical state of the pages that were crawled, as a share of checks that passed.',
       },
       {
-        title: 'Credential.',
+        title: 'AI Search Health.',
         description:
-          'Replace the provider key with your Neon key — nothing else in the environment changes.',
+          'Whether the eight AI crawlers can reach you, and which of them are being turned away.',
       },
       {
-        title: 'Request shape.',
-        description: 'Chat completions and streaming follow the format you already write.',
+        title: 'Site Speed Score.',
+        description:
+          'Measured as part of the crawl rather than on demand, so it moves with the rest of the report.',
       },
       {
-        title: 'Model switching.',
-        description: 'Move between providers by changing the model name, not the integration.',
+        title: 'Issues by severity.',
+        description:
+          'Errors, warnings and notices, each with the affected pages and a how-to-fix note.',
+      },
+      {
+        title: 'Crawl comparison.',
+        description:
+          'Every crawl is kept, so you see what a release broke and what a fix actually fixed.',
+      },
+      {
+        title: 'Thematic reports.',
+        description: 'The same crawl sliced by subject: crawlability, redirects, links, content.',
       },
     ],
   },
   faqItems: [
     {
-      question: 'What is AI Gateway?',
+      question: 'How many pages does a crawl cover?',
       answer:
-        '<p>AI Gateway is the LLM inference layer built into your Neon project. It runs on Databricks Foundation Model APIs. Use your Neon credential to call models from multiple providers through one endpoint, without setting up separate provider accounts.</p>',
+        '<p>100 pages per crawl on Growth and Scale, 1,000 on Agency. The limit is per crawl, not per month, so re-crawling after a fix does not cost you anything extra.</p>',
       initialState: 'open',
     },
     {
-      question: 'Which models can I call?',
+      question: 'What is AI Search Health?',
       answer:
-        '<p>AI Gateway includes frontier and open-weight models from Anthropic, OpenAI, Google, Meta, Alibaba, Zhipu AI, Moonshot AI, Thinking Machines, and others. The catalog changes as models are added or retired, and availability can vary by region. Check the <a href="/docs/ai-gateway/models#available-models">live model catalog</a> for current models, prices, and supported endpoints.</p>',
+        '<p>A check on whether the crawlers behind the answer engines can reach your pages: Googlebot, Google-Extended, OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User, Claude-SearchBot and Claude-User. Each comes back Healthy, Have issues, or Blocked. It is the first thing to look at when <a href="/ai-visibility">AI Visibility</a> is flat, because a blocked crawler cannot cite you no matter what you publish.</p>',
     },
     {
-      question: 'What is the difference between Neon AI Gateway and Databricks Unity AI Gateway?',
+      question: 'Is blocking Google-Extended bad for my rankings?',
       answer:
-        '<p>Both use <a href="https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/">Databricks Foundation Model APIs</a> for model serving. Neon AI Gateway is built into Neon projects and credentials for developers building applications and agents. Databricks Unity AI Gateway provides centralized governance for AI traffic within the Databricks Platform.</p>',
+        '<p>No. Google-Extended governs whether your pages may be used by Gemini; it has no effect on Google Search ranking. Plenty of sites block it without realising, which is why the audit calls it out separately rather than lumping it in with Googlebot.</p>',
     },
     {
-      question: 'How does AI Gateway relate to the rest of the Neon backend?',
+      question: 'Can I see what changed between crawls?',
       answer:
-        '<p>AI Gateway shares the same project and branch boundaries as Lakebase Postgres, Functions, Object Storage, and Managed Better Auth. A Function receives <code>NEON_AI_GATEWAY_TOKEN</code> and <code>NEON_AI_GATEWAY_BASE_URL</code> alongside <code>DATABASE_URL</code>, so it can call a model and write results to Postgres without separate provider keys.</p>',
+        '<p>Yes. Crawls are kept and compared, so a page reads as fixed, unchanged, or newly broken. A crawl that found nothing new says so rather than showing you the same list again.</p>',
     },
     {
-      question: 'Do I need to run my application on Neon to use AI Gateway?',
+      question: 'How is this different from a one-off SEO checker?',
       answer:
-        '<p>No. Any application or service that can make an HTTPS request with a bearer token can call AI Gateway. Running model calls in Functions keeps them close to the other services in your Neon backend and lets them follow the same branching workflow.</p>',
+        '<p>It runs on the same site as your <a href="/rank-tracking">rank tracking</a> and your <a href="/ai-visibility">AI visibility</a>, so a technical problem, a lost position and a lost citation sit next to each other instead of in three tools. Findings also feed the ranked task list per site, rather than ending as a PDF.</p>',
     },
     {
-      question: 'What happens to AI Gateway when I create a branch?',
+      question: 'Does it check page speed?',
       answer:
-        '<p>Each Neon branch has its own AI Gateway endpoint. Requests from a development or preview branch stay scoped to that branch, separate from production.</p>',
-    },
-    {
-      question: 'Do I have to change my code to use AI Gateway?',
-      answer:
-        '<p>For an OpenAI-compatible client, change the base URL and credential. The request and streaming formats stay the same. AI Gateway also provides provider-specific endpoints when you need features from the OpenAI Responses API, Anthropic Messages API, or Gemini API.</p>',
-    },
-    {
-      question: 'Who can use AI Gateway after GA?',
-      answer:
-        '<p>AI Gateway is available on the Neon Launch and Scale plans. Both plans have the same AI Gateway pricing. You need prepaid AI Gateway credits before you can make inference requests. Model access can also depend on region, availability, and any verification required by provider policies.</p>',
-    },
-    {
-      question: 'How does AI Gateway pricing work?',
-      answer:
-        '<p>Inference is billed per token at the published rate for each model, with no additional Neon markup. One AI Gateway credit equals $1 USD. The minimum credit purchase is $5, and purchased credits are valid for 12 months. Check the <a href="/docs/ai-gateway/models#available-models">model catalog</a> for current per-model rates.</p>',
-    },
-    {
-      question: 'What are the rate limits?',
-      answer:
-        '<p>AI Gateway applies a default limit of 200,000 tokens per minute (TPM). These are default limits and can be increased on request. If you hit a limit, requests return HTTP 429 and the error body explains which limit you reached. <a href="/docs/introduction/support">Contact support</a> if you need a higher TPM limit.</p>',
-    },
-    {
-      question: 'How do I buy and manage credits?',
-      answer:
-        '<p>Buy credits from the Billing page in the Neon Console. Credits are added to your AI Gateway balance after payment and accumulate across purchases. You can see your current balance in the Neon Console. Automatic top-ups can add credits when your balance falls below a threshold.</p>',
-    },
-    {
-      question: 'How are credits deducted?',
-      answer:
-        '<p>Each inference request deducts credits based on the model&apos;s token price and the final number of tokens reported by the serving system. Balance updates can take about five minutes. A failed request can still be billed if the model consumed tokens before the request failed.</p>',
-    },
-    {
-      question: 'What happens when my credit balance runs out?',
-      answer:
-        '<p>AI Gateway stops accepting new inference requests when the available balance is too low. Requests already in progress can finish and are charged for the tokens they consume. Because usage reporting is not instantaneous, your balance can fall slightly below zero. Neon applies a $2 minimum balance to account for this delay.</p>',
-    },
-    {
-      question: 'Do credits expire?',
-      answer:
-        '<p>Purchased credits are valid for 12 months from the purchase date. Promotional credits can have a different expiration date. Check the Billing page or the terms of the promotion for the applicable date.</p>',
-    },
-    {
-      question: "Why can't I access a model in the catalog?",
-      answer:
-        '<p>Model access can vary by region and account. Proprietary models may require account verification to meet provider requirements. Use the authenticated <code>GET /v1/models</code> endpoint and check for <code>enabled: true</code> to see which models your account can call.</p>',
+        '<p>Yes, as part of the crawl. Site Speed Score is measured alongside the rest of the campaign rather than as a separate button, so the number is always from the same run as the issues beside it.</p>',
     },
   ],
 };
@@ -711,7 +679,7 @@ const sharedBackendPlatformContent = {
 
 module.exports = {
   rankTrackingPageContent,
-  aiGatewayPageContent,
+  siteAuditPageContent,
   aiVisibilityPageContent,
   sharedBackendPlatformContent,
 };

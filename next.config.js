@@ -320,6 +320,17 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The AI Gateway product page became the Site Audit page.
+      {
+        source: '/ai-gateway',
+        destination: '/site-audit',
+        permanent: true,
+      },
+      {
+        source: '/ai-gateway.md',
+        destination: '/site-audit.md',
+        permanent: true,
+      },
       // The Neon CLI page became the MCP page.
       {
         source: '/cli',

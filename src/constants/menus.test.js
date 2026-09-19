@@ -8,7 +8,7 @@ describe('Product navigation', () => {
     ['Content Score', '/content-score'],
     ['Rank Tracking', '/rank-tracking'],
     ['WordPress plugin', '/wordpress'],
-    ['Keyword Research', '/ai-gateway'],
+    ['Site Audit', '/site-audit'],
   ])('links %s to its product page', (title, path) => {
     const product = MENUS.header.find(({ text }) => text === 'Product');
     const items = product.sections.flatMap(({ items }) => items);
