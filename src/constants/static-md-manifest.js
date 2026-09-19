@@ -2,4 +2,7 @@
 // Real static .md files under public/ (excluding the generated public/md/ mirror).
 // Regenerate with: npm run generate:static-md-manifest
 
-export const STATIC_MD_PATHS = ['/index.md', '/pricing.md'];
+export const STATIC_MD_PATHS = [
+  '/index.md',
+  '/pricing.md',
+];
