@@ -42,7 +42,7 @@ export default function getMetadata({
   const metaTitle = title || DEFAULT_TITLE;
   const metaDescription = description || DEFAULT_DESCRIPTION;
 
-  const siteName = 'Neon';
+  const siteName = 'Ranksmile';
   const robots = robotsNoindex === 'noindex' ? { index: false } : null;
 
   let alternateCanonical = canonicalUrl;

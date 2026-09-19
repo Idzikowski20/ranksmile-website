@@ -9,12 +9,6 @@ export default {
       'Ranksmile records whether AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini name your brand, scores every page as you write it, and tracks your rankings on the schedule you set.',
     pathname: '',
   },
-  about: {
-    title: 'About Us - Neon',
-    description:
-      'The Neon team consists of PostgreSQL contributors and technologists on a mission to build the backend for apps and agents, for every developer.',
-    pathname: '',
-  },
   ai: {
     title: 'Smily AI — the writer that reads your content score | Ranksmile',
     description:
@@ -83,14 +77,8 @@ export default {
   agencies: {
     title: 'Ranksmile for agencies — every client in its own space',
     description:
-      'Rankings, AI visibility, site audits and drafts in a separate brand space for every client, with full API access and no per-seat pricing.',
+      'Rankings, AI visibility, site audits and drafts in a separate brand space for every client, with no per-seat pricing.',
     pathname: LINKS.agencies,
-  },
-  partners: {
-    title: 'Accelerate your business with Neon partnership — Neon',
-    description: 'Bring familiar, reliable and scalable Postgres experience to your customers.',
-    imagePath: '/images/social-previews/partners.jpg',
-    pathname: LINKS.partners,
   },
   pricing: {
     title: 'Pricing — Ranksmile',
@@ -98,13 +86,6 @@ export default {
       'Growth, Scale and Agency: flat monthly plans for AI visibility tracking, live Content Score and scheduled rank tracking. 7-day free trial, cancel anytime.',
     imagePath: '/images/social-previews/pricing.jpg',
     pathname: LINKS.pricing,
-  },
-  costFleets: {
-    title: 'Neon for platforms: Cost estimator',
-    description:
-      'Run thousands of Postgres databases for a fraction of the cost with Neon. Great for building your free tier.',
-    imagePath: '/images/social-previews/cost-fleets.jpg',
-    pathname: LINKS.costFleets,
   },
   security: {
     title: 'Security — Ranksmile',
@@ -114,22 +95,9 @@ export default {
     pathname: LINKS.security,
   },
   error: {
-    title: 'Page Is Broken — Neon',
+    title: 'Page Is Broken — Ranksmile',
   },
   404: {
-    title: 'Page Not Found — Neon',
+    title: 'Page Not Found — Ranksmile',
   },
-};
-
-export const getBlogCategoryDescription = (category) => {
-  switch (category) {
-    case 'company':
-      return 'Stay updated on the latest Neon company new and partnership announcements. Explore our blog posts for valuable insights and stay ahead in the world of serverless Postgres.';
-    case 'engineering':
-      return 'Dive into the technical depths of Neon serverless Postgres. Optimize performance, scalability, and reliability. Explore our cutting-edge approach.';
-    case 'community':
-      return 'Join the vibrant serverless Postgres community. Engage in discussions, tutorials, and success stories. Connect with developers and industry experts.';
-    default:
-      return 'Learn about Neon and how it can help you build better with Serverless Postgres by reading our blog posts.';
-  }
 };

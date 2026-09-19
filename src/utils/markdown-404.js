@@ -5,7 +5,7 @@ import { buildAgent404Response } from './ai-agent-detection';
 // Single source of truth for a `text/markdown` 404 response: the agent-404 body
 // plus the doc headers (Content-Type, Cache-Control, X-Content-Source,
 // X-Robots-Tag, Vary, X-LLMs-Txt, Link). Used by the proxy's markdown branches
-// and by route handlers (e.g. the skills catch-all), so there is exactly one
+// and by route handlers, so there is exactly one
 // markdown-404 format across the site.
 //
 // `source` sets X-Content-Source so logs distinguish which branch produced it.

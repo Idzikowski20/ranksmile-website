@@ -19,17 +19,6 @@ module.exports = {
 
     // Home page for logged-in users
     '/home',
-
-    // Legacy docs
-    '/docs/auth/legacy/*',
-
-    // Inherited from Neon and not yet rewritten. Kept on disk, kept out of
-    // search: see the Disallow list below and the noindex headers in
-    // next.config.js. Drop a line here once its section is ours.
-    '/docs',
-    '/docs/*',
-    '/changelog',
-    '/changelog/*',
   ],
   generateRobotsTxt: true,
   additionalPaths: async (config) => [await config.transform(config, '/')],
@@ -41,23 +30,14 @@ module.exports = {
         disallow: [
           // Home page for logged-in users
           '/home$',
-
-          // Legacy docs
-          '/docs/auth/legacy/',
-
-          // Inherited from Neon and not yet rewritten.
-          '/docs/',
-          '/changelog/',
         ],
       },
     ],
-    // blog-sitemap.xml and sitemap-postgres.xml list inherited Neon content, so
-    // they are not announced while that content is out of search.
     additionalSitemaps: [],
     transformRobotsTxt: async (_config, robotsTxt) => {
       return robotsTxt.replace(
         '# Host',
-        'Content-Signal: ai-train=no, search=yes, ai-input=yes\n\n# Host'
+        'Content-Signal: ai-train=yes, search=yes, ai-input=yes\n\n# Host'
       );
     },
   },

@@ -20,7 +20,7 @@ const { CONTENT_ROUTES, EXCLUDED_DIRS } = require('../constants/content');
 
 const config = require('./llms-index-config');
 
-const BASE_URL = 'https://neon.com';
+const BASE_URL = 'https://ranksmile.pl';
 const OUTPUT_PATH = 'public/docs/llms.txt';
 const EXCLUDED_FILES = ['README.md', 'index.md', '_index.md', 'GUIDE_TEMPLATE.md'];
 

@@ -3,21 +3,10 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import PropTypes from 'prop-types';
 import remarkGfm from 'remark-gfm';
 
-import ApiMethodBadge from 'components/pages/doc/api-method-badge';
-import ApiParam from 'components/pages/doc/api-param';
-import ApiResourceGrid from 'components/pages/doc/api-resource-grid/api-resource-grid';
-import ApiResponse from 'components/pages/doc/api-response';
 import Callout from 'components/pages/doc/callout';
 import ChatOptions from 'components/pages/doc/chat-options';
 import CheckItem from 'components/pages/doc/check-item';
 import CheckList from 'components/pages/doc/check-list';
-import {
-  CliCommandIndex,
-  CliUsage,
-  CliOptions,
-  CliSubcommands,
-  CliGlobalOptions,
-} from 'components/pages/doc/cli-reference';
 import CodeTabs from 'components/pages/doc/code-tabs';
 import CommunityBanner from 'components/pages/doc/community-banner';
 import { CompactCards } from 'components/pages/doc/compact-cards';
@@ -26,10 +15,10 @@ import DetailIconCards from 'components/pages/doc/detail-icon-cards';
 import DocsLink from 'components/pages/doc/docs-link';
 import DocsList from 'components/pages/doc/docs-list';
 import Faq, { FaqItem } from 'components/pages/doc/faq';
-import IncludeBlock from 'components/pages/doc/include-block';
 import InfoBlock from 'components/pages/doc/info-block';
 import LinkPreview from 'components/pages/doc/link-preview';
 import McpSetupConfigurator from 'components/pages/doc/mcp-setup-configurator';
+import NeedHelp from 'components/pages/doc/need-help';
 import Steps from 'components/pages/doc/steps';
 import StickyTable from 'components/pages/doc/sticky-table';
 import Tabs from 'components/pages/doc/tabs';
@@ -69,16 +58,10 @@ import SubprocessorsForm from 'components/shared/subprocessors-form';
 import getCodeProps from 'lib/rehype-code-props';
 import { cn } from 'utils/cn';
 
-import sharedMdxComponents from '../../../../content/docs/shared-content';
 import FeatureList from '../feature-list';
 import LogosSection from '../grid-features/logos-section';
 import QuickLinks from '../quick-links';
 import QuoteBlock from '../quote-block';
-
-const sharedComponents = Object.keys(sharedMdxComponents).reduce((acc, key) => {
-  acc[key] = (props) => IncludeBlock({ url: sharedMdxComponents[key], ...props });
-  return acc;
-}, {});
 
 const KNOWN_IMAGE_FLAGS = new Set(['no-border', 'square', 'priority']);
 
@@ -150,10 +133,6 @@ const getComponents = (withoutAnchorHeading, isReleaseNote, isTemplate) => ({
       </ImageZoom>
     );
   },
-  ApiMethodBadge,
-  ApiResourceGrid,
-  ApiParam,
-  ApiResponse,
   AutoscalingChart,
   AutoscalingViz,
   Button,
@@ -162,6 +141,7 @@ const getComponents = (withoutAnchorHeading, isReleaseNote, isTemplate) => ({
   FeatureList,
   Admonition,
   Callout,
+  NeedHelp,
   CodeTabs,
   DetailIconCards,
   Faq,
@@ -200,11 +180,6 @@ const getComponents = (withoutAnchorHeading, isReleaseNote, isTemplate) => ({
   StickyTable,
   CheckList,
   CheckItem,
-  CliCommandIndex,
-  CliUsage,
-  CliOptions,
-  CliSubcommands,
-  CliGlobalOptions,
   ExternalCode: (props) => <ExternalCode {...props} />,
   InlineSvg,
   MegaLink,
@@ -212,7 +187,6 @@ const getComponents = (withoutAnchorHeading, isReleaseNote, isTemplate) => ({
   McpSetupConfigurator,
   SqlToRestConverter,
   StatBlock,
-  ...sharedComponents,
 });
 
 const Content = ({

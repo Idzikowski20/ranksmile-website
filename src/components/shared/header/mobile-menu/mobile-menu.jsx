@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { useContext, useState } from 'react';
 
 import Button from 'components/shared/button';
-import InkeepTrigger from 'components/shared/inkeep-trigger';
 import Link from 'components/shared/link';
 import LINKS from 'constants/links';
 import MENUS from 'constants/menus';
@@ -129,14 +128,13 @@ MobileMenuItem.propTypes = {
 
 const mobileMenuItems = [...MENUS.header];
 
-const MobileMenu = ({ isDocPage = false, docPageType = null }) => {
+const MobileMenu = ({ isDocPage = false }) => {
   const { isMobileMenuOpen, toggleMobileMenu } = useMobileMenu();
   const { hasTopbar } = useContext(TopbarContext);
 
   return (
     <>
       <div className="absolute top-3 right-7 z-50 hidden gap-5 lg:flex lg:items-center lg:gap-x-4 sm:right-4">
-        {isDocPage && <InkeepTrigger className="mobile-search" docPageType={docPageType} />}
         <Burger
           className="relative flex text-black dark:text-white"
           dataTest="mobile-menu-toggle"
@@ -194,7 +192,6 @@ const MobileMenu = ({ isDocPage = false, docPageType = null }) => {
 
 MobileMenu.propTypes = {
   isDocPage: PropTypes.bool,
-  docPageType: PropTypes.string,
 };
 
 export default MobileMenu;

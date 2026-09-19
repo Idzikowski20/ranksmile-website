@@ -19,78 +19,6 @@ The API endpoint has been deprecated.
 "
 `;
 
-exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > Available tools 1`] = `
-"## Available tools
-
-Tools are grouped into categories. Use the \`?category=\` URL parameter to restrict which categories are active. You can pass it more than once to enable multiple categories.
-
-| Category                          | What it enables                                                                                                             |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Project management (\`projects\`)   | List, create, describe, and delete projects; list organizations                                                             |
-| Branch management (\`branches\`)    | Create, reset, and delete branches; manage Postgres roles and databases                                                     |
-| Compute endpoints (\`endpoints\`)   | List, create, start, suspend, and restart branch computes                                                                   |
-| Snapshots (\`snapshots\`)           | Create, restore, and schedule snapshots                                                                                     |
-| Schema (\`schema\`)                 | Inspect tables and columns; compare schemas                                                                                 |
-| SQL (\`querying\`)                  | Execute queries and transactions; apply schema changes on a temporary branch; run the same diagnostics as \`neon inspect db\` |
-| Managed Better Auth (\`neon_auth\`) | Provision Auth; manage OAuth providers, trusted domains, and users                                                          |
-| Neon Data API (\`data_api\`)        | Enable, update, and disable the Data API for a branch                                                                       |
-| Observability (\`observability\`)   | Query function and storage logs; check AI Gateway availability                                                              |
-| Documentation (\`docs\`)            | Look up Neon documentation from within your assistant (no OAuth required)                                                   |
-| Functions (\`functions\`)           | List, deploy, update, and delete Neon Functions                                                                             |
-| Object storage (\`storage\`)        | Manage buckets and objects; create presigned URLs                                                                           |
-
-Search and navigation tools (search across projects, fetch resource details by ID) are available by default but disabled in [project-scoped mode](https://neon.com/docs/ai/neon-mcp-server#project-scoped-mode).
-
-Schema tools accept schema-qualified table names, such as \`crm.contacts\`. An unqualified name resolves against the database \`search_path\`, which defaults to the \`public\` schema.
-
-The \`querying\` category includes \`inspect_database\`, which runs the same 15 read-only checks as [\`neon inspect db\`](https://neon.com/docs/cli/inspect): relation and index sizes, unused indexes, sequential scans, active queries and locks, stalled queries running longer than 30 seconds, heavy and frequent statements, cache hit rate and working set, autovacuum and bloat, and replication state. Some checks need [\`pg_stat_statements\`](https://neon.com/docs/extensions/pg_stat_statements) or the [\`neon\`](https://neon.com/docs/extensions/neon) extension; the tool asks before suggesting \`CREATE EXTENSION\`.
-
-**Note:** The \`observability\` tools query [Neon Functions logs](https://neon.com/docs/compute/functions/logs) and [object storage logs](https://neon.com/docs/storage/logs), which are part of the Neon backend, currently available in AWS US East (Ohio) (\`aws-us-east-2\`), AWS US East (N. Virginia) (\`aws-us-east-1\`), AWS Europe (Frankfurt) (\`aws-eu-central-1\`), and AWS Asia Pacific (Singapore) (\`aws-ap-southeast-1\`). Support is expanding toward [all regions](https://neon.com/docs/introduction/regions). Log querying returns results only for projects in a supported region. Database diagnostics via \`inspect_database\` are under \`querying\`, not \`observability\`.
-
-### LinkAPIKey
-
-**Note:** To learn more about the types of API keys you can create — personal, organization, or project-scoped — see [Manage API Keys](https://neon.com/docs/manage/api-keys).
-
-### LRNotice
-
-**Important: Enrollment Pause for Logical Replication Beta**
-
-We have temporarily paused new enrollments in our Logical Replication Beta program. This pause is aimed at evaluating the feature's performance and incorporating feedback from our early adopters. Please stay tuned for updates, and thank you for your interest. We plan to reopen enrollment again soon.
-
-### PrivatePreview
-
-**Coming Soon: Private Preview**
-
-This feature is currently accessible in Private Preview only.
-
-### PrivatePreviewEnquire
-
-**Coming Soon: Private Preview**
-
-This feature is in private preview: it's not ready for production use, and it may be briefly unavailable as we deploy updates. To get access, [sign up here](https://neon.com/blog/were-building-backends#access).
-
-### PublicPreview
-
-**Note: Public Preview**
-
-This feature is in Public Preview. Please provide [Feedback](https://console.neon.tech/app/projects?modal=feedback) from the Neon Console or by connecting with us on [Discord](https://neon.com/discord).
-
-### LRBeta
-
-**Note: Beta**
-
-Replicating data to Neon, where Neon is configured as a subscriber in a Postgres logical replication setup, is currently in Beta. We welcome your feedback to help improve this feature. You can provide feedback via the [Feedback](https://console.neon.tech/app/projects?modal=feedback) form in the Neon Console or by reaching out to us on [Discord](https://neon.com/discord).
-
-### MigrationAssistant
-
-**Note: New feature**
-
-If you are looking to migrate your database to Neon, you may want to try our new **Migration Assistant**, which can help. Read the [guide](https://neon.com/docs/import/migration-assistant) to learn more.
-
-### NextSteps
-"
-`;
-
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > CTA 1`] = `
 "## CTA
 
@@ -137,8 +65,8 @@ Share your feedback: [Join Discord](https://discord.gg/neon)
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > CompactCards 1`] = `
 "## CompactCards
 
-- [Next.js prompt](https://neon.com/prompts/nextjs-prompt.md): Copy a Next.js setup prompt
-- [Django](https://neon.com/docs/guides/django): Open the Django guide
+- [Next.js prompt](https://ranksmile.pl/prompts/nextjs-prompt.md): Copy a Next.js setup prompt
+- [Django](https://ranksmile.pl/docs/guides/django): Open the Django guide
 "
 `;
 
@@ -147,7 +75,7 @@ exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) 
 
 Set the \`DATABASE_URL\` environment variable.
 
-For more details, see the [driver documentation](https://neon.com/docs/serverless/serverless-driver).
+For more details, see the [driver documentation](https://ranksmile.pl/docs/serverless/serverless-driver).
 "
 `;
 
@@ -165,8 +93,8 @@ Endpoint
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > DetailIconCards 1`] = `
 "## DetailIconCards
 
-- [Prisma](https://neon.com/docs/guides/prisma): Connect Prisma ORM to Neon
-- [Next.js](https://neon.com/docs/guides/nextjs): Build Next.js apps with Neon
+- [Prisma](https://ranksmile.pl/docs/guides/prisma): Connect Prisma ORM to Neon
+- [Next.js](https://ranksmile.pl/docs/guides/nextjs): Build Next.js apps with Neon
 "
 `;
 
@@ -175,8 +103,8 @@ exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) 
 
 **Related guides:**
 
-- [Prisma integration](https://neon.com/docs/guides/prisma)
-- [Drizzle ORM guide](https://neon.com/docs/guides/drizzle)
+- [Prisma integration](https://ranksmile.pl/docs/guides/prisma)
+- [Drizzle ORM guide](https://ranksmile.pl/docs/guides/drizzle)
 "
 `;
 
@@ -220,7 +148,7 @@ Line break in a table:
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > Ignored components 1`] = `
 "## Ignored components
 
-[View prompt](https://neon.com/prompts/test.md)
+[View prompt](https://ranksmile.pl/prompts/test.md)
 
 
 
@@ -231,7 +159,7 @@ exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) 
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > InfoBlock 1`] = `
 "## InfoBlock
 
-This is important information inside an InfoBlock. It can contain **bold text** and [links](https://neon.com/docs/introduction).
+This is important information inside an InfoBlock. It can contain **bold text** and [links](https://ranksmile.pl/docs/introduction).
 "
 `;
 
@@ -262,7 +190,7 @@ Values must be provided in [RFC 3339 format](https://tools.ietf.org/html/rfc3339
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > Markdown fundamentals 1`] = `
 "## Markdown fundamentals
 
-Regular paragraph with **bold**, _italic_, \`inline code\`, and a [link](https://neon.com/docs/introduction).
+Regular paragraph with **bold**, _italic_, \`inline code\`, and a [link](https://ranksmile.pl/docs/introduction).
 
 > A standard blockquote.
 
@@ -309,36 +237,12 @@ conn = psycopg2.connect(os.environ["DATABASE_URL"])
 "
 `;
 
-exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > Next steps 1`] = `
-"## Next steps
-
-- [Import data into your database](https://neon.com/docs/import/migrate-intro)
-- [Integrate database branching into your dev workflow](https://neon.com/docs/get-started/workflow-primer)
-- [Secure your app with the Neon Data API](https://neon.com/docs/data-api/get-started)
-- [Set up Managed Better Auth for your app](https://neon.com/docs/auth/overview)
-
-### NewPricing
-
-**Coming Soon: New pricing plans**
-
-On February 19th, 2024, Neon will launch new, simplified pricing plans. You can see the [details of all the plans here](https://neon.com/2024-plan-updates).
-
-### AzureRegionsDeprecation
-
-**Warning: Azure regions deprecation**
-
-Neon Azure regions (\`azure-eastus2\`, \`azure-westus3\`, \`azure-gwc\`) are deprecated. You can no longer create new projects in Azure regions. Projects on the Free plan that have been inactive for 90 days or more are subject to deletion as of October 5, 2026.
-
-If you have projects in Azure regions, see [Azure regions deprecation](https://neon.com/docs/import/azure-regions-deprecation) for what's changing and your options.
-"
-`;
-
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > Production checklist 1`] = `
 "## Production checklist
 
-- [ ] [Enable connection pooling](https://neon.com/docs/test/mdx-conversion-test#pooling)
+- [ ] [Enable connection pooling](https://ranksmile.pl/docs/test/mdx-conversion-test#pooling)
     Connection pooling reduces latency and improves throughput.
-- [ ] [Set up monitoring](https://neon.com/docs/test/mdx-conversion-test#monitoring)
+- [ ] [Set up monitoring](https://ranksmile.pl/docs/test/mdx-conversion-test#monitoring)
     Configure alerts for storage and compute usage.
 "
 `;
@@ -346,7 +250,7 @@ exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) 
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > ProgramForm 1`] = `
 "## ProgramForm
 
-[Apply for the Agent Plan](https://neon.com/use-cases/ai-agents)
+[Apply for the Agent Plan](https://ranksmile.pl/use-cases/ai-agents)
 "
 `;
 
@@ -357,38 +261,7 @@ exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) 
 >
 > — Jane Smith, Acme Corp
 >
-> [Read case study](https://neon.com/blog/acme-case-study)
-"
-`;
-
-exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > Shared content components 1`] = `
-"## Shared content components
-
-### FeatureBeta (parameterless)
-
-**Note: Beta**
-
-This feature is in Beta. Please give us [Feedback](https://console.neon.tech/app/projects?modal=feedback) from the Neon Console or by connecting with us on [Discord](https://neon.com/discord).
-
-### FeatureBetaProps (with prop)
-
-**Note: Beta**
-
-The **Autoscaling** is in Beta. Share your feedback on [Discord](https://neon.com/discord) or via the [Neon Console](https://console.neon.tech/app/projects?modal=feedback).
-
-### EarlyAccessProps (with prop)
-
-**Coming Soon: Early access**
-
-**Schema Diff** is currently in early access.
-
-### AgentSkillsTip (with prop)
-
-**Tip: AI assistant support**
-
-Neon's [Agent Skills](https://neon.com/docs/ai/agent-skills) give AI coding assistants context about branching and other Neon features. Install them for more accurate code suggestions.
-
-### MCPTools
+> [Read case study](https://ranksmile.pl/blog/acme-case-study)
 "
 `;
 
@@ -429,8 +302,8 @@ neon databases create --name mydb
 exports[`MDX to Markdown Conversion > Component conversion test page (snapshot) > should convert every component without raw MDX leaks > TechCards 1`] = `
 "## TechCards
 
-- [Node.js](https://neon.com/docs/guides/node): Connect a Node.js app to Neon
-- [Python](https://neon.com/docs/guides/python): Connect a Python app to Neon
+- [Node.js](https://ranksmile.pl/docs/guides/node): Connect a Node.js app to Neon
+- [Python](https://ranksmile.pl/docs/guides/python): Connect a Python app to Neon
 "
 `;
 

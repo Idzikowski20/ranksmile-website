@@ -84,16 +84,7 @@ const defaultConfig = {
         }))
     );
 
-    // Content inherited from Neon and not yet rewritten. It stays on disk and
-    // stays reachable, but it is not for search engines or model training: see
-    // the matching exclude and Disallow lists in next-sitemap.config.js.
-    const inheritedNoindex = ['/docs/:path*', '/changelog/:path*'].map((source) => ({
-      source,
-      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
-    }));
-
     return [
-      ...inheritedNoindex,
       {
         source: '/',
         headers: [
@@ -105,7 +96,6 @@ const defaultConfig = {
             key: 'Link',
             value: [
               '</docs/llms.txt>; rel="llms-txt"',
-              '</.well-known/agent-skills/index.json>; rel="profile"',
               '</.well-known/mcp/server-card.json>; rel="mcp-server-card"',
               '</.well-known/ai-catalog.json>; rel="ai-catalog"',
             ].join(', '),
@@ -2639,30 +2629,13 @@ const defaultConfig = {
         { source: '/docs/:path*/llms.txt', destination: '/docs/:path*/llms.txt' },
         { source: '/docs/:path*/llms-full.txt', destination: '/docs/:path*/llms-full.txt' },
         { source: '/docs/llms-full.txt', destination: '/docs/llms-full.txt' },
-        // Skill discovery under /docs/ — wildcard :name handles all skills without per-skill edits.
-        // Must be beforeFiles to avoid the docs/[...slug] catch-all intercepting them.
-        // /docs/skill.md is a single-entrypoint alias for the primary skill (see config/skills.json).
-        // Update the destination here if the primary skill changes.
-        { source: '/docs/skill.md', destination: '/docs/ai/skills/neon-postgres/SKILL.md' },
-        {
-          source: '/docs/.well-known/agent-skills/:name/SKILL.md',
-          destination: '/docs/ai/skills/:name/SKILL.md',
-        },
-        {
-          source: '/docs/.well-known/skills/:name/SKILL.md',
-          destination: '/docs/ai/skills/:name/SKILL.md',
-        },
         // /docs.md serves the canonical, curated docs index (llms.txt) instead of a
         // generated page-listing. beforeFiles so the [slug] catch-all doesn't intercept it.
         { source: '/docs.md', destination: '/docs/llms.txt' },
-        ...Object.entries(GENERATED_PAGE_MARKDOWN_PATHS)
-          // /auth.md is the existing Claimable Neon protocol. The Auth product
-          // page exposes its separate Markdown mirror at /md/auth-page.md.
-          .filter(([route]) => route !== 'auth')
-          .map(([route, destination]) => ({
-            source: `/${route}.md`,
-            destination,
-          })),
+        ...Object.entries(GENERATED_PAGE_MARKDOWN_PATHS).map(([route, destination]) => ({
+          source: `/${route}.md`,
+          destination,
+        })),
         // Index .md files (e.g. /faqs.md, /programs.md) must be beforeFiles so the
         // top-level [slug] catch-all doesn't intercept them before the rewrite fires.
         ...indexRewrites,
@@ -2675,27 +2648,11 @@ const defaultConfig = {
         // Serve /llms.txt and /llms-full.txt from /docs/ (canonical location is public/docs/)
         { source: '/llms.txt', destination: '/docs/llms.txt' },
         { source: '/llms-full.txt', destination: '/docs/llms-full.txt' },
-        // Agent skill discovery — wildcard :name handles all skills (agentskills.io 0.2.0 and v0.1.0).
-        // /skill.md is a single-entrypoint alias for the primary skill (see config/skills.json).
-        // Update the destination here if the primary skill changes.
-        {
-          source: '/.well-known/agent-skills/:name/SKILL.md',
-          destination: '/docs/ai/skills/:name/SKILL.md',
-        },
-        {
-          source: '/.well-known/skills/:name/SKILL.md',
-          destination: '/docs/ai/skills/:name/SKILL.md',
-        },
-        { source: '/skill.md', destination: '/docs/ai/skills/neon-postgres/SKILL.md' },
         { source: '/docs/changelog/:path*.md', destination: '/md/changelog/:path*.md' },
         ...contentRewrites,
       ],
       // fallback: existing rewrites for external services
       fallback: [
-        {
-          source: '/api_spec/release/v2.json',
-          destination: 'https://dfv3qgd2ykmrx.cloudfront.net/api_spec/release/v2.json',
-        },
         {
           source: '/demos/ping-thing',
           destination: 'https://ping-thing.vercel.app/demos/ping-thing',
@@ -2761,11 +2718,7 @@ const defaultConfig = {
       url: { browser: './empty.js' },
     },
   },
-  env: {
-    INKEEP_INTEGRATION_API_KEY: process.env.INKEEP_INTEGRATION_API_KEY,
-    INKEEP_INTEGRATION_ID: process.env.INKEEP_INTEGRATION_ID,
-    INKEEP_ORGANIZATION_ID: process.env.INKEEP_ORGANIZATION_ID,
-  },
+  env: {},
 };
 
 module.exports = withBundleAnalyzer(defaultConfig);

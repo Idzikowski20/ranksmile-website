@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 
 beforeAll(() => {
-  process.env.NEXT_PUBLIC_DEFAULT_SITE_URL = 'https://neon.com';
+  process.env.NEXT_PUBLIC_DEFAULT_SITE_URL = 'https://ranksmile.pl';
 });
 
 describe('generateOrganizationSchema', () => {
@@ -11,19 +11,25 @@ describe('generateOrganizationSchema', () => {
 
     expect(s['@context']).toBe('https://schema.org');
     expect(s['@type']).toBe('Organization');
-    expect(s.name).toBe('Neon');
-    expect(s.alternateName).toBe('Neon Serverless Postgres');
-    expect(s.legalName).toBe('Neon, LLC');
-    expect(s.url).toBe('https://neon.com');
+    expect(s.name).toBe('Ranksmile');
+    expect(s.legalName).toBe('Globalzone');
+    expect(s.url).toBe('https://ranksmile.pl');
     expect(s.description).toBeTruthy();
     expect(s.logo).toMatch(/^https?:\/\//);
-    expect(Array.isArray(s.sameAs)).toBe(true);
-    expect(s.sameAs.length).toBeGreaterThanOrEqual(3);
-    expect(s.parentOrganization?.name).toMatch(/Databricks/i);
     expect(s.contactPoint?.['@type']).toBe('ContactPoint');
     expect(s.contactPoint?.contactType).toBeTruthy();
     // Product decision: no PostalAddress
     expect(s.address).toBeUndefined();
+  });
+
+  // The social accounts in constants/links.js are still Neon's. Until they are
+  // Ranksmile's, claiming them in sameAs would assert someone else's profiles as
+  // this organization's, to every crawler that reads the structured data.
+  it('does not claim social profiles it does not own', async () => {
+    const { generateOrganizationSchema } = await import('./schema');
+    const s = generateOrganizationSchema();
+
+    expect(s.sameAs).toBeUndefined();
   });
 
   it('produces JSON-serialisable output', async () => {

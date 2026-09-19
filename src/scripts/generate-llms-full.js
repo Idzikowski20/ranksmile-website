@@ -27,7 +27,7 @@ const { CONTENT_ROUTES, EXCLUDED_DIRS } = require('../constants/content');
 const config = require('./llms-index-config');
 const { stripNavigationContext } = require('./process-md-for-llms');
 
-const BASE_URL = 'https://neon.com';
+const BASE_URL = 'https://ranksmile.pl';
 const OUTPUT_PATH = 'public/docs/llms-full.txt';
 const EXCLUDED_FILES = ['README.md', 'index.md', '_index.md'];
 const GENERATED_MODEL_MARKDOWN_DIR = 'docs/ai-gateway/models';

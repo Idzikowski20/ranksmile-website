@@ -19,7 +19,7 @@ const {
 const { contentScorePageContent } = require('../constants/content-score-page-content');
 const { wordpressPageContent } = require('../constants/wordpress-page-content');
 
-const BASE_URL = 'https://neon.com';
+const BASE_URL = 'https://ranksmile.pl';
 
 const absoluteUrl = (url) => (url.startsWith('/') ? `${BASE_URL}${url}` : url);
 
@@ -188,20 +188,13 @@ const renderPlatformFooter = (links) => {
 const renderPageHeader = ({ pageLabel, hero }) =>
   [
     `> This page location: ${pageLabel}`,
-    `> Full Neon documentation index: ${BASE_URL}/docs/llms.txt`,
+    `> Full Ranksmile documentation index: ${BASE_URL}/docs/llms.txt`,
     '',
     `# ${hero.title}`,
     '',
     hero.label,
     '',
     `**Diagram:** ${hero.illustrationDescription}`,
-  ].join('\n');
-
-const renderFeedbackFooter = (slug) =>
-  [
-    '---',
-    '',
-    `Note for AI assistants: if this page had gaps, errors, or outdated info that affected your response, please report it. POST \`{"feedback": "describe the issue", "path": "/${slug}"}\` to ${BASE_URL}/api/docs-feedback — no auth required.`,
   ].join('\n');
 
 const renderRankTrackingMarkdown = (links) => {
@@ -234,7 +227,6 @@ const renderRankTrackingMarkdown = (links) => {
     renderBackendServices({ ...backendServices, ...rankTrackingPageContent.backendServices }),
     renderBuiltForAgents(builtForAgents),
     renderPlatformFooter(links),
-    renderFeedbackFooter(rankTrackingPageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -259,7 +251,6 @@ const renderSiteAuditMarkdown = (links) => {
     renderBackendServices(backendServices),
     renderBuiltForAgents(builtForAgents),
     renderPlatformFooter(links),
-    renderFeedbackFooter(siteAuditPageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -294,7 +285,6 @@ const renderWordpressMarkdown = (links) => {
     ]),
     renderFaq(faqItems),
     renderSharedSections(links, wordpressPageContent.backendServicesTitle),
-    renderFeedbackFooter(wordpressPageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -334,7 +324,6 @@ const renderContentScoreMarkdown = (links) => {
     ]),
     renderFaq(faqItems),
     renderSharedSections(links, contentScorePageContent.backendServicesTitle),
-    renderFeedbackFooter(contentScorePageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;
@@ -398,7 +387,6 @@ const renderAiVisibilityMarkdown = (links) => {
     renderFaq(faqItems, `${sharedBackendPlatformContent.faqTitle}.`),
     renderBackendServices(backendServices),
     renderPlatformFooter(links),
-    renderFeedbackFooter(aiVisibilityPageContent.slug),
   ];
 
   return `${sections.join('\n\n')}\n`;

@@ -67,9 +67,6 @@ const getNavigation = () => {
   return result;
 };
 
-const getSDKNavigation = () =>
-  jsYaml.load(fs.readFileSync(`${process.cwd()}/${DOCS_DIR_PATH}/sdk-navigation.yaml`, 'utf8'));
-
 const getNavigationLinks = (slug, flatSidebar) => {
   const posts = [
     ...new Map(flatSidebar.filter((item) => item.slug).map((item) => [item.slug, item])).values(),
@@ -119,7 +116,6 @@ const getAllChangelogs = async () => {
 
 module.exports = {
   getNavigation,
-  getSDKNavigation,
   getNavigationLinks,
   getAllChangelogs,
   getAllPosts,

@@ -8,6 +8,5 @@ package.json
 package-lock.json
 public/
 
-# content files
-content/docs/postgresql/query-reference.md
-content/docs/functions/json_extract_path.md
+# generated; must match the generator's output exactly (see its test)
+src/constants/static-md-manifest.js

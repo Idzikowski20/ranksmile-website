@@ -15,7 +15,6 @@ const Layout = ({
   isHeaderStickyOverlay = false,
   hasThemesSupport = false,
   isDocPage = false,
-  docPageType = null,
   docsNavigation = null,
   docsBasePath = null,
   customType = null,
@@ -36,7 +35,6 @@ const Layout = ({
         isStickyOverlay={isHeaderStickyOverlay}
         hasThemesSupport={hasThemesSupport}
         isDocPage={isDocPage}
-        docPageType={docPageType}
         docsNavigation={docsNavigation}
         docsBasePath={docsBasePath}
         customType={customType}
@@ -60,7 +58,6 @@ Layout.propTypes = {
   isHeaderSticky: PropTypes.bool,
   isHeaderStickyOverlay: PropTypes.bool,
   isDocPage: PropTypes.bool,
-  docPageType: PropTypes.string,
   docsNavigation: PropTypes.array,
   docsBasePath: PropTypes.string,
   hasThemesSupport: PropTypes.bool,

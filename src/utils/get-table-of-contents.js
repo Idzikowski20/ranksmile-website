@@ -1,8 +1,4 @@
-const fs = require('fs');
-
 const slugify = require('slugify');
-
-const sharedMdxComponents = require('../../content/docs/shared-content');
 
 const parseMDXHeading = require('./parse-mdx-heading');
 
@@ -95,48 +91,7 @@ const buildNestedToc = (headings, currentLevel, currentIndex = 0) => {
   return toc;
 };
 
-const parseProps = (propsString) => {
-  if (!propsString) return {};
-
-  const props = {};
-  const propRegex = /(\w+)="([^"]+)"/g;
-  let match;
-
-  while ((match = propRegex.exec(propsString)) !== null) {
-    const [, key, value] = match;
-    props[key] = value;
-  }
-
-  return props;
-};
-
 const getTableOfContents = (content) => {
-  const mdxComponentRegex = /<(\w+)(?:\s+([^>]*))?\/>/g;
-  let match;
-  // check if the content has any mdx shared components
-  while ((match = mdxComponentRegex.exec(content)) !== null) {
-    const componentName = match[1];
-    const propsString = match[2] || '';
-    const props = parseProps(propsString);
-
-    const fileName = sharedMdxComponents[componentName];
-    const mdFilePath = `content/docs/${fileName}.md`;
-
-    // Check if the MD file exists
-    if (fs.existsSync(mdFilePath)) {
-      const mdContent = fs.readFileSync(mdFilePath, 'utf8');
-      // Replace any {propName} placeholders with their values
-      const processedContent = Object.entries(props).reduce(
-        (content, [key, value]) => content.replace(new RegExp(`{${key}}`, 'g'), value),
-        mdContent
-      );
-      content = content.replace(
-        new RegExp(`<${componentName}\\s*${propsString}\\/>`, 'g'),
-        processedContent
-      );
-    }
-  }
-
   const codeBlockRegex = /```[\s\S]*?```/g;
   const headingRegex = /^(#+)\s(.*)$/gm;
   const contentWithoutCodeBlocks = content.replace(codeBlockRegex, '');

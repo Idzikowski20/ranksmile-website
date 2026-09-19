@@ -1,8 +1,8 @@
-const { DOCS_HOME_SLUG, POSTGRESQL_HOME_SLUG } = require('../constants/docs');
+const { DOCS_HOME_SLUG } = require('../constants/docs');
 
 const getBreadcrumbs = (slug, flatSidebar) => {
   // Hide breadcrumbs for index pages
-  if (slug === DOCS_HOME_SLUG || slug === POSTGRESQL_HOME_SLUG) {
+  if (slug === DOCS_HOME_SLUG) {
     return [];
   }
 
