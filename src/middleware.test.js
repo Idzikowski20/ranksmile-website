@@ -93,7 +93,6 @@ describe('Middleware - AI Agent Integration Tests', () => {
       { name: 'Docs', path: '/docs/introduction' },
       { name: 'PostgreSQL', path: '/postgresql/tutorial' },
       { name: 'Guides', path: '/guides/neon-sst' },
-      { name: 'Programs', path: '/programs/agents' },
       { name: 'Pricing', path: '/pricing' },
       { name: 'Rank Tracking', path: '/rank-tracking' },
       { name: 'Site Audit', path: '/site-audit' },

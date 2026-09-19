@@ -16,7 +16,6 @@ export default {
   agencies: '/agencies',
   flow: '/flow',
   functions: '/rank-tracking',
-  faster: '/faster',
   guides: '/guides',
   faqs: '/faqs',
   generateTicket: '/generate-ticket',
@@ -24,14 +23,8 @@ export default {
   partners: '/docs/guides/platform-integration-overview',
   postgresqltutorial: '/postgresql/tutorial',
   pricing: '/pricing',
-  programs: '/programs',
-  programsAgents: '/programs/agents',
   scaleTrial: '/scale-trial',
   security: '/security',
-  storage: '/storage',
-  subprocessorsSubscribe: '/subscribe-to-subprocessors',
-  platforms: '/platforms',
-  autoscalingReport: '/autoscaling-report',
 
   // Ranksmile product pages (Neon routes kept, content repurposed)
   aiVisibility: '/ai-visibility',
@@ -91,7 +84,6 @@ export default {
   // Legal
   dpa: '/platform-terms#3.4',
   websiteTerms: 'https://www.databricks.com/legal/terms-of-use',
-  platformTerms: '/platform-terms',
   privacy: 'https://www.databricks.com/legal/privacynotice',
   privacyPolicy: 'https://www.databricks.com/legal/privacynotice',
   modernSlaveryStatement: 'https://www.databricks.com/legal/modern-slavery-policy-statement',
@@ -101,7 +93,6 @@ export default {
   subprocessors: 'https://www.databricks.com/legal/databricks-subprocessors',
   businessInformation: '/business-info',
   hipaaCompliance: '/docs/security/hipaa',
-  hipaaContractors: '/hipaa-contractors',
 
   // Console
   console: 'https://app.ranksmile.pl',

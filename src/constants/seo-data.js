@@ -126,25 +126,12 @@ export default {
     imagePath: '/images/social-previews/cost-fleets.jpg',
     pathname: LINKS.costFleets,
   },
-  platforms: {
-    title: 'Embedded Postgres for Platforms - Neon',
-    description: 'Offer Postgres to your users',
-    pathname: LINKS.platforms,
-    type: 'article',
-    imagePath: '/images/social-previews/platforms.jpg',
-  },
   security: {
     title: 'Security — Ranksmile',
     description:
       'What Ranksmile stores, where it runs, how it is encrypted, and which certifications we do not hold yet. Written plainly, including the gaps.',
     imagePath: '/images/social-previews/security.jpg',
     pathname: LINKS.security,
-  },
-  autoscalingReport: {
-    title: 'Compute Autoscaling Report',
-    description: 'A deep-dive into the numbers behind Neon Autoscaling.',
-    imagePath: '/images/social-previews/compute-autoscaling-report.jpg',
-    pathname: LINKS.autoscalingReport,
   },
   error: {
     title: 'Page Is Broken — Neon',

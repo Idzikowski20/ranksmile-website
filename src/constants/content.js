@@ -16,7 +16,6 @@ const CONTENT_ROUTES = {
   postgresql: POSTGRESQL_DIR_PATH,
   guides: GUIDES_DIR_PATH,
   faqs: FAQS_DIR_PATH,
-  programs: PROGRAMS_DIR_PATH,
 };
 
 // Marketing pages whose Markdown mirrors are generated from the same structured

@@ -171,11 +171,6 @@ describe('getMarkdownPath', () => {
       expect(result).toBe('/md/guides/neon-sst.md');
     });
 
-    it('should convert /programs/agents to markdown path', () => {
-      const result = getMarkdownPath('/programs/agents');
-      expect(result).toBe('/md/programs/agents.md');
-    });
-
     it('should handle nested docs paths', () => {
       const result = getMarkdownPath('/docs/guides/logical-replication');
       expect(result).toBe('/md/docs/guides/logical-replication.md');
@@ -191,8 +186,11 @@ describe('getMarkdownPath', () => {
     // The branching and use-cases content routes are retired, so nothing under
     // them resolves to a mirror any more. Asserted rather than deleted so a route
     // reappearing by accident fails here.
-    it('should return null for the retired branching and use-cases routes', () => {
+    it('should return null for the retired branching, use-cases and programs routes', () => {
       for (const path of [
+        '/programs',
+        '/programs/agents',
+        '/programs.md',
         '/branching',
         '/branching/introduction',
         '/branching.md',
@@ -337,11 +335,6 @@ describe('getMarkdownPath', () => {
     it('should map /postgresql.md to /md/postgresql.md (file may not exist)', () => {
       const result = getMarkdownPath('/postgresql.md');
       expect(result).toBe('/md/postgresql.md');
-    });
-
-    it('should map /programs.md to /md/programs.md', () => {
-      const result = getMarkdownPath('/programs.md');
-      expect(result).toBe('/md/programs.md');
     });
   });
 });
