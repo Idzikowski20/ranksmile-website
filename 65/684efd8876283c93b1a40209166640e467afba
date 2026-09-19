@@ -1,0 +1,31 @@
+content/pages/programs/agents.md
+  s_57407775d5d685::t_6508d3073cffed 35-47,49-50,54-63
+src/constants/content.js
+  s_57407775d5d685::t_e0f6fea15a4aec 32
+content/pages/platforms.md
+  s_57407775d5d685::t_6a912b836729b4 25
+  s_57407775d5d685::t_6508d3073cffed 71-77,81-85,102-104,109-118,149
+src/scripts/docs-reindex-map.test.js
+  s_57407775d5d685::t_a8719fc39371a3 31,36
+src/scripts/process-md-for-llms.test.js
+  s_57407775d5d685::t_a8719fc39371a3 150-165
+  s_57407775d5d685::t_c7db48bbdbda04 465-472,474-475
+src/utils/ai-agent-detection.test.js
+  s_57407775d5d685::t_70ef056e3eddec 191-207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "65684efd8876283c93b1a40209166640e467afba",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
