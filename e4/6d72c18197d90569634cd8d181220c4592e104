@@ -1,0 +1,44 @@
+src/scripts/docs-reindex-map.test.js
+  s_57407775d5d685::t_67ef2086ef1023 17-18,38,71,84-85,98,112,160,164
+src/scripts/site-reindex-map.test.js
+  s_57407775d5d685::t_67ef2086ef1023 21-22,54,56,68-69,77,85
+src/scripts/process-md-for-llms.js
+  s_57407775d5d685::t_1d262e8b3d14d4 2525-2526
+  s_57407775d5d685::t_0cf00b7d65e741 1413
+  s_57407775d5d685::t_26a2565549555a 1974
+src/scripts/generate-llms-full.js
+  s_57407775d5d685::t_26a2565549555a 30
+src/scripts/generate-backend-platform-page-markdown.js
+  s_57407775d5d685::t_26a2565549555a 22
+src/scripts/generate-llms-index.js
+  s_57407775d5d685::t_26a2565549555a 23
+src/lib/schema.js
+  s_57407775d5d685::t_26a2565549555a 4
+src/lib/inkeep-settings.js
+  s_57407775d5d685::t_26a2565549555a 4
+src/scripts/docs-reindex-map.js
+  s_57407775d5d685::t_26a2565549555a 7
+src/scripts/site-reindex-map.js
+  s_57407775d5d685::t_26a2565549555a 5
+src/scripts/generate-backend-platform-page-markdown.test.js
+  s_57407775d5d685::t_67ef2086ef1023 34,73,108
+src/scripts/process-md-for-llms.test.js
+  s_57407775d5d685::t_1d262e8b3d14d4 820-824,826-827,833
+  s_57407775d5d685::t_67ef2086ef1023 20,41,47,63,76,88,109,183,186,229,232,265,328,338,346,349,365,368,375,388,392,411,432,510-511,523,526,706,708,872,879-881,894-896,901-903,909-911,917-919,959-961,992,1096,1135
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "e46d72c18197d90569634cd8d181220c4592e104",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
