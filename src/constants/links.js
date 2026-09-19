@@ -12,6 +12,7 @@ export default {
   claimableNeon: '/claimable-neon',
   cli: '/mcp',
   mcp: '/mcp',
+  appMcpSettings: 'https://app.ranksmile.pl/settings/api',
   contactSales: '/contact-sales',
   enterprise: '/agencies',
   agencies: '/agencies',

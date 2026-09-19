@@ -11,13 +11,13 @@ export async function GET() {
     websiteUrl: 'https://ranksmile.pl/mcp',
     icons: [
       {
-        src: 'https://ranksmile.pl/images/logo-light.svg',
+        src: 'https://ranksmile.pl/brand/ranksmile-logo-light.svg',
         mimeType: 'image/svg+xml',
         sizes: ['any'],
         theme: 'light',
       },
       {
-        src: 'https://ranksmile.pl/images/logo-dark.svg',
+        src: 'https://ranksmile.pl/brand/ranksmile-logo-dark.svg',
         mimeType: 'image/svg+xml',
         sizes: ['any'],
         theme: 'dark',

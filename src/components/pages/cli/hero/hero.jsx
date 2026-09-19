@@ -30,7 +30,7 @@ const Hero = () => (
       <CodeTabs className="mt-[60px] w-[760px] lg:w-full" />
       <Link
         className="mt-[18px] flex items-center text-[15px] leading-none tracking-extra-tight"
-        to={LINKS.signup}
+        to={LINKS.appMcpSettings}
         theme="green"
         withArrow
         isExternal
