@@ -1,0 +1,56 @@
+src/components/pages/cli/hero/hero.jsx
+  s_57407775d5d685::t_ed26b00c8946eb 12,14,17,22,28,33,36,38
+  s_57407775d5d685::t_c70d61bfcc98de 30
+src/components/pages/cli/try/try.jsx
+  s_57407775d5d685::t_ed26b00c8946eb 16,25,28
+  s_57407775d5d685::t_83aef598e72b70 19-20
+src/constants/links.js
+  s_57407775d5d685::t_86d946c47f28d1 13-14,50
+public/pricing.md
+  s_57407775d5d685::t_83aef598e72b70 60
+src/components/pages/cli/hero/code-tabs/code-tabs.jsx
+  s_57407775d5d685::t_ed26b00c8946eb 10-12,15-24,27,29
+src/components/pages/cli/tools/tools.jsx
+  s_57407775d5d685::t_83aef598e72b70 82-83
+  s_57407775d5d685::t_586d93707c239f 1-81,84-170
+src/components/pages/pricing/hero/programs/programs.jsx
+  s_57407775d5d685::t_86d946c47f28d1 19
+src/constants/seo-data.js
+  s_57407775d5d685::t_86d946c47f28d1 74-78
+src/app/mcp/server.json/route.js
+  s_57407775d5d685::t_5121520eb22682 6-29
+next.config.js
+  s_57407775d5d685::t_86d946c47f28d1 323-328
+src/components/pages/pricing/hero/plans/data/plans.js
+  s_57407775d5d685::t_83aef598e72b70 95
+  s_57407775d5d685::t_86d946c47f28d1 146
+src/components/pages/cli/tools/index.js
+  s_57407775d5d685::t_ed26b00c8946eb 1-3
+src/components/pages/cli/hero/code-tabs/code-tabs-navigation.jsx
+  s_57407775d5d685::t_c70d61bfcc98de 6,17-31,33,46
+src/constants/menus.js
+  s_57407775d5d685::t_86d946c47f28d1 42-43,172-173
+src/app/mcp/page.jsx
+  s_57407775d5d685::t_ed26b00c8946eb 1-20
+src/components/pages/cli/features/features.jsx
+  s_57407775d5d685::t_ed26b00c8946eb 12-16,20-24,28,30-31,42
+  s_57407775d5d685::t_83aef598e72b70 29
+src/app/pricing/page.jsx
+  s_57407775d5d685::t_83aef598e72b70 126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "211c22884f081347e04ea496ed6e1b5aba618c41",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
