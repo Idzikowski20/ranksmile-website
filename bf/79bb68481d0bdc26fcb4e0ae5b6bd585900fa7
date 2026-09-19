@@ -1,0 +1,21 @@
+.prettierignore
+  s_57407775d5d685::t_83298ee0dbc6c8 11-12
+src/constants/static-md-manifest.js
+  s_57407775d5d685::t_4de2004056572a 5-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "bf79bb68481d0bdc26fcb4e0ae5b6bd585900fa7",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
