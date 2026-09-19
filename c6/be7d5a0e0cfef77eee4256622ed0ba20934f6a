@@ -1,0 +1,24 @@
+next.config.js
+  s_57407775d5d685::t_023dd798054a97 87-101,103
+package.json
+  s_57407775d5d685::t_b76de8662add77 15
+next-sitemap.config.js
+  s_57407775d5d685::t_29299ff5f94a3b 37-48,64-71,75-77,81
+  s_57407775d5d685::t_b76de8662add77 49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "c6be7d5a0e0cfef77eee4256622ed0ba20934f6a",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
