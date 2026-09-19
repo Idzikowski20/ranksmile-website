@@ -380,11 +380,6 @@ const defaultConfig = {
       },
       // Branching page redirects — old slugs deleted in PR #4374 (Jan 2026)
       {
-        source: '/yc-startups',
-        destination: '/startups',
-        permanent: true,
-      },
-      {
         source: '/yc-deal-terms',
         destination: '/startups-deal-terms',
         permanent: true,
@@ -2470,16 +2465,6 @@ const defaultConfig = {
         permanent: true,
       },
       {
-        source: '/flow',
-        destination: '/branching',
-        permanent: true,
-      },
-      {
-        source: '/flow/:path*',
-        destination: '/branching/:path*',
-        permanent: true,
-      },
-      {
         source: '/scalable-architecture',
         destination: '/',
         permanent: true,
@@ -2711,11 +2696,6 @@ const defaultConfig = {
       // /demos index and /templates gallery removed (outdated marketing pages).
       // /demos/* sub-routes (regional-latency, ping-thing) remain as external rewrites below.
       {
-        source: '/demos',
-        destination: '/use-cases',
-        permanent: true,
-      },
-      {
         source: '/templates',
         destination: 'https://github.com/neondatabase/examples',
         permanent: true,
@@ -2723,26 +2703,6 @@ const defaultConfig = {
       {
         source: '/templates/:slug*',
         destination: 'https://github.com/neondatabase/examples',
-        permanent: true,
-      },
-      {
-        source: '/use-cases/multi-tb',
-        destination: '/use-cases/large-databases',
-        permanent: true,
-      },
-      {
-        source: '/use-cases/serverless-apps',
-        destination: '/use-cases/bursty-workloads',
-        permanent: true,
-      },
-      {
-        source: '/use-cases/variable-load',
-        destination: '/use-cases/bursty-workloads',
-        permanent: true,
-      },
-      {
-        source: '/use-cases/fast-dev-workflows',
-        destination: '/use-cases/branching-workflows',
         permanent: true,
       },
       ...docsRedirects,
@@ -2863,27 +2823,6 @@ const defaultConfig = {
           source: '/demos/regional-latency/:path*',
           destination:
             'https://latency-benchmarks-dashboard.vercel.app/demos/regional-latency/:path*',
-        },
-        // Neon tools mounted under /tools/* (each app deployed with a matching
-        // basePath, so source and destination keep the prefix and assets resolve).
-        {
-          source: '/tools/postgres-major-version-assessment',
-          destination:
-            'https://neon-postgres-upgrade-assessment.vercel.app/tools/postgres-major-version-assessment',
-        },
-        {
-          source: '/tools/postgres-major-version-assessment/:path*',
-          destination:
-            'https://neon-postgres-upgrade-assessment.vercel.app/tools/postgres-major-version-assessment/:path*',
-        },
-        {
-          source: '/tools/postgres-migration',
-          destination: 'https://postgres-migration-assistant.vercel.app/tools/postgres-migration',
-        },
-        {
-          source: '/tools/postgres-migration/:path*',
-          destination:
-            'https://postgres-migration-assistant.vercel.app/tools/postgres-migration/:path*',
         },
         {
           source: '/ai-chat',

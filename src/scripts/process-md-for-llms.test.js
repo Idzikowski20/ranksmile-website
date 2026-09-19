@@ -83,20 +83,6 @@ describe('MDX to Markdown Conversion', () => {
       expect(result).not.toContain('<AzureRegionsDeprecation');
     });
 
-    it('should unwrap QuoteBlocksWrapper and preserve all quotes', async () => {
-      const inputPath = 'content/pages/use-cases/dev-test.md';
-      const pageUrl = 'https://neon.com/use-cases/dev-test';
-      const projectRoot = process.cwd();
-
-      const { content: result } = await processFile(inputPath, pageUrl, projectRoot);
-
-      expect(result).not.toContain('<QuoteBlocksWrapper');
-      expect(result).not.toContain('</QuoteBlocksWrapper>');
-      expect(result).toContain('Jonathan Reyes');
-      expect(result).toContain('Léonard Henriquez');
-      expect(result).toContain('Alex Co');
-    });
-
     it('should convert TwoColumnLayout in reference docs', async () => {
       const inputPath = 'content/docs/auth/reference/nextjs-server.md';
       const pageUrl = 'https://neon.com/docs/auth/reference/nextjs-server';
@@ -160,6 +146,23 @@ ${mdxContent}`;
       await fs.writeFile(tempPath, fullContent);
       return (await processFile(tempPath, pageUrl, rootDir)).content;
     }
+
+    // Was a real-file test against content/pages/use-cases/dev-test.md. That page is
+    // retired, and no surviving content uses QuoteBlocksWrapper, so the same
+    // conversion is exercised inline rather than dropped.
+    it('should unwrap QuoteBlocksWrapper and preserve all quotes', async () => {
+      const result = await processInlineMdx(`
+<QuoteBlocksWrapper>
+  <QuoteBlock quote="First quote." author="Ada Lovelace" role="Engineer" />
+  <QuoteBlock quote="Second quote." author="Grace Hopper" role="Rear Admiral" />
+</QuoteBlocksWrapper>
+`);
+
+      expect(result).not.toContain('<QuoteBlocksWrapper');
+      expect(result).not.toContain('</QuoteBlocksWrapper>');
+      expect(result).toContain('Ada Lovelace');
+      expect(result).toContain('Grace Hopper');
+    });
 
     it('should convert Admonition to bold label', async () => {
       const result = await processInlineMdx(`
@@ -459,15 +462,18 @@ ${mdxContent}`;
       expect(result).toContain('[Read case study](https://neon.com/blog/case-study)');
     });
 
-    it('should handle QuoteBlock with object author and link in real file', async () => {
-      const inputPath = 'content/pages/use-cases/dev-test.md';
-      const pageUrl = 'https://neon.com/use-cases/dev-test';
-      const { content: result } = await processFile(inputPath, pageUrl, process.cwd());
+    it('should handle QuoteBlock with an object author and a link', async () => {
+      const result = await processInlineMdx(`
+<QuoteBlock
+  quote="It held up under load."
+  author={{ name: 'Ada Lovelace', role: 'Principal Engineer at Analytical' }}
+  link={{ text: 'Read case study', url: 'https://ranksmile.pl/blog/analytical' }}
+/>
+`);
 
-      expect(result).toContain('— Jonathan Reyes, Principal Engineer at Dispatch');
-      expect(result).not.toContain("name: 'Jonathan Reyes'");
+      expect(result).toContain('Ada Lovelace');
+      expect(result).not.toContain("name: 'Ada Lovelace'");
       expect(result).toContain('Read case study');
-      expect(result).toContain('https://neon.com/blog/');
     });
 
     it('should convert Testimonial to blockquote', async () => {

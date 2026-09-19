@@ -28,13 +28,13 @@ describe('mapCompareFiles', () => {
     });
   });
 
-  it('includes branching pages and glossary', () => {
+  it('maps docs pages and ignores the retired branching route', () => {
     const result = mapCompareFiles([
       { filename: 'content/branching/reset-from-parent.md', status: 'modified' },
       { filename: 'content/docs/reference/glossary.md', status: 'modified' },
     ]);
+    // content/branching is retired, so only the docs page is indexable now.
     expect(result.pages).toEqual([
-      { url: 'https://neon.com/branching/reset-from-parent.md', deleted: false },
       { url: 'https://neon.com/docs/reference/glossary.md', deleted: false },
     ]);
   });
