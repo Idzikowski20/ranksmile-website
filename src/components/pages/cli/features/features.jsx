@@ -9,24 +9,26 @@ import workflowIcon from 'icons/cli/workflow.svg';
 const items = [
   {
     icon: workflowIcon.src,
-    title: 'Your full Neon workflow',
-    description: 'Manage projects, databases, branches, roles, and&nbsp;more.',
-    linkText: 'View all Neon CLI commands',
-    url: LINKS.cliReference,
+    title: 'Ask why, not just what',
+    description:
+      'Your agent reads the score breakdown, not&nbsp;the number: every NLP term, every count against its&nbsp;target.',
+    linkText: 'See the Content Score',
+    url: LINKS.contentScore,
   },
   {
     icon: scriptIcon.src,
-    title: 'Script and automate',
-    description: 'Use the Neon CLI to script almost any&nbsp;action in&nbsp;Neon.',
-    linkText: 'Learn about branching with the CLI',
-    url: '/docs/guides/branching-neon-cli',
+    title: 'Work without the app',
+    description:
+      'Pull rankings, AI answers and drafts into whatever you&nbsp;already work&nbsp;in.',
+    linkText: 'See AI Visibility',
+    url: LINKS.aiVisibility,
   },
   {
     icon: contributeIcon.src,
-    title: 'Contribute',
-    description: 'Neon CLI is open source. Contribute&nbsp;to our GitHub&nbsp;repo.',
-    linkText: 'Contribute to Neon CLI',
-    url: 'https://github.com/neondatabase/neon-pkgs/tree/main/packages/cli',
+    title: 'Read-only by design',
+    description: 'Every tool reads. Nothing writes, nothing&nbsp;publishes, nothing deletes.',
+    linkText: 'How we handle your data',
+    url: LINKS.security,
   },
 ];
 
@@ -37,7 +39,7 @@ const Features = () => (
         className="mx-auto max-w-3xl text-center text-[52px] leading-none font-medium tracking-extra-tight xl:max-w-[640px] xl:text-[44px] lg:max-w-xl lg:text-4xl md:max-w-md md:text-[32px]"
         tag="h2"
       >
-        Cut out the clicks. Command Neon Postgres from the terminal
+        Stop copying numbers between tabs. Let the agent read them
       </Heading>
       <CardItemsList
         className="mt-14 gap-x-[18px] xl:mt-10 xl:gap-x-6 lg:gap-x-4 md:mt-8 md:gap-y-4"

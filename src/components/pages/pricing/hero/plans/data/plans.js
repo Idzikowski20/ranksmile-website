@@ -92,7 +92,7 @@ export default [
         features: [
           { title: '100 documents' },
           { title: '15 Brand Spaces' },
-          { title: 'API access', info: 'For reporting and automation' },
+          { title: 'MCP access', info: 'Connect Claude, Codex or your own agent' },
           { title: 'Priority support' },
           { title: 'Everything in Growth' },
         ],
@@ -143,7 +143,7 @@ export default [
           { title: 'Unlimited documents', info: 'Fair-use limits apply' },
           { title: 'Unlimited Brand Spaces', info: 'Fair-use limits apply' },
           {
-            title: 'Full API access',
+            title: 'MCP access',
             info: '<p>White-label reporting is planned<br/> for this plan, not yet available.</p>',
           },
           { title: 'Personalized onboarding' },

@@ -16,7 +16,7 @@ const PROGRAMS = [
   {
     type: 'Agency plan',
     title: 'Running many client brands',
-    description: 'Unlimited Brand Spaces, full API access and onboarding with a person.',
+    description: 'Unlimited Brand Spaces, the highest limits and onboarding with a person.',
     url: '#compare-plans',
   },
   {

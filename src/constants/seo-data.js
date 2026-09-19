@@ -71,11 +71,11 @@ export default {
       'Let agents provision a temporary Neon project (Lakebase Postgres, Data API, and Managed Better Auth) before a human creates a Neon account.',
     pathname: LINKS.claimableNeon,
   },
-  cli: {
-    title: 'Your Neon workflow lives in the terminal',
-    description: 'The Neon CLI brings the Neon backend platform to your terminal.',
-    pathname: LINKS.cli,
-    imagePath: '/images/social-previews/cli.jpg',
+  mcp: {
+    title: 'Ranksmile MCP — give your agent the keys to your SEO data',
+    description:
+      'One URL connects Claude, Codex, Gemini or any MCP client to your Ranksmile workspace. Read content scores, rankings, AI answers and audits without opening the app.',
+    pathname: LINKS.mcp,
   },
   rankTracking: {
     title: 'Rank Tracking — every position, per device and per country | Ranksmile',

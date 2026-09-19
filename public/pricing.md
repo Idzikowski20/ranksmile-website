@@ -38,7 +38,6 @@ All prices are in EUR and exclude VAT. Yearly billing takes 17% off every plan. 
 | WordPress publishing         | Yes                           | Yes                           | Yes                                 |
 | MCP access                   | Yes                           | Yes                           | Yes                                 |
 | Advanced SERP analysis       | -                             | Yes                           | Yes                                 |
-| API access                   | -                             | Yes                           | Yes                                 |
 | White-label                  | -                             | -                             | Planned                             |
 | Priority support             | -                             | Yes                           | Yes                                 |
 | Personalized onboarding      | -                             | -                             | Yes                                 |
@@ -58,7 +57,7 @@ All plans include: AI visibility tracking with stored answers and citations, cit
 - **Documents** count only pages opened in the editor. Auditing a published page does not consume one.
 - **Keyword research** and **Competitor Keyword Gap** reset monthly and unused runs do not roll over.
 - **Site Audit** limits are per crawl, not per month.
-- **White-label** client-facing reporting is planned for the Agency plan and is not built yet, so do not pick a plan for it. API access on Scale and Agency covers reporting and automation today, under your own branding.
+- **White-label** client-facing reporting is planned for the Agency plan and is not built yet, so do not pick a plan for it.
 - **A named contact** on Agency means someone who works on the product answers you directly. There is no 24/7 rota and no support SLA on any plan.
 - **Unlimited documents and Brand Spaces** on Agency are subject to fair use; if you need more than the plan comfortably carries, contact us for a quote.
 
