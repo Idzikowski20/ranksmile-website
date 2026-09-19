@@ -28,6 +28,11 @@ export default {
               to: LINKS.siteAudit,
               description: 'Site health, speed, and whether AI crawlers get in',
             },
+            {
+              title: 'Smily AI',
+              to: LINKS.ai,
+              description: 'The writer that reads your content score',
+            },
           ],
         },
         {
@@ -163,6 +168,10 @@ export default {
         {
           text: 'Site Audit',
           to: LINKS.siteAudit,
+        },
+        {
+          text: 'Smily AI',
+          to: LINKS.ai,
         },
         {
           text: 'WordPress plugin',

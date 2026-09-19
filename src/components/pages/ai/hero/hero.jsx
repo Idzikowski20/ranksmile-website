@@ -29,19 +29,22 @@ const Hero = () => (
         />
       </div>
       <h1 className="max-w-3xl font-title text-[60px] leading-none font-medium tracking-extra-tight xl:text-[56px] lg:max-w-xl lg:text-5xl md:max-w-full md:text-[36px]">
-        Neon for&nbsp;AI.{' '}
+        Smily AI.{' '}
         <span className="text-gray-new-60">
-          Designed for agents. Optimized for vectors. Backed{' '}
-          <br className="hidden md:inline-block" />
-          by Postgres.
+          The writer that sits in your editor, reads the <br className="hidden md:inline-block" />
+          score, and fixes the page.
         </span>
       </h1>
+      <p className="mt-6 max-w-[620px] text-lg leading-snug tracking-extra-tight text-gray-new-70 lg:mt-5 lg:text-base md:mt-4">
+        Smily is in <strong className="font-medium text-white">pre alpha</strong>. It works, the app
+        labels it as such, and this page does too. Attachments are not in yet.
+      </p>
       <Button
         className="mt-9 h-12 min-w-40 px-[38px] font-semibold tracking-tighter lg:mt-7 md:mt-6 md:h-11 md:min-w-min md:px-10"
         theme="primary"
         to={LINKS.signup}
         target="_blank"
-        tagName="AI Page Hero"
+        tagName="Smily AI Hero"
       >
         Get started
       </Button>
