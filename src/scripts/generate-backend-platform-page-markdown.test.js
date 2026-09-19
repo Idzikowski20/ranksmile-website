@@ -65,7 +65,7 @@ describe('backend platform page Markdown', () => {
   it('renders Rank Tracking unique and shared content from the page data', () => {
     const markdown = renderRankTrackingMarkdown(LINKS);
 
-    expect(markdown).toContain('# Every position, per device and per country');
+    expect(markdown).toContain('# Every position, per device and per country.');
     expect(markdown).toContain('## What a check records');
     expect(markdown).toContain('### Compare back to `90d`');
     expect(markdown).toContain('## Your questions, answered');
@@ -77,7 +77,7 @@ describe('backend platform page Markdown', () => {
   it('renders Site Audit page content, the crawlers and the checks', () => {
     const markdown = renderSiteAuditMarkdown(LINKS);
 
-    expect(markdown).toContain('# Find what is stopping you from being found');
+    expect(markdown).toContain("# What's broken, and who can't reach your pages.");
     expect(markdown).toContain('### Google-Extended');
     expect(markdown).toContain('### Claude-SearchBot');
     expect(markdown).toContain('## What a crawl gives you');
@@ -89,7 +89,7 @@ describe('backend platform page Markdown', () => {
   it('renders Object Storage config, FAQ, and matching shared content', () => {
     const markdown = renderWordpressMarkdown(LINKS);
 
-    expect(markdown).toContain('# Send the finished draft straight to WordPress');
+    expect(markdown).toContain('# The finished draft, straight to WordPress.');
     expect(markdown).toContain('[Start your free trial](https://app.ranksmile.pl/auth/sign-up)');
     expect(markdown).toContain('### publish-options.json');
     expect(markdown).toContain('"status": "draft"');
@@ -104,7 +104,7 @@ describe('backend platform page Markdown', () => {
   it('renders Content Score content without confusing it with Claimable Neon', () => {
     const markdown = renderContentScoreMarkdown(LINKS);
 
-    expect(markdown).toContain('# Write against the pages already winning the query');
+    expect(markdown).toContain('# How your page compares to the ones already winning.');
     expect(markdown).toContain('[See plans](https://ranksmile.pl/pricing)');
     expect(markdown).toContain('Two scores, not a vibe');
     expect(markdown).toContain('`target_count`');
@@ -119,7 +119,7 @@ describe('backend platform page Markdown', () => {
   it('renders AI Visibility unique content and its shared platform footer', () => {
     const markdown = renderAiVisibilityMarkdown(LINKS);
 
-    expect(markdown).toContain('# Find out who the engines name when buyers ask');
+    expect(markdown).toContain('# Who the AI engines name when buyers ask.');
     expect(markdown).toContain('### Track the prompts buyers ask');
     expect(markdown).toContain('## Every answer is kept whole, with its citations attached.');
     expect(markdown).toContain('### scan-result.json');
@@ -158,19 +158,19 @@ describe('backend platform page Markdown', () => {
       'ai-visibility.md',
     ]);
     expect(await fs.readFile(path.join(outputDir, 'rank-tracking.md'), 'utf8')).toContain(
-      '# Every position, per device and per country'
+      '# Every position, per device and per country.'
     );
     expect(await fs.readFile(path.join(outputDir, 'site-audit.md'), 'utf8')).toContain(
-      '# Find what is stopping you from being found'
+      "# What's broken, and who can't reach your pages."
     );
     expect(await fs.readFile(path.join(outputDir, 'wordpress.md'), 'utf8')).toContain(
-      '# Send the finished draft straight to WordPress'
+      '# The finished draft, straight to WordPress.'
     );
     expect(await fs.readFile(path.join(outputDir, 'content-score.md'), 'utf8')).toContain(
-      '# Write against the pages already winning the query'
+      '# How your page compares to the ones already winning.'
     );
     expect(await fs.readFile(path.join(outputDir, 'ai-visibility.md'), 'utf8')).toContain(
-      '# Find out who the engines name when buyers ask'
+      '# Who the AI engines name when buyers ask.'
     );
     expect(await fs.readFile(sentinelPath, 'utf8')).toBe('keep me');
   });

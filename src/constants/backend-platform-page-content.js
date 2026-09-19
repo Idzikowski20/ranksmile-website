@@ -11,7 +11,7 @@ const rankTrackingPageContent = {
   pageLabel: 'Rank Tracking',
   hero: {
     label: 'Rank Tracking in Ranksmile',
-    title: 'Every position, per device and per country',
+    title: 'Every position, per device and per country.',
     illustrationDescription:
       'A tracked keyword checked on desktop and mobile in one location, stored with its position, the URL that ranked and the SERP features around it.',
     primaryAction: { label: 'Start your free trial', linkKey: 'signup' },
@@ -136,7 +136,7 @@ const siteAuditPageContent = {
   pageLabel: 'Site Audit',
   hero: {
     label: 'Site Audit',
-    title: 'Find what is stopping you from being found',
+    title: "What's broken, and who can't reach your pages.",
     primaryAction: { label: 'Start your free trial', linkKey: 'signup' },
     secondaryAction: { label: 'See plans', linkKey: 'pricing' },
   },
@@ -260,7 +260,7 @@ const aiVisibilityPageContent = {
   pageLabel: 'AI Visibility',
   hero: {
     label: 'AI Visibility',
-    title: 'Find out who the engines name when buyers ask',
+    title: 'Who the AI engines name when buyers ask.',
     illustrationDescription:
       'A tracked prompt answered by five AI engines, with the brands each answer named and the sources it cited stored alongside it.',
     primaryAction: { label: 'Start your free trial', linkKey: 'signup' },
