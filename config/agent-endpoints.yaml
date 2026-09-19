@@ -1,4 +1,4 @@
-# Catalog of Neon's machine-readable agent / discovery endpoints.
+# Catalog of Ranksmile's machine-readable agent / discovery endpoints.
 #
 # This is the single inventory of every well-known (and custom) endpoint that
 # documents Neon to agents: skills, MCP, API/OpenAPI, OAuth, the AI-Gateway
@@ -49,22 +49,6 @@ endpoints:
     builder: buildMcpServerCard
     routeFile: src/app/.well-known/mcp/server-card.json/route.js
 
-  - id: api-catalog
-    name: API catalog
-    description: >-
-      RFC 9727 linkset pointing agents at the Neon REST API base, its OpenAPI
-      document, and the human API docs.
-    servedPath: /.well-known/api-catalog
-    contentType: application/linkset+json
-    spec:
-      name: RFC 9727 API catalog
-      url: https://www.rfc-editor.org/rfc/rfc9727
-      standard: true
-    validator: api-catalog
-    check: builder
-    builder: buildApiCatalog
-    routeFile: src/app/.well-known/api-catalog/route.js
-
   - id: agent-skills-index
     name: Agent skills index
     description: >-
@@ -97,44 +81,6 @@ endpoints:
     file: src/app/.well-known/ai-catalog.json/catalog.json
     generator: src/scripts/generate-skills-index.js
 
-  - id: models-json
-    name: AI Gateway model catalog (custom)
-    description: >-
-      Neon AI Gateway model catalog served at /models.json, and the source of
-      truth for it. Authored and reviewed in this repo. Uses the models.dev
-      shape so anything that reads models.dev can read it unchanged; the `neon`
-      provider on models.dev is a mirror we keep in sync afterwards.
-    servedPath: /models.json
-    contentType: application/json
-    spec:
-      name: Neon AI Gateway models (custom; models.dev-shaped)
-      url: https://neon.com/models.json
-      standard: false
-    validator: models-json
-    check: file
-    file: src/app/models.json/data.json
-    editedBy: hand; src/scripts/import-models-from-models-dev.mjs can merge resolved upstream metadata
-    liveSync: src/scripts/check-models-sync.mjs
-
-  - id: models-rest
-    name: AI Gateway models REST API
-    description: >-
-      Neon AI Gateway models as a REST resource at /models. Sibling of /models.json:
-      same models and same core data, but paired with the code examples that actually
-      work for each one. Query params scope it to a single model and use case. Must
-      never disagree with /models.json on the fields they share.
-    servedPath: /models
-    contentType: application/json
-    spec:
-      name: Neon AI Gateway models (REST)
-      url: https://neon.com/models
-      standard: false
-    validator: models-rest
-    check: file
-    file: src/app/models/capabilities.json
-    generator: live gateway probe (see $howToRegenerate in src/app/models/capabilities.json)
-    liveSync: src/scripts/check-models-endpoint-sync.js
-
   - id: llms-txt
     name: llms.txt
     description: >-
@@ -149,36 +95,3 @@ endpoints:
     validator: llms-txt
     check: live
     generator: src/scripts/generate-llms-index.js
-
-  - id: openapi
-    name: OpenAPI document
-    description: >-
-      Canonical Neon REST API OpenAPI spec, aliased to the conventional
-      /openapi.json path via a rewrite.
-    servedPath: /openapi.json
-    contentType: application/json
-    spec:
-      name: OpenAPI
-      url: https://spec.openapis.org/oas/latest.html
-      standard: true
-    validator: openapi
-    check: live
-    rewriteFile: next.config.js
-
-  - id: claimable-authorization-server
-    name: Claimable Neon authorization server
-    description: >-
-      RFC 8414 metadata for the Claimable Neon path issuer on neon.com.
-      Token, JWKS, identity, and claim endpoints stay on claimable.neon.tech.
-      The protocol file is /auth.md. The apex
-      /.well-known/oauth-authorization-server on neon.com is unused.
-    servedPath: /.well-known/oauth-authorization-server/claimable
-    contentType: application/json
-    spec:
-      name: RFC 8414 Authorization Server Metadata
-      url: https://www.rfc-editor.org/rfc/rfc8414
-      standard: true
-    validator: claimable-authorization-server
-    check: builder
-    builder: buildClaimableAuthorizationServer
-    routeFile: src/app/.well-known/oauth-authorization-server/claimable/route.js
