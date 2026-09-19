@@ -30,7 +30,6 @@ export default {
   keywordResearch: '/site-audit',
   wordpress: '/wordpress',
   mcpApi: '/mcp',
-  contact: 'mailto:kontakt@ranksmile.pl',
   legalTerms: 'https://app.ranksmile.pl/legal/terms',
   legalPrivacy: 'https://app.ranksmile.pl/legal/privacy',
   legalCookies: 'https://app.ranksmile.pl/legal/cookies',

@@ -673,7 +673,7 @@ const sharedBackendPlatformContent = {
     description: 'Tell us what you track and we will get back to you within a few business days.',
     label: 'Get help',
     buttonText: 'Contact us',
-    linkKey: 'contact',
+    linkKey: 'contactSales',
   },
 };
 

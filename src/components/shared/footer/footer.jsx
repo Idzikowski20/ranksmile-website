@@ -182,7 +182,7 @@ const Footer = ({ hasThemesSupport = false }) => (
             </Link>
             <Link
               className="leading-none text-gray-new-40 hover:text-black-pure dark:text-gray-new-70 dark:hover:text-white"
-              to={LINKS.contact}
+              to={LINKS.contactSales}
             >
               Contact
             </Link>

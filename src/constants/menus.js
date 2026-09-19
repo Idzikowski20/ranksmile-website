@@ -131,7 +131,7 @@ export default {
             },
             {
               title: 'Contact',
-              to: LINKS.contact,
+              to: LINKS.contactSales,
               description: 'Talk to a human',
             },
             {
@@ -195,7 +195,7 @@ export default {
         },
         {
           text: 'Contact',
-          to: LINKS.contact,
+          to: LINKS.contactSales,
         },
       ],
     },
