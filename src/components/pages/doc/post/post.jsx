@@ -163,7 +163,7 @@ const Post = ({
             />
           </article>
         )}
-        {!isDocsIndex && <DocFooter slug={currentSlug} gitHubPath={gitHubPath} />}
+        {!isDocsIndex && <DocFooter slug={currentSlug} />}
 
         {!isChangelog && (
           <NavigationLinks
