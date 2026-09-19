@@ -2,8 +2,7 @@
 
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
-import useLocation from 'react-use/lib/useLocation';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 
 import { cn } from 'utils/cn';
 
@@ -47,6 +46,22 @@ const variants = {
   },
 };
 
+/**
+ * The URL hash, without react-use's useLocation.
+ *
+ * That hook patches history.pushState/replaceState to dispatch a synchronous window
+ * event, and Next calls replaceState from inside useInsertionEffect — so every
+ * subscribed item answered with a setState during the insertion phase, which React 19
+ * rejects ("useInsertionEffect must not schedule updates"). A FAQ item only needs the
+ * hash, and hashchange reports every change a reader can cause.
+ */
+const subscribeToHash = (onChange) => {
+  window.addEventListener('hashchange', onChange);
+  return () => window.removeEventListener('hashchange', onChange);
+};
+const getHash = () => window.location.hash;
+const getServerHash = () => '';
+
 const Item = ({
   question,
   answer,
@@ -55,7 +70,7 @@ const Item = ({
   index,
   variant = 'default',
 }) => {
-  const { hash } = useLocation();
+  const hash = useSyncExternalStore(subscribeToHash, getHash, getServerHash);
   const [isOpen, setIsOpen] = useState(initialState === 'open');
   const shouldReduceMotion = useReducedMotion();
   const styles = variants[variant] ?? variants.default;
@@ -64,7 +79,7 @@ const Item = ({
     setIsOpen((prev) => {
       const newState = !prev;
 
-      if (!newState && hash === `#${id}`) {
+      if (!newState && window.location.hash === `#${id}`) {
         window.history.replaceState(
           null,
           '',
