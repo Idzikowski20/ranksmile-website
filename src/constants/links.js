@@ -39,7 +39,7 @@ export default {
 
   // Docs
   docs: '/docs',
-  docsHome: '/docs/introduction',
+  docsHome: '/docs/introduction/overview',
   api: '/docs/reference/api',
   architecture: '/docs/introduction/architecture-overview',
   postgresOverview: '/docs/postgres/overview',

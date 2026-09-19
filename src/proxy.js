@@ -226,7 +226,7 @@ export async function proxy(req) {
     // normalizes trailing slashes before middleware on most paths, and the matcher
     // pattern '/docs' does not match '/docs/', so it falls through harmlessly.
     if (pathname === '/docs') {
-      const res = NextResponse.redirect(new URL('/docs/introduction', req.url), 308);
+      const res = NextResponse.redirect(new URL(LINKS.docsHome, req.url), 308);
       // The /docs response is content-negotiated (agents/markdown get llms.txt above),
       // so the redirect must vary on both negotiation inputs to stay correct in shared caches.
       return applyNegotiationVary(res);
