@@ -2718,11 +2718,7 @@ const defaultConfig = {
       url: { browser: './empty.js' },
     },
   },
-  env: {
-    INKEEP_INTEGRATION_API_KEY: process.env.INKEEP_INTEGRATION_API_KEY,
-    INKEEP_INTEGRATION_ID: process.env.INKEEP_INTEGRATION_ID,
-    INKEEP_ORGANIZATION_ID: process.env.INKEEP_ORGANIZATION_ID,
-  },
+  env: {},
 };
 
 module.exports = withBundleAnalyzer(defaultConfig);

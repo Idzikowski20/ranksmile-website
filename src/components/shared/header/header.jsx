@@ -15,7 +15,6 @@ const Header = ({
   isSticky = false,
   isStickyOverlay = false,
   isDocPage = false,
-  docPageType = null,
   docsNavigation = null,
   docsBasePath = null,
   customType = null,
@@ -29,12 +28,7 @@ const Header = ({
       theme={theme}
     >
       {isDocPage ? (
-        <DocsHeader
-          customType={customType}
-          docPageType={docPageType}
-          navigation={docsNavigation}
-          basePath={docsBasePath}
-        />
+        <DocsHeader customType={customType} navigation={docsNavigation} basePath={docsBasePath} />
       ) : (
         <Container
           className="static! z-10 flex w-full items-center justify-between md:px-8 sm:px-5"
@@ -48,7 +42,7 @@ const Header = ({
         </Container>
       )}
     </HeaderWrapper>
-    <MobileMenu isDocPage={isDocPage} docPageType={docPageType} />
+    <MobileMenu isDocPage={isDocPage} />
   </>
 );
 
@@ -58,7 +52,6 @@ Header.propTypes = {
   isSticky: PropTypes.bool,
   isStickyOverlay: PropTypes.bool,
   isDocPage: PropTypes.bool,
-  docPageType: PropTypes.string,
   docsNavigation: PropTypes.array,
   docsBasePath: PropTypes.string,
   customType: PropTypes.shape({
