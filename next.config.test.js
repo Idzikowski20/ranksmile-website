@@ -10,7 +10,7 @@ describe('backend platform Markdown rewrites', () => {
     expect(functionsHeaders).toContainEqual({ key: 'X-Robots-Tag', value: 'noindex' });
     for (const path of [
       '/md/rank-tracking.md',
-      '/md/ai-gateway.md',
+      '/md/site-audit.md',
       '/md/wordpress.md',
       '/md/content-score.md',
     ]) {
@@ -26,7 +26,7 @@ describe('backend platform Markdown rewrites', () => {
     expect(rewrites.beforeFiles).toEqual(
       expect.arrayContaining([
         { source: '/rank-tracking.md', destination: '/md/rank-tracking.md' },
-        { source: '/ai-gateway.md', destination: '/md/ai-gateway.md' },
+        { source: '/site-audit.md', destination: '/md/site-audit.md' },
         { source: '/wordpress.md', destination: '/md/wordpress.md' },
       ])
     );

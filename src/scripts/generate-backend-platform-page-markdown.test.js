@@ -10,7 +10,7 @@ import LINKS from '../constants/links';
 import {
   generateBackendPlatformPageMarkdown,
   htmlToMarkdown,
-  renderAiGatewayMarkdown,
+  renderSiteAuditMarkdown,
   renderContentScoreMarkdown,
   renderRankTrackingMarkdown,
   renderWordpressMarkdown,
@@ -74,16 +74,14 @@ describe('backend platform page Markdown', () => {
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code)>/);
   });
 
-  it('renders AI Gateway page content and the live model catalog', () => {
-    const markdown = renderAiGatewayMarkdown(LINKS);
+  it('renders Site Audit page content, the crawlers and the checks', () => {
+    const markdown = renderSiteAuditMarkdown(LINKS);
 
-    expect(markdown).toContain('# Call the latest models right from your Neon backend');
-    expect(markdown).toContain('## Models');
-    expect(markdown).toContain('### Text models');
-    expect(markdown).toContain('`gemini-3-5-flash`');
-    expect(markdown).toContain('| Released |');
-    expect(markdown).toContain('Inference is free during the private preview.');
-    expect(markdown).toContain('## Compatibility');
+    expect(markdown).toContain('# Find what is stopping you from being found');
+    expect(markdown).toContain('### Google-Extended');
+    expect(markdown).toContain('### Claude-SearchBot');
+    expect(markdown).toContain('## What a crawl gives you');
+    expect(markdown).toContain('### AI Search Health.');
     expect(markdown).toContain('## Built for the teams and the agents behind them.');
     expect(markdown).toContain('## Measured, not guessed.');
   });
@@ -154,7 +152,7 @@ describe('backend platform page Markdown', () => {
 
     expect(files.map((file) => path.basename(file))).toEqual([
       'rank-tracking.md',
-      'ai-gateway.md',
+      'site-audit.md',
       'wordpress.md',
       'content-score.md',
       'ai-visibility.md',
@@ -162,8 +160,8 @@ describe('backend platform page Markdown', () => {
     expect(await fs.readFile(path.join(outputDir, 'rank-tracking.md'), 'utf8')).toContain(
       '# Every position, per device and per country'
     );
-    expect(await fs.readFile(path.join(outputDir, 'ai-gateway.md'), 'utf8')).toContain(
-      '# Call the latest models'
+    expect(await fs.readFile(path.join(outputDir, 'site-audit.md'), 'utf8')).toContain(
+      '# Find what is stopping you from being found'
     );
     expect(await fs.readFile(path.join(outputDir, 'wordpress.md'), 'utf8')).toContain(
       '# Send the finished draft straight to WordPress'

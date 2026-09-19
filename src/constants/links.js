@@ -1,7 +1,8 @@
 export default {
   aboutUs: '/about-us',
   ai: '/ai',
-  aiGateway: '/ai-gateway',
+  aiGateway: '/site-audit',
+  siteAudit: '/site-audit',
   lakebase: '/ai-visibility',
   blog: '/blog',
   branching: '/branching',
@@ -44,7 +45,7 @@ export default {
   aiVisibility: '/ai-visibility',
   contentScore: '/content-score',
   rankTracking: '/rank-tracking',
-  keywordResearch: '/ai-gateway',
+  keywordResearch: '/site-audit',
   wordpress: '/wordpress',
   mcpApi: '/cli',
   contact: 'mailto:kontakt@ranksmile.pl',

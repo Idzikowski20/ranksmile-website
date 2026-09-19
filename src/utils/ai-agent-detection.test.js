@@ -144,8 +144,8 @@ describe('getMarkdownPath', () => {
     it.each([
       ['/rank-tracking', '/md/rank-tracking.md'],
       ['/rank-tracking.md', '/md/rank-tracking.md'],
-      ['/ai-gateway', '/md/ai-gateway.md'],
-      ['/ai-gateway.md', '/md/ai-gateway.md'],
+      ['/site-audit', '/md/site-audit.md'],
+      ['/site-audit.md', '/md/site-audit.md'],
       ['/wordpress', '/md/wordpress.md'],
       ['/wordpress.md', '/md/wordpress.md'],
       ['/content-score', '/md/content-score.md'],

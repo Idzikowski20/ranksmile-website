@@ -400,7 +400,7 @@ export const config = {
     '/home', // Check if the user is logged in
     '/pricing', // Agent-friendly pricing page
     '/rank-tracking', // Agent-friendly Rank Tracking page
-    '/ai-gateway', // Agent-friendly AI Gateway page
+    '/site-audit', // Agent-friendly Site Audit page
     '/wordpress', // Agent-friendly WordPress plugin page
     '/content-score', // Agent-friendly Content Score page
     '/ai-visibility', // Agent-friendly AI Visibility page

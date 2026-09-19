@@ -1,9 +1,9 @@
 import Container from 'components/shared/container';
 import SectionLabel from 'components/shared/section-label';
-import { aiGatewayPageContent } from 'constants/backend-platform-page-content';
+import { siteAuditPageContent } from 'constants/backend-platform-page-content';
 import { cn } from 'utils/cn';
 
-const { compatibility } = aiGatewayPageContent;
+const { checks: compatibility } = siteAuditPageContent;
 
 const Compatibility = () => (
   <section className="сompatibility bg-black-pure pt-20 safe-paddings pb-40 xl:pt-16 xl:pb-32 lg:pt-12 lg:pb-24 md:pt-10 md:pb-20">

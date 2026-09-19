@@ -38,7 +38,7 @@ describe('getMetadata', () => {
 
   it.each([
     [SEO_DATA.rankTracking, 'https://neon.com/rank-tracking.md'],
-    [SEO_DATA.aiGateway, 'https://neon.com/ai-gateway.md'],
+    [SEO_DATA.siteAudit, 'https://neon.com/site-audit.md'],
     [SEO_DATA.wordpress, 'https://neon.com/wordpress.md'],
     [SEO_DATA.contentScore, 'https://neon.com/md/content-score.md'],
     [SEO_DATA.aiVisibility, 'https://neon.com/ai-visibility.md'],

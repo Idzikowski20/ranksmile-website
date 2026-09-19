@@ -8,18 +8,6 @@ import SectionLabel from 'components/shared/section-label';
 import LINKS from 'constants/links';
 import { cn } from 'utils/cn';
 
-const DEFAULT_LOGOS = [
-  'replit',
-  'outfront',
-  'doordash',
-  'bcg',
-  'pepsi',
-  'retool',
-  'meta',
-  'bitso',
-  'framer',
-];
-
 const Hero = ({
   className,
   content,
@@ -29,7 +17,7 @@ const Hero = ({
   headingRowClassName = 'gap-x-12 xl:flex-col xl:items-start xl:gap-y-8',
   illustration,
   illustrationClassName,
-  logos = DEFAULT_LOGOS,
+  logos = null,
   logosClassName,
   logosDataFigmaNodeId = null,
   logosStaticDesktop = false,
@@ -86,19 +74,23 @@ const Hero = ({
           </div>
         </div>
 
-        <div className={cn('mt-12 md:mt-10', illustrationClassName)}>{illustration}</div>
+        {illustration && (
+          <div className={cn('mt-12 md:mt-10', illustrationClassName)}>{illustration}</div>
+        )}
 
-        <div
-          className={cn('mt-14 select-none lg:mt-12 md:mt-10', logosClassName)}
-          data-figma-node-id={logosDataFigmaNodeId}
-        >
-          <Logos
-            className="max-w-full p-0!"
-            logos={logos}
-            size="md"
-            staticDesktop={logosStaticDesktop}
-          />
-        </div>
+        {logos?.length > 0 && (
+          <div
+            className={cn('mt-14 select-none lg:mt-12 md:mt-10', logosClassName)}
+            data-figma-node-id={logosDataFigmaNodeId}
+          >
+            <Logos
+              className="max-w-full p-0!"
+              logos={logos}
+              size="md"
+              staticDesktop={logosStaticDesktop}
+            />
+          </div>
+        )}
       </Container>
     </section>
   );

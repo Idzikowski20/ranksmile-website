@@ -22,12 +22,12 @@ export default {
     imagePath: '/images/social-previews/ai.jpg',
     pathname: LINKS.ai,
   },
-  aiGateway: {
-    title: 'AI Gateway — One API for frontier models | Neon',
+  siteAudit: {
+    title: 'Site Audit — and whether the AI crawlers can get in | Ranksmile',
     description:
-      'Call frontier and open-weight models from your Neon backend with one credential, one bill, and zero markup.',
-    pathname: LINKS.aiGateway,
-    markdownPath: `${LINKS.aiGateway}.md`,
+      'Site Health, Site Speed and AI Search Health from one crawl, with the pages behind every score. Checks the eight crawlers behind Google, ChatGPT, Perplexity and Claude.',
+    pathname: LINKS.siteAudit,
+    markdownPath: `${LINKS.siteAudit}.md`,
   },
   aiVisibility: {
     title: 'AI Visibility — who the engines name when buyers ask | Ranksmile',
