@@ -91,7 +91,6 @@ describe('Middleware - AI Agent Integration Tests', () => {
   describe('Content routes - AI Agents should get markdown', () => {
     const testCases = [
       { name: 'Docs', path: '/docs/introduction' },
-      { name: 'PostgreSQL', path: '/postgresql/tutorial' },
       { name: 'Guides', path: '/guides/neon-sst' },
       { name: 'Pricing', path: '/pricing' },
       { name: 'Rank Tracking', path: '/rank-tracking' },

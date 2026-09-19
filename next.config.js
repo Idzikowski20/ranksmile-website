@@ -89,10 +89,8 @@ const defaultConfig = {
     // the matching exclude and Disallow lists in next-sitemap.config.js.
     const inheritedNoindex = [
       '/docs/:path*',
-      '/postgresql/:path*',
       '/guides/:path*',
       '/faqs/:path*',
-      '/blog/:path*',
       '/changelog/:path*',
     ].map((source) => ({
       source,
@@ -2671,7 +2669,6 @@ const defaultConfig = {
         // /docs.md serves the canonical, curated docs index (llms.txt) instead of a
         // generated page-listing. beforeFiles so the [slug] catch-all doesn't intercept it.
         { source: '/docs.md', destination: '/docs/llms.txt' },
-        { source: '/blog.md', destination: '/blog/llms.txt' },
         ...Object.entries(GENERATED_PAGE_MARKDOWN_PATHS)
           // /auth.md is the existing Claimable Neon protocol. The Auth product
           // page exposes its separate Markdown mirror at /md/auth-page.md.

@@ -23,12 +23,6 @@ module.exports = {
     // XML routes (RSS feeds and sitemaps)
     '**/*.xml',
 
-    // Blog pages (handled by blog-sitemap.xml)
-    '/blog/*',
-
-    // PostgreSQL Tutorial (handled by sitemap-postgres.xml)
-    '/postgresql/*',
-
     // Home page for logged-in users
     '/home',
 
@@ -46,7 +40,6 @@ module.exports = {
     '/faqs/*',
     '/changelog',
     '/changelog/*',
-    '/blog',
   ],
   generateRobotsTxt: true,
   additionalPaths: async (config) => [await config.transform(config, '/')],
@@ -64,10 +57,8 @@ module.exports = {
 
           // Inherited from Neon and not yet rewritten.
           '/docs/',
-          '/postgresql/',
           '/guides/',
           '/faqs/',
-          '/blog/',
           '/changelog/',
         ],
       },

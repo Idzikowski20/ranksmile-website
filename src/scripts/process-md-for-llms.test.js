@@ -679,15 +679,14 @@ See [CONN_MAX_AGE](https://example.com).
       expect(connectEntry.urlPrefix).toBe('docs');
     });
 
-    it('should include postgresql pages in navigation map', () => {
+    // The postgresql tutorials are gone, so nothing in the map carries that
+    // prefix any more. Asserted so the prefix reappearing fails here.
+    it('should not include postgresql pages in navigation map', () => {
       const rootDir = process.cwd();
       const navMap = buildNavigationMap(rootDir);
 
-      // Check a known postgresql page
-      const selectEntry = navMap.get('tutorial/select');
-      expect(selectEntry).toBeDefined();
-      expect(selectEntry.urlPrefix).toBe('postgresql');
-      expect(selectEntry.siblings.length).toBeGreaterThan(0);
+      expect(navMap.get('tutorial/select')).toBeUndefined();
+      expect([...navMap.values()].some((entry) => entry.urlPrefix === 'postgresql')).toBe(false);
     });
 
     it('should generate footer with sibling links', () => {

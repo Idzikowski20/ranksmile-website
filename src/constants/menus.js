@@ -110,11 +110,6 @@ export default {
           title: 'Learn',
           items: [
             {
-              title: 'Blog',
-              to: LINKS.blog,
-              description: 'Notes on ranking and getting cited',
-            },
-            {
               title: 'Changelog',
               to: LINKS.changelog,
               description: 'What we shipped recently',
@@ -193,10 +188,6 @@ export default {
         {
           text: 'About',
           to: LINKS.aboutUs,
-        },
-        {
-          text: 'Blog',
-          to: LINKS.blog,
         },
         {
           text: 'Pricing',

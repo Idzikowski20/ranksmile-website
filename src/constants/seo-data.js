@@ -41,13 +41,6 @@ export default {
       'Ranksmile is built by Globalzone: one tool for rank tracking, AI visibility, keyword research, site audits and writing, instead of four subscriptions.',
     pathname: LINKS.aboutUs,
   },
-  blog: {
-    title: 'Our Blog — Neon',
-    description:
-      'Learn about Neon and how it can help you build better backends for apps and agents by reading our blog posts.',
-    imagePath: '/images/social-previews/blog.jpg',
-    pathname: LINKS.blog,
-  },
   guides: {
     title: 'Guides — Neon',
     description: 'Learn how to use Neon with our guides.',

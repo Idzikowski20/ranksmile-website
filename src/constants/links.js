@@ -4,7 +4,6 @@ export default {
   aiGateway: '/site-audit',
   siteAudit: '/site-audit',
   lakebase: '/ai-visibility',
-  blog: '/blog',
   careers:
     'https://www.databricks.com/company/careers/open-positions?department=engineering&location=all&itm_source=www&itm_category=company&itm_page=engineering-at-databricks&itm_location=body&itm_component=hero&itm_offer=open-positions',
   cli: '/mcp',

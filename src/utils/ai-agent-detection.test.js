@@ -161,11 +161,6 @@ describe('getMarkdownPath', () => {
       expect(result).toBe('/md/docs/introduction.md');
     });
 
-    it('should convert /postgresql/tutorial to markdown path', () => {
-      const result = getMarkdownPath('/postgresql/tutorial');
-      expect(result).toBe('/md/postgresql/tutorial.md');
-    });
-
     it('should convert /guides/neon-sst to markdown path', () => {
       const result = getMarkdownPath('/guides/neon-sst');
       expect(result).toBe('/md/guides/neon-sst.md');
@@ -183,11 +178,17 @@ describe('getMarkdownPath', () => {
       expect(result).toBeNull();
     });
 
-    // The branching and use-cases content routes are retired, so nothing under
-    // them resolves to a mirror any more. Asserted rather than deleted so a route
-    // reappearing by accident fails here.
-    it('should return null for the retired branching, use-cases and programs routes', () => {
+    // These content routes are retired, so nothing under them resolves to a
+    // mirror any more. Asserted rather than deleted so a route reappearing by
+    // accident fails here.
+    it('should return null for the retired content routes', () => {
       for (const path of [
+        '/postgresql',
+        '/postgresql/tutorial',
+        '/postgresql.md',
+        '/blog',
+        '/blog/some-post',
+        '/blog.md',
         '/programs',
         '/programs/agents',
         '/programs.md',
@@ -330,11 +331,6 @@ describe('getMarkdownPath', () => {
     it('should map /guides.md to /md/guides.md (file may not exist)', () => {
       const result = getMarkdownPath('/guides.md');
       expect(result).toBe('/md/guides.md');
-    });
-
-    it('should map /postgresql.md to /md/postgresql.md (file may not exist)', () => {
-      const result = getMarkdownPath('/postgresql.md');
-      expect(result).toBe('/md/postgresql.md');
     });
   });
 });
