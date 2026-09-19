@@ -13,18 +13,19 @@ const Try = () => (
             className="max-w-sm text-[52px] leading-none font-medium tracking-extra-tight tracking-tighter xl:max-w-[640px] xl:text-[44px] lg:max-w-xl lg:text-4xl md:max-w-md md:text-center md:text-[32px]"
             tag="h2"
           >
-            Try Neon on the command&nbsp;line
+            Connect it in under a&nbsp;minute
           </Heading>
           <p className="mt-4 text-lg leading-snug font-light tracking-extra-tight xl:text-lg lg:mt-4 md:mt-2.5 md:text-center md:text-base">
-            The Neon CLI brings the Neon backend platform to&nbsp;your&nbsp;terminal.
+            Copy the endpoint from Settings, paste it into your&nbsp;agent, approve the consent
+            screen. That is the whole setup.
           </p>
           <AnimatedButton
             className="relative mt-12 px-6 py-[17px] text-lg font-semibold tracking-extra-tight lg:mt-7 md:mt-6"
             theme="primary"
-            to={LINKS.cliInstall}
+            to={LINKS.signup}
             isAnimated
           >
-            View setup instructions
+            Start your free trial
           </AnimatedButton>
         </div>
         <div className="w-1/2 md:w-full">

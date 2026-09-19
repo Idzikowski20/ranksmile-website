@@ -39,8 +39,8 @@ export default {
               description: 'Publish finished drafts straight to your site',
             },
             {
-              title: 'MCP & API',
-              to: LINKS.mcpApi,
+              title: 'MCP',
+              to: LINKS.mcp,
               description: 'Connect Claude, Codex or your own agent',
             },
           ],
@@ -169,8 +169,8 @@ export default {
           to: LINKS.wordpress,
         },
         {
-          text: 'MCP & API',
-          to: LINKS.mcpApi,
+          text: 'MCP',
+          to: LINKS.mcp,
         },
         {
           text: 'For agencies',

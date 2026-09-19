@@ -155,15 +155,6 @@ export default {
       scale: true,
     },
     {
-      rows: '1',
-      feature: {
-        title: 'API access',
-      },
-      free: false,
-      launch: true,
-      scale: true,
-    },
-    {
       rows: '1-2',
       feature: {
         title: 'Advanced SERP analysis',

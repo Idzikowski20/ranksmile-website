@@ -123,7 +123,7 @@ const faqItems = [
     question: 'What does white-label on Agency include?',
     id: 'white-label',
     answer: `
-      <p>Nothing yet. White-label reporting is planned for Agency and it is not built, so do not buy the plan for it. Today you pull the same data through full API access and put it in your own template, under your own branding.</p>
+      <p>Nothing yet. White-label reporting is planned for Agency and it is not built, so do not buy the plan for it. Today you pull the same data through <a href="/mcp">the MCP server</a> and put it in your own template, under your own branding.</p>
       <p>What Agency does add today is unlimited Brand Spaces, the highest limits, personalized onboarding and a named contact.</p>
     `,
   },
