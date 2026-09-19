@@ -25,10 +25,6 @@ const FaqsPage = async () => {
       <Breadcrumbs
         breadcrumbs={[
           {
-            title: 'Community',
-            slug: 'community/community-intro',
-          },
-          {
             title: 'FAQs',
           },
         ]}

@@ -119,7 +119,6 @@ const REPO_ROOT = path.join(__dirname, '..');
 function runAssetGenerators() {
   const scripts = [
     'src/scripts/copy-md-content.js',
-    'src/scripts/generate-ai-gateway-model-markdown.js',
     'src/scripts/generate-backend-platform-page-markdown.js',
     'src/scripts/generate-llms-index.js',
     'src/scripts/generate-llms-full.js',

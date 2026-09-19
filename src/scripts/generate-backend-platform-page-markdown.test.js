@@ -70,7 +70,7 @@ describe('backend platform page Markdown', () => {
     expect(markdown).toContain('### Compare back to `90d`');
     expect(markdown).toContain('## Your questions, answered');
     expect(markdown).toContain('## Built for the teams and the agents behind them.');
-    expect(markdown).toContain('[Contact us](mailto:kontakt@ranksmile.pl)');
+    expect(markdown).toContain('[Contact us](https://neon.com/contact-sales)');
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code)>/);
   });
 

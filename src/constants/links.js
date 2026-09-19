@@ -4,10 +4,8 @@ export default {
   aiGateway: '/site-audit',
   siteAudit: '/site-audit',
   lakebase: '/ai-visibility',
-  blog: '/blog',
   careers:
     'https://www.databricks.com/company/careers/open-positions?department=engineering&location=all&itm_source=www&itm_category=company&itm_page=engineering-at-databricks&itm_location=body&itm_component=hero&itm_offer=open-positions',
-  claimableNeon: '/claimable-neon',
   cli: '/mcp',
   mcp: '/mcp',
   appMcpSettings: 'https://app.ranksmile.pl/settings/api',
@@ -16,22 +14,14 @@ export default {
   agencies: '/agencies',
   flow: '/flow',
   functions: '/rank-tracking',
-  faster: '/faster',
-  guides: '/guides',
   faqs: '/faqs',
   generateTicket: '/generate-ticket',
   objectStorage: '/wordpress',
   partners: '/docs/guides/platform-integration-overview',
   postgresqltutorial: '/postgresql/tutorial',
   pricing: '/pricing',
-  programs: '/programs',
-  programsAgents: '/programs/agents',
   scaleTrial: '/scale-trial',
   security: '/security',
-  storage: '/storage',
-  subprocessorsSubscribe: '/subscribe-to-subprocessors',
-  platforms: '/platforms',
-  autoscalingReport: '/autoscaling-report',
 
   // Ranksmile product pages (Neon routes kept, content repurposed)
   aiVisibility: '/ai-visibility',
@@ -40,7 +30,6 @@ export default {
   keywordResearch: '/site-audit',
   wordpress: '/wordpress',
   mcpApi: '/mcp',
-  contact: 'mailto:kontakt@ranksmile.pl',
   legalTerms: 'https://app.ranksmile.pl/legal/terms',
   legalPrivacy: 'https://app.ranksmile.pl/legal/privacy',
   legalCookies: 'https://app.ranksmile.pl/legal/cookies',
@@ -91,7 +80,6 @@ export default {
   // Legal
   dpa: '/platform-terms#3.4',
   websiteTerms: 'https://www.databricks.com/legal/terms-of-use',
-  platformTerms: '/platform-terms',
   privacy: 'https://www.databricks.com/legal/privacynotice',
   privacyPolicy: 'https://www.databricks.com/legal/privacynotice',
   modernSlaveryStatement: 'https://www.databricks.com/legal/modern-slavery-policy-statement',
@@ -101,7 +89,6 @@ export default {
   subprocessors: 'https://www.databricks.com/legal/databricks-subprocessors',
   businessInformation: '/business-info',
   hipaaCompliance: '/docs/security/hipaa',
-  hipaaContractors: '/hipaa-contractors',
 
   // Console
   console: 'https://app.ranksmile.pl',

@@ -41,28 +41,11 @@ export default {
       'Ranksmile is built by Globalzone: one tool for rank tracking, AI visibility, keyword research, site audits and writing, instead of four subscriptions.',
     pathname: LINKS.aboutUs,
   },
-  blog: {
-    title: 'Our Blog — Neon',
-    description:
-      'Learn about Neon and how it can help you build better backends for apps and agents by reading our blog posts.',
-    imagePath: '/images/social-previews/blog.jpg',
-    pathname: LINKS.blog,
-  },
-  guides: {
-    title: 'Guides — Neon',
-    description: 'Learn how to use Neon with our guides.',
-    pathname: LINKS.guides,
-  },
   faqs: {
-    title: 'FAQs — Neon',
-    description: 'Frequently asked questions about Neon.',
-    pathname: LINKS.faqs,
-  },
-  claimableNeon: {
-    title: 'Claimable Neon for agents — Neon',
+    title: 'FAQs — Ranksmile',
     description:
-      'Let agents provision a temporary Neon project (Lakebase Postgres, Data API, and Managed Better Auth) before a human creates a Neon account.',
-    pathname: LINKS.claimableNeon,
+      'Answers to the questions people ask before signing up: which AI engines Ranksmile tracks, how often data refreshes, and what a Brand Space includes.',
+    pathname: LINKS.faqs,
   },
   mcp: {
     title: 'Ranksmile MCP — give your agent the keys to your SEO data',
@@ -109,9 +92,6 @@ export default {
     imagePath: '/images/social-previews/partners.jpg',
     pathname: LINKS.partners,
   },
-  pingThing: {
-    robotsNoindex: 'noindex',
-  },
   pricing: {
     title: 'Pricing — Ranksmile',
     description:
@@ -126,25 +106,12 @@ export default {
     imagePath: '/images/social-previews/cost-fleets.jpg',
     pathname: LINKS.costFleets,
   },
-  platforms: {
-    title: 'Embedded Postgres for Platforms - Neon',
-    description: 'Offer Postgres to your users',
-    pathname: LINKS.platforms,
-    type: 'article',
-    imagePath: '/images/social-previews/platforms.jpg',
-  },
   security: {
     title: 'Security — Ranksmile',
     description:
       'What Ranksmile stores, where it runs, how it is encrypted, and which certifications we do not hold yet. Written plainly, including the gaps.',
     imagePath: '/images/social-previews/security.jpg',
     pathname: LINKS.security,
-  },
-  autoscalingReport: {
-    title: 'Compute Autoscaling Report',
-    description: 'A deep-dive into the numbers behind Neon Autoscaling.',
-    imagePath: '/images/social-previews/compute-autoscaling-report.jpg',
-    pathname: LINKS.autoscalingReport,
   },
   error: {
     title: 'Page Is Broken — Neon',

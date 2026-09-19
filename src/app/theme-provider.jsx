@@ -5,7 +5,7 @@ import { ThemeProvider as PreferredProvider, useTheme } from 'next-themes';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
-const themesSupportPages = ['/docs', '/guides', '/postgresql'];
+const themesSupportPages = ['/docs'];
 
 const ThemeColorUpdater = () => {
   const { theme, resolvedTheme } = useTheme();

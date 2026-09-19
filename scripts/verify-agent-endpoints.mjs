@@ -24,7 +24,6 @@
 
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
-import { spawnSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
@@ -32,7 +31,6 @@ import crypto from 'crypto';
 import Ajv from 'ajv';
 import { load as loadYaml } from 'js-yaml';
 
-import { validateCatalog } from './lib/models-catalog.mjs';
 
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -276,26 +274,6 @@ const VALIDATORS = {
     return checks;
   },
 
-  'api-catalog'(payload, entry, sot) {
-    const checks = [schemaCheck(entry.spec.name, SCHEMAS.apiCatalog, payload)];
-    const link = payload.linkset?.[0] || {};
-    checks.push(equalsCheck('anchor matches SoT baseUrl', link.anchor, sot.NEON_API.baseUrl));
-    checks.push(
-      equalsCheck(
-        'service-desc href matches SoT openApiSpecUrl',
-        link['service-desc']?.[0]?.href,
-        sot.NEON_API.openApiSpecUrl
-      )
-    );
-    checks.push(
-      equalsCheck(
-        'service-doc href matches SoT docsUrl',
-        link['service-doc']?.[0]?.href,
-        sot.NEON_API.docsUrl
-      )
-    );
-    return checks;
-  },
 
   'agent-skills-index'(payload, entry) {
     const checks = [schemaCheck(entry.spec.name, SCHEMAS.agentSkillsIndex, payload)];
@@ -362,86 +340,7 @@ const VALIDATORS = {
   // anything, so offline verification validates the catalog on its own terms.
   // That used to be implied by the file being machine-generated from models.dev;
   // now that it is authored, the invariants have to be stated and checked.
-  'models-json'(payload, entry, sot, { live }) {
-    const checks = [schemaCheck(entry.spec.name, SCHEMAS.modelsJson, payload)];
-
-    const errors = validateCatalog(payload);
-    checks.push(
-      errors.length === 0
-        ? ok('catalog is well formed', `${Object.keys(payload.neon.models).length} models`)
-        : fail('catalog is well formed', errors.slice(0, 10).join('; '))
-    );
-
-    if (live && entry.liveSync) {
-      const res = spawnSync('node', [path.join(ROOT, entry.liveSync), '--ci'], {
-        cwd: ROOT,
-        encoding: 'utf-8',
-      });
-      const output = `${res.stdout || ''}${res.stderr || ''}`.trim();
-      // Exit 0 covers both "mirrored" and "models.dev is behind". Lag is the
-      // normal state of an in-flight change and must not fail the run; the
-      // workflow reports it as sync debt instead.
-      if (res.status === 0) {
-        const debt = output.includes('[SYNC DEBT]');
-        checks.push(
-          ok('models.dev mirror', debt ? 'behind — upstream PR owed' : output.split('\n').pop())
-        );
-      } else if (res.status === 1) {
-        checks.push(fail('models.dev mirror', `advertises a model we do not publish — ${output}`));
-      } else {
-        checks.push(
-          fail('models.dev mirror', `sync check errored (exit ${res.status}) — ${output}`)
-        );
-      }
-    }
-    return checks;
-  },
-
-  // /models pairs each model with the code examples that work for it. Offline we can only
-  // check the committed capability data is well formed; the cross-endpoint comparison needs
   // both endpoints live, so it runs via liveSync.
-  'models-rest'(payload, entry, sot, { live }) {
-    const checks = [];
-    const models = Array.isArray(payload?.models) ? payload.models : null;
-    checks.push(
-      models && models.length > 0
-        ? ok('capability data present', `${models.length} models probed ${payload.probedAt || '?'}`)
-        : fail('capability data present', 'capabilities.json has no models array')
-    );
-
-    if (models) {
-      const REQUIRED = ['id', 'chat', 'nativeDialect', 'webSearch', 'imageGeneration'];
-      const incomplete = models
-        .filter((m) => REQUIRED.some((k) => m[k] === undefined))
-        .map((m) => m.id || '(unnamed)');
-      checks.push(
-        incomplete.length === 0
-          ? ok('every model has complete capability data')
-          : fail('every model has complete capability data', `incomplete: ${incomplete.join(', ')}`)
-      );
-    }
-
-    if (live && entry.liveSync) {
-      const res = spawnSync('node', [path.join(ROOT, entry.liveSync), '--live', '--ci'], {
-        cwd: ROOT,
-        encoding: 'utf-8',
-      });
-      const output = `${res.stdout || ''}${res.stderr || ''}`.trim();
-      if (res.status === 0) {
-        checks.push(ok('core data matches /models.json', output.split('\n').pop()));
-      } else if (res.status === 1) {
-        checks.push(fail('core data matches /models.json', `endpoint drift — ${output}`));
-      } else {
-        checks.push(
-          fail(
-            'core data matches /models.json',
-            `sync check errored (exit ${res.status}) — ${output}`
-          )
-        );
-      }
-    }
-    return checks;
-  },
 
   'llms-txt'(payload, entry, sot, { live, liveBody }) {
     if (!live) return [ok('generator present (checked live)', entry.generator)];
@@ -450,83 +349,10 @@ const VALIDATORS = {
       liveBody && liveBody.length > 0 ? ok('non-empty') : fail('non-empty', 'empty body')
     );
     checks.push(
-      /neon/i.test(liveBody || '') ? ok('mentions Neon') : fail('mentions Neon', 'no "Neon" found')
+      /ranksmile/i.test(liveBody || '')
+        ? ok('mentions Ranksmile')
+        : fail('mentions Ranksmile', 'no "Ranksmile" found')
     );
-    return checks;
-  },
-
-  openapi(payload, entry, sot, { live, liveJson }) {
-    if (!live) {
-      // Offline: the spec is served via a rewrite; assert the rewrite is declared.
-      const cfg = fs.readFileSync(path.join(ROOT, entry.rewriteFile), 'utf-8');
-      return [
-        cfg.includes("source: '/openapi.json'")
-          ? ok('rewrite declared in next.config.js')
-          : fail('rewrite declared in next.config.js', "no source: '/openapi.json' rewrite found"),
-      ];
-    }
-    if (!liveJson) return [fail(`schema (${entry.spec.name})`, 'response was not valid JSON')];
-    return [schemaCheck(entry.spec.name, SCHEMAS.openapi, liveJson)];
-  },
-
-  'claimable-authorization-server'(payload, entry, sot) {
-    const checks = [schemaCheck(entry.spec.name, SCHEMAS.claimableAuthorizationServer, payload)];
-    checks.push(equalsCheck('issuer matches SoT', payload.issuer, sot.CLAIMABLE.issuer));
-    checks.push(
-      equalsCheck('token_endpoint matches SoT', payload.token_endpoint, sot.CLAIMABLE.tokenEndpoint)
-    );
-    checks.push(
-      equalsCheck('jwks_uri matches SoT', payload.jwks_uri, sot.CLAIMABLE.jwksUri)
-    );
-    checks.push(
-      Array.isArray(payload.token_endpoint_auth_methods_supported) &&
-        payload.token_endpoint_auth_methods_supported.includes('none')
-        ? ok('token endpoint advertises no client authentication')
-        : fail(
-            'token endpoint advertises no client authentication',
-            payload.token_endpoint_auth_methods_supported
-          )
-    );
-    checks.push(
-      equalsCheck('agent_auth.skill matches SoT', payload.agent_auth?.skill, sot.CLAIMABLE.skillUrl)
-    );
-    checks.push(
-      equalsCheck(
-        'identity_endpoint matches SoT',
-        payload.agent_auth?.identity_endpoint,
-        sot.CLAIMABLE.identityEndpoint
-      )
-    );
-    const skill = new URL(sot.CLAIMABLE.skillUrl);
-    const issuer = new URL(sot.CLAIMABLE.issuer);
-    checks.push(
-      skill.origin === issuer.origin
-        ? ok('skill is on the issuer host')
-        : fail('skill is on the issuer host', `${skill.origin} vs ${issuer.origin}`)
-    );
-    checks.push(
-      issuer.pathname.replace(/\/+$/, '') !== ''
-        ? ok('issuer is a path identifier')
-        : fail('issuer is a path identifier', issuer.href)
-    );
-    try {
-      const markdown = fs.readFileSync(path.join(ROOT, sot.CLAIMABLE.authMarkdownPath), 'utf-8');
-      for (const [name, value] of [
-        ['skill URL', sot.CLAIMABLE.skillUrl],
-        ['token endpoint', sot.CLAIMABLE.tokenEndpoint],
-        ['identity endpoint', sot.CLAIMABLE.identityEndpoint],
-        ['resource', sot.CLAIMABLE.resource],
-        ['issuer', sot.CLAIMABLE.issuer],
-      ]) {
-        checks.push(
-          markdown.includes(value)
-            ? ok(`auth.md contains ${name}`)
-            : fail(`auth.md contains ${name}`, `missing ${value}`)
-        );
-      }
-    } catch (err) {
-      checks.push(fail('auth.md readable', err.message));
-    }
     return checks;
   },
 };

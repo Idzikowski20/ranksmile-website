@@ -1,4 +1,4 @@
-// Source of truth (spec-agnostic) for Neon's machine-readable agent-discovery
+// Source of truth (spec-agnostic) for Ranksmile's machine-readable agent-discovery
 // surfaces — the raw facts (endpoint URLs, auth servers, spec locations) plus
 // small builder functions that assemble the served payloads from those facts.
 //
@@ -17,37 +17,15 @@
 // When a surface changes (new MCP endpoint, moved spec, new auth server), edit
 // it HERE — never hand-edit the individual route/JSON files.
 
-// Neon MCP server. OAuth metadata mirrors what the resource server advertises at
-// https://mcp.neon.tech/.well-known/oauth-authorization-server (self-onboarding
-// via RFC 7591 dynamic client registration).
+// The Ranksmile MCP server. OAuth metadata mirrors what the resource server
+// advertises at https://app.ranksmile.pl/.well-known/oauth-authorization-server
+// (self-onboarding via RFC 7591 dynamic client registration).
 const MCP_SERVER = {
-  connectUrl: 'https://mcp.neon.tech/mcp',
+  connectUrl: 'https://app.ranksmile.pl/mcp',
   transport: 'streamable-http',
-  authorizationServer: 'https://mcp.neon.tech',
-  cardUrl: 'https://neon.com/.well-known/mcp/server-card.json',
-  serverInfo: { name: 'Neon MCP', version: '1.0.0' },
-};
-
-// Neon REST management API and its published OpenAPI document. `openApiSpecUrl`
-// is also aliased to /openapi.json via next.config.js so agents probing the
-// conventional OpenAPI path resolve it.
-const NEON_API = {
-  baseUrl: 'https://console.neon.tech/api/v2',
-  openApiSpecUrl: 'https://neon.com/api_spec/release/v2.json',
-  docsUrl: 'https://neon.com/docs/reference/api',
-};
-
-// A path issuer avoids publishing Claimable metadata at neon.com's apex.
-const CLAIMABLE = {
-  issuer: 'https://neon.com/claimable',
-  skillUrl: 'https://neon.com/auth.md',
-  resource: 'https://claimable.neon.tech/',
-  tokenEndpoint: 'https://claimable.neon.tech/v1/oauth2/token',
-  revocationEndpoint: 'https://claimable.neon.tech/v1/oauth2/revoke',
-  jwksUri: 'https://claimable.neon.tech/.well-known/jwks.json',
-  identityEndpoint: 'https://claimable.neon.tech/v1/agent/identity',
-  claimEndpoint: 'https://claimable.neon.tech/v1/agent/identity/claim',
-  authMarkdownPath: 'public/auth.md',
+  authorizationServer: 'https://app.ranksmile.pl',
+  cardUrl: 'https://ranksmile.pl/.well-known/mcp/server-card.json',
+  serverInfo: { name: 'Ranksmile MCP', version: '1.0.0' },
 };
 
 // ── Payload builders ───────────────────────────────────────────────────────
@@ -71,43 +49,7 @@ function buildMcpServerCard() {
   };
 }
 
-// /.well-known/api-catalog — RFC 9727 linkset pointing at the API base, its
-// OpenAPI document, and the human docs.
-function buildApiCatalog() {
-  return {
-    linkset: [
-      {
-        anchor: NEON_API.baseUrl,
-        'service-desc': [{ href: NEON_API.openApiSpecUrl, type: 'application/json' }],
-        'service-doc': [{ href: NEON_API.docsUrl }],
-      },
-    ],
-  };
-}
-
-function buildClaimableAuthorizationServer() {
-  return {
-    issuer: CLAIMABLE.issuer,
-    token_endpoint: CLAIMABLE.tokenEndpoint,
-    revocation_endpoint: CLAIMABLE.revocationEndpoint,
-    jwks_uri: CLAIMABLE.jwksUri,
-    grant_types_supported: ['urn:ietf:params:oauth:grant-type:jwt-bearer'],
-    token_endpoint_auth_methods_supported: ['none'],
-    response_types_supported: [],
-    agent_auth: {
-      skill: CLAIMABLE.skillUrl,
-      identity_endpoint: CLAIMABLE.identityEndpoint,
-      claim_endpoint: CLAIMABLE.claimEndpoint,
-      identity_types_supported: ['anonymous'],
-    },
-  };
-}
-
 module.exports = {
   MCP_SERVER,
-  NEON_API,
-  CLAIMABLE,
   buildMcpServerCard,
-  buildApiCatalog,
-  buildClaimableAuthorizationServer,
 };

@@ -44,17 +44,7 @@ const jsYaml = require('js-yaml');
 // web page and this llms mirror can never disagree on the generated tables.
 const cliDocs = require('../../scripts/docs-checks/neonctl/generate-docs');
 const cliSchema = require('../../scripts/docs-checks/neonctl/schema.json');
-const {
-  renderAiGatewayModelIndex,
-} = require('../components/pages/doc/ai-gateway-model-index/model-markdown');
 const { isUnusedOrSharedContent } = require('../constants/content');
-
-// AI Gateway model catalog: <AiGatewayModelIndex/> renders an interactive table
-// with Text/Image tabs and links to per-model copy-paste quickstarts on the web page.
-// Here it degrades to static markdown built from the same /models.json catalog
-// and measured capabilities as the web page. Code examples vary by model, so
-// the index links to the generated model-detail Markdown instead of advertising
-// a generic snippet that may not work for every row.
 
 const TOC_ONLY_PATTERN = /\s*\[toc-only\]\s*$/i;
 
@@ -575,12 +565,6 @@ const componentHandlers = {
     // The interactive index on the web page degrades to the full static
     // command tree for agents reading the .md mirror.
     return parseMarkdownToNodes(cliDocs.renderCommandIndex(cliSchema));
-  },
-
-  AiGatewayModelIndex() {
-    // The interactive model table degrades to static per-provider tables built
-    // from the same /models.json data for agents reading the .md mirror.
-    return parseMarkdownToNodes(renderAiGatewayModelIndex());
   },
 
   /**

@@ -84,7 +84,16 @@ const defaultConfig = {
         }))
     );
 
+    // Content inherited from Neon and not yet rewritten. It stays on disk and
+    // stays reachable, but it is not for search engines or model training: see
+    // the matching exclude and Disallow lists in next-sitemap.config.js.
+    const inheritedNoindex = ['/docs/:path*', '/changelog/:path*'].map((source) => ({
+      source,
+      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+    }));
+
     return [
+      ...inheritedNoindex,
       {
         source: '/',
         headers: [
@@ -95,26 +104,6 @@ const defaultConfig = {
           {
             key: 'Link',
             value: [
-              '</.well-known/api-catalog>; rel="api-catalog"',
-              '</docs/llms.txt>; rel="llms-txt"',
-              '</.well-known/agent-skills/index.json>; rel="profile"',
-              '</.well-known/mcp/server-card.json>; rel="mcp-server-card"',
-              '</.well-known/ai-catalog.json>; rel="ai-catalog"',
-            ].join(', '),
-          },
-        ],
-      },
-      {
-        source: '/home',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'max-age=0, s-maxage=31536000',
-          },
-          {
-            key: 'Link',
-            value: [
-              '</.well-known/api-catalog>; rel="api-catalog"',
               '</docs/llms.txt>; rel="llms-txt"',
               '</.well-known/agent-skills/index.json>; rel="profile"',
               '</.well-known/mcp/server-card.json>; rel="mcp-server-card"',
@@ -278,11 +267,6 @@ const defaultConfig = {
         // Legacy favicon path removed in #4345; redirect stale references to the current icon.
         source: '/favicon/favicon.png',
         destination: '/favicon/favicon.svg',
-        permanent: true,
-      },
-      {
-        source: '/guides/neondatabase-toolkit',
-        destination: '/docs/reference/sdk',
         permanent: true,
       },
       {
@@ -2375,86 +2359,6 @@ const defaultConfig = {
         permanent: true,
       },
       {
-        source: '/launchpad',
-        destination: '/claimable-neon',
-        permanent: false,
-      },
-      {
-        source: '/instagres',
-        destination: '/claimable-neon',
-        permanent: false,
-      },
-      {
-        source: '/claimable',
-        destination: '/claimable-neon',
-        permanent: false,
-      },
-      {
-        source: '/claimable-postgres',
-        destination: '/claimable-neon',
-        permanent: true,
-      },
-      {
-        source: '/docs/reference/claimable-postgres',
-        destination: '/docs/reference/claimable-neon',
-        permanent: true,
-      },
-      {
-        source: '/docs/reference/claimable-postgres.md',
-        destination: '/docs/reference/claimable-neon.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/ai/skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/ai/skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/agent-skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/agent-skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/.well-known/skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/agent-skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/agent-skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/skills/claimable-postgres',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
-        source: '/docs/.well-known/skills/claimable-postgres/:path*',
-        destination: '/auth.md',
-        permanent: true,
-      },
-      {
         source: '/docs/local/neon-local-vscode',
         destination: '/docs/local/neon-local-connect',
         permanent: true,
@@ -2735,10 +2639,6 @@ const defaultConfig = {
         { source: '/docs/:path*/llms.txt', destination: '/docs/:path*/llms.txt' },
         { source: '/docs/:path*/llms-full.txt', destination: '/docs/:path*/llms-full.txt' },
         { source: '/docs/llms-full.txt', destination: '/docs/llms-full.txt' },
-        // Unlinked community-guides index. The /guides catch-all would eat this
-        // without a beforeFiles identity rewrite; /docs/changelog/llms.txt is
-        // already covered by /docs/:path*/llms.txt above.
-        { source: '/guides/llms.txt', destination: '/guides/llms.txt' },
         // Skill discovery under /docs/ — wildcard :name handles all skills without per-skill edits.
         // Must be beforeFiles to avoid the docs/[...slug] catch-all intercepting them.
         // /docs/skill.md is a single-entrypoint alias for the primary skill (see config/skills.json).
@@ -2755,7 +2655,6 @@ const defaultConfig = {
         // /docs.md serves the canonical, curated docs index (llms.txt) instead of a
         // generated page-listing. beforeFiles so the [slug] catch-all doesn't intercept it.
         { source: '/docs.md', destination: '/docs/llms.txt' },
-        { source: '/blog.md', destination: '/blog/llms.txt' },
         ...Object.entries(GENERATED_PAGE_MARKDOWN_PATHS)
           // /auth.md is the existing Claimable Neon protocol. The Auth product
           // page exposes its separate Markdown mirror at /md/auth-page.md.
@@ -2769,16 +2668,6 @@ const defaultConfig = {
         ...indexRewrites,
         // Canonical OpenAPI path probed by agent-discovery tooling (e.g. integrations.sh).
         // Aliases the published Neon API spec (the same document served at
-        // /api_spec/release/v2.json) so /openapi.json resolves as application/json.
-        // Must be beforeFiles for the same reason as the index .md rewrites above: as a
-        // single top-level segment, /openapi.json is otherwise intercepted by the [slug]
-        // catch-all (a fallback rewrite never fires → 404). Point straight at the
-        // CloudFront origin the /api_spec/release/v2.json rewrite targets, since Next.js
-        // does not chain rewrites (a relative /api_spec/... destination wouldn't resolve).
-        {
-          source: '/openapi.json',
-          destination: 'https://dfv3qgd2ykmrx.cloudfront.net/api_spec/release/v2.json',
-        },
       ],
       // afterFiles: runs after checking pages/public files but before dynamic routes
       // This ensures physical .md files are served first, with fallback to public/md/

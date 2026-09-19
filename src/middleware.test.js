@@ -91,9 +91,6 @@ describe('Middleware - AI Agent Integration Tests', () => {
   describe('Content routes - AI Agents should get markdown', () => {
     const testCases = [
       { name: 'Docs', path: '/docs/introduction' },
-      { name: 'PostgreSQL', path: '/postgresql/tutorial' },
-      { name: 'Guides', path: '/guides/neon-sst' },
-      { name: 'Programs', path: '/programs/agents' },
       { name: 'Pricing', path: '/pricing' },
       { name: 'Rank Tracking', path: '/rank-tracking' },
       { name: 'Site Audit', path: '/site-audit' },
@@ -188,10 +185,8 @@ describe('Middleware - AI Agent Integration Tests', () => {
 
   describe('Excluded routes - no index markdown available, return HTML', () => {
     const excludedCases = [
-      { name: 'Index /guides', path: '/guides', reason: 'index page without markdown' },
       { name: 'Index /branching', path: '/branching', reason: 'index page without markdown' },
       { name: 'Index /faqs', path: '/faqs', reason: 'index page without markdown' },
-      { name: 'RSS file', path: '/guides/rss.xml', reason: 'RSS file' },
     ];
 
     excludedCases.forEach(({ name, path, reason }) => {
@@ -572,7 +567,6 @@ describe('Middleware - AI Agent Integration Tests', () => {
 
     it.each([
       ['real static file', '/pricing.md'],
-      ['Claimable Neon auth protocol', '/auth.md'],
       ['real skill SKILL.md', '/docs/ai/skills/neon-postgres/SKILL.md'],
       // Rewrite-backed skill-discovery aliases: no physical file at the request
       // path (next.config rewrites to a real SKILL.md), so the proxy must pass

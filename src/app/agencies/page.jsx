@@ -57,7 +57,7 @@ const features = [
     title: 'Onboarding with a person',
     description:
       'The Agency plan includes personalized onboarding and a named contact. We are a small team, so that contact is someone who works on the product.',
-    url: LINKS.contact,
+    url: LINKS.contactSales,
   },
 ];
 

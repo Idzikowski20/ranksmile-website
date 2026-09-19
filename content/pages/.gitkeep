@@ -1,0 +1,3 @@
+# Template pages live here, served by /[slug]. Kept so the directory exists:
+# getPostSlugs and the postbuild worker both readdir it, and a missing directory
+# fails the build rather than yielding an empty list.

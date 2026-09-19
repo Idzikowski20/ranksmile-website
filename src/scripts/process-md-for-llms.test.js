@@ -101,36 +101,6 @@ describe('MDX to Markdown Conversion', () => {
       // Should NOT have raw TwoColumnLayout
       expect(result).not.toContain('<TwoColumnLayout');
     });
-
-    it('should render both AI Gateway model groups with links to accurate quickstarts', async () => {
-      const inputPath = 'content/docs/ai-gateway/models.md';
-      const pageUrl = 'https://neon.com/docs/ai-gateway/models';
-      const projectRoot = process.cwd();
-
-      const { content: result } = await processFile(inputPath, pageUrl, projectRoot);
-
-      // Both tabs are served as static sections (not just the interactive widget)
-      expect(result).toContain('### Text models');
-      expect(result).toContain('### Image models');
-      expect(result).not.toContain('<AiGatewayModelIndex');
-
-      // Per-provider tables render under each tab
-      expect(result).toContain('#### OpenAI');
-      expect(result).toContain('`gpt-5`');
-      expect(result).toContain('[GPT-5](https://neon.com/docs/ai-gateway/models/gpt-5.md)');
-
-      // Examples differ by model, so the index links to generated detail pages
-      // instead of advertising a generic snippet that may not work.
-      expect(result).toContain(
-        'Select a linked model for code examples matched to its measured AI Gateway capabilities.'
-      );
-      // Every cataloged model is currently served, so no "not available" note renders.
-      expect(result).not.toContain('Verified code examples are not currently available for:');
-      expect(result).toContain(
-        'Select a linked model for image-generation examples matched to that model.'
-      );
-      expect(result).not.toContain('__MODEL_ID__');
-    });
   });
 
   // Test specific component conversions with inline MDX
@@ -709,15 +679,14 @@ See [CONN_MAX_AGE](https://example.com).
       expect(connectEntry.urlPrefix).toBe('docs');
     });
 
-    it('should include postgresql pages in navigation map', () => {
+    // The postgresql tutorials are gone, so nothing in the map carries that
+    // prefix any more. Asserted so the prefix reappearing fails here.
+    it('should not include postgresql pages in navigation map', () => {
       const rootDir = process.cwd();
       const navMap = buildNavigationMap(rootDir);
 
-      // Check a known postgresql page
-      const selectEntry = navMap.get('tutorial/select');
-      expect(selectEntry).toBeDefined();
-      expect(selectEntry.urlPrefix).toBe('postgresql');
-      expect(selectEntry.siblings.length).toBeGreaterThan(0);
+      expect(navMap.get('tutorial/select')).toBeUndefined();
+      expect([...navMap.values()].some((entry) => entry.urlPrefix === 'postgresql')).toBe(false);
     });
 
     it('should generate footer with sibling links', () => {

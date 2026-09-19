@@ -56,9 +56,6 @@ const Sidebar = ({ className = null, navigation, basePath, customType, sdkNaviga
   }, [menu]);
 
   const isChangelogIndex = !!currentSlug.match('changelog')?.length;
-  const routePath = `/${currentSlug.replace(/^\/+/, '')}`;
-  const isGuidesRoute = /^\/guides(?:\/|$)/.test(routePath);
-  const hasBorder = !isGuidesRoute;
 
   if (isChangelogIndex) {
     return null;
@@ -75,7 +72,7 @@ const Sidebar = ({ className = null, navigation, basePath, customType, sdkNaviga
   ) : null;
 
   return (
-    <aside className={cn('relative -mt-12', isGuidesRoute && 'xl:hidden', className)}>
+    <aside className={cn('relative -mt-12', className)}>
       <div className="sticky top-28">
         <div
           className={cn(
@@ -87,7 +84,7 @@ const Sidebar = ({ className = null, navigation, basePath, customType, sdkNaviga
           <nav
             className={cn(
               'z-10 -mx-1 no-scrollbars h-[calc(100vh-7rem)] overflow-y-scroll pt-11 pr-8 pb-16 pl-1',
-              hasBorder && 'border-r border-gray-new-90 dark:border-gray-new-20'
+              'border-r border-gray-new-90 dark:border-gray-new-20'
             )}
             ref={navRef}
           >

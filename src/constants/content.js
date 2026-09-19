@@ -1,10 +1,8 @@
 const CONTENT_DIR_PATH = 'content';
 const DOCS_DIR_PATH = `${CONTENT_DIR_PATH}/docs`;
-const GUIDES_DIR_PATH = `${CONTENT_DIR_PATH}/guides`;
 const FAQS_DIR_PATH = `${CONTENT_DIR_PATH}/faqs`;
 const BRANCHING_DIR_PATH = `${CONTENT_DIR_PATH}/branching`;
 const CHANGELOG_DIR_PATH = `${CONTENT_DIR_PATH}/changelog`;
-const POSTGRESQL_DIR_PATH = `${CONTENT_DIR_PATH}/postgresql`;
 const TEMPLATE_PAGES_DIR_PATH = `${CONTENT_DIR_PATH}/pages`;
 const USE_CASES_DIR_PATH = `${TEMPLATE_PAGES_DIR_PATH}/use-cases`;
 const PROGRAMS_DIR_PATH = `${TEMPLATE_PAGES_DIR_PATH}/programs`;
@@ -13,10 +11,7 @@ const AUTOSCALING_REPORT_DIR_PATH = `${CONTENT_DIR_PATH}/autoscaling-report`;
 const CONTENT_ROUTES = {
   'docs/changelog': CHANGELOG_DIR_PATH,
   docs: DOCS_DIR_PATH,
-  postgresql: POSTGRESQL_DIR_PATH,
-  guides: GUIDES_DIR_PATH,
   faqs: FAQS_DIR_PATH,
-  programs: PROGRAMS_DIR_PATH,
 };
 
 // Marketing pages whose Markdown mirrors are generated from the same structured
@@ -29,7 +24,7 @@ const GENERATED_PAGE_MARKDOWN_PATHS = {
   'ai-visibility': '/md/ai-visibility.md',
 };
 
-const EXCLUDED_ROUTES = ['guides', 'faqs'];
+const EXCLUDED_ROUTES = ['faqs'];
 
 const EXCLUDED_DIRS = ['shared-content', 'unused'];
 
@@ -50,12 +45,10 @@ module.exports = {
   EXCLUDED_FILES,
   DOCS_DIR_PATH,
   BRANCHING_DIR_PATH,
-  GUIDES_DIR_PATH,
   FAQS_DIR_PATH,
   USE_CASES_DIR_PATH,
   PROGRAMS_DIR_PATH,
   CHANGELOG_DIR_PATH,
-  POSTGRESQL_DIR_PATH,
   TEMPLATE_PAGES_DIR_PATH,
   AUTOSCALING_REPORT_DIR_PATH,
 };
