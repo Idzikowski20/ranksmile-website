@@ -1,0 +1,27 @@
+src/constants/docs.test.js
+  s_57407775d5d685::t_488c230ed07e74 1-25
+src/utils/get-breadcrumbs.js
+  s_57407775d5d685::t_788fc86e9cd256 1,5
+src/proxy.js
+  s_57407775d5d685::t_788fc86e9cd256 229
+src/constants/docs.js
+  s_57407775d5d685::t_20b0a3886d9082 2-4
+src/constants/links.js
+  s_57407775d5d685::t_20b0a3886d9082 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "85b1954e5a1b76a2d5bb2aeb182d918e2d558cf4",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
