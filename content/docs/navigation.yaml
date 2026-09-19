@@ -72,3 +72,24 @@
       items:
         - title: Glossary
           slug: reference/glossary
+
+- nav: FAQ
+  slug: /faqs
+  title: FAQs
+  icon: info
+  items:
+    - section: Frequently asked
+      icon: info
+      items:
+        - title: Which AI engines are tracked
+          slug: /faqs/which-ai-engines-does-ranksmile-track
+        - title: How often data refreshes
+          slug: /faqs/how-often-does-ranksmile-refresh-data
+        - title: Rank tracking vs AI visibility
+          slug: /faqs/rank-tracking-vs-ai-visibility
+        - title: Connecting an assistant
+          slug: /faqs/connect-ranksmile-to-claude-cursor-mcp
+        - title: What is in a Brand Space
+          slug: /faqs/what-is-in-a-brand-space
+        - title: Is there a free trial
+          slug: /faqs/ranksmile-free-trial
