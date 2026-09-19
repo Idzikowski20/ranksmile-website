@@ -33,13 +33,10 @@ describe('generateIndexText — Common tasks', () => {
 
   it('does not link unlinked site-search indexes from the parent docs index', () => {
     const text = generateIndexText(buildMinimalOrganized(), [
-      { title: 'Community Guides', url: 'https://neon.com/guides', description: 'tutorials' },
       { title: 'Changelog', url: 'https://neon.com/docs/changelog', description: 'releases' },
     ]);
-    expect(text).not.toContain('https://neon.com/guides/llms.txt');
     expect(text).not.toContain('https://neon.com/docs/changelog/llms.txt');
     expect(config.unlinkedIndexes.map((index) => index.outputPath)).toEqual([
-      'public/guides/llms.txt',
       'public/docs/changelog/llms.txt',
     ]);
   });

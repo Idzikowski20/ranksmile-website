@@ -298,16 +298,6 @@ module.exports = {
       url: 'https://neon.com/docs/changelog',
       description: 'Latest updates and releases',
     },
-    postgresql: {
-      title: 'PostgreSQL Tutorial',
-      url: 'https://neon.com/postgresql/tutorial',
-      description: 'Comprehensive PostgreSQL tutorial and reference',
-    },
-    guides: {
-      title: 'Community Guides',
-      url: 'https://neon.com/guides',
-      description: 'Step-by-step tutorials for frameworks and tools',
-    },
     faqs: {
       title: 'FAQs',
       url: 'https://neon.com/faqs',
@@ -325,24 +315,11 @@ module.exports = {
       url: 'https://neon.com/docs/reference/glossary.md',
       sourcePath: 'reference/glossary.md',
     },
-    {
-      title: 'Blog',
-      url: 'https://neon.com/blog.md',
-      description: 'Engineering, product, and community posts from the Neon team',
-    },
   ],
 
   // Indexes written at build time that are not linked from public/docs/llms.txt.
   // Site search ingest walks these URLs; the official docs catalog walk stays on the parent index.
   unlinkedIndexes: [
-    {
-      route: 'guides',
-      publicPath: 'guides',
-      outputPath: 'public/guides/llms.txt',
-      title: 'Neon Community Guides',
-      intro:
-        'Step-by-step tutorials for frameworks, ORMs, auth providers, and deployment platforms.',
-    },
     {
       route: 'docs/changelog',
       publicPath: 'docs/changelog',
@@ -357,15 +334,7 @@ module.exports = {
   // Section `collapse` settings are index-only and do not apply here.
   fullText: {
     // Routes from CONTENT_ROUTES to skip entirely.
-    excludeRoutes: [
-      'docs/changelog',
-      'postgresql',
-      'guides',
-      'faqs',
-      'branching',
-      'use-cases',
-      'programs',
-    ],
+    excludeRoutes: ['docs/changelog', 'faqs', 'branching', 'use-cases', 'programs'],
     // When true, do not exclude additionalResources[].sourcePath files
     // (e.g., glossary.md stays in its natural section instead of being excluded).
     includeAdditionalResourcePaths: true,

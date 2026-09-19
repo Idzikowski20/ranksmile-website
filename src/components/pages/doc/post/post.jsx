@@ -48,13 +48,11 @@ const Post = ({
   navigationLinksBasePath = DOCS_BASE_PATH,
   isDocsIndex = false,
   isChangelog = false,
-  isPostgres = false,
   changelogPosts = [],
   currentSlug,
   gitHubPath,
   markdownPath,
   tableOfContents,
-  author,
   aboveContent = null,
   isFaq = false,
   className = 'max-w-208 lg:max-w-none',
@@ -162,7 +160,6 @@ const Post = ({
             <Content
               className={cn('mt-10 lg:mt-7 md:mt-5', isSplitLayout && 'split-layout')}
               content={content}
-              isPostgres={isPostgres}
             />
           </article>
         )}
@@ -187,7 +184,6 @@ const Post = ({
           enableTableOfContents={enableTableOfContents}
           tableOfContents={tableOfContents}
           gitHubPath={gitHubPath}
-          author={author}
         />
       )}
       {modal && <Modal {...modal} />}
@@ -216,7 +212,6 @@ Post.propTypes = {
   }).isRequired,
   navigationLinksBasePath: PropTypes.string,
   isChangelog: PropTypes.bool,
-  isPostgres: PropTypes.bool,
   isDocsIndex: PropTypes.bool,
   changelogPosts: PropTypes.arrayOf(
     PropTypes.shape({
@@ -228,17 +223,6 @@ Post.propTypes = {
   gitHubPath: PropTypes.string.isRequired,
   markdownPath: PropTypes.string,
   tableOfContents: PropTypes.arrayOf(PropTypes.shape({})),
-  author: PropTypes.shape({
-    slug: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    position: PropTypes.string,
-    bio: PropTypes.string,
-    link: PropTypes.shape({
-      url: PropTypes.string,
-      title: PropTypes.string,
-    }),
-    photo: PropTypes.string,
-  }),
   aboveContent: PropTypes.node,
   isFaq: PropTypes.bool,
   className: PropTypes.string,

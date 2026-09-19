@@ -87,15 +87,12 @@ const defaultConfig = {
     // Content inherited from Neon and not yet rewritten. It stays on disk and
     // stays reachable, but it is not for search engines or model training: see
     // the matching exclude and Disallow lists in next-sitemap.config.js.
-    const inheritedNoindex = [
-      '/docs/:path*',
-      '/guides/:path*',
-      '/faqs/:path*',
-      '/changelog/:path*',
-    ].map((source) => ({
-      source,
-      headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
-    }));
+    const inheritedNoindex = ['/docs/:path*', '/faqs/:path*', '/changelog/:path*'].map(
+      (source) => ({
+        source,
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      })
+    );
 
     return [
       ...inheritedNoindex,
@@ -272,11 +269,6 @@ const defaultConfig = {
         // Legacy favicon path removed in #4345; redirect stale references to the current icon.
         source: '/favicon/favicon.png',
         destination: '/favicon/favicon.svg',
-        permanent: true,
-      },
-      {
-        source: '/guides/neondatabase-toolkit',
-        destination: '/docs/reference/sdk',
         permanent: true,
       },
       {
@@ -2649,10 +2641,6 @@ const defaultConfig = {
         { source: '/docs/:path*/llms.txt', destination: '/docs/:path*/llms.txt' },
         { source: '/docs/:path*/llms-full.txt', destination: '/docs/:path*/llms-full.txt' },
         { source: '/docs/llms-full.txt', destination: '/docs/llms-full.txt' },
-        // Unlinked community-guides index. The /guides catch-all would eat this
-        // without a beforeFiles identity rewrite; /docs/changelog/llms.txt is
-        // already covered by /docs/:path*/llms.txt above.
-        { source: '/guides/llms.txt', destination: '/guides/llms.txt' },
         // Skill discovery under /docs/ — wildcard :name handles all skills without per-skill edits.
         // Must be beforeFiles to avoid the docs/[...slug] catch-all intercepting them.
         // /docs/skill.md is a single-entrypoint alias for the primary skill (see config/skills.json).

@@ -14,7 +14,6 @@ export default {
   agencies: '/agencies',
   flow: '/flow',
   functions: '/rank-tracking',
-  guides: '/guides',
   faqs: '/faqs',
   generateTicket: '/generate-ticket',
   objectStorage: '/wordpress',

@@ -1,12 +1,6 @@
-const { guideHasExternalCanonical } = require('./src/utils/guide-has-external-canonical');
-
 module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_DEFAULT_SITE_URL || 'https://neon.com',
   transform: async (config, routePath) => {
-    if (guideHasExternalCanonical(routePath)) {
-      return null;
-    }
-
     return {
       loc: routePath,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
@@ -34,8 +28,6 @@ module.exports = {
     // next.config.js. Drop a line here once its section is ours.
     '/docs',
     '/docs/*',
-    '/guides',
-    '/guides/*',
     '/faqs',
     '/faqs/*',
     '/changelog',
@@ -57,7 +49,6 @@ module.exports = {
 
           // Inherited from Neon and not yet rewritten.
           '/docs/',
-          '/guides/',
           '/faqs/',
           '/changelog/',
         ],

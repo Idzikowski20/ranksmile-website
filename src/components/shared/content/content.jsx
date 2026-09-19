@@ -89,7 +89,7 @@ const getHeadingComponent = (heading, withoutAnchorHeading) => {
   return AnchorHeading(heading);
 };
 
-const getComponents = (withoutAnchorHeading, isReleaseNote, isPostgres, isTemplate) => ({
+const getComponents = (withoutAnchorHeading, isReleaseNote, isTemplate) => ({
   h2: getHeadingComponent('h2', withoutAnchorHeading),
   h3: getHeadingComponent('h3', withoutAnchorHeading),
   h4: getHeadingComponent('h4', withoutAnchorHeading),
@@ -133,56 +133,21 @@ const getComponents = (withoutAnchorHeading, isReleaseNote, isPostgres, isTempla
     const titleAttr = flags.every((flag) => KNOWN_IMAGE_FLAGS.has(flag)) ? undefined : title;
     const templateRounding = isTemplate && !isSquare && 'rounded-lg';
 
-    // No zoom on PostgreSQLTutorial Images
-    if (!isPostgres) {
-      return (
-        <ImageZoom src={src}>
-          <Image
-            className={cn(className, { 'no-border': isNoBorder }, templateRounding)}
-            src={src}
-            width={704}
-            height={447}
-            style={{ width: '100%', height: '100%' }}
-            title={titleAttr}
-            unoptimized={unoptimizedPreserveAlpha}
-            priority={isPriority}
-            {...rest}
-          />
-          {isTemplate && (
-            <GradientBorder className={templateRounding || 'rounded-none'} withBlend />
-          )}
-        </ImageZoom>
-      );
-    }
-
-    return src.includes('?') ? (
-      // Authors can use anchor tags to make images float right/left
-      <Image
-        className={cn(
-          className,
-          {
-            'no-border': isNoBorder || src.includes('alignleft') || src.includes('alignright'),
-          },
-          { 'float-right clear-left p-4 grayscale filter': src.includes('alignright') },
-          { 'float-left clear-right p-4 grayscale filter': src.includes('alignleft') }
-        )}
-        src={src.split('?')[0]}
-        width={100}
-        height={100}
-        style={{ width: 'auto', height: 'auto', maxWidth: '128px', maxHeight: '128px' }}
-        title={titleAttr}
-        {...rest}
-      />
-    ) : (
-      <Image
-        className={cn(className, { 'no-border': isNoBorder })}
-        src={src}
-        width={200}
-        height={100}
-        style={{ width: 'auto', height: 'auto' }}
-        title={titleAttr}
-        {...rest}
-      />
+    return (
+      <ImageZoom src={src}>
+        <Image
+          className={cn(className, { 'no-border': isNoBorder }, templateRounding)}
+          src={src}
+          width={704}
+          height={447}
+          style={{ width: '100%', height: '100%' }}
+          title={titleAttr}
+          unoptimized={unoptimizedPreserveAlpha}
+          priority={isPriority}
+          {...rest}
+        />
+        {isTemplate && <GradientBorder className={templateRounding || 'rounded-none'} withBlend />}
+      </ImageZoom>
     );
   },
   ApiMethodBadge,
@@ -256,7 +221,6 @@ const Content = ({
   asHTML = false,
   withoutAnchorHeading = false,
   isReleaseNote = false,
-  isPostgres = false,
   isTemplate = false,
 }) => {
   const rootClassName = cn(
@@ -271,7 +235,7 @@ const Content = ({
   return (
     <div className={rootClassName}>
       <MDXRemote
-        components={getComponents(withoutAnchorHeading, isReleaseNote, isPostgres, isTemplate)}
+        components={getComponents(withoutAnchorHeading, isReleaseNote, isTemplate)}
         source={content}
         options={{
           mdxOptions: {
@@ -294,7 +258,6 @@ Content.propTypes = {
   asHTML: PropTypes.bool,
   withoutAnchorHeading: PropTypes.bool,
   isReleaseNote: PropTypes.bool,
-  isPostgres: PropTypes.bool,
   isTemplate: PropTypes.bool,
 };
 

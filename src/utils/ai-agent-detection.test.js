@@ -161,11 +161,6 @@ describe('getMarkdownPath', () => {
       expect(result).toBe('/md/docs/introduction.md');
     });
 
-    it('should convert /guides/neon-sst to markdown path', () => {
-      const result = getMarkdownPath('/guides/neon-sst');
-      expect(result).toBe('/md/guides/neon-sst.md');
-    });
-
     it('should handle nested docs paths', () => {
       const result = getMarkdownPath('/docs/guides/logical-replication');
       expect(result).toBe('/md/docs/guides/logical-replication.md');
@@ -173,16 +168,15 @@ describe('getMarkdownPath', () => {
   });
 
   describe('Excluded routes (should return null)', () => {
-    it('should exclude index page /guides', () => {
-      const result = getMarkdownPath('/guides');
-      expect(result).toBeNull();
-    });
-
     // These content routes are retired, so nothing under them resolves to a
     // mirror any more. Asserted rather than deleted so a route reappearing by
     // accident fails here.
     it('should return null for the retired content routes', () => {
       for (const path of [
+        '/guides',
+        '/guides/neon-sst',
+        '/guides/rss.xml',
+        '/guides.md',
         '/postgresql',
         '/postgresql/tutorial',
         '/postgresql.md',
@@ -262,11 +256,6 @@ describe('getMarkdownPath', () => {
   });
 
   describe('Excluded files (should return null)', () => {
-    it('should exclude RSS files like /guides/rss.xml', () => {
-      const result = getMarkdownPath('/guides/rss.xml');
-      expect(result).toBeNull();
-    });
-
     it('should exclude RSS files like /docs/rss.xml', () => {
       const result = getMarkdownPath('/docs/rss.xml');
       expect(result).toBeNull();
@@ -326,11 +315,6 @@ describe('getMarkdownPath', () => {
     it('should not double .md for nested paths ending with .md', () => {
       const result = getMarkdownPath('/docs/guides/logical-replication.md');
       expect(result).toBe('/md/docs/guides/logical-replication.md');
-    });
-
-    it('should map /guides.md to /md/guides.md (file may not exist)', () => {
-      const result = getMarkdownPath('/guides.md');
-      expect(result).toBe('/md/guides.md');
     });
   });
 });

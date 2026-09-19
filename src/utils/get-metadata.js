@@ -28,8 +28,6 @@ export default function getMetadata({
   publishedTime = null,
   authors = [],
   imagePath = DEFAULT_IMAGE_PATH,
-  isPostgres = false,
-  currentSlug = null,
   markdownPath = null,
   canonical,
 }) {
@@ -47,9 +45,7 @@ export default function getMetadata({
   const siteName = 'Neon';
   const robots = robotsNoindex === 'noindex' ? { index: false } : null;
 
-  let alternateCanonical = isPostgres
-    ? `https://www.postgresql.org/docs/16/${currentSlug}.html`
-    : canonicalUrl;
+  let alternateCanonical = canonicalUrl;
 
   if (canonical !== undefined && canonical !== null) {
     assertAbsoluteHttpUrl(canonical, 'canonical');
