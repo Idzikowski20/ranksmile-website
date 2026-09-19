@@ -1,0 +1,26 @@
+src/constants/wordpress-page-content.js
+  s_57407775d5d685::t_9aff4bda03cf1e 8
+src/constants/backend-platform-page-content.js
+  s_57407775d5d685::t_9aff4bda03cf1e 14,139,263
+src/constants/content-score-page-content.js
+  s_57407775d5d685::t_9aff4bda03cf1e 43
+  s_57407775d5d685::t_863f766e97b540 44
+src/scripts/generate-backend-platform-page-markdown.test.js
+  s_57407775d5d685::t_72687f94c8160d 68,80,92,107,122,161,164,167,170,173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "6ead7086ed28cb05bfa791547184ab6bba195600",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
