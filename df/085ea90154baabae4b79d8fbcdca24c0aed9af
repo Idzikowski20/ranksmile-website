@@ -1,0 +1,21 @@
+src/constants/docs-navigation.test.js
+  s_57407775d5d685::t_29711a34f942f0 11-23,26,40
+content/docs/navigation.yaml
+  s_57407775d5d685::t_e367383c9a34de 75-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "df085ea90154baabae4b79d8fbcdca24c0aed9af",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
