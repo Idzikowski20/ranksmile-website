@@ -213,7 +213,7 @@ RecursiveList.propTypes = {
   currentPath: PropTypes.string.isRequired,
 };
 
-const MobileMenu = ({ navigation, basePath, title = 'Neon Docs' }) => {
+const MobileMenu = ({ navigation, basePath, title = 'Ranksmile Docs' }) => {
   const [open, setOpen] = useState(false);
   // The drawer is a JS-only overlay that stays hidden until the user opens it,
   // and its links are already server-rendered in the desktop Sidebar. Building

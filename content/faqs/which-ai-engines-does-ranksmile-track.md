@@ -18,11 +18,11 @@ AI Overviews and AI Mode are where Google puts generated answers above the class
 
 Claude is not tracked. When it is, it will appear in the engine list without you needing to change anything.
 
-## Where the answers come from
+## What gets measured
 
-Ranksmile queries the engines through [DataForSEO](https://dataforseo.com), not through its own scrapers. ChatGPT, Perplexity and Gemini come back through their LLM response endpoints; AI Overviews and AI Mode come from Google SERP endpoints, because that's where those answers actually live.
+Two things, separately. **A mention** is the engine naming your brand in its answer. **A citation** is the engine linking your domain as a source. You can have either without the other, and the gap between them is usually the most useful number on the page.
 
-This matters for one reason: the results are what the engine returned to a neutral query from a neutral location, not what it returns to you while you're logged in and it already knows your site.
+Results reflect what an engine returned to a neutral question from a neutral location, not what it returns to you while you are logged in and it already knows your site.
 
 <Admonition type="note" title="Prompt limits">
 Fifty prompts per Brand Space. Each one runs against every enabled engine, so the ceiling is 250 prompt/engine pairs per scan.

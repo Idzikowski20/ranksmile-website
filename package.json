@@ -7,8 +7,8 @@
     "npm": ">=8.6.0"
   },
   "scripts": {
-    "prebuild": "node scripts/generate-api-ref.mjs && node src/scripts/update-github-stars.js && node src/scripts/generate-docs-icons-config.js && node src/scripts/generate-static-md-manifest.js && npm run check:content-data && npm run check:pricing-sync && node scripts/docs-checks/neonctl/check-staleness.js",
-    "predev": "node scripts/generate-api-ref.mjs && node src/scripts/update-github-stars.js && node src/scripts/generate-docs-icons-config.js && node src/scripts/generate-static-md-manifest.js && npm run check:content-data && npm run check:pricing-sync && node scripts/docs-checks/neonctl/check-staleness.js && npm run generate:backend-platform-page-markdown",
+    "prebuild": "node src/scripts/update-github-stars.js && node src/scripts/generate-docs-icons-config.js && node src/scripts/generate-static-md-manifest.js && npm run check:content-data",
+    "predev": "node src/scripts/update-github-stars.js && node src/scripts/generate-docs-icons-config.js && node src/scripts/generate-static-md-manifest.js && npm run check:content-data && npm run generate:backend-platform-page-markdown",
     "dev": "next dev",
     "build": "next build",
     "dev:build": "next build",
@@ -22,20 +22,12 @@
     "lint": "npm run lint:js",
     "lint:js": "eslint .",
     "lint:md": "markdownlint --ignore-path .gitignore .",
-    "sync:skills": "node src/scripts/sync-skills.js",
-    "generate:skills": "node src/scripts/generate-skills-index.js",
     "generate:static-md-manifest": "node src/scripts/generate-static-md-manifest.js",
-    "update:skills": "npm run sync:skills && npm run generate:skills && npm run generate:static-md-manifest",
-    "generate:api-ref": "node scripts/generate-api-ref.mjs",
-    "check:api-ref-generated": "node scripts/check-api-ref-generated.mjs",
     "check:docs-api-consistency": "node scripts/check-docs-api-consistency.mjs",
-    "check:skills-sync": "node scripts/check-skills-sync.mjs",
     "check:mcp-categories": "node scripts/check-mcp-categories-sync.mjs",
     "check:mcp-categories:live": "node scripts/check-mcp-categories-sync.mjs --live",
-    "audit:api-ref": "node scripts/audit-api-spec.mjs",
     "audit:field-groups": "node scripts/validate-field-groups.mjs",
     "check:broken-links": "linkinator --config linkinator.config.json",
-    "check:pricing-sync": "node src/scripts/check-pricing-sync.js",
     "models:import": "node src/scripts/import-models-from-models-dev.mjs",
     "generate:backend-platform-page-markdown": "node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON src/scripts/generate-backend-platform-page-markdown.js",
     "verify:agent-endpoints": "node scripts/verify-agent-endpoints.mjs",
@@ -51,9 +43,7 @@
     "test:unit": "vitest",
     "test:unit:ui": "vitest --ui",
     "test:unit:run": "vitest run",
-    "test:unit:coverage": "vitest run --coverage",
-    "check:docs": "vitest run scripts/docs-checks/**/__tests__/*.test.js",
-    "cli-docs": "node scripts/docs-checks/neonctl/cli.js"
+    "test:unit:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@codemirror/lang-sql": "^6.9.1",

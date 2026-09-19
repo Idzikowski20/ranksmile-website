@@ -482,38 +482,6 @@ describe('Middleware - AI Agent Integration Tests', () => {
       expect(response.url.toString()).toBe('https://neon.com/use-cases.md');
     });
 
-    it('should pass through static .md files under docs/ai/ without rewriting', async () => {
-      const req = createMockRequest(
-        '/docs/ai/skills/neon-functions/references/sentry.md',
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-        'text/html'
-      );
-
-      const response = await middleware(req);
-
-      const markdownFetchCalls = global.fetch.mock.calls.filter(
-        ([url]) => url !== 'https://neonapi.io/t.js'
-      );
-      expect(markdownFetchCalls).toHaveLength(0);
-      expect(response.type).toBe('next');
-    });
-
-    it('should pass through static .md files under docs/ai/ for AI agents too', async () => {
-      const req = createMockRequest(
-        '/docs/ai/skills/neon-functions/references/sentry.md',
-        'Claude/1.0',
-        'text/html'
-      );
-
-      const response = await middleware(req);
-
-      const markdownFetchCalls = global.fetch.mock.calls.filter(
-        ([url]) => url !== 'https://neonapi.io/t.js'
-      );
-      expect(markdownFetchCalls).toHaveLength(0);
-      expect(response.type).toBe('next');
-    });
-
     it.each(['/docs/reference/api/llms.txt', '/docs/reference/api/llms-full.txt'])(
       'should pass through static API reference indexes for AI agents: %s',
       async (path) => {
@@ -544,10 +512,6 @@ describe('Middleware - AI Agent Integration Tests', () => {
     it.each([
       ['out-of-namespace path', '/foo/bar.md'],
       ['deep out-of-namespace path', '/foo/bar/baz.md'],
-      ['missing skill reference', '/docs/ai/skills/neon-postgres/references/gone.md'],
-      // Unknown skill via a discovery alias: the rewrite target doesn't exist, so
-      // return a markdown 404 (not a mislabeled read + HTML 404).
-      ['unknown skill alias', '/.well-known/agent-skills/does-not-exist/SKILL.md'],
     ])('returns a markdown 404 for a missing %s and tracks it', async (_label, path) => {
       const req = createMockRequest(path, 'Mozilla/5.0', 'text/html');
 
@@ -567,13 +531,7 @@ describe('Middleware - AI Agent Integration Tests', () => {
 
     it.each([
       ['real static file', '/pricing.md'],
-      ['real skill SKILL.md', '/docs/ai/skills/neon-postgres/SKILL.md'],
-      // Rewrite-backed skill-discovery aliases: no physical file at the request
-      // path (next.config rewrites to a real SKILL.md), so the proxy must pass
-      // them through rather than 404, or agent discovery breaks.
-      ['/skill.md alias', '/skill.md'],
-      ['.well-known agent-skills alias', '/.well-known/agent-skills/neon-postgres/SKILL.md'],
-      ['docs .well-known alias', '/docs/.well-known/agent-skills/neon-postgres/SKILL.md'],
+      ['agent homepage brief', '/index.md'],
     ])('passes through a %s, tracks the read, no markdown fetch', async (_label, path) => {
       const req = createMockRequest(path, 'Mozilla/5.0', 'text/html');
 

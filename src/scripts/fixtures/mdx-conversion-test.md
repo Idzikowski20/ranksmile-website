@@ -235,68 +235,6 @@ Scale compute up and down based on demand.
 
 <ProgramForm type="agent" />
 
-## Shared content components
-
-### FeatureBeta (parameterless)
-
-<FeatureBeta />
-
-### FeatureBetaProps (with prop)
-
-<FeatureBetaProps feature_name="Autoscaling" />
-
-### EarlyAccessProps (with prop)
-
-<EarlyAccessProps feature_name="Schema Diff" />
-
-### AgentSkillsTip (with prop)
-
-<AgentSkillsTip skill_topic="branching" />
-
-### MCPTools
-
-<MCPTools />
-
-### LinkAPIKey
-
-<LinkAPIKey />
-
-### LRNotice
-
-<LRNotice />
-
-### PrivatePreview
-
-<PrivatePreview />
-
-### PrivatePreviewEnquire
-
-<PrivatePreviewEnquire />
-
-### PublicPreview
-
-<PublicPreview />
-
-### LRBeta
-
-<LRBeta />
-
-### MigrationAssistant
-
-<MigrationAssistant />
-
-### NextSteps
-
-<NextSteps />
-
-### NewPricing
-
-<NewPricing />
-
-### AzureRegionsDeprecation
-
-<AzureRegionsDeprecation />
-
 ## Ignored components
 
 <CopyPrompt src="/prompts/test.md" />

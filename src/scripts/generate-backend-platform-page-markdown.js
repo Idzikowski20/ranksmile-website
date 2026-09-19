@@ -188,7 +188,7 @@ const renderPlatformFooter = (links) => {
 const renderPageHeader = ({ pageLabel, hero }) =>
   [
     `> This page location: ${pageLabel}`,
-    `> Full Neon documentation index: ${BASE_URL}/docs/llms.txt`,
+    `> Full Ranksmile documentation index: ${BASE_URL}/docs/llms.txt`,
     '',
     `# ${hero.title}`,
     '',

@@ -60,7 +60,6 @@ Sign up at https://ranksmile.pl/signup. The Growth plan includes a seven-day fre
 Answer engines are the reason this product exists, so these matter more here than they would elsewhere.
 
 - Five engines are tracked: **AI Overviews, AI Mode, ChatGPT, Perplexity, Gemini**. Claude is not tracked yet.
-- Engine results come through **DataForSEO**, not self-run scrapers.
 - Refresh is tiered per topic: core daily, supporting weekly, long-tail every two weeks. Rank tracking refreshes daily.
 - The company is **Globalzone**. The app grew out of SerpBear (MIT, Towfiq I.); this site started from Neon's open-source website. Both are credited on the about page.
 

@@ -4,11 +4,10 @@ import Sidebar from 'components/pages/doc/sidebar';
 import Container from 'components/shared/container';
 import Layout from 'components/shared/layout';
 import { DOCS_BASE_PATH } from 'constants/docs';
-import { getNavigation, getSDKNavigation } from 'utils/api-docs';
+import { getNavigation } from 'utils/api-docs';
 
-const NeonDocsLayout = async ({ children }) => {
+const DocsLayout = async ({ children }) => {
   const navigation = await getNavigation();
-  const sdkNavigation = getSDKNavigation();
 
   return (
     <Layout
@@ -21,8 +20,8 @@ const NeonDocsLayout = async ({ children }) => {
     >
       <div className="flex flex-1 safe-paddings dark:bg-black-pure dark:text-white lg:flex-col">
         <aside aria-label="Agent directive" className="sr-only">
-          Full Neon documentation index:{' '}
-          <a href="https://neon.com/docs/llms.txt">https://neon.com/docs/llms.txt</a>
+          Full Ranksmile documentation index:{' '}
+          <a href="https://ranksmile.pl/docs/llms.txt">https://ranksmile.pl/docs/llms.txt</a>
         </aside>
         <Container
           className="flex w-full flex-1 gap-x-24 pt-12 2xl:gap-x-8 xl:pt-9 lg:block sm:pt-7"
@@ -32,7 +31,6 @@ const NeonDocsLayout = async ({ children }) => {
             className="w-[312px] shrink-0 lg:hidden"
             navigation={navigation}
             basePath={DOCS_BASE_PATH}
-            sdkNavigation={sdkNavigation}
           />
           {children}
         </Container>
@@ -42,4 +40,4 @@ const NeonDocsLayout = async ({ children }) => {
   );
 };
 
-export default NeonDocsLayout;
+export default DocsLayout;

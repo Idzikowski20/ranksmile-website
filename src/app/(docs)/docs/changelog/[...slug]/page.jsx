@@ -83,7 +83,7 @@ const ChangelogPost = async ({ currentSlug }) => {
     datePublished: date,
     author: {
       '@type': 'Organization',
-      name: 'Neon',
+      name: 'Ranksmile',
     },
   };
 

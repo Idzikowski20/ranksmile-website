@@ -6,18 +6,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL || 'https://ranksmile.
 export const generateOrganizationSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Neon',
-  alternateName: 'Neon Serverless Postgres',
-  legalName: 'Neon, LLC',
+  name: 'Ranksmile',
+  legalName: 'Globalzone',
   url: SITE_URL,
   description: SEO_DATA.index.description,
-  logo: `${SITE_URL}/brand/neon-logo-light-color.svg`,
-  sameAs: [LINKS.github, LINKS.twitter, LINKS.linkedin, LINKS.youtube, LINKS.discord],
-  parentOrganization: {
-    '@type': 'Organization',
-    name: 'Databricks, Inc.',
-    url: 'https://www.databricks.com',
-  },
+  logo: `${SITE_URL}/brand/ranksmile-logo-light.svg`,
+  // sameAs is omitted deliberately: the social links in constants/links.js are
+  // still Neon's accounts, and asserting them as Ranksmile's in structured data
+  // would be a false claim to every crawler that reads this.
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',

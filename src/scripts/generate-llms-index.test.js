@@ -21,8 +21,8 @@ describe('generateIndexText — Common tasks', () => {
     expect(text).toContain('## Common tasks');
     // At least one task renders as a markdown link
     expect(text).toMatch(/## Common tasks\n\n- \[.+\]\(.+\)/);
-    // The claimable-provisioning task is present
-    expect(text).toContain('https://neon.com/auth.md');
+    // A configured task is present
+    expect(text).toContain('https://ranksmile.pl/docs/introduction/overview.md');
   });
 
   it('no longer renders the old "When to use Neon" or "Common Queries" headings', () => {
