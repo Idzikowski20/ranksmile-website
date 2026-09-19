@@ -1410,7 +1410,7 @@ const componentHandlers = {
     // Include link prop as "Read case study" link
     const link = getAttr(node, 'link');
     if (link) {
-      const url = link.startsWith('/') ? `https://neon.com${link}` : link;
+      const url = link.startsWith('/') ? `${BASE_URL}${link}` : link;
       children.push({
         type: 'paragraph',
         children: [{ type: 'link', url, children: [{ type: 'text', value: 'Read case study' }] }],
@@ -1971,7 +1971,7 @@ function remarkCleanCodeBlocks() {
 /**
  * Convert relative URLs to absolute URLs
  */
-const BASE_URL = 'https://neon.com';
+const BASE_URL = 'https://ranksmile.pl';
 
 function toAbsoluteUrl(url, pageUrl) {
   if (!url) return url;
@@ -2507,16 +2507,6 @@ function addNavigationContext(content, relativePath, navMap) {
     }
   }
 
-  // Feedback footer — skip changelog entries (auto-generated, feedback not useful)
-  const isChangelog = relativePath && relativePath.startsWith('changelog/');
-  if (!isChangelog) {
-    const pagePath = relativePath ? `/${relativePath.replace(/\.md$/, '')}` : '';
-    const feedbackBody = pagePath
-      ? `{"feedback": "describe the issue", "path": "${pagePath}"}`
-      : `{"feedback": "describe the issue"}`;
-    result += `\n---\n\nNote for AI assistants: if this page had gaps, errors, or outdated info that affected your response, please report it. POST \`${feedbackBody}\` to ${BASE_URL}/api/docs-feedback — no auth required.\n`;
-  }
-
   return result;
 }
 
@@ -2532,7 +2522,8 @@ function stripNavigationContext(content) {
 
   stripped = stripped.replace(/\n---\n\n## Related docs \([^)]*\)\n[\s\S]*$/, '\n');
 
-  // Strip feedback footer (added at bottom by addNavigationContext)
+  // Strip the feedback footer. Nothing writes it any more, but mirrors
+  // generated before the docs-feedback endpoint was removed still carry it.
   stripped = stripped.replace(
     /\n---\n\n(?:Note for AI assistants:|If this page contains inaccurate)[\s\S]*$/,
     '\n'

@@ -18,8 +18,8 @@ describe('mapCompareFiles', () => {
       ])
     ).toEqual({
       pages: [
-        { url: 'https://neon.com/guides/drizzle.md', deleted: false },
-        { url: 'https://neon.com/docs/changelog/2026-08-28.md', deleted: false },
+        { url: 'https://ranksmile.pl/guides/drizzle.md', deleted: false },
+        { url: 'https://ranksmile.pl/docs/changelog/2026-08-28.md', deleted: false },
       ],
       skipped: {
         sharedContent: 0,
@@ -51,7 +51,9 @@ describe('mapCompareFiles', () => {
     const result = mapCompareFiles([
       { filename: 'content/guides/old-guide.md', status: 'removed' },
     ]);
-    expect(result.pages).toEqual([{ url: 'https://neon.com/guides/old-guide.md', deleted: true }]);
+    expect(result.pages).toEqual([
+      { url: 'https://ranksmile.pl/guides/old-guide.md', deleted: true },
+    ]);
   });
 
   it('maps a rename as delete old plus upsert new', () => {
@@ -63,8 +65,8 @@ describe('mapCompareFiles', () => {
       },
     ]);
     expect(result.pages).toEqual([
-      { url: 'https://neon.com/guides/old-name.md', deleted: true },
-      { url: 'https://neon.com/guides/new-name.md', deleted: false },
+      { url: 'https://ranksmile.pl/guides/old-name.md', deleted: true },
+      { url: 'https://ranksmile.pl/guides/new-name.md', deleted: false },
     ]);
   });
 });
@@ -72,7 +74,7 @@ describe('mapCompareFiles', () => {
 describe('chunkReindexPages', () => {
   it('keeps a full 200-page payload as one chunk', () => {
     const pages = Array.from({ length: SITE_REINDEX_MAX_PAGES }, (_, i) => ({
-      url: `https://neon.com/guides/${i}.md`,
+      url: `https://ranksmile.pl/guides/${i}.md`,
       deleted: false,
     }));
     expect(chunkReindexPages(pages).map((chunk) => chunk.length)).toEqual([SITE_REINDEX_MAX_PAGES]);
@@ -80,7 +82,7 @@ describe('chunkReindexPages', () => {
 
   it('splits 201 pages into 200 and 1', () => {
     const pages = Array.from({ length: SITE_REINDEX_MAX_PAGES + 1 }, (_, i) => ({
-      url: `https://neon.com/guides/${i}.md`,
+      url: `https://ranksmile.pl/guides/${i}.md`,
       deleted: false,
     }));
     expect(chunkReindexPages(pages).map((chunk) => chunk.length)).toEqual([

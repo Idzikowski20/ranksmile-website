@@ -1,7 +1,7 @@
 import LINKS from 'constants/links';
 import closeIcon from 'icons/close.svg';
 
-const BASE_URL = 'https://neon.com';
+const BASE_URL = 'https://ranksmile.pl';
 
 const inkeepTheme = {
   styles: [

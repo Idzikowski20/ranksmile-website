@@ -31,7 +31,7 @@ describe('backend platform page Markdown', () => {
 
     expect(
       htmlToMarkdown('<p>Options:</p><ul><li><a href="/docs/one">One</a></li><li>Two</li></ul>')
-    ).toBe('Options:\n\n- [One](https://neon.com/docs/one)\n- Two');
+    ).toBe('Options:\n\n- [One](https://ranksmile.pl/docs/one)\n- Two');
 
     expect(htmlToMarkdown('<p>Use <code>&lt;T&gt;</code> as the type.</p>')).toBe(
       'Use `<T>` as the type.'
@@ -70,7 +70,7 @@ describe('backend platform page Markdown', () => {
     expect(markdown).toContain('### Compare back to `90d`');
     expect(markdown).toContain('## Your questions, answered');
     expect(markdown).toContain('## Built for the teams and the agents behind them.');
-    expect(markdown).toContain('[Contact us](https://neon.com/contact-sales)');
+    expect(markdown).toContain('[Contact us](https://ranksmile.pl/contact-sales)');
     expect(markdown).not.toMatch(/<\/?(?:p|strong|code)>/);
   });
 
@@ -105,7 +105,7 @@ describe('backend platform page Markdown', () => {
     const markdown = renderContentScoreMarkdown(LINKS);
 
     expect(markdown).toContain('# Write against the pages already winning the query');
-    expect(markdown).toContain('[See plans](https://neon.com/pricing)');
+    expect(markdown).toContain('[See plans](https://ranksmile.pl/pricing)');
     expect(markdown).toContain('Two scores, not a vibe');
     expect(markdown).toContain('`target_count`');
     expect(markdown).toContain('From competitors to published, in one panel');
