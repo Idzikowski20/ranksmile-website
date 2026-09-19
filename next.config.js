@@ -320,6 +320,12 @@ const defaultConfig = {
         destination: '/?ref=tbm-p',
         permanent: true,
       },
+      // The Neon CLI page became the MCP page.
+      {
+        source: '/cli',
+        destination: '/mcp',
+        permanent: true,
+      },
       // The Enterprise page became the Agencies page.
       {
         source: '/enterprise',

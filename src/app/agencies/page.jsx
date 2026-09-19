@@ -33,10 +33,10 @@ const features = [
   },
   {
     icon: connectionIcon,
-    title: 'Full API access',
+    title: 'Connect your agent',
     description:
-      'Pull rankings, AI visibility and content scores into the report you already send clients, or into your own dashboard. Included on Scale and Agency.',
-    url: LINKS.mcpApi,
+      'One MCP endpoint pulls rankings, AI visibility and content scores into Claude, Codex or whatever you already work in.',
+    url: LINKS.mcp,
   },
   {
     icon: recoveryIcon,
@@ -67,7 +67,7 @@ const howNeonHelpsTabs = [
     challenge:
       'Every client wants a monthly report, and the numbers behind it live in four separate tools with four separate exports.',
     description:
-      'Rankings, AI answers, site audits and content scores sit in one project per client, so the report is assembled from one place. The API returns the same numbers if you would rather build the report yourself.',
+      'Rankings, AI answers, site audits and content scores sit in one project per client, so the report is assembled from one place. The MCP server returns the same numbers if you would rather build the report yourself.',
   },
   {
     title: 'Proving the work',
@@ -95,7 +95,7 @@ const howNeonHelpsTabs = [
 const faqItems = [
   {
     question: 'What does the Agency plan actually add?',
-    answer: `Unlimited brand spaces and documents, 250 AI prompts a day, 2,000 keyword research credits a month, site audit crawls up to 1,000 pages, full API access, personalized onboarding and a named contact. The exact limits are on the <a href="/pricing">pricing page</a>.`,
+    answer: `Unlimited brand spaces and documents, 250 AI prompts a day, 2,000 keyword research credits a month, site audit crawls up to 1,000 pages, <a href="/mcp">MCP access</a>, personalized onboarding and a named contact. The exact limits are on the <a href="/pricing">pricing page</a>.`,
     initialState: 'open',
   },
   {
@@ -104,7 +104,7 @@ const faqItems = [
   },
   {
     question: 'Do you offer white-label reports?',
-    answer: `Not yet. It is planned for the Agency plan and it is not built, so do not buy on the strength of it. Today you can pull the numbers through the API and put them in your own template.`,
+    answer: `Not yet. It is planned for the Agency plan and it is not built, so do not buy on the strength of it. Today you can pull the numbers through <a href="/mcp">the MCP server</a> and put them in your own template.`,
   },
   {
     question: 'Is there an annual contract or a custom quote?',

@@ -7,22 +7,26 @@ import CodeTabsNavigation from './code-tabs-navigation';
 
 const codeSnippets = [
   {
-    name: 'macOS',
-    iconName: 'macos',
-    language: 'text',
-    code: `brew install neonctl`,
+    name: 'Claude Code',
+    language: 'bash',
+    code: `claude mcp add --transport http ranksmile https://app.ranksmile.pl/mcp`,
   },
   {
-    name: 'Windows',
-    iconName: 'windows',
-    language: 'text',
-    code: `npm install -g neon`,
+    name: 'Codex',
+    language: 'json',
+    code: `{
+  "mcpServers": {
+    "ranksmile": {
+      "type": "http",
+      "url": "https://app.ranksmile.pl/mcp"
+    }
+  }
+}`,
   },
   {
-    name: 'Linux',
-    iconName: 'linux',
+    name: 'Any client',
     language: 'text',
-    code: `npm install -g neon`,
+    code: `https://app.ranksmile.pl/mcp`,
   },
 ];
 
