@@ -1,0 +1,137 @@
+src/app/(docs)/docs/changelog/[...slug]/page.jsx
+  s_57407775d5d685::t_971061bb01a954 86
+src/lib/schema.test.js
+  s_57407775d5d685::t_2cab057c576f5b 4,14-16,25-32
+content/docs/introduction/plans.md
+  s_57407775d5d685::t_df98e4e4dc81e7 2-3,7,9,11,13-22,24,26,28,30,32,34,36,38,40,42,44-45,48,50,52
+src/scripts/process-md-for-llms.js
+  s_57407775d5d685::t_f01449ae62b37d 2376
+  s_57407775d5d685::t_217351db6edafb 2320,2466
+  s_57407775d5d685::t_ef5df6e806aa85 91,95
+content/docs/site/recommendations.md
+  s_57407775d5d685::t_a2d72f444ae65d 1-46
+next-sitemap.config.js
+  s_57407775d5d685::t_dd0b6655443bad 40
+content/docs/ai-visibility/prompts.md
+  s_57407775d5d685::t_a7dc9efd4110b7 1-14,16-67
+src/app/(docs)/docs/changelog/rss.xml/route.js
+  s_57407775d5d685::t_69ac6ee9f77d00 18
+content/docs/content/content-audit.md
+  s_57407775d5d685::t_1fc1dcb5e5cc6c 1-39
+content/docs/integrations/wordpress.md
+  s_57407775d5d685::t_a29869b9fc1192 1-53
+content/docs/navigation.yaml
+  s_57407775d5d685::t_b94fa323fb4e5c 1-3,5-14,16-17,19-60,63-73
+content/docs/search/keyword-tracking.md
+  s_57407775d5d685::t_90c9eafd5e7676 1-45
+content/docs/content/content-score.md
+  s_57407775d5d685::t_df7480816f1bcd 1-28,30-55
+src/components/pages/doc/need-help/need-help.jsx
+  s_57407775d5d685::t_b7c9e5da860337 1-18
+content/docs/integrations/smily-ai.md
+  s_57407775d5d685::t_e356b206c465ec 1-39
+src/components/pages/doc/need-help/index.js
+  s_57407775d5d685::t_e6769b0a11c28e 1,3
+  s_57407775d5d685::t_24148de66a888d 2
+src/scripts/llms-index-config.js
+  s_57407775d5d685::t_10b46bd3b956dc 122
+  s_57407775d5d685::t_d22320b8e8a07e 13-15,20,23,25,32-33,36-37,40-41,44-45,48-49,52-53,55,58-59,64,67,69,72,74,77,79,82,84,87,89,93,98,100-101,103,110-111,115-116,131-132,141
+src/scripts/generate-llms-index.test.js
+  s_57407775d5d685::t_5546780b13bb31 24-25
+src/app/.well-known/ai-catalog.json/route.js
+  s_57407775d5d685::t_d46015706ef736 5-8,10-12
+src/utils/ai-agent-detection.js
+  s_57407775d5d685::t_69ac6ee9f77d00 71-74
+content/docs/ai-visibility/sources.md
+  s_57407775d5d685::t_68dfa79c657e5f 1-55
+src/utils/markdown-404.js
+  s_57407775d5d685::t_d46015706ef736 8
+content/faqs/which-ai-engines-does-ranksmile-track.md
+  s_57407775d5d685::t_99976051cdd9f8 21,23,25
+content/docs/ai-visibility/overview.md
+  s_57407775d5d685::t_13d8e5d65d6376 1-45,47-75
+content/docs/introduction/overview.md
+  s_57407775d5d685::t_c761a7ab7c9e78 1-44
+content/docs/search/keyword-research.md
+  s_57407775d5d685::t_e859e39104f3e3 1-62
+src/scripts/generate-backend-platform-page-markdown.js
+  s_57407775d5d685::t_217351db6edafb 191
+content/docs/introduction/first-week.md
+  s_57407775d5d685::t_b78d7a769566c8 1-63
+src/middleware.test.js
+  s_57407775d5d685::t_f38cdc2b12983e 534
+src/components/pages/doc/mobile-nav/mobile-nav.jsx
+  s_57407775d5d685::t_69ac6ee9f77d00 216
+src/lib/schema.js
+  s_57407775d5d685::t_1ad3f86ff70314 9-10,13-16
+src/components/shared/content/content.jsx
+  s_57407775d5d685::t_e6769b0a11c28e 144
+content/docs/introduction/brand-spaces.md
+  s_57407775d5d685::t_b79a269ceb5672 1-54
+content/docs/search/keyword-list.md
+  s_57407775d5d685::t_8dab6b776638a4 1-53
+content/docs/site/ai-search-health.md
+  s_57407775d5d685::t_6849ad977342ac 1-51
+src/app/(docs)/layout.jsx
+  s_57407775d5d685::t_a2fdad319877d4 7,9,23-24,43
+src/components/pages/doc/sidebar/sidebar.jsx
+  s_57407775d5d685::t_167286954fd641 41,60
+src/app/(docs)/docs/[...slug]/page.jsx
+  s_57407775d5d685::t_69ac6ee9f77d00 52
+  s_57407775d5d685::t_971061bb01a954 110
+src/utils/get-metadata.js
+  s_57407775d5d685::t_971061bb01a954 45
+content/docs/content/automations.md
+  s_57407775d5d685::t_204edd53053260 1-57
+content/docs/site/site-audit.md
+  s_57407775d5d685::t_4b5ab13d1a4e1a 1-50
+content/docs/ai-visibility/fanout-queries.md
+  s_57407775d5d685::t_aef003668e91e8 1-53
+content/docs/ai-visibility/competitors.md
+  s_57407775d5d685::t_c373e9042623a3 1-41
+content/docs/reference/glossary.md
+  s_57407775d5d685::t_419572f30109bf 3,7,9-10,12-13,15-16,18-19,21-22,24-25,27-28,30-31,33-34,36-37,39-40,42-43,45-46,48-49,51-52,54-55,57,59
+src/components/pages/doc/actions/actions.jsx
+  s_57407775d5d685::t_2e7280f5655999 79
+content/docs/content/auto-optimize.md
+  s_57407775d5d685::t_0aa2de4c8aec79 1-47
+src/proxy.js
+  s_57407775d5d685::t_3d991bf11ec970 107,133
+  s_57407775d5d685::t_471ffd051dd147 114,121,170
+src/components/shared/inkeep-trigger/inkeep-ai-button/inkeep-ai-button.jsx
+  s_57407775d5d685::t_971061bb01a954 16
+src/constants/seo-data.js
+  s_57407775d5d685::t_0eacf29a504d43 80,98,101
+src/scripts/docs-reindex-map.test.js
+  s_57407775d5d685::t_c2ad6539bdfa0b 58,60,62-63
+content/docs/integrations/mcp.md
+  s_57407775d5d685::t_123de020f041fc 1-49
+src/scripts/process-md-for-llms.test.js
+  s_57407775d5d685::t_836051eaeced75 28
+  s_57407775d5d685::t_cfce7c9aa6fb23 620-624,710-714,721-722,724
+  s_57407775d5d685::t_cfc0419aec31e6 18-20,22,24-25,27,29-31,34,36,39-41,43,46-47
+  s_57407775d5d685::t_217351db6edafb 785,793,808,815,823,831,847,873
+  s_57407775d5d685::t_c037e67a713112 870-871,882-886
+  s_57407775d5d685::t_6f6a17a1195556 45
+content/docs/search/performance.md
+  s_57407775d5d685::t_b3c57b97273436 1-39
+package.json
+  s_57407775d5d685::t_d1aae98bd61ad9 10-11
+  s_57407775d5d685::t_6e28a580a45454 46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "78174b2a4f07fec0fc0a04cc110398af7ec494d3",
+  "prompts": {},
+  "sessions": {
+    "s_57407775d5d685": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1559192-7e17-492d-924e-f25b0711ab44",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Idzikowski20 <patryk.idzikowski@interia.pl>"
+    }
+  }
+}
