@@ -16,10 +16,9 @@ export default {
     pathname: '',
   },
   ai: {
-    title: 'Postgres and backend platform for AI — Neon',
+    title: 'Smily AI — the writer that reads your content score | Ranksmile',
     description:
-      'Build AI agents faster with Neon: serverless Postgres, Auth, Functions, Storage, and an AI Gateway, built for operation by agents.',
-    imagePath: '/images/social-previews/ai.jpg',
+      'Smily writes inside the Ranksmile editor: outline first, then the draft, on the paragraph you selected. Nine actions, from competitor analysis to Auto-Optimize to publishing. In pre alpha.',
     pathname: LINKS.ai,
   },
   siteAudit: {
